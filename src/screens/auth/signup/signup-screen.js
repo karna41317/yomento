@@ -59,8 +59,7 @@ export default class Login extends Component {
 
   handleBack () {
     this.unmountComponent(() => {
-      /*Actions.pop();*/
-      //this.props.navigation.pop()
+      this.props.navigation.goBack()
     })
   }
 
