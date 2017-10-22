@@ -5,6 +5,7 @@ import * as snapshotUtil from '../utils/snapshot';
 import * as SessionStateActions from '../modules/session/SessionState';
 import store from '../redux/store';
 import DeveloperMenu from '../components/DeveloperMenu';
+import LinearGradient from 'react-native-linear-gradient';
 
 class AppView extends Component {
   static displayName = 'AppView';
@@ -41,11 +42,11 @@ class AppView extends Component {
     }
 
     return (
-      <View style={{flex: 1}}>
-        <StatusBar backgroundColor='#455a64' barStyle='light-content' />
+      <LinearGradient colors={['#0B0B48', '#0F0E4E', '#0F0F55', '#111059', '#17166D', '#181776', '#1D1C80', '#1E1D85']} style={{flex: 1}}>
+        <StatusBar backgroundColor='#0B0B48' barStyle="light-content"/>
         <NavigatorViewContainer />
         {__DEV__ && <DeveloperMenu />}
-      </View>
+      </LinearGradient>
     );
   }
 }

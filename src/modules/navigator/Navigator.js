@@ -1,41 +1,72 @@
-import {Platform} from 'react-native';
-import {TabNavigator, StackNavigator} from 'react-navigation';
+import {
+  Platform,
+  Easing, Animated,
+} from 'react-native'
+import {
+  TabNavigator,
+  StackNavigator,
+} from 'react-navigation'
 
-import CounterViewContainer from '../counter/CounterViewContainer';
-import ColorViewContainer from '../colors/ColorViewContainer';
+import HomeScreen from '../../screens/home/home-screen'
+import loginScreen from '../../screens/auth/login/login-screen'
+import signupScreen from '../../screens/auth/signup/signup-screen'
+import verfiyScreen from '../../screens/auth/verify/verify-screen'
+import verificationCodeScreen from '../../screens/auth/verificationCode/verification-code-screen'
+import passwordScreen from '../../screens/auth/password/password-screen'
 
-const headerColor = '#39babd';
-const activeColor = 'white';
+const headerColor = '#39babd'
+const activeColor = 'white'
 
-// TabNavigator is nested inside StackNavigator
-export const MainScreenNavigator = TabNavigator({
-  Counter: {screen: CounterViewContainer},
-  Color: {screen: ColorViewContainer}
-}, {
-  tabBarOptions: {
-    ...Platform.select({
-      android: {
-        activeTintColor: activeColor,
-        indicatorStyle: {backgroundColor: activeColor},
-        style: {backgroundColor: headerColor}
-      }
-    })
-  }
-});
-
-MainScreenNavigator.navigationOptions = {
-  title: 'Pepperoni App Template',
-  headerTitleStyle: {color: 'white'},
-  headerStyle: {
-    backgroundColor: headerColor,
-    elevation: 0 // disable header elevation when TabNavigator visible
-  }
-};
-
-// Root navigator is a StackNavigator
 const AppNavigator = StackNavigator({
-  Home: {screen: MainScreenNavigator},
-  InfiniteColorStack: {screen: ColorViewContainer}
-});
+  home: {
+    screen: HomeScreen,
+  },
+  login: {
+    screen: loginScreen,
+  },
+  password: {
+    screen: passwordScreen,
+  },
+  signup: {
+    screen: signupScreen,
+  },
+  verify: {
+    screen: verfiyScreen,
+  },
+  verificationCode: {
+    screen: verificationCodeScreen,
+  },
+}, {
+  initialRouteName: 'home',
+  headerMode: 'none',
+  mode: 'modal',
+  navigationOptions: {
+    gesturesEnabled: false,
+  },
+  transitionConfig: () => ({
+    transitionSpec: {
+      duration: 300,
+      easing: Easing.out(Easing.poly(4)),
+      timing: Animated.timing,
+    },
+    screenInterpolator: sceneProps => {
+      const {layout, position, scene} = sceneProps
+      const {index} = scene
 
-export default AppNavigator;
+      const height = layout.initHeight
+      const translateY = position.interpolate({
+        inputRange: [index - 1, index, index + 1],
+        outputRange: [height, 0, 0],
+      })
+
+      const opacity = position.interpolate({
+        inputRange: [index - 1, index - 0.99, index],
+        outputRange: [0, 1, 1],
+      })
+
+      return {opacity, transform: [{translateY}]}
+    },
+  }),
+})
+
+export default AppNavigator

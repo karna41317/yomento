@@ -49,30 +49,21 @@
           <key>NSExceptionAllowsInsecureHTTPLoads</key>
           <true/>
         </dict>
-
         <key>codepush.azurewebsites.net</key>
         <dict>
           <key>NSExceptionAllowsInsecureHTTPLoads</key>
           <true/>
         </dict>
-
         <key>codepush.blob.core.windows.net</key>
         <dict>
           <key>NSExceptionAllowsInsecureHTTPLoads</key>
           <true/>
         </dict>
-
         <key>codepushupdates.azureedge.net</key>
         <dict>
           <key>NSExceptionAllowsInsecureHTTPLoads</key>
           <true/>
         </dict>
-
-
-
-
-
-
       </dict>
     </dict>
     <key>UIAppFonts</key>
@@ -87,6 +78,19 @@
       <string>SimpleLineIcons.ttf</string>
       <string>Zocial.ttf</string>
       <string>MaterialCommunityIcons.ttf</string>
+      <string>Entypo.ttf</string>
+      <string>EvilIcons.ttf</string>
+      <string>FontAwesome.ttf</string>
+      <string>Foundation.ttf</string>
+      <string>Ionicons.ttf</string>
+      <string>MaterialIcons.ttf</string>
+      <string>Octicons.ttf</string>
+      <string>Raleway_bold.ttf</string>
+      <string>Raleway_medium.ttf</string>
+      <string>Raleway.ttf</string>
+      <string>SimpleLineIcons.ttf</string>
+      <string>Zocial.ttf</string>
+      <string>Feather.ttf</string>
     </array>
     <key>CodePushDeploymentKey</key>
     <string>rBN5vHwbRXAUiivgTg0rW1P7tDMK6de86c2a-973b-4f25-9914-22830c3cd7a1</string>
