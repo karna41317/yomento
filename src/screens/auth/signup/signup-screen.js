@@ -1,10 +1,8 @@
 /**
  * Created by Karan on 2017-10-22.
  */
-import React, { Component, PropTypes } from 'react'
-import {
-  View, Text, Image, StyleSheet, Animated, InteractionManager, Alert,
-} from 'react-native'
+import React, { Component } from 'react'
+import { View, Animated, Alert } from 'react-native'
 import { Input, Button, Logo, Heading, BackgroundWrapper, AlertStatus } from './../../../components'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { getPlatformValue } from './../../../utils'
@@ -88,15 +86,7 @@ export default class Login extends Component {
   }
 
   render () {
-    return <LinearGradient colors={[
-      '#0B0B48',
-      '#0F0E4E',
-      '#0F0F55',
-      '#111059',
-      '#17166D',
-      '#181776',
-      '#1D1C80',
-      '#1E1D85']} style={{flex: 1}}>
+    return (
       <BackgroundWrapper transparent iconLeft="arrow-left-circle"
                          onPressIcon={this.handleBack.bind(this)}>
         <View style={styles.loginContainer}>
@@ -148,6 +138,6 @@ export default class Login extends Component {
         <AlertStatus textHelper="You're ready account" textAction="Login"
                      onPressAction={this.handleLogin.bind(this)}></AlertStatus>
       </BackgroundWrapper>
-    </LinearGradient>
+    )
   }
 }

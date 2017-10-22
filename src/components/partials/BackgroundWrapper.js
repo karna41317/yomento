@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import {
-  View, Image, Dimensions, TouchableOpacity, Platform,
+  View, Image, Dimensions, TouchableOpacity,
 } from 'react-native'
 import Icon from 'react-native-vector-icons/SimpleLineIcons'
 import { getStyleFromProps, getPlatformValue } from './../../utils'
@@ -42,12 +42,14 @@ export default class BackgroundWrapper extends Component {
       {this.renderChildren()}
     </View>
   }
+
   getContent = () => {
     if (this.props.transparent) return this.renderViewBackground()
     else return this.renderImageBackground()
   }
+
   render () {
-    return(
+    return (
       <LinearGradient colors={[
         '#0B0B48',
         '#0F0E4E',

@@ -12,5 +12,5 @@ export const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
     marginTop: getPlatformValue('android', 25, 45),
-  }
+  },
 })

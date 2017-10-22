@@ -1,13 +1,12 @@
 /**
  * Created by Karan on 2017-10-22.
  */
-import {
-  View, Text, Image, StyleSheet, Animated, InteractionManager, Alert
-} from 'react-native';
-import React, { Component, PropTypes } from 'react'
+import { View, Text } from 'react-native'
+import React, { Component } from 'react'
+
 export default class PasswordScreen extends Component {
-  render() {
-    return(
+  render () {
+    return (
       <View>
         <Text>
           Password Screen

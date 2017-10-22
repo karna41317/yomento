@@ -1,10 +1,10 @@
-import Heading from './Heading';
-import TextFont from './TextFont';
+import Heading from './Heading'
+import TextFont from './TextFont'
 
 export {
-    Heading, TextFont
+  Heading, TextFont,
 }
 
 export default {
-    Heading, TextFont
+  Heading, TextFont,
 }

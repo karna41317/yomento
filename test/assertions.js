@@ -1,4 +1,4 @@
-import {isArray, isFunction, isUndefined, isMatchWith} from 'lodash';
+import { isArray, isFunction, isUndefined, isMatchWith } from 'lodash'
 
 /**
  * Tests whether the passed Enzyme wrapper element has all the style
@@ -6,31 +6,32 @@ import {isArray, isFunction, isUndefined, isMatchWith} from 'lodash';
  *
  * Example: hasStyles(element, {textAlign: 'left', color: '*', position: _.isUndefined})
  */
-export function hasStyles(wrapper, expectedStyles) {
-  const styleProp = wrapper.props().style;
+export function hasStyles (wrapper, expectedStyles) {
+  const styleProp = wrapper.props().style
   if (!styleProp) {
-    return false;
+    return false
   }
 
   // support array and object styles
   const appliedStyle = isArray(styleProp)
     ? Object.assign({}, ...styleProp)
-    : styleProp;
+    : styleProp
 
   // test that styles match spec
-  return isMatchWith(appliedStyle, expectedStyles, (actualValue, expectedValue) => {
+  return isMatchWith(appliedStyle, expectedStyles,
+    (actualValue, expectedValue) => {
 
-    // Splat means any value
-    if (expectedValue === '*') {
-      return !isUndefined(actualValue);
-    }
+      // Splat means any value
+      if (expectedValue === '*') {
+        return !isUndefined(actualValue)
+      }
 
-    // Function property for complex tests
-    if (isFunction(expectedValue)) {
-      return expectedValue(actualValue);
-    }
+      // Function property for complex tests
+      if (isFunction(expectedValue)) {
+        return expectedValue(actualValue)
+      }
 
-    // otherwise defer to regular _.isMatch check
-    return void 0;
-  });
+      // otherwise defer to regular _.isMatch check
+      return void 0
+    })
 }
