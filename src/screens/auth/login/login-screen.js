@@ -1,10 +1,8 @@
 import React, { Component, PropTypes } from 'react'
-import { View, Text, Image, StyleSheet, Alert, Animated } from 'react-native'
+import { View, Alert, Animated } from 'react-native'
 import { Input, Button, Logo, Heading, BackgroundWrapper, AlertStatus } from './../../../components'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { styles } from './login-styles'
-import LinearGradient from 'react-native-linear-gradient'
-//import { getColorCodes } from 'src/utils'
 
 export default class Login extends Component {
   state = {
