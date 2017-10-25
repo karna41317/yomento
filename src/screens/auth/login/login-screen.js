@@ -64,7 +64,7 @@ export default class Login extends Component {
         <View style={styles.loginContainer}>
           <Logo/>
           <Heading marginTop={16} color="#ffffff" textAlign="center">
-            {'<React Viet Nam/>'}
+            {'<Y e M o N t O/>'}
           </Heading>
           <View style={styles.formContainer}>
             <Animated.View style={{
