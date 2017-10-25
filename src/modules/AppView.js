@@ -1,61 +1,59 @@
-import React, {PropTypes, Component} from 'react';
-import {View, StyleSheet, StatusBar, ActivityIndicator} from 'react-native';
-import NavigatorViewContainer from './navigator/NavigatorViewContainer';
-import * as snapshotUtil from '../utils/snapshot';
-import * as SessionStateActions from '../modules/session/SessionState';
-import store from '../redux/store';
-import DeveloperMenu from '../components/DeveloperMenu';
-import GradientWrapper from './../components';
+import React, { PropTypes, Component } from 'react'
+import { View, StyleSheet, StatusBar, ActivityIndicator } from 'react-native'
+import {NavigatorView} from 'src/screens/navigator'
+import * as snapshotUtil from '../utils/snapshot'
+import * as SessionStateActions from 'src/actions/session-state'
+import store from '../redux/store'
+import DeveloperMenu from '../components/DeveloperMenu'
 
 class AppView extends Component {
-  static displayName = 'AppView';
+  static displayName = 'AppView'
 
   static propTypes = {
     isReady: PropTypes.bool.isRequired,
-    dispatch: PropTypes.func.isRequired
-  };
-
-  componentDidMount() {
-    snapshotUtil.resetSnapshot()
-      .then(snapshot => {
-        const {dispatch} = this.props;
-
-        if (snapshot) {
-          dispatch(SessionStateActions.resetSessionStateFromSnapshot(snapshot));
-        } else {
-          dispatch(SessionStateActions.initializeSessionState());
-        }
-
-        store.subscribe(() => {
-          snapshotUtil.saveSnapshot(store.getState());
-        });
-      });
+    dispatch: PropTypes.func.isRequired,
   }
 
-  render() {
+  componentDidMount () {
+    snapshotUtil.resetSnapshot().then(snapshot => {
+      const {dispatch} = this.props
+      if (snapshot) {
+        dispatch(SessionStateActions.resetSessionStateFromSnapshot(snapshot))
+      } else {
+        dispatch(SessionStateActions.initializeSessionState())
+      }
+
+      store.subscribe(() => {
+        snapshotUtil.saveSnapshot(store.getState())
+      })
+    })
+  }
+
+  render () {
     if (!this.props.isReady) {
       return (
         <View style={{flex: 1}}>
-          <ActivityIndicator style={styles.centered} />
+          <ActivityIndicator style={styles.centered}/>
         </View>
-      );
+      )
     }
 
     return (
-      <GradientWrapper>
+      <View>
         <StatusBar backgroundColor='#0B0B48' barStyle="light-content"/>
-        <NavigatorViewContainer />
-        {__DEV__ && <DeveloperMenu />}
-      </GradientWrapper>
-    );
+
+        <NavigatorView/>
+        {__DEV__ && <DeveloperMenu/>}
+      </View>
+    )
   }
 }
 
 const styles = StyleSheet.create({
   centered: {
     flex: 1,
-    alignSelf: 'center'
-  }
-});
+    alignSelf: 'center',
+  },
+})
 
-export default AppView;
+export default AppView

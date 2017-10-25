@@ -1,4 +1,4 @@
-import createLogger from 'redux-logger';
+import { createLogger } from 'redux-logger'
 
 // log actions in development mode
 export default createLogger({
@@ -12,5 +12,10 @@ export default createLogger({
 
   // transform immutable action payloads to plain objects
   actionTransformer: action =>
-    action && action.payload && action.payload.toJS ? {...action, payload: action.payload.toJS()} : action
-});
+    action && action.payload && action.payload.toJS
+      ? {
+        ...action,
+        payload: action.payload.toJS(),
+      }
+      : action,
+})

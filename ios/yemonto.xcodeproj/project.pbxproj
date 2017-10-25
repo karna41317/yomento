@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -50,9 +51,9 @@
 		95D8DA5518954E21BBDDB355 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42C5381DEE514F6B8EFD9A9C /* SimpleLineIcons.ttf */; };
 		99839E5F2A3441D0A1A436F5 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13468FC66F5B4480B5CA49EC /* Zocial.ttf */; };
 		9AD68C9FE0C44BE1812488DC /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D48CDB6E1594FF69439C93D /* Octicons.ttf */; };
-		9E75CC3B1F9D04BE00402736 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E75CC381F9D00CA00402736 /* libBVLinearGradient.a */; };
 		9E75CC3C1F9D04CC00402736 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2BEE781E2EDFEA008A6295 /* libRNVectorIcons.a */; };
 		9E75CC3D1F9D04DA00402736 /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9A360F1F99662F00A7A7C4 /* libCodePush.a */; };
+		9E7FEF531FA0D409000312A4 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E75CC381F9D00CA00402736 /* libBVLinearGradient.a */; };
 		B1A6E9BBF1464CD3891CDEB4 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C683AA59481F427C94997448 /* FontAwesome.ttf */; };
 		DAFE823C545A470C99815401 /* Raleway_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CD9779D6A7D48DF8B0E784F /* Raleway_medium.ttf */; };
 		DE1B3E808D534E7491C40551 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EDC7FFB304A4B26BA90D73C /* SimpleLineIcons.ttf */; };
@@ -233,13 +234,6 @@
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = CodePush;
 		};
-		9E9A36101F99662F00A7A7C4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 89AAF1DE41C94502911D4BA7 /* CodePush.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F886647B1F4ADB500036D01B;
-			remoteInfo = "CodePush-tvOS";
-		};
 		EE2BEE5F1E2EDFEA008A6295 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
@@ -361,9 +355,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E7FEF531FA0D409000312A4 /* libBVLinearGradient.a in Frameworks */,
 				9E75CC3D1F9D04DA00402736 /* libCodePush.a in Frameworks */,
 				9E75CC3C1F9D04CC00402736 /* libRNVectorIcons.a in Frameworks */,
-				9E75CC3B1F9D04BE00402736 /* libBVLinearGradient.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
@@ -637,7 +631,6 @@
 			isa = PBXGroup;
 			children = (
 				9E9A360F1F99662F00A7A7C4 /* libCodePush.a */,
-				9E9A36111F99662F00A7A7C4 /* libCodePush.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -744,7 +737,11 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 39F7ZCTB24;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 39F7ZCTB24;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -991,13 +988,6 @@
 			remoteRef = 9E9A360E1F99662F00A7A7C4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9E9A36111F99662F00A7A7C4 /* libCodePush.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libCodePush.a;
-			remoteRef = 9E9A36101F99662F00A7A7C4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		EE2BEE601E2EDFEA008A6295 /* libRCTLinking-tvOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1204,6 +1194,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 39F7ZCTB24;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1237,6 +1228,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 39F7ZCTB24;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
@@ -1267,6 +1259,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = 39F7ZCTB24;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -1293,6 +1286,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 39F7ZCTB24;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

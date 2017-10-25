@@ -1,14 +1,21 @@
+/**
+ * Created by Karan on 2017-10-25.
+ */
 import React, { PropTypes, Component } from 'react'
-import { addNavigationHelpers } from 'react-navigation'
-import { GradientWrapper } from 'src/components'
-import AppNavigator from './Navigator'
+import { connect } from 'react-redux'
 
-class NavigatorView extends Component {
+import { addNavigationHelpers } from 'react-navigation'
+import { navSelector } from './navigator-selector'
+
+import { AppNavigator } from 'src/routes'
+
+@connect(navSelector)
+export class NavigatorView extends Component {
   static displayName = 'NavigationView'
 
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
-    navigatorState: PropTypes.shape({
+    nav: PropTypes.shape({
       index: PropTypes.number.isRequired,
       routes: PropTypes.arrayOf(PropTypes.shape({
         key: PropTypes.string.isRequired,
@@ -19,18 +26,21 @@ class NavigatorView extends Component {
 
   render () {
     return (
-      <GradientWrapper>
-        <AppNavigator
-          navigation={
-            addNavigationHelpers({
-              dispatch: this.props.dispatch,
-              state: this.props.navigatorState,
-            })
-          }
-        />
-      </GradientWrapper>
+      <AppNavigator
+        navigation={
+          addNavigationHelpers({
+            dispatch: this.props.dispatch,
+            state: this.props.nav,
+          })
+        }
+      />
     )
   }
 }
 
-export default NavigatorView
+
+
+
+
+
+
