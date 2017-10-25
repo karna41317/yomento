@@ -1,39 +1,40 @@
 /**
  * Created by Karan on 2017-10-22.
  */
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react'
 import {
-  View, Text, Image, StyleSheet, Animated, InteractionManager
-} from 'react-native';
+  View, Text, Image, StyleSheet, Animated, InteractionManager,
+} from 'react-native'
 
-import LinearGradient from 'react-native-linear-gradient';
+import LinearGradient from 'react-native-linear-gradient'
 
-import {Button, Logo, Heading, BackgroundWrapper, AlertStatus} from './../../components';
-
+import { Button, Logo, Heading, BackgroundWrapper, AlertStatus } from './../../components'
+import LinkedinLogin from 'react-native-linkedin-login'
 
 export default class Home extends Component {
   state = {
     logoPositionTop: new Animated.Value(-228),
     groupHeadingPositionLeft: new Animated.Value(-614),
     buttonPositionLeft: new Animated.Value(-696),
-    statusPositionTop: new Animated.Value(1200)
-  };
+    statusPositionTop: new Animated.Value(1200),
+    user: null
+  }
 
-  handePressSignIn() {
+  handePressSignIn () {
     this.props.navigation.navigate('login')
   }
 
-  handlePressSignUp() {
+  handlePressSignUp () {
     this.props.navigation.navigate('signup')
   }
 
-  animateHome(){
+  animateHome () {
     const timingToZero = (stateValue) => Animated.timing(
       stateValue,
       {
         toValue: 0,
-        duration: 700
-      }
+        duration: 700,
+      },
     )
     Animated.sequence([
       Animated.delay(20),
@@ -43,56 +44,89 @@ export default class Home extends Component {
         timingToZero(this.state.buttonPositionLeft),
         Animated.timing(this.state.statusPositionTop, {
           toValue: 0,
-          duration: 700
-        })
-      ])
+          duration: 700,
+        }),
+      ]),
     ]).start()
   }
 
-  componentDidMount(){
-    if(this.props.disableInteractionCheck) {
-      this.animateHome();
+  componentDidMount () {
+    if (this.props.disableInteractionCheck) {
+      this.animateHome()
     }
     else {
       InteractionManager.runAfterInteractions(() => {
-        this.animateHome();
+        this.animateHome()
       })
     }
   }
 
-  render() {
-    return<BackgroundWrapper transparent>
-      <View style={loginStyle.loginContainer}>
-        <Animated.View style={{position: 'relative', top: this.state.logoPositionTop}}>
-          <Logo/>
+  loginWithLinkedIn = () => {
+    LinkedinLogin.login().then((user) => {
+      console.log('User logged in: ', user)
+      this.setState({user})
+      AsyncStorage.setItem('user', JSON.stringify(user), () => {
+        this.getUserProfile()
+      })
+    }).catch((e) => {
+      var err = JSON.parse(e.description)
+      alert('ERROR: ' + err.errorMessage)
+      console.log('Error', e)
+    })
+    return true
+  }
+
+  render () {
+
+    return (
+      <BackgroundWrapper transparent>
+        <View style={loginStyle.loginContainer}>
+          <Animated.View
+            style={{position: 'relative', top: this.state.logoPositionTop}}>
+            <Logo/>
+          </Animated.View>
+          <Animated.View style={{
+            position: 'relative',
+            left: this.state.groupHeadingPositionLeft,
+          }}>
+            <Heading marginTop={89} color="#ffffff" textAlign="center">
+              {'<React Viet Nam/>'}
+            </Heading>
+            <Heading marginTop={16} element="h3" color="#ffffff"
+                     textAlign="center">
+              {'Animated in react'}
+            </Heading>
+          </Animated.View>
+          <Animated.View
+            style={{position: 'relative', left: this.state.buttonPositionLeft}}>
+            <Button marginTop={90} onPress={this.handePressSignIn.bind(this)}>
+              Sign in
+            </Button>
+          </Animated.View>
+
+          <Animated.View
+            style={{position: 'relative', left: this.state.buttonPositionLeft}}>
+            <Button marginTop={40} onPress={this.loginWithLinkedIn}>
+              LinkedIn
+            </Button>
+          </Animated.View>
+        </View>
+
+        <Animated.View
+          style={{position: 'relative', top: this.state.statusPositionTop}}>
+          <AlertStatus
+            textHelper="Don't have account" textAction="Sign up"
+            onPressAction={this.handlePressSignUp.bind(this)}
+          />
         </Animated.View>
-        <Animated.View style={{position: 'relative', left: this.state.groupHeadingPositionLeft}}>
-          <Heading marginTop={89} color="#ffffff" textAlign="center">
-            {'<React Viet Nam/>'}
-          </Heading>
-          <Heading marginTop={16} element="h3" color="#ffffff" textAlign="center">
-            {'Animated in react'}
-          </Heading>
-        </Animated.View>
-        <Animated.View style={{position: 'relative', left: this.state.buttonPositionLeft}}>
-          <Button marginTop={90} onPress={this.handePressSignIn.bind(this)}>
-            Sign in
-          </Button>
-        </Animated.View>
-      </View>
-      <Animated.View style={{position: 'relative', top: this.state.statusPositionTop}}>
-        <AlertStatus
-          textHelper="Don't have account" textAction="Sign up"
-          onPressAction={this.handlePressSignUp.bind(this)}
-        />
-      </Animated.View>
-    </BackgroundWrapper>
+      </BackgroundWrapper>
+    )
 
   }
 }
 
 Home.propTypes = {
-  disableInteractionCheck: PropTypes.bool
+  disableInteractionCheck: PropTypes.bool,
 }
 
 const loginStyle = StyleSheet.create({
@@ -105,6 +139,6 @@ const loginStyle = StyleSheet.create({
     flex: 1,
     paddingLeft: 15,
     paddingRight: 15,
-    marginTop: 45
-  }
+    marginTop: 45,
+  },
 })

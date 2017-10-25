@@ -4682,6 +4682,10 @@ react-native-linear-gradient@^2.3.0:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-linkedin-login@^1.44.1:
+  version "1.44.1"
+  resolved "https://registry.yarnpkg.com/react-native-linkedin-login/-/react-native-linkedin-login-1.44.1.tgz#62c49dac7252abb0e8ea42acb436b0aeceae586e"
+
 react-native-mdcore@^0.1.9:
   version "0.1.9"
   resolved "https://registry.yarnpkg.com/react-native-mdcore/-/react-native-mdcore-0.1.9.tgz#7e9c91f4514e9d44c2ae63d8d8c1a2bb9dd0617d"

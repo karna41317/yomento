@@ -65,6 +65,7 @@
     "react-native": "0.42.0",
     "react-native-code-push": "1.17.0-beta",
     "react-native-linear-gradient": "^2.3.0",
+    "react-native-linkedin-login": "^1.44.1",
     "react-native-mdcore": "^0.1.9",
     "react-native-vector-icons": "^4.4.2",
     "react-navigation": "1.0.0-beta.11",
