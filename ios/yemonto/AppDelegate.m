@@ -9,9 +9,9 @@
 
 #import "AppDelegate.h"
 #import <CodePush/CodePush.h>
-
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import <RCTLinkedinLogin.h>
 
 @implementation AppDelegate
 
@@ -21,7 +21,8 @@
 
   
     #ifdef DEBUG
-        jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+  jsCodeLocation = [NSURL URLWithString:@"http://85.227.231.75:8081/index.ios.bundle?platform=ios&dev=true"];
+        //jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
     #else
         jsCodeLocation = [CodePush bundleURL];
     #endif
@@ -37,6 +38,15 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+  if ([RCTLinkedinLogin shouldHandleUrl:url])
+  {
+    return [RCTLinkedinLogin application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+  }
   return YES;
 }
 

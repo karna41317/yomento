@@ -7,14 +7,16 @@ export default class Button extends Component {
   render () {
     const style = {
       ...styleButton.container,
-      ...getStyleFromProps(['marginTop', 'width', 'flex'], this.props)
+      //...getStyleFromProps(['marginTop', 'width', 'flex'], this.props)
     }
 
-    return <View style={{alignItems: 'center'}}>
-      <TouchableOpacity style={style} onPress={this.props.onPress}>
-        <TextFont style={styleButton.text}>{this.props.children}</TextFont>
-      </TouchableOpacity>
-    </View>
+    return (
+      <View style={{alignItems: 'center'}}>
+        <TouchableOpacity style={style} onPress={this.props.onPress}>
+          <TextFont style={styleButton.text}>{this.props.children}</TextFont>
+        </TouchableOpacity>
+      </View>
+    )
   }
 }
 
@@ -31,8 +33,8 @@ Button.propTypes = {
 
 const styleButton = {
   container: {
-    paddingTop: 16,
-    paddingBottom: 16,
+    paddingTop: 25,
+    paddingBottom: 25,
     paddingLeft: 47,
     paddingRight: 47,
     backgroundColor: '#6c56b7',
@@ -45,6 +47,9 @@ const styleButton = {
       height: 2,
       width: 1,
     },
+    flex: 1,
+    justifyContent: 'center',
+
   },
   text: {
     color: '#ffffff',

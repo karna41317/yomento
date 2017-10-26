@@ -3,10 +3,10 @@
  */
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
-
+import { View, Text } from 'react-native'
 import { addNavigationHelpers } from 'react-navigation'
 import { navSelector } from './navigator-selector'
-
+import GradientWrapper from 'src/components/partials/gradientWrapper'
 import { AppNavigator } from 'src/routes'
 
 @connect(navSelector)
@@ -26,14 +26,16 @@ export class NavigatorView extends Component {
 
   render () {
     return (
-      <AppNavigator
-        navigation={
-          addNavigationHelpers({
-            dispatch: this.props.dispatch,
-            state: this.props.nav,
-          })
-        }
-      />
+      <GradientWrapper>
+        <AppNavigator
+          navigation={
+            addNavigationHelpers({
+              dispatch: this.props.dispatch,
+              state: this.props.nav,
+            })
+          }
+        />
+      </GradientWrapper>
     )
   }
 }

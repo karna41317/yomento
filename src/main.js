@@ -1,15 +1,14 @@
-import { Provider } from 'react-redux'
 import Store from './store'
-import AppViewContainer from './modules/AppViewContainer'
+import RootScreen from './screens/root'
 import React, { Component } from 'react'
-import { AppRegistry, BackAndroid, Platform } from 'react-native'
+import { AppRegistry, BackHandler, Platform } from 'react-native'
 import { NavigationActions } from 'react-navigation'
 
 class yemonto extends Component {
 
   componentWillMount () {
     if (Platform.OS === 'android') {
-      BackAndroid.addEventListener('hardwareBackPress', this.navigateBack)
+      BackHandler.addEventListener('hardwareBackPress', this.navigateBack)
     }
   }
 
@@ -27,7 +26,7 @@ class yemonto extends Component {
   render () {
     return (
       <Store>
-        <AppViewContainer/>
+        <RootScreen/>
       </Store>
     )
   }

@@ -1,127 +1,135 @@
 /**
  * Created by Karan on 2017-10-22.
  */
-import React, { Component, PropTypes } from 'react'
-import {
-  View, Text, Image, StyleSheet, Animated, InteractionManager,
-} from 'react-native'
-
-import LinearGradient from 'react-native-linear-gradient'
-
-import { Button, Logo, Heading, BackgroundWrapper, AlertStatus } from './../../components'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { View, StyleSheet, AsyncStorage, Text, Dimensions } from 'react-native'
+import { Button } from 'src/components/buttons'
 import LinkedinLogin from 'react-native-linkedin-login'
+import GradientWrapper from 'src/components/partials/gradientWrapper'
 
 export default class Home extends Component {
-  state = {
-    logoPositionTop: new Animated.Value(-228),
-    groupHeadingPositionLeft: new Animated.Value(-614),
-    buttonPositionLeft: new Animated.Value(-696),
-    statusPositionTop: new Animated.Value(1200),
-    user: null
+  constructor (props) {
+    super(props)
+
+    this.login = this.login.bind(this)
+    this.logout = this.logout.bind(this)
+
+    this.state = {
+      user: null,
+    }
   }
 
-  handePressSignIn () {
-    this.props.navigation.navigate('login')
-  }
-
-  handlePressSignUp () {
-    this.props.navigation.navigate('signup')
-  }
-
-  animateHome () {
-    const timingToZero = (stateValue) => Animated.timing(
-      stateValue,
-      {
-        toValue: 0,
-        duration: 700,
-      },
+  componentWillMount () {
+    // initialize LinkedinApi
+    console.log('init')
+    LinkedinLogin.init(
+      [
+        'r_emailaddress',
+        'r_basicprofile',
+      ],
     )
-    Animated.sequence([
-      Animated.delay(20),
-      Animated.parallel([
-        timingToZero(this.state.logoPositionTop),
-        timingToZero(this.state.groupHeadingPositionLeft),
-        timingToZero(this.state.buttonPositionLeft),
-        Animated.timing(this.state.statusPositionTop, {
-          toValue: 0,
-          duration: 700,
-        }),
-      ]),
-    ]).start()
+
+    this.getUserSession()
+
   }
 
-  componentDidMount () {
-    if (this.props.disableInteractionCheck) {
-      this.animateHome()
-    }
-    else {
-      InteractionManager.runAfterInteractions(() => {
-        this.animateHome()
-      })
-    }
+  getUserSession () {
+    // get the user session from the store
+
+    AsyncStorage.getItem('user', (err, result) => {
+      if (result) {
+        const user = JSON.parse(result)
+
+        // set the api session if found
+        LinkedinLogin.setSession(user.accessToken, user.expiresOn)
+
+        this.setState({
+          user,
+        })
+
+        console.log('user', user)
+      }
+    })
+
   }
 
-  loginWithLinkedIn = () => {
+  login () {
     LinkedinLogin.login().then((user) => {
       console.log('User logged in: ', user)
+      
+      // recieved auth token
       this.setState({user})
+
       AsyncStorage.setItem('user', JSON.stringify(user), () => {
         this.getUserProfile()
       })
+
     }).catch((e) => {
       var err = JSON.parse(e.description)
       alert('ERROR: ' + err.errorMessage)
       console.log('Error', e)
     })
+
     return true
   }
 
+  logout () {
+    LinkedinLogin.logout()
+    console.log('user logged out')
+
+    AsyncStorage.removeItem('user')
+    this.setState({user: null})
+  }
+
+  getUserProfile (user) {
+    LinkedinLogin.getProfile().then((data) => {
+      console.log('received profile', data)
+      const userdata = Object.assign({}, this.state.user, data)
+
+      console.log('user: ', userdata)
+      this.setState({user: userdata})
+
+      AsyncStorage.setItem('user', JSON.stringify(userdata), () => {
+        this.getUserProfileImage()
+      })
+
+    }).catch((e) => {
+      console.log(e)
+    })
+  }
+
+  getUserProfileImage () {
+    LinkedinLogin.getProfileImages().then((images) => {
+      console.log('received profile image', images)
+
+      const userdata = Object.assign({}, this.state.user, {images})
+
+      AsyncStorage.setItem('user', JSON.stringify(userdata), () => {
+        this.setState({user: userdata})
+      })
+
+    }).catch((e) => {
+      console.log(e)
+    })
+  }
+
   render () {
-
     return (
-      <BackgroundWrapper transparent>
-        <View style={loginStyle.loginContainer}>
-          <Animated.View
-            style={{position: 'relative', top: this.state.logoPositionTop}}>
-            <Logo/>
-          </Animated.View>
-          <Animated.View style={{
-            position: 'relative',
-            left: this.state.groupHeadingPositionLeft,
-          }}>
-            <Heading marginTop={89} color="#ffffff" textAlign="center">
-              {'<React Viet Nam/>'}
-            </Heading>
-            <Heading marginTop={16} element="h3" color="#ffffff"
-                     textAlign="center">
-              {'Animated in react'}
-            </Heading>
-          </Animated.View>
-          <Animated.View
-            style={{position: 'relative', left: this.state.buttonPositionLeft}}>
-            <Button marginTop={90} onPress={this.handePressSignIn.bind(this)}>
-              Sign in
+      <GradientWrapper>
+        <View style={styles.container}>
+          <View
+            style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+            <Button onPress={this.login}>
+              Login
             </Button>
-          </Animated.View>
-
-          <Animated.View
-            style={{position: 'relative', left: this.state.buttonPositionLeft}}>
-            <Button marginTop={40} onPress={this.loginWithLinkedIn}>
-              LinkedIn
+            <Button onPress={this.logout}>
+              Logout
             </Button>
-          </Animated.View>
+          </View>
         </View>
-
-        <Animated.View
-          style={{position: 'relative', top: this.state.statusPositionTop}}>
-          <AlertStatus
-            textHelper="Don't have account" textAction="Sign up"
-            onPressAction={this.handlePressSignUp.bind(this)}
-          />
-        </Animated.View>
-      </BackgroundWrapper>
+      </GradientWrapper>
     )
-
   }
 }
 
@@ -129,16 +137,10 @@ Home.propTypes = {
   disableInteractionCheck: PropTypes.bool,
 }
 
-const loginStyle = StyleSheet.create({
-  loginContainer: {
+const styles = StyleSheet.create({
+  container: {
     flex: 1,
-    backgroundColor: 'transparent',
-    paddingTop: 69,
-  },
-  formContainer: {
-    flex: 1,
-    paddingLeft: 15,
-    paddingRight: 15,
-    marginTop: 45,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
   },
 })
