@@ -57,7 +57,7 @@ export default class Home extends Component {
   login () {
     LinkedinLogin.login().then((user) => {
       console.log('User logged in: ', user)
-      
+
       // recieved auth token
       this.setState({user})
 
