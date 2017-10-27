@@ -18,3 +18,9 @@ export const toExperienceDetail = (id) => (dispatch, { navigator }) => {
 export const toListingDetail = (id) => (dispatch, { navigator }) => {
   navigate(navigator, 'listingDetail', { id })
 }
+
+/*export const toLogin = () => (dispatch, { navigator }) => {
+  console.log('printing navigator', navigator)
+
+  navigate(navigator, 'login')
+}*/

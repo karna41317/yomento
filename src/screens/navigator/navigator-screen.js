@@ -8,6 +8,7 @@ import { addNavigationHelpers } from 'react-navigation'
 import { navSelector } from './navigator-selector'
 import GradientWrapper from 'src/components/partials/gradientWrapper'
 import { AppNavigator } from 'src/routes'
+import { Injector } from '../../middlewares/index'
 
 @connect(navSelector)
 export class NavigatorView extends Component {
@@ -24,10 +25,16 @@ export class NavigatorView extends Component {
     }).isRequired,
   }
 
+  componentDidMount () {
+    //Injector.inject({navigator: this.refs.navigator})
+  }
+
   render () {
+    /*ref="navigator"*/
     return (
       <GradientWrapper>
         <AppNavigator
+
           navigation={
             addNavigationHelpers({
               dispatch: this.props.dispatch,

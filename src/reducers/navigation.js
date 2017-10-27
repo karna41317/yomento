@@ -4,7 +4,7 @@
 import { NavigationActions } from 'react-navigation'
 import includes from 'lodash/includes'
 
-import {AppNavigator} from 'src/routes'
+import { AppNavigator } from 'src/routes'
 
 export default (state, action) => {
   if (!state) {

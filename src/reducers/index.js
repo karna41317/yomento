@@ -5,9 +5,11 @@ import { combineReducers } from 'redux'
 import rootReducer from './root'
 import sessionStateReducer from './session-state'
 import navigationReducer from './navigation'
+import authReducer from './auth-reducer'
 
 export default combineReducers({
   root: rootReducer,
   session: sessionStateReducer,
-  navigatorState:navigationReducer
+  navigatorState:navigationReducer,
+  auth: authReducer
 })
