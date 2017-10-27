@@ -1,6 +1,8 @@
 package com.yemonto;
 
 import com.facebook.react.ReactActivity;
+import cl.json.RNSharePackage;
+import com.reactnative.photoview.PhotoViewPackage;
 
 public class MainActivity extends ReactActivity {
 
