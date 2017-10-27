@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { View, StyleSheet } from 'react-native'
-import { TextFont } from '../text'
+import { TextFont } from '../typography/index'
 
 export default class AlertStatus extends Component {
   render () {

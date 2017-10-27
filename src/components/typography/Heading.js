@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
-import { getStyleFromProps } from '../../utils'
+import { getStyleFromProps } from '../../utils/index'
 import TextFont from './TextFont'
+
 
 export default class Heading extends Component {
   render () {

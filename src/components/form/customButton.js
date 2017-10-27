@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { View, TouchableOpacity } from 'react-native'
 import { getStyleFromProps } from '../../utils'
-import { TextFont } from '../text'
+import { TextFont } from '../typography/index'
 
 export default class Button extends Component {
   render () {

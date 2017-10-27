@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { Text } from 'react-native'
-import { getStyleFromProps } from '../../utils'
+import { getStyleFromProps } from '../../utils/index'
 
 export default class TextFont extends Component {
   render () {

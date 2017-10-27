@@ -1,5 +1,3 @@
-import Button from './buttons'
-
-export default {
-  Button
-}
+export * from './buttons'
+export * from './typography'
+export * from './wrappers'

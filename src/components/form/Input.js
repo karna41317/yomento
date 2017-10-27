@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { View, TextInput, Animated } from 'react-native'
 import { getStyleFromProps } from '../../utils'
-import { TextFont } from '../text'
+import { TextFont } from '../typography/index'
 
 // Distance label top with input container default
 const LABEL_DEFAULT_TOP = 15
