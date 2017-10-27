@@ -16,11 +16,10 @@ export default class Home extends Component {
     super(props)
   }
 
-  /*goToLogin = () => {
-    console.log('printingdma amgotoLogin')
-
-    //this.props.dispatch(toLogin())
-  }*/
+  goToLogin = () => {
+    const {navigation} = this.props
+    navigation.navigate('login')
+  }
 
   render () {
     return (

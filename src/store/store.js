@@ -40,6 +40,7 @@ export const store = createStore(reducers, {}, composeWithDevTools(
 ))
 persistStore(store, {
     storage: AsyncStorage,
+    blacklist: ['navigatorState'],
   },
   () => store.dispatch(update({isHydrated: true})),)
 

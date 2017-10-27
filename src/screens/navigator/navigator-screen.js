@@ -26,15 +26,15 @@ export class NavigatorView extends Component {
   }
 
   componentDidMount () {
-    //Injector.inject({navigator: this.refs.navigator})
+    Injector.inject({navigator: this.refs.navigator})
   }
 
   render () {
-    /*ref="navigator"*/
+
     return (
       <GradientWrapper>
         <AppNavigator
-
+          ref="navigator"
           navigation={
             addNavigationHelpers({
               dispatch: this.props.dispatch,
