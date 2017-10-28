@@ -1,13 +1,10 @@
 import React, { Component, PropTypes } from 'react'
-import { Text } from 'react-native'
+import { Text, StyleSheet } from 'react-native'
 import { getStyleFromProps } from '../../utils/index'
 
 export default class TextFont extends Component {
   render () {
-    const style = getStyleFromProps(
-      ['fontFamily', 'fontSize', 'fontWeight', 'color', 'marginTop'],
-      this.props)
-    return <Text {...this.props} style={style}>
+    return <Text {...this.props} style={[styles.textStyle, this.props.style]}>
       {this.props.children}
     </Text>
   }
@@ -18,6 +15,16 @@ TextFont.defaultProps = {
   fontWeight: '400',
   color: '#ffffff',
 }
+
+const styles = StyleSheet.create({
+  textStyle: {
+    fontSize: 18,
+    fontFamily: 'Raleway',
+    fontWeight: '400',
+    color: '#ffffff',
+    backgroundColor: 'transparent'
+  }
+})
 
 TextFont.propTypes = {
   fontFamily: PropTypes.string,

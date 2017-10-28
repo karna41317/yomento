@@ -15,10 +15,6 @@ export class ViewWrapper extends Component {
   }
 }
 
-ViewWrapper.defaultProps = {
-  width: 179,
-}
-
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'transparent'
