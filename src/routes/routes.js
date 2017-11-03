@@ -7,6 +7,7 @@ import signupScreen from 'src/screens/auth/signup/signup-screen'
 import verfiyScreen from 'src/screens/auth/verify/verify-screen'
 import verificationCodeScreen from 'src/screens/auth/verificationCode/verification-code-screen'
 import passwordScreen from 'src/screens/auth/password/password-screen'
+import onBoarding from 'src/screens/on-boarding/on-boarding-screen'
 
 const headerColor = '#39babd'
 const activeColor = 'white'
@@ -17,6 +18,9 @@ export const AppNavigator = StackNavigator({
   },
   login: {
     screen: loginScreen,
+  },
+  onBoarding: {
+    screen: onBoarding,
   },
   password: {
     screen: passwordScreen,

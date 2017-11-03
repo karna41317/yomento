@@ -18,7 +18,7 @@ TextFont.defaultProps = {
 
 const styles = StyleSheet.create({
   textStyle: {
-    fontSize: 18,
+    fontSize: 14,
     fontFamily: 'Raleway',
     fontWeight: '400',
     color: '#ffffff',

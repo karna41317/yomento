@@ -4,19 +4,92 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { View, Image, StyleSheet, } from 'react-native'
-import { Button, Heading } from 'src/components'
-import GradientWrapper from 'src/components/partials/gradientWrapper'
 import { ViewWrapper } from '../../components/wrappers/viewWrapper'
 import TextFont from '../../components/typography/TextFont'
+import { View, StyleSheet, AsyncStorage, Image, Text, Dimensions } from 'react-native'
+import { Button } from 'src/components/buttons'
+import { Button as RNEButton } from 'react-native-elements'
+import LinkedinLogin from 'react-native-linkedin-login'
+import GradientWrapper from 'src/components/partials/gradientWrapper'
+import { loginWithLinkedIn, loginSuccess, loginFailure, loginLocal, linkedInLogout } from 'src/actions/auth-action'
+import * as Constans from 'src/constants'
+import { authSelector } from 'src/selectors/common'
 
 const logo = require('src/images/logoText.png')
 
-@connect()
+@connect(authSelector)
 export default class Home extends Component {
 
   constructor (props) {
     super(props)
+    this.state = {
+      user: null,
+    }
+    this.goToLinkedInLogin = this.goToLinkedInLogin.bind(this)
+  }
+
+  componentWillMount () {
+    const linkedInScopes = ['r_emailaddress', 'r_basicprofile']
+    LinkedinLogin.init(linkedInScopes)
+    this.getUserSession()
+  }
+
+  getUserSession () {
+    AsyncStorage.getItem('user', (err, result) => {
+      if (result) {
+        const user = JSON.parse(result)
+        LinkedinLogin.setSession(user.accessToken, user.expiresOn)
+      }
+    })
+
+  }
+
+  goToLinkedInLogin () {
+    const {dispatch} = this.props
+    dispatch(loginWithLinkedIn({
+      authType: Constans.LINKEDIN,
+    }))
+    LinkedinLogin.login().then((user) => {
+      AsyncStorage.setItem('user', JSON.stringify(user), () => {
+        this.getUserProfile(user)
+      })
+    }).catch((e) => {
+      var err = JSON.parse(e.description)
+      alert('ERROR: ' + err.errorMessage)
+      dispatch(loginFailure({
+        authType: Constans.LINKEDIN,
+      }))
+    })
+
+    return true
+  }
+
+  goToLinkedInLogout () {
+    LinkedinLogin.logout()
+    AsyncStorage.removeItem('user')
+    this.props.dispatch(linkedInLogout({
+      authType: Constans.LINKEDIN,
+    }))
+  }
+
+  getUserProfile (user) {
+    LinkedinLogin.getProfile().then((data) => {
+      let userData = {
+        email: data.emailAddress,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        authType: Constans.LINKEDIN,
+      }
+      this.props.dispatch(loginSuccess(userData))
+      this.props.navigation.navigate('onBoarding')
+      /*AsyncStorage.setItem('user', JSON.stringify(userData), () => {
+        this.getUserProfileImage()
+      })*/
+    }).catch((e) => {
+      dispatch(loginFailure({
+        authType: Constans.LINKEDIN,
+      }))
+    })
   }
 
   goToLogin = () => {
@@ -24,7 +97,13 @@ export default class Home extends Component {
     navigation.navigate('login')
   }
 
+  goToSignUp = () => {
+    const {navigation} = this.props
+    navigation.navigate('signup')
+  }
+
   render () {
+    console.log('printing', this.props)
     return (
       <GradientWrapper>
         <ViewWrapper style={styles.container}>
@@ -39,18 +118,40 @@ export default class Home extends Component {
           </ViewWrapper>
           <ViewWrapper>
             <TextFont style={{textAlign: 'center'}}>Become Member</TextFont>
-            <Button onPress={this.goToLogin}>
-              Sign in With LinkedIn
-            </Button>
-            <Button onPress={this.goToLogin}>
-              Sign up with e-mail
-            </Button>
+            <RNEButton onPress={this.goToLinkedInLogin}
+                       backgroundColor={'#2B7AB6'}
+                       color={'white'}
+                       buttonStyle={styles.rneButton}
+                       borderRadius={30}
+                       raised
+                       large
+                       leftIcon={{name: 'logo-linkedin', type: 'ionicon', color: 'white'}}
+                       title='Login with LinkedIn'/>
+            <RNEButton onPress={this.goToSignUp}
+                       backgroundColor={'#D5EDFF'}
+                       color={'black'}
+                       large
+                       leftIcon={{name: 'ios-mail-outline', type: 'ionicon', color: 'black'}}
+                       borderRadius={30}
+                       buttonStyle={styles.rneButton}
+                       raised
+                       title='Login with email'/>
+
+            {/* <Button onPress={this.goToSignUp}>
+
+            </Button>*/}
           </ViewWrapper>
           <ViewWrapper>
             <TextFont style={{textAlign: 'center'}}>Already a Member</TextFont>
-            <Button onPress={this.goToLogin}>
-              Login
-            </Button>
+            <RNEButton onPress={this.goToLogin}
+                       backgroundColor={'#2B7AB6'}
+                       color={'white'}
+                       large
+                       borderRadius={30}
+                       buttonStyle={styles.rneButton}
+                       raised
+                       title='Member Login'/>
+
           </ViewWrapper>
         </ViewWrapper>
       </GradientWrapper>
@@ -78,7 +179,13 @@ const styles = StyleSheet.create({
   introText: {
     marginHorizontal: 20,
     textAlign: 'center',
-    fontSize: 24,
+    fontSize: 25,
     color: 'white',
+  },
+  rneButton: {
+    marginVertical: 10,
+    marginHorizontal: 40,
+    width: Dimensions.get('window').width,
+
   },
 })

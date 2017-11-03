@@ -13,7 +13,7 @@ import * as Constans from 'src/constants'
 import { authSelector } from 'src/selectors/common'
 
 @connect(authSelector)
-export default class Home extends Component {
+export default class LoginScreen extends Component {
   constructor (props) {
     super(props)
 
@@ -121,7 +121,7 @@ export default class Home extends Component {
   }
 }
 
-Home.propTypes = {
+LoginScreen.propTypes = {
   disableInteractionCheck: PropTypes.bool,
 }
 
