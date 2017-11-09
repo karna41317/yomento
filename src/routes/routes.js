@@ -7,14 +7,15 @@ import signupScreen from 'src/screens/auth/signup/signup-screen'
 import verfiyScreen from 'src/screens/auth/verify/verify-screen'
 import verificationCodeScreen from 'src/screens/auth/verificationCode/verification-code-screen'
 import passwordScreen from 'src/screens/auth/password/password-screen'
+import profileScreen from 'src/screens/profile/profile-screen'
 import onBoarding from 'src/screens/on-boarding/on-boarding-screen'
-
+import DemoScreen from 'src/screens/demo/slider-screen'
 const headerColor = '#39babd'
 const activeColor = 'white'
 
 export const AppNavigator = StackNavigator({
   home: {
-    screen: homeScreen,
+    screen: onBoarding,
   },
   login: {
     screen: loginScreen,
@@ -33,6 +34,9 @@ export const AppNavigator = StackNavigator({
   },
   verificationCode: {
     screen: verificationCodeScreen,
+  },
+  profile: {
+    screen: profileScreen,
   },
 }, {
   initialRouteName: 'home',

@@ -1,47 +1,68 @@
 import React, { Component, PropTypes } from 'react'
-import { View, TouchableOpacity, StyleSheet, Text, Dimensions } from 'react-native'
+import { TouchableOpacity, StyleSheet, Text } from 'react-native'
+import { upperCase } from 'lodash'
 
-const screenWidth = Dimensions.get('window').width
-
-export class Button extends Component {
+export class PrimaryButton extends Component {
   render () {
-    console.log('printing', screenWidth - 50)
-
     return (
-      <TouchableOpacity style={[styles.container, this.props.style]}
+      <TouchableOpacity style={[styles.primaryContainer, this.props.style]}
                         onPress={this.props.onPress}>
-        <Text style={styles.text}>{this.props.children}</Text>
+        <Text style={styles.primaryText}>{upperCase(this.props.children)}</Text>
       </TouchableOpacity>
     )
   }
 }
 
-Button.defaultProps = {
-  width: 179,
+export class SecondaryButton extends Component {
+
+  render () {
+    return (
+      <TouchableOpacity style={[styles.secondaryContainer, this.props.style]}
+                        onPress={this.props.onPress}>
+        <Text style={styles.secondaryText}>{upperCase(this.props.children)}</Text>
+      </TouchableOpacity>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    paddingVertical: 20,
-    paddingHorizontal: 50,
-    marginHorizontal: 30,
+  primaryContainer: {
+    paddingVertical: 15,
+    paddingHorizontal: 30,
     backgroundColor: '#6c56b7',
     borderRadius: 30,
     alignItems: 'stretch',
     shadowColor: '#000000',
     shadowOpacity: 0.5,
     shadowRadius: 2,
+    minWidth: 150,
     shadowOffset: {
       height: 2,
       width: 1,
     },
-    marginVertical: 5,
   },
-  text: {
-    color: '#ffffff',
+  secondaryContainer: {
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    backgroundColor: 'transparent',
+    borderRadius: 30,
+    borderColor: '#9595A4',
+    borderWidth: 1,
+    alignItems: 'stretch',
+    minWidth: 150,
+  },
+  primaryText: {
+    color: '#FFF',
     fontSize: 18,
-    fontWeight: '600',
+    fontWeight: '800',
     textAlign: 'center',
-    letterSpacing: 3,
+    letterSpacing: 2,
   },
+  secondaryText: {
+    color: '#0F0F3D',
+    fontSize: 18,
+    fontWeight: '800',
+    textAlign: 'center',
+    letterSpacing: 2,
+  }
 })

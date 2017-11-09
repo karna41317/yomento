@@ -1,5 +1,5 @@
-import Heading from './Heading'
-import TextFont from './TextFont'
+import Heading from './heading'
+import TextFont from './textFont'
 
 export {
   Heading, TextFont,

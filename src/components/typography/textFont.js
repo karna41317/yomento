@@ -11,7 +11,7 @@ export default class TextFont extends Component {
 }
 
 TextFont.defaultProps = {
-  fontFamily: 'Raleway',
+  fontFamily: 'TabletGothic-Light',
   fontWeight: '400',
   color: '#ffffff',
 }
@@ -19,7 +19,7 @@ TextFont.defaultProps = {
 const styles = StyleSheet.create({
   textStyle: {
     fontSize: 14,
-    fontFamily: 'Raleway',
+    fontFamily: 'TabletGothic-Light',
     fontWeight: '400',
     color: '#ffffff',
     backgroundColor: 'transparent'

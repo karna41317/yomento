@@ -4,9 +4,9 @@
  * @flow
  */
 
-import React, { Component } from 'react'
-import { AppRegistry, StyleSheet, Text, View, Alert, Image, Dimensions } from 'react-native'
-import AppIntro from 'src/components/app-intro/app-intro'
+import React, { Component } from 'react';
+import { AppRegistry, StyleSheet, Text, View, Alert, Image } from 'react-native';
+import AppIntro from 'src/components/app-intro/app-intro';
 
 const styles = StyleSheet.create({
   slide: {
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   info: {
     flex: 0.5,
     alignItems: 'center',
-    padding: 40,
+    padding: 40
   },
   title: {
     color: '#fff',
@@ -44,32 +44,35 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 20,
   },
-})
-
-const {width, height} = Dimensions.get('window')
+});
 
 export default class IntroComponent extends Component {
 
+
   onSkipBtnHandle = (index) => {
-    console.log(index)
+    Alert.alert('Skip');
+    console.log(index);
   }
   doneBtnHandle = () => {
+    Alert.alert('Done');
   }
   nextBtnHandle = (index) => {
-    console.log(index)
+    Alert.alert('Next');
+    console.log(index);
   }
   onSlideChangeHandle = (index, total) => {
-    console.log(index, total)
+    console.log(index, total);
   }
 
-  render () {
+  render() {
+    console.log('printingabd asn')
     const pageArray = [{
       title: 'Page 1',
       description: 'Description 1',
-      img: require('src/images/background.png'),
+      img: 'https://goo.gl/Bnc3XP',
       imgStyle: {
-        height: height,
-        width: width,
+        height: 80 * 2.5,
+        width: 109 * 2.5,
       },
       backgroundColor: '#fa931d',
       fontColor: '#fff',
@@ -77,7 +80,7 @@ export default class IntroComponent extends Component {
     }, {
       title: 'Page 2',
       description: 'Description 2',
-      img: require('src/images/background.png'),
+      img: require('src/images/logo.jpg'),
       imgStyle: {
         height: 93 * 2.5,
         width: 103 * 2.5,
@@ -88,15 +91,13 @@ export default class IntroComponent extends Component {
     }];
     return (
       <AppIntro
-        showDots={false}
-        showSkipButton={false}
         onNextBtnClick={this.nextBtnHandle}
         onDoneBtnClick={this.doneBtnHandle}
         onSkipBtnClick={this.onSkipBtnHandle}
         onSlideChange={this.onSlideChangeHandle}
         pageArray={pageArray}
       />
-    )
+    );
   }
 }
 
