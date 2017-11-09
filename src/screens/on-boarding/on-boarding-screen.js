@@ -7,6 +7,7 @@
 import React, { Component } from 'react'
 import { AppRegistry, StyleSheet, Text, View, Alert, Image, Dimensions } from 'react-native'
 import AppIntro from 'src/components/app-intro/app-intro'
+import demoData from './demo-data'
 
 const styles = StyleSheet.create({
   slide: {

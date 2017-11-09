@@ -5,7 +5,6 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
   Animated,
   Dimensions,
   Image,
@@ -15,102 +14,15 @@ import { Swiper } from 'src/components/swiper'
 import DoneButton from './components/DoneButton'
 import SkipButton from './components/SkipButton'
 import RenderDots from './components/Dots'
+import Button from '../form/customButton'
+import GradientWrapper from '../partials/gradientWrapper'
+import {styles} from './app-intro-styles'
 
-const windowsWidth = Dimensions.get('window').width
-const windowsHeight = Dimensions.get('window').height
-
-const defaulStyles = {
-  header: {
-    flex: 0.5,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  pic: {
-    width: 150,
-    height: 150,
-  },
-  info: {
-    flex: 0.5,
-    alignItems: 'center',
-    padding: 30,
-  },
-  slide: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9DD6EB',
-    padding: 15,
-  },
-  title: {
-    color: '#fff',
-    fontSize: 30,
-    paddingBottom: 20,
-  },
-  description: {
-    color: '#fff',
-    fontSize: 20,
-  },
-  controllText: {
-    color: '#fff',
-    fontSize: 22,
-    fontWeight: 'bold',
-  },
-  dotStyle: {
-    backgroundColor: 'rgba(255,255,255,.3)',
-    width: 13,
-    height: 13,
-    borderRadius: 7,
-    marginLeft: 7,
-    marginRight: 7,
-    marginTop: 7,
-    marginBottom: 7,
-  },
-  activeDotStyle: {
-    backgroundColor: '#fff',
-  },
-  paginationContainer: {
-    position: 'absolute',
-    bottom: 25,
-    left: 0,
-    right: 0,
-    flexDirection: 'row',
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'transparent',
-  },
-  dotContainer: {
-    flex: 0.6,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  btnContainer: {
-    flex: 0.2,
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 50,
-  },
-  nextButtonText: {
-    fontSize: 25,
-    fontWeight: 'bold',
-    fontFamily: 'Arial',
-  },
-  full: {
-    height: 80,
-    width: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-}
+const {width, height} = Dimensions.get('window')
 
 export default class AppIntro extends Component {
   constructor (props) {
     super(props)
-
-    this.styles = StyleSheet.create(
-      assign({}, defaulStyles, props.customStyles))
-
     this.state = {
       skipFadeOpacity: new Animated.Value(1),
       doneFadeOpacity: new Animated.Value(0),
@@ -160,12 +72,12 @@ export default class AppIntro extends Component {
   }
   getTransform = (index, offset, level) => {
     const isFirstPage = index === 0
-    const statRange = isFirstPage ? 0 : windowsWidth * (index - 1)
-    const endRange = isFirstPage ? windowsWidth : windowsWidth * index
+    const statRange = isFirstPage ? 0 : width * (index - 1)
+    const endRange = isFirstPage ? width : width * index
     const startOpacity = isFirstPage ? 1 : 0
     const endOpacity = isFirstPage ? 1 : 1
-    const leftPosition = isFirstPage ? 0 : windowsWidth / 3
-    const rightPosition = isFirstPage ? -windowsWidth / 3 : 0
+    const leftPosition = isFirstPage ? 0 : width / 3
+    const rightPosition = isFirstPage ? -width / 3 : 0
     const transform = [
       {
         transform: [
@@ -206,27 +118,27 @@ export default class AppIntro extends Component {
       isSkipBtnShow = true
     }
     return (
-      <View style={[this.styles.paginationContainer]}>
+      <View style={[styles.paginationContainer]}>
         {this.props.showSkipButton ? <SkipButton
             {...this.props}
             {...this.state}
             isSkipBtnShow={isSkipBtnShow}
-            styles={this.styles}
+            styles={styles}
             onSkipBtnClick={() => this.props.onSkipBtnClick(index)}/> :
-          <View style={this.styles.btnContainer}/>
+          <View style={styles.btnContainer}/>
         }
         {this.props.showDots && RenderDots(index, total, {
           ...this.props,
-          styles: this.styles,
+          styles: styles,
         })}
         {this.props.showDoneButton ? <DoneButton
             {...this.props}
             {...this.state}
             isDoneBtnShow={isDoneBtnShow}
-            styles={this.styles}
+            styles={styles}
             onNextBtnClick={this.onNextBtnClick.bind(this, context)}
             onDoneBtnClick={this.props.onDoneBtnClick}/> :
-          <View style={this.styles.btnContainer}/>
+          <View style={styles.btnContainer}/>
         }
       </View>
     )
@@ -246,23 +158,27 @@ export default class AppIntro extends Component {
     const AnimatedStyle3 = this.getTransform(index, 15, level)
     const imgSource = (typeof img === 'string') ? {uri: img} : img
     const pageView = (
-      <View style={[this.styles.slide, {backgroundColor}]}
-            showsPagination={false} key={index}>
-        <Animated.View
-          style={[this.styles.header, ...AnimatedStyle1.transform]}>
-          <Image style={imgStyle} source={imgSource}/>
-        </Animated.View>
-        <View style={this.styles.info}>
+      <GradientWrapper key={index}>
+        <View style={styles.wrapper}>
           <Animated.View style={AnimatedStyle2.transform}>
-            <Text style={[this.styles.title, {color: fontColor}]}>{title}</Text>
+            <Text style={[styles.title, {color: fontColor}]}>{title}</Text>
           </Animated.View>
           <Animated.View style={AnimatedStyle3.transform}>
             <Text style={[
-              this.styles.description,
+              styles.description,
+              {color: fontColor}]}>{description}</Text>
+            <Text style={[
+              styles.description,
+              {color: fontColor}]}>{description}</Text>
+            <Text style={[
+              styles.description,
+              {color: fontColor}]}>{description}</Text>
+            <Text style={[
+              styles.description,
               {color: fontColor}]}>{description}</Text>
           </Animated.View>
         </View>
-      </View>
+      </GradientWrapper>
     )
     return pageView
   }
@@ -326,14 +242,14 @@ export default class AppIntro extends Component {
           (children, i) => this.renderChild(children, i, i))
       } else {
         androidPages = childrens.map((children, i) => {
-          const {transform} = this.getTransform(i, -windowsWidth / 3 * 2, 1)
+          const {transform} = this.getTransform(i, -width / 3 * 2, 1)
           pages.push(<View key={i}/>)
           return (
             <Animated.View key={i} style={[
               {
                 position: 'absolute',
-                height: windowsHeight,
-                width: windowsWidth,
+                height: height,
+                width: width,
                 top: 0,
               }, {
                 ...transform[0],
@@ -357,7 +273,7 @@ export default class AppIntro extends Component {
         {androidPages}
         <Swiper
           ref={'scrollView'}
-          scrollEnabled={false}
+          scrollEnabled={true}
           loop={false}
           index={this.props.defaultIndex}
           renderPagination={this.renderPagination}
@@ -369,19 +285,6 @@ export default class AppIntro extends Component {
             }
             this.props.onSlideChange(state.index, state.total)
           }}
-          /*onScroll={Animated.event(
-            [{ x: this.state.parallax }]
-          )}*/
-
-          /*onScroll={(e) => {
-            const currentScrollPos = e.nativeEvent.contentOffset.y
-            const sensitivity = 50
-            if (Math.abs(currentScrollPos - this.state.lastScrollPos) >
-              sensitivity) {
-              this.setState({lastScrollPos: e.nativeEvent.contentOffset.y})
-            }
-          }}*/
-
           onScroll={Animated.event(
             [{nativeEvent: {contentOffset: {y: this.state.yValue}}}],
           )}
