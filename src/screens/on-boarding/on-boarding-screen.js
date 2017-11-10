@@ -96,7 +96,7 @@ export default class IntroComponent extends Component {
         onDoneBtnClick={this.doneBtnHandle}
         onSkipBtnClick={this.onSkipBtnHandle}
         onSlideChange={this.onSlideChangeHandle}
-        pageArray={pageArray}
+        pageArray={demoData}
       />
     )
   }

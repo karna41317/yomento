@@ -14,6 +14,7 @@ import RenderDots from './components/Dots'
 import GradientWrapper from '../partials/gradientWrapper'
 import { styles } from './app-intro-styles'
 import {get} from 'lodash'
+import HTMLView from 'react-native-htmlview'
 
 const {width, height} = Dimensions.get('window')
 
@@ -156,10 +157,10 @@ export default class AppIntro extends Component {
             <Text style={styles.title}>{title}</Text>
           </Animated.View>
           <Animated.View>
-            <Text style={styles.description}>{description}</Text>
-            <Text style={styles.description}>{description}</Text>
-            <Text style={styles.description}>{description}</Text>
-            <Text style={styles.description}>{description}</Text>
+            <HTMLView
+              value={description}
+              stylesheet={styles}
+            />
           </Animated.View>
         </View>
       </GradientWrapper>
