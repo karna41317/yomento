@@ -13,6 +13,7 @@ import SkipButton from './components/SkipButton'
 import RenderDots from './components/Dots'
 import GradientWrapper from '../partials/gradientWrapper'
 import { styles } from './app-intro-styles'
+import {get} from 'lodash'
 
 const {width, height} = Dimensions.get('window')
 
@@ -96,7 +97,7 @@ export default class AppIntro extends Component {
       transform,
     }
   }
-  
+
   renderPagination = (index, total, context) => {
     let isDoneBtnShow
     let isSkipBtnShow
@@ -115,7 +116,7 @@ export default class AppIntro extends Component {
     }
     const {pageArray} = this.props
     console.log('printing', pageArray)
-    
+    const desc = get(pageArray[index], 'description')
     return (
       <View style={styles.paginationContainer}>
         {this.props.showSkipButton ? <SkipButton
