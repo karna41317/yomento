@@ -39,21 +39,22 @@ export const styles = StyleSheet.create({
     right: 0,
     flexDirection: 'row',
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
     backgroundColor: 'transparent',
   },
   dotContainer: {
-    flex: 0.6,
+    flex: 1,
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
   },
   btnContainer: {
-    flex: 0.2,
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 50,
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    marginRight: 10
   },
   nextButtonText: {
     fontSize: 25,
@@ -61,9 +62,9 @@ export const styles = StyleSheet.create({
     fontFamily: 'Arial',
   },
   full: {
-    height: 80,
+    /*height: 80,
     width: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',*/
   },
 })

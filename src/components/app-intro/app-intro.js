@@ -1,22 +1,18 @@
-import assign from 'assign-deep'
 import React, { Component, PropTypes } from 'react'
 import {
   StatusBar,
-  StyleSheet,
   Text,
   View,
   Animated,
   Dimensions,
-  Image,
   Platform,
 } from 'react-native'
 import { Swiper } from 'src/components/swiper'
 import DoneButton from './components/DoneButton'
 import SkipButton from './components/SkipButton'
 import RenderDots from './components/Dots'
-import Button from '../form/customButton'
 import GradientWrapper from '../partials/gradientWrapper'
-import {styles} from './app-intro-styles'
+import { styles } from './app-intro-styles'
 
 const {width, height} = Dimensions.get('window')
 
@@ -100,7 +96,7 @@ export default class AppIntro extends Component {
       transform,
     }
   }
-
+  
   renderPagination = (index, total, context) => {
     let isDoneBtnShow
     let isSkipBtnShow
@@ -117,8 +113,11 @@ export default class AppIntro extends Component {
       isDoneBtnShow = false
       isSkipBtnShow = true
     }
+    const {pageArray} = this.props
+    console.log('printing', pageArray)
+    
     return (
-      <View style={[styles.paginationContainer]}>
+      <View style={styles.paginationContainer}>
         {this.props.showSkipButton ? <SkipButton
             {...this.props}
             {...this.state}
@@ -147,35 +146,19 @@ export default class AppIntro extends Component {
   renderBasicSlidePage = (index, {
     title,
     description,
-    img,
-    imgStyle,
-    backgroundColor,
-    fontColor,
     level,
   }) => {
-    const AnimatedStyle1 = this.getTransform(index, 10, level)
-    const AnimatedStyle2 = this.getTransform(index, 0, level)
-    const AnimatedStyle3 = this.getTransform(index, 15, level)
-    const imgSource = (typeof img === 'string') ? {uri: img} : img
     const pageView = (
       <GradientWrapper key={index}>
         <View style={styles.wrapper}>
-          <Animated.View style={AnimatedStyle2.transform}>
-            <Text style={[styles.title, {color: fontColor}]}>{title}</Text>
+          <Animated.View>
+            <Text style={styles.title}>{title}</Text>
           </Animated.View>
-          <Animated.View style={AnimatedStyle3.transform}>
-            <Text style={[
-              styles.description,
-              {color: fontColor}]}>{description}</Text>
-            <Text style={[
-              styles.description,
-              {color: fontColor}]}>{description}</Text>
-            <Text style={[
-              styles.description,
-              {color: fontColor}]}>{description}</Text>
-            <Text style={[
-              styles.description,
-              {color: fontColor}]}>{description}</Text>
+          <Animated.View>
+            <Text style={styles.description}>{description}</Text>
+            <Text style={styles.description}>{description}</Text>
+            <Text style={styles.description}>{description}</Text>
+            <Text style={styles.description}>{description}</Text>
           </Animated.View>
         </View>
       </GradientWrapper>
@@ -272,15 +255,16 @@ export default class AppIntro extends Component {
       <View style={{flex: 1}}>
         {androidPages}
         <Swiper
-          ref={'scrollView'}
           scrollEnabled={true}
-          loop={false}
+          scrollEventThrottle={50}
+          loop={true}
           index={this.props.defaultIndex}
           renderPagination={this.renderPagination}
           onMomentumScrollEnd={(e, state) => {
             if (this.isToTintStatusBar()) {
-              StatusBar.setBackgroundColor(this.shadeStatusBarColor(
-                this.props.pageArray[state.index].backgroundColor, -0.3),
+              StatusBar.setBackgroundColor(
+                this.shadeStatusBarColor(
+                  this.props.pageArray[state.index].backgroundColor, -0.3),
                 false)
             }
             this.props.onSlideChange(state.index, state.total)
