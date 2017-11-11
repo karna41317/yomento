@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import {
   StatusBar,
   Text,
@@ -12,8 +13,9 @@ import DoneButton from './components/DoneButton'
 import SkipButton from './components/SkipButton'
 import RenderDots from './components/Dots'
 import GradientWrapper from '../partials/gradientWrapper'
-import { styles } from './app-intro-styles'
-import {get} from 'lodash'
+import { styles, htmlStyles } from './app-intro-styles'
+
+import { get } from 'lodash'
 import HTMLView from 'react-native-htmlview'
 
 const {width, height} = Dimensions.get('window')
@@ -116,8 +118,7 @@ export default class AppIntro extends Component {
       isSkipBtnShow = true
     }
     const {pageArray} = this.props
-    console.log('printing', pageArray)
-    const desc = get(pageArray[index], 'description')
+    const buttonText = get(pageArray[index], 'button_text', 'next')
     return (
       <View style={styles.paginationContainer}>
         {this.props.showSkipButton ? <SkipButton
@@ -135,6 +136,8 @@ export default class AppIntro extends Component {
         {this.props.showDoneButton ? <DoneButton
             {...this.props}
             {...this.state}
+            nextBtnLabel={buttonText}
+            doneBtnLabel={buttonText}
             isDoneBtnShow={isDoneBtnShow}
             styles={styles}
             onNextBtnClick={this.onNextBtnClick.bind(this, context)}
@@ -148,19 +151,20 @@ export default class AppIntro extends Component {
   renderBasicSlidePage = (index, {
     title,
     description,
-    level,
   }) => {
+
+    const {wrapperStyle, titleStyle, descriptionStyle} = this.props
+    const htmlContent = `<div>${description}</div>`
+
+
     const pageView = (
       <GradientWrapper key={index}>
         <View style={styles.wrapper}>
           <Animated.View>
-            <Text style={styles.title}>{title}</Text>
+            <Text numberOfLines={3} style={styles.title}>{title}</Text>
           </Animated.View>
-          <Animated.View>
-            <HTMLView
-              value={description}
-              stylesheet={styles}
-            />
+          <Animated.View style={styles.descriptionStyle}>
+            <HTMLView value={htmlContent} stylesheet={htmlStyles}/>
           </Animated.View>
         </View>
       </GradientWrapper>
@@ -259,7 +263,7 @@ export default class AppIntro extends Component {
         <Swiper
           scrollEnabled={true}
           scrollEventThrottle={50}
-          loop={true}
+          loop={false}
           index={this.props.defaultIndex}
           renderPagination={this.renderPagination}
           onMomentumScrollEnd={(e, state) => {

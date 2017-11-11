@@ -2,6 +2,7 @@
  * Created by Karan on 2017-11-09.
  */
 import { StyleSheet } from 'react-native'
+import { extraBoldTextMixin, lightTextMixin, boldTextMixin, semiBoldTextMixin, regularTextMixin } from 'src/styles'
 
 export const styles = StyleSheet.create({
   header: {
@@ -54,17 +55,43 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
-    marginRight: 10
+    marginRight: 10,
   },
   nextButtonText: {
     fontSize: 25,
     fontWeight: 'bold',
     fontFamily: 'Arial',
   },
-  full: {
-    /*height: 80,
-    width: 100,
-    justifyContent: 'flex-end',
-    alignItems: 'flex-end',*/
+  /*Styles with custome slide*/
+  wrapper: {
+    position: 'absolute',
+    top: 170,
+    left: 40,
+  },
+  title: {
+    ...extraBoldTextMixin(24),
+    marginBottom: 40,
+    marginRight: 40
+  },
+  actionButton: {
+    marginRight: 25,
+  },
+
+  textDescription: {
+    ...regularTextMixin(20)
   },
 })
+
+
+export const htmlStyles = StyleSheet.create({
+  a: {
+    fontWeight: '300',
+    color: '#1d3fff',
+  },
+  p: {
+    ...regularTextMixin(18)
+  },
+  div: {
+    ...regularTextMixin(18)
+  },
+});

@@ -5,9 +5,12 @@
  */
 
 import React, { Component } from 'react'
-import { AppRegistry, StyleSheet, Text, View, Alert, Image, Dimensions } from 'react-native'
+import { connect } from 'react-redux'
+import { StyleSheet, ActivityIndicator } from 'react-native'
 import AppIntro from 'src/components/app-intro/app-intro'
 import demoData from './demo-data'
+import { getProfileContent } from 'src/actions'
+import { profileSelector } from 'src/selectors'
 
 const styles = StyleSheet.create({
   slide: {
@@ -47,9 +50,14 @@ const styles = StyleSheet.create({
   },
 })
 
-const {width, height} = Dimensions.get('window')
 
+
+@connect(profileSelector)
 export default class IntroComponent extends Component {
+
+  componentDidMount () {
+    this.props.dispatch(getProfileContent())
+  }
 
   onSkipBtnHandle = (index) => {
     console.log(index)
@@ -64,41 +72,25 @@ export default class IntroComponent extends Component {
   }
 
   render () {
-    const pageArray = [
-      {
-        title: 'Page 1',
-        description: 'Description 1',
-        img: require('src/images/background.png'),
-        imgStyle: {
-          height: height,
-          width: width,
-        },
-        backgroundColor: '#fa931d',
-        fontColor: '#fff',
-        level: 10,
-      }, {
-        title: 'Page 2',
-        description: 'Description 2',
-        img: require('src/images/background.png'),
-        imgStyle: {
-          height: 93 * 2.5,
-          width: 103 * 2.5,
-        },
-        backgroundColor: '#a4b602',
-        fontColor: '#fff',
-        level: 10,
-      }]
-    return (
-      <AppIntro
-        showDots={false}
-        showSkipButton={true}
-        onNextBtnClick={this.nextBtnHandle}
-        onDoneBtnClick={this.doneBtnHandle}
-        onSkipBtnClick={this.onSkipBtnHandle}
-        onSlideChange={this.onSlideChangeHandle}
-        pageArray={demoData}
-      />
-    )
+
+    const {myself} = this.props
+    if (myself) {
+      return (
+        <AppIntro
+          showDots={false}
+          showSkipButton={false}
+          onNextBtnClick={this.nextBtnHandle}
+          onDoneBtnClick={this.doneBtnHandle}
+          onSkipBtnClick={this.onSkipBtnHandle}
+          onSlideChange={this.onSlideChangeHandle}
+          pageArray={myself}
+          wrapperStyle ={styles.wrapperStyle}
+          titleStyle={styles.titleStyle}
+          descriptionStyle={styles.descriptionStyle}
+        />
+      )
+    }
+    return <ActivityIndicator/>
   }
 }
 

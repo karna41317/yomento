@@ -4,6 +4,8 @@ import React, { Component } from 'react'
 import { AppRegistry, BackHandler, Platform } from 'react-native'
 import { NavigationActions } from 'react-navigation'
 
+GLOBAL.XMLHttpRequest = GLOBAL.originalXMLHttpRequest || GLOBAL.XMLHttpRequest
+
 class yemonto extends Component {
 
   componentWillMount () {

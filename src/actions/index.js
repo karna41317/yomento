@@ -4,3 +4,4 @@
 export * from './navigation-action'
 export * from './persist-action'
 export * from './auth-action'
+export * from './profile-content-action'

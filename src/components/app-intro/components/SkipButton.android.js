@@ -18,7 +18,7 @@ export const SkipButton = ({
         opacity: isSkipBtnShow ? 1 : 0,
       }]}>
       <TouchableOpacity
-        style={styles.full}
+        style={styles.actionButton}
         onPress={isSkipBtnShow ? () => onSkipBtnClick() : null}>
         <Text style={[styles.controllText, { color: leftTextColor }]}>
           {skipBtnLabel}

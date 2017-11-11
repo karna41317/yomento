@@ -6,8 +6,6 @@ import {
   Animated,
 } from 'react-native'
 
-
-
 const DoneButton = ({
                       styles, onDoneBtnClick, onNextBtnClick,
                       rightTextColor, isDoneBtnShow,
@@ -27,12 +25,12 @@ const DoneButton = ({
               }),
             }],
         }}>
-        <View style={styles.full}>
+        <View style={styles.actionButton}>
           <Text>{doneBtnLabel}</Text>
         </View>
       </Animated.View>
       <Animated.View style={[{opacity: nextOpacity}]}>
-        <TouchableOpacity style={styles.full}
+        <TouchableOpacity style={styles.actionButton}
                           onPress={isDoneBtnShow
                             ? onDoneBtnClick
                             : onNextBtnClick}>
