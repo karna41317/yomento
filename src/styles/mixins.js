@@ -1,6 +1,6 @@
 import { Platform } from 'react-native'
 
-export const thinTextMixin = (fontSize = null, color='#FFF') => {
+export const thinTextMixin = (fontSize = null, color='#16161C') => {
   return {
     fontFamily: 'TabletGothic-Thin',
     fontSize,
@@ -8,7 +8,7 @@ export const thinTextMixin = (fontSize = null, color='#FFF') => {
   }
 }
 
-export const lightTextMixin = (fontSize = null, color='#FFF') => {
+export const lightTextMixin = (fontSize = null, color='#16161C') => {
   return {
     fontFamily: 'TabletGothic-Light',
     fontSize,
@@ -16,7 +16,7 @@ export const lightTextMixin = (fontSize = null, color='#FFF') => {
   }
 }
 
-export const regularTextMixin = (fontSize = null, color='#FFF') => {
+export const regularTextMixin = (fontSize = null, color='#16161C') => {
   return {
     fontFamily: 'TabletGothic-Light',
     fontWeight: "300",
@@ -26,7 +26,7 @@ export const regularTextMixin = (fontSize = null, color='#FFF') => {
   }
 }
 
-export const mediumTextMixin = (fontSize = null, color='#FFF') => {
+export const mediumTextMixin = (fontSize = null, color='#16161C') => {
   return {
     fontFamily: 'TabletGothic-Regular',
     fontSize,
@@ -35,21 +35,21 @@ export const mediumTextMixin = (fontSize = null, color='#FFF') => {
   }
 }
 
-export const semiBoldTextMixin = (fontSize = null, color='#FFF') => ({
+export const semiBoldTextMixin = (fontSize = null, color='#16161C') => ({
   fontFamily: 'TabletGothic-Bold',
   fontSize,
   color
 })
 
 
-export const boldTextMixin = (fontSize = null, color='#FFF') => ({
+export const boldTextMixin = (fontSize = null, color='#16161C') => ({
   fontFamily: 'TabletGothic-Bold',
   fontSize,
   color
 })
 
 
-export const extraBoldTextMixin = (fontSize = null, color='#FFF') => ({
+export const extraBoldTextMixin = (fontSize = null, color='#16161C') => ({
   fontFamily: 'TabletGothic-ExtraBold',
   fontSize,
   color

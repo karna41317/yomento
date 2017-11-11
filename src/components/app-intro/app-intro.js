@@ -151,6 +151,7 @@ export default class AppIntro extends Component {
   renderBasicSlidePage = (index, {
     title,
     description,
+    content_type
   }) => {
 
     const {wrapperStyle, titleStyle, descriptionStyle} = this.props
@@ -158,7 +159,7 @@ export default class AppIntro extends Component {
 
 
     const pageView = (
-      <GradientWrapper key={index}>
+      <GradientWrapper key={index} name={content_type}>
         <View style={styles.wrapper}>
           <Animated.View>
             <Text numberOfLines={3} style={styles.title}>{title}</Text>
