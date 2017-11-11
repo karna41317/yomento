@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, View, Alert, Image } from 'react-native';
-import AppIntro from 'src/components/app-intro/app-intro';
+import AppIntro from 'src/components/Swiper/swiper';
 
 const styles = StyleSheet.create({
   slide: {

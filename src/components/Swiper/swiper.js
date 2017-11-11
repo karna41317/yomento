@@ -8,12 +8,12 @@ import {
   Dimensions,
   Platform,
 } from 'react-native'
-import { Swiper } from 'src/components/swiper'
+import Swiper from './components/swiper'
 import DoneButton from './components/DoneButton'
 import SkipButton from './components/SkipButton'
 import RenderDots from './components/Dots'
 import GradientWrapper from '../partials/gradientWrapper'
-import { styles, htmlStyles } from './app-intro-styles'
+import { styles, htmlStyles } from './swiper-styles'
 
 import { get } from 'lodash'
 import HTMLView from 'react-native-htmlview'
@@ -151,12 +151,11 @@ export default class AppIntro extends Component {
   renderBasicSlidePage = (index, {
     title,
     description,
-    content_type
+    content_type,
   }) => {
 
     const {wrapperStyle, titleStyle, descriptionStyle} = this.props
     const htmlContent = `<div>${description}</div>`
-
 
     const pageView = (
       <GradientWrapper key={index} name={content_type}>

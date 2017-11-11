@@ -2,7 +2,6 @@
  * Created by Karan on 2017-10-23.
  */
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 
 export default class GradientWrapper extends Component {
