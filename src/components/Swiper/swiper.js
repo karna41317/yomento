@@ -17,6 +17,7 @@ import { styles, htmlStyles } from './swiper-styles'
 
 import { get } from 'lodash'
 import HTMLView from 'react-native-htmlview'
+import { RatingComponent } from '../rating/rating'
 
 const {width, height} = Dimensions.get('window')
 
@@ -119,6 +120,7 @@ export default class SwiperComponent extends Component {
     }
     const {pageArray} = this.props
     const buttonText = get(pageArray[index], 'button_text', 'next')
+    const readMoreText = get(pageArray[index], 'read_more', null)
     return (
       <View style={styles.paginationContainer}>
         {this.props.showSkipButton ? <SkipButton
@@ -139,6 +141,7 @@ export default class SwiperComponent extends Component {
             nextBtnLabel={buttonText}
             doneBtnLabel={buttonText}
             isDoneBtnShow={isDoneBtnShow}
+            readMoreText={readMoreText}
             styles={styles}
             onNextBtnClick={this.onNextBtnClick.bind(this, context)}
             onDoneBtnClick={this.props.onDoneBtnClick}/> :
@@ -146,6 +149,17 @@ export default class SwiperComponent extends Component {
         }
       </View>
     )
+  }
+  valueChanged = (value) => {
+    console.log('printing', value)
+
+  }
+  getRatingComponent = (content_type) => {
+    if(content_type === 'rate') {
+      return(
+        <RatingComponent valueChanged={this.valueChanged}/>
+      )
+    }
   }
 
   renderBasicSlidePage = (index, {
@@ -166,6 +180,7 @@ export default class SwiperComponent extends Component {
           <Animated.View style={descWrapperStyle}>
             <HTMLView value={htmlContent} stylesheet={descriptionStyle}/>
           </Animated.View>
+          {this.getRatingComponent(content_type)}
         </View>
       </GradientWrapper>
     )

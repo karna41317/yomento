@@ -4,32 +4,20 @@ import {
   View,
   Animated,
 } from 'react-native'
-import { PrimaryButton } from '../../buttons/Button'
+import { PrimaryButton, SecondaryButton } from '../../buttons/Button'
 
 const DoneButton = ({
-                      styles, onDoneBtnClick, onNextBtnClick,
+                      styles, onDoneBtnClick, onNextBtnClick, readMoreClick,
                       isDoneBtnShow,
                       doneBtnLabel, nextBtnLabel,
+                      readMoreLable,
                       doneFadeOpacity, skipFadeOpacity, nextOpacity,
                     }) => {
   console.log('printing', nextBtnLabel, doneBtnLabel)
 
   return (
     <View style={styles.btnContainer}>
-      <Animated.View
-        style={{
-          opacity: doneFadeOpacity,
-          transform: [
-            {
-              translateX: skipFadeOpacity.interpolate({
-                inputRange: [0, 1],
-                outputRange: [0, 20],
-              }),
-            }],
-        }}>
-        <PrimaryButton>{doneBtnLabel}</PrimaryButton>
-      </Animated.View>
-      <Animated.View style={[{opacity: nextOpacity}]}>
+      <Animated.View>
         <PrimaryButton
           onPress={isDoneBtnShow
             ? onDoneBtnClick
@@ -37,6 +25,9 @@ const DoneButton = ({
           {nextBtnLabel}
         </PrimaryButton>
       </Animated.View>
+      {isDoneBtnShow && readMoreLable ? (
+        <SecondaryButton onPress={readMoreClick} style={{marginTop: 10}}>Read
+          more</SecondaryButton>) : null}
     </View>
   )
 }

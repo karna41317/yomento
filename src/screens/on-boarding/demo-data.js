@@ -32,7 +32,7 @@ const demoData = [
     'description': `<p>As your PT, I would like to get to know you a bit, so you can get your training program.</p><p>Are you ready?</p>`,
     'button_text': 'I’M READY!',
     'content_type': 'onBoarding',
-    'readMore': 'READ MORE',
+    'read_more': 'READ MORE',
   },
 ]
 

@@ -11,7 +11,7 @@ import Swiper from 'src/components/Swiper/swiper'
 import demoData from './demo-data'
 import { getProfileContent } from 'src/actions'
 import { profileSelector } from 'src/selectors'
-import {styles, htmlStyles} from './onboarding.styles'
+import { styles, htmlStyles } from './onboarding.styles'
 
 @connect(profileSelector)
 export default class OnBoarding extends Component {
@@ -24,12 +24,18 @@ export default class OnBoarding extends Component {
     console.log(index)
   }
   doneBtnHandle = () => {
+    const {navigation} = this.props
+    navigation.navigate('idealRating')
   }
   nextBtnHandle = (index) => {
     console.log(index)
   }
   onSlideChangeHandle = (index, total) => {
     console.log(index, total)
+  }
+  readMoreHandle = () => {
+    const {navigation} = this.props
+    navigation.navigate('readMore')
   }
 
   render () {
@@ -44,6 +50,7 @@ export default class OnBoarding extends Component {
           onDoneBtnClick={this.doneBtnHandle}
           onSkipBtnClick={this.onSkipBtnHandle}
           onSlideChange={this.onSlideChangeHandle}
+          readMoreClick={this.readMoreHandle}
           pageArray={demoData}
           wrapperStyle={styles.wrapper}
           titleStyle={styles.title}

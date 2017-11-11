@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     },
   },
   secondaryContainer: {
-    paddingVertical: 15,
+    paddingVertical: 10,
     paddingHorizontal: 30,
     backgroundColor: 'transparent',
     borderRadius: 30,
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   secondaryText: {
-    color: '#0F0F3D',
+    color: '#FFF',
     fontWeight: 'bold',
     fontSize: 14,
     textAlign: 'center',

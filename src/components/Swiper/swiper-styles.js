@@ -52,7 +52,7 @@ export const styles = StyleSheet.create({
   },
   btnContainer: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
     marginRight: 10,
