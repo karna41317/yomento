@@ -2,16 +2,18 @@ import React from 'react'
 import {
   Text,
   View,
-  TouchableOpacity,
   Animated,
 } from 'react-native'
+import { PrimaryButton } from '../../buttons/Button'
 
 const DoneButton = ({
                       styles, onDoneBtnClick, onNextBtnClick,
-                      rightTextColor, isDoneBtnShow,
+                      isDoneBtnShow,
                       doneBtnLabel, nextBtnLabel,
                       doneFadeOpacity, skipFadeOpacity, nextOpacity,
                     }) => {
+  console.log('printing', nextBtnLabel, doneBtnLabel)
+
   return (
     <View style={styles.btnContainer}>
       <Animated.View
@@ -25,19 +27,15 @@ const DoneButton = ({
               }),
             }],
         }}>
-        <View style={styles.actionButton}>
-          <Text>{doneBtnLabel}</Text>
-        </View>
+        <PrimaryButton>{doneBtnLabel}</PrimaryButton>
       </Animated.View>
       <Animated.View style={[{opacity: nextOpacity}]}>
-        <TouchableOpacity style={styles.actionButton}
-                          onPress={isDoneBtnShow
-                            ? onDoneBtnClick
-                            : onNextBtnClick}>
-          <Text style={[styles.nextButtonText, {color: rightTextColor}]}>
-            {nextBtnLabel}
-          </Text>
-        </TouchableOpacity>
+        <PrimaryButton
+          onPress={isDoneBtnShow
+            ? onDoneBtnClick
+            : onNextBtnClick}>
+          {nextBtnLabel}
+        </PrimaryButton>
       </Animated.View>
     </View>
   )

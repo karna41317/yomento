@@ -11,9 +11,9 @@ export default class GradientWrapper extends Component {
       case 'onBoarding':
         return (
           <LinearGradient colors={[
-            '#0B0B48',
-            '#0F0E4E',
-            '#0F0F55',
+            '#0b0b44',
+            '#0e0d48',
+            '#0f0f51',
             '#111059',
             '#17166D',
             '#181776',

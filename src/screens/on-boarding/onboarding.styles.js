@@ -7,12 +7,13 @@ import { extraBoldTextMixin, lightTextMixin, boldTextMixin, semiBoldTextMixin, r
 export const styles = StyleSheet.create({
   wrapper: {
     position: 'absolute',
-    top: 170,
+    top: 165,
     left: 40,
+    right: 40
   },
   title: {
-    ...extraBoldTextMixin(24),
-    marginBottom: 40,
+    ...extraBoldTextMixin(24, '#FFF'),
+    marginBottom: 25,
     marginRight: 40,
   },
   actionButton: {
@@ -20,6 +21,9 @@ export const styles = StyleSheet.create({
   },
   readMoreButton: {
     marginTop: 5,
+  },
+  descWrapper: {
+    marginRight: 10
   },
   textDescription: {
     ...regularTextMixin(20, '#FFF')
@@ -32,9 +36,9 @@ export const htmlStyles = StyleSheet.create({
     color: '#fbff57',
   },
   p: {
-    ...regularTextMixin(18, '#FFF'),
+    ...regularTextMixin(20, '#FFF'),
   },
   div: {
-    ...regularTextMixin(18, '#FFF')
+    ...regularTextMixin(20, '#FFF')
   },
 })

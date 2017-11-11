@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { StyleSheet, ActivityIndicator } from 'react-native'
+import { ActivityIndicator } from 'react-native'
 import Swiper from 'src/components/Swiper/swiper'
 import demoData from './demo-data'
 import { getProfileContent } from 'src/actions'
@@ -47,6 +47,7 @@ export default class OnBoarding extends Component {
           pageArray={demoData}
           wrapperStyle={styles.wrapper}
           titleStyle={styles.title}
+          descWrapperStyle={styles.descWrapper}
           descriptionStyle={htmlStyles}
         />
       )

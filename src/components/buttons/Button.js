@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { TouchableOpacity, StyleSheet, Text } from 'react-native'
 import { upperCase } from 'lodash'
+import { boldTextMixin } from '../../styles/mixins'
 
 export class PrimaryButton extends Component {
   render () {
@@ -19,7 +20,8 @@ export class SecondaryButton extends Component {
     return (
       <TouchableOpacity style={[styles.secondaryContainer, this.props.style]}
                         onPress={this.props.onPress}>
-        <Text style={styles.secondaryText}>{upperCase(this.props.children)}</Text>
+        <Text style={styles.secondaryText}>{upperCase(
+          this.props.children)}</Text>
       </TouchableOpacity>
     )
   }
@@ -27,9 +29,9 @@ export class SecondaryButton extends Component {
 
 const styles = StyleSheet.create({
   primaryContainer: {
-    paddingVertical: 15,
+    paddingVertical: 10,
     paddingHorizontal: 30,
-    backgroundColor: '#6c56b7',
+    backgroundColor: '#0079FF',
     borderRadius: 30,
     alignItems: 'stretch',
     shadowColor: '#000000',
@@ -53,16 +55,14 @@ const styles = StyleSheet.create({
   },
   primaryText: {
     color: '#FFF',
-    fontSize: 18,
-    fontWeight: '800',
+    fontWeight: 'bold',
+    fontSize: 14,
     textAlign: 'center',
-    letterSpacing: 2,
   },
   secondaryText: {
     color: '#0F0F3D',
-    fontSize: 18,
-    fontWeight: '800',
+    fontWeight: 'bold',
+    fontSize: 14,
     textAlign: 'center',
-    letterSpacing: 2,
-  }
+  },
 })

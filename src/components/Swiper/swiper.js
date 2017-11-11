@@ -154,17 +154,17 @@ export default class SwiperComponent extends Component {
     content_type,
   }) => {
 
-    const {wrapperStyle, titleStyle, descriptionStyle} = this.props
+    const {wrapperStyle, titleStyle, descriptionStyle, descWrapperStyle} = this.props
     const htmlContent = `<div>${description}</div>`
 
     const pageView = (
       <GradientWrapper key={index} name={content_type}>
-        <View style={styles.wrapper}>
+        <View style={wrapperStyle}>
           <Animated.View>
-            <Text numberOfLines={3} style={styles.title}>{title}</Text>
+            <Text numberOfLines={3} style={titleStyle}>{title}</Text>
           </Animated.View>
-          <Animated.View style={styles.descriptionStyle}>
-            <HTMLView value={htmlContent} stylesheet={htmlStyles}/>
+          <Animated.View style={descWrapperStyle}>
+            <HTMLView value={htmlContent} stylesheet={descriptionStyle}/>
           </Animated.View>
         </View>
       </GradientWrapper>

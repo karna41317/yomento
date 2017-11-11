@@ -57,11 +57,7 @@ export const styles = StyleSheet.create({
     alignItems: 'flex-end',
     marginRight: 10,
   },
-  nextButtonText: {
-    fontSize: 25,
-    fontWeight: 'bold',
-    fontFamily: 'Arial',
-  },
+
   /*Styles with custome slide*/
   wrapper: {
     position: 'absolute',
