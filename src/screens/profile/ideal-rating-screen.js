@@ -11,10 +11,49 @@ import Swiper from 'src/components/Swiper/swiper'
 import demoData from './demo-data'
 import { getProfileContent } from 'src/actions'
 import { profileSelector } from 'src/selectors'
-import {styles, htmlStyles} from './onboarding.styles'
+
+const styles = StyleSheet.create({
+  slide: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#9DD6EB',
+    padding: 15,
+  },
+  header: {
+    flex: 0.5,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  pic: {
+    width: 75 * 2,
+    height: 63 * 2,
+  },
+  text: {
+    color: '#fff',
+    fontSize: 30,
+    fontWeight: 'bold',
+  },
+  info: {
+    flex: 0.5,
+    alignItems: 'center',
+    padding: 40,
+  },
+  title: {
+    color: '#fff',
+    fontSize: 30,
+    paddingBottom: 20,
+  },
+  description: {
+    color: '#fff',
+    fontSize: 20,
+  },
+})
+
+
 
 @connect(profileSelector)
-export default class OnBoarding extends Component {
+export default class IntroComponent extends Component {
 
   componentDidMount () {
     this.props.dispatch(getProfileContent())
@@ -44,10 +83,10 @@ export default class OnBoarding extends Component {
           onDoneBtnClick={this.doneBtnHandle}
           onSkipBtnClick={this.onSkipBtnHandle}
           onSlideChange={this.onSlideChangeHandle}
-          pageArray={demoData}
-          wrapperStyle={styles.wrapper}
-          titleStyle={styles.title}
-          descriptionStyle={htmlStyles}
+          pageArray={myself}
+          wrapperStyle ={styles.wrapperStyle}
+          titleStyle={styles.titleStyle}
+          descriptionStyle={styles.descriptionStyle}
         />
       )
     }

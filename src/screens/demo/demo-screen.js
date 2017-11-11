@@ -15,7 +15,7 @@ import { Slider } from 'src/components/slider'
 
 var DEFAULT_VALUE = 0.3
 
-class SliderContainer extends Component {
+export default class demoScreen extends Component {
   constructor () {
     super()
     this.state = {

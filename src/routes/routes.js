@@ -9,7 +9,11 @@ import verificationCodeScreen from 'src/screens/auth/verificationCode/verificati
 import passwordScreen from 'src/screens/auth/password/password-screen'
 import profileScreen from 'src/screens/profile/profile-screen'
 import onBoarding from 'src/screens/on-boarding/on-boarding-screen'
-import DemoScreen from 'src/screens/demo/slider-screen'
+import idealRatingScreen from 'src/screens/profile/ideal-rating-screen'
+import selfRatingScreen from 'src/screens/profile/self-rating-screen'
+import demoScreen from 'src/screens/demo/demo-screen'
+import readMoreScreen from  'src/screens/profile/read-more'
+
 const headerColor = '#39babd'
 const activeColor = 'white'
 
@@ -38,6 +42,18 @@ export const AppNavigator = StackNavigator({
   profile: {
     screen: profileScreen,
   },
+  idealRating: {
+    screen: idealRatingScreen
+  },
+  selfRating: {
+    screen: selfRatingScreen
+  },
+  readMore:{
+    screen: readMoreScreen
+  },
+  demoScreen: {
+    screen: demoScreen
+  }
 }, {
   initialRouteName: 'home',
   headerMode: 'none',

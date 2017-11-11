@@ -20,7 +20,7 @@ import HTMLView from 'react-native-htmlview'
 
 const {width, height} = Dimensions.get('window')
 
-export default class AppIntro extends Component {
+export default class SwiperComponent extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -286,7 +286,7 @@ export default class AppIntro extends Component {
   }
 }
 
-AppIntro.propTypes = {
+SwiperComponent.propTypes = {
   dotColor: PropTypes.string,
   activeDotColor: PropTypes.string,
   rightTextColor: PropTypes.string,
@@ -315,7 +315,7 @@ AppIntro.propTypes = {
   showDots: PropTypes.bool,
 }
 
-AppIntro.defaultProps = {
+SwiperComponent.defaultProps = {
   dotColor: 'rgba(255,255,255,.3)',
   activeDotColor: '#fff',
   rightTextColor: '#fff',
