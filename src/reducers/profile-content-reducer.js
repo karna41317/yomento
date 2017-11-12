@@ -3,7 +3,7 @@
  */
 
 import * as Types from './../action-types'
-import { find, set } from 'lodash'
+import { find, set, map, extend, assign } from 'lodash'
 
 const initialState = {
   fetching: false,
@@ -51,25 +51,21 @@ function parsePayload (payload, ratingState) {
 
   //console.log('printing', payload, state)
 
-  let themeType = ratingState[payload.profile_type]
+  let themeType = ratingState['myideal']
   let themeIDState = find(themeType, {theme_id: payload.theme_id})
   console.log('printing themeIDState', themeType, themeIDState)
   //debugger
   if (themeIDState) {
-    let updatedState = [
-      ...themeIDState, {
-        qtn_id: payload.profile_qtn_id,
-        theme_id: payload.theme_id,
-        qtn_result: payload.result,
-      }]
-   /* console.log('printing', ratingState)
+    let updatedState = mergeById(themeType, {
+      qtn_id: payload.profile_qtn_id,
+      theme_id: payload.theme_id,
+      qtn_result: payload.result,
+    })
 
-    //ratingState[payload.profile_type][]
-    //debugger
-    ratingState[payload.profile_type][themeIDState] = updatedState
-    console.log('printingupdatedState', ratingState)*/
+    //ratingState[payload.profile_type][themeIDState] = updatedState
+    console.log('printingupdatedState updatedState', ratingState, updatedState)
 
-    return []
+    return updatedState
   } else {
     let initThemeIdState = [
       ...themeType, {
@@ -84,12 +80,9 @@ function parsePayload (payload, ratingState) {
   }
 }
 
-function mergeById (arr) {
-  return {
-    with: function (arr2) {
-      return _.map(arr, item => {
-        return _.find(arr2, obj => obj.id === item.id) || item
-      })
-    },
-  }
+function mergeById (themType, payload) {
+  return map(themType, function (item) {
+    return assign(item, find([payload], {theme_id: item.theme_id}))
+  })
 }
+
