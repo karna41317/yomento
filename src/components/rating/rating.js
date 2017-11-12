@@ -201,7 +201,7 @@ export class RatingComponent extends Component {
         : 1,
     })
     if (this.props.valueChanged) {
-      this.props.valueChanged(value)
+      this.props.valueChanged(this.props.page, value)
     }
   }
 

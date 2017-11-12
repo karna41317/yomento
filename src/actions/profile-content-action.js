@@ -22,3 +22,19 @@ export const getProfileContent = () => {
     }
   }
 }
+
+export const saveProfileRating = (data) => {
+  return dispatch => {
+    try {
+      dispatch({
+        type: Types.SAVE_PROFILE_RATING,
+        payload: data,
+      })
+    } catch (err) {
+      dispatch({
+        type: Types.ERROR_PROFILE_RATING,
+        payload: err,
+      })
+    }
+  }
+}

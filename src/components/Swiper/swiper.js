@@ -8,6 +8,7 @@ import {
   Dimensions,
   Platform,
 } from 'react-native'
+import { connect } from 'react-redux'
 import Swiper from './components/swiper'
 import DoneButton from './components/DoneButton'
 import SkipButton from './components/SkipButton'
@@ -18,9 +19,11 @@ import { styles, htmlStyles } from './swiper-styles'
 import { get } from 'lodash'
 import HTMLView from 'react-native-htmlview'
 import { RatingComponent } from '../rating/rating'
+import { saveProfileRating } from 'src/actions'
+import { profileSelector } from '../../selectors/common'
 
 const {width, height} = Dimensions.get('window')
-
+@connect(profileSelector)
 export default class SwiperComponent extends Component {
   constructor (props) {
     super(props)
@@ -150,24 +153,29 @@ export default class SwiperComponent extends Component {
       </View>
     )
   }
-  valueChanged = (value) => {
-    console.log('printing', value)
-
+  valueChanged = (page, value) => {
+    const profileData = {
+      ...page,
+      result: value,
+    }
+    this.props.dispatch(saveProfileRating(profileData))
+    console.log('printing', page, value)
   }
-  getRatingComponent = (content_type) => {
-    if(content_type === 'rate') {
-      return(
-        <RatingComponent valueChanged={this.valueChanged}/>
+
+  getRatingComponent = (page) => {
+    if (page.content_type === 'rate') {
+      return (
+        <RatingComponent page={page} valueChanged={this.valueChanged}/>
       )
     }
   }
 
-  renderBasicSlidePage = (index, {
-    title,
-    description,
-    content_type,
-  }) => {
-
+  renderBasicSlidePage = (index, page) => {
+    const {
+      title,
+      description,
+      content_type,
+    } = page
     const {wrapperStyle, titleStyle, descriptionStyle, descWrapperStyle} = this.props
     const htmlContent = `<div>${description}</div>`
 
@@ -180,7 +188,7 @@ export default class SwiperComponent extends Component {
           <Animated.View style={descWrapperStyle}>
             <HTMLView value={htmlContent} stylesheet={descriptionStyle}/>
           </Animated.View>
-          {this.getRatingComponent(content_type)}
+          {this.getRatingComponent(page)}
         </View>
       </GradientWrapper>
     )
