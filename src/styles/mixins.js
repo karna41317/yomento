@@ -37,6 +37,7 @@ export const mediumTextMixin = (fontSize = null, color='#16161C') => {
 
 export const semiBoldTextMixin = (fontSize = null, color='#16161C') => ({
   fontFamily: 'TabletGothic-Bold',
+  fontWeight: "500",
   fontSize,
   color
 })

@@ -5,16 +5,13 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { View, Image, StyleSheet, TextInput, Dimensions } from 'react-native'
-import { Button, Heading } from 'src/components'
 import { authSelector } from 'src/selectors'
 import GradientWrapper from 'src/components/partials/gradientWrapper'
 import { ViewWrapper } from 'src/components/wrappers/viewWrapper'
-import { Container, Header, Left, Body, Right, Button as NativeButton, Icon, Title, Item, Input, Text } from 'native-base'
+import { Container, Header, Left, Body, Right, Button as NativeButton, Icon, Title, Item, Input } from 'native-base'
 import { usernameChanged, passwordChanged, emailChanged, registerUser } from 'src/actions'
-import navigation from '../../../reducers/navigation'
+import { PrimaryButton } from '../../../components/buttons/Button'
 
-const logo = require('src/images/logoText.png')
-const screenWidth = Dimensions.get('window').width
 @connect(authSelector)
 export default class Home extends Component {
 
@@ -76,27 +73,9 @@ export default class Home extends Component {
   }
 
   render () {
-    console.log('printing', this.props)
-
     return (
-      <GradientWrapper>
-        <Container>
-          <Header>
-            <Left>
-              <NativeButton transparent onPress={this.goBack}>
-                <Icon name='arrow-back'/>
-              </NativeButton>
-            </Left>
-            <Body>
-            <Title>Header</Title>
-            </Body>
-            <Right>
-              <NativeButton transparent>
-                <Icon name='menu'/>
-              </NativeButton>
-            </Right>
-          </Header>
-          <ViewWrapper style={styles.formContainer}>
+      <GradientWrapper name={'default'}>
+          <View style={styles.formContainer}>
             <ViewWrapper>
               <Item rounded style={styles.item}>
                 <Icon active name='person' style={styles.icon}/>
@@ -124,11 +103,11 @@ export default class Home extends Component {
                        style={styles.textInput}/>
               </Item>
             </ViewWrapper>
-            <Button rounded full style={styles.buttonStyle} onPress={this.signUpUser}>
-              <Text>Sign me Up</Text>
-            </Button>
-          </ViewWrapper>
-        </Container>
+            <PrimaryButton rounded full style={styles.buttonStyle}
+                           onPress={this.signUpUser}>
+              Sign Up
+            </PrimaryButton>
+          </View>
       </GradientWrapper>
     )
   }
@@ -141,7 +120,7 @@ Home.propTypes = {
 const styles = StyleSheet.create({
   icon: {
     fontSize: 25,
-    color: 'white'
+    color: 'white',
   },
   logoText: {
     width: 250,
@@ -156,11 +135,11 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   textInput: {
-    color: 'white'
+    color: 'white',
   },
   item: {
     borderColor: '#007DFF',
-    margin: 5
+    margin: 5,
   },
 
   container: {
@@ -190,6 +169,6 @@ const styles = StyleSheet.create({
     opacity: 0.8,
   },
   buttonStyle: {
-    backgroundColor:'#0079FF'
+    backgroundColor: '#0079FF',
   },
 })

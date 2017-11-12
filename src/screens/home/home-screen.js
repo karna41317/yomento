@@ -14,6 +14,8 @@ import GradientWrapper from 'src/components/partials/gradientWrapper'
 import { loginWithLinkedIn, loginSuccess, loginFailure, loginLocal, linkedInLogout } from 'src/actions/auth-action'
 import * as Constans from 'src/constants'
 import { authSelector } from 'src/selectors/common'
+import { regularTextMixin, semiBoldTextMixin } from '../../styles/mixins'
+import { SecondaryButton } from '../../components/buttons/Button'
 
 const logo = require('src/images/logoText.png')
 
@@ -105,7 +107,7 @@ export default class Home extends Component {
   render () {
     console.log('printing', this.props)
     return (
-      <GradientWrapper>
+      <GradientWrapper name={'default'}>
         <ViewWrapper style={styles.container}>
           <ViewWrapper>
             <Image source={logo} style={styles.logoText}/>
@@ -117,7 +119,7 @@ export default class Home extends Component {
             </TextFont>
           </ViewWrapper>
           <ViewWrapper>
-            <TextFont style={{textAlign: 'center'}}>Become Member</TextFont>
+            <TextFont style={styles.member}>Become a member</TextFont>
             <RNEButton onPress={this.goToLinkedInLogin}
                        backgroundColor={'#2B7AB6'}
                        color={'white'}
@@ -125,33 +127,31 @@ export default class Home extends Component {
                        borderRadius={30}
                        raised
                        large
-                       leftIcon={{name: 'logo-linkedin', type: 'ionicon', color: 'white'}}
-                       title='Login with LinkedIn'/>
+                       leftIcon={{
+                         name: 'logo-linkedin',
+                         type: 'ionicon',
+                         color: 'white',
+                       }}
+                       title='Sign in with LinkedIn'/>
             <RNEButton onPress={this.goToSignUp}
                        backgroundColor={'#D5EDFF'}
                        color={'black'}
                        large
-                       leftIcon={{name: 'ios-mail-outline', type: 'ionicon', color: 'black'}}
+                       leftIcon={{
+                         name: 'ios-mail-outline',
+                         type: 'ionicon',
+                         color: 'black',
+                       }}
                        borderRadius={30}
                        buttonStyle={styles.rneButton}
                        raised
-                       title='Login with email'/>
-
-            {/* <Button onPress={this.goToSignUp}>
-
-            </Button>*/}
+                       title='Sign up with email'/>
           </ViewWrapper>
           <ViewWrapper>
             <TextFont style={{textAlign: 'center'}}>Already a Member</TextFont>
-            <RNEButton onPress={this.goToLogin}
-                       backgroundColor={'#2B7AB6'}
-                       color={'white'}
-                       large
-                       borderRadius={30}
-                       buttonStyle={styles.rneButton}
-                       raised
-                       title='Member Login'/>
-
+            <SecondaryButton onPress={this.goToLogin} style={[styles.rneSecondary,]}>
+              Member Login
+            </SecondaryButton>
           </ViewWrapper>
         </ViewWrapper>
       </GradientWrapper>
@@ -179,13 +179,23 @@ const styles = StyleSheet.create({
   introText: {
     marginHorizontal: 20,
     textAlign: 'center',
-    fontSize: 25,
-    color: 'white',
+    ...regularTextMixin(20, '#FFF')
+  },
+  member: {
+    ...semiBoldTextMixin(12, '#FFF'),
+    textAlign: 'center',
   },
   rneButton: {
     marginVertical: 10,
     marginHorizontal: 40,
-    width: Dimensions.get('window').width,
-
+    width: Dimensions.get('window').width-20,
+  },
+  rneSecondary: {
+    backgroundColor: 'transparent',
+    borderColor: '#007DFF',
+    marginVertical: 10,
+    marginHorizontal: 40,
+    paddingVertical: 20,
+    width: Dimensions.get('window').width-20,
   },
 })
