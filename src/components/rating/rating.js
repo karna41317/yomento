@@ -278,7 +278,7 @@ const styles = StyleSheet.create({
 
   },
   ratingText: {
-    ...semiBoldTextMixin(18, '#FFFFFF'),
+    ...semiBoldTextMixin(24, '#FFFFFF'),
     backgroundColor: 'transparent',
   },
   circle: {

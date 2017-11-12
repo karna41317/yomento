@@ -48,35 +48,23 @@ export default (state = initialState, {type, payload}) => {
 }
 
 function parsePayload (payload, ratingState) {
-
-  //console.log('printing', payload, state)
-
-  let themeType = ratingState['myideal']
+  let themeType = ratingState[payload.profile_type]
   let themeIDState = find(themeType, {theme_id: payload.theme_id})
-  console.log('printing themeIDState', themeType, themeIDState)
-  //debugger
   if (themeIDState) {
-    let updatedState = mergeById(themeType, {
+    const updatedState = mergeById(themeType, {
       qtn_id: payload.profile_qtn_id,
       theme_id: payload.theme_id,
       qtn_result: payload.result,
     })
-
-    //ratingState[payload.profile_type][themeIDState] = updatedState
-    console.log('printingupdatedState updatedState', ratingState, updatedState)
-
     return updatedState
   } else {
-    let initThemeIdState = [
+    const initThemeIdState = [
       ...themeType, {
         qtn_id: payload.profile_qtn_id,
         theme_id: payload.theme_id,
         qtn_result: payload.result,
       }]
-    console.log('printing else initThemeIdState after push', initThemeIdState)
-
     return initThemeIdState
-    //console.log('printing else', themeType[payload.theme_id])
   }
 }
 
@@ -85,4 +73,3 @@ function mergeById (themType, payload) {
     return assign(item, find([payload], {theme_id: item.theme_id}))
   })
 }
-
