@@ -19,7 +19,7 @@ const activeColor = 'white'
 
 export const AppNavigator = StackNavigator({
   home: {
-    screen: onBoarding,
+    screen: idealRatingScreen,
   },
   login: {
     screen: loginScreen,

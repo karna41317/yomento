@@ -40,8 +40,6 @@ export default class OnBoarding extends Component {
 
   render () {
 
-    console.log('printing', this.props.profileContent)
-
     const {myself} = this.props
     if (myself) {
       return (

@@ -159,7 +159,6 @@ export default class SwiperComponent extends Component {
       result: value,
     }
     this.props.dispatch(saveProfileRating(profileData))
-    console.log('printing', page, value)
   }
 
   getRatingComponent = (page) => {
