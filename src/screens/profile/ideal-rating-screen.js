@@ -14,7 +14,7 @@ import { profileSelector } from 'src/selectors'
 import { styles, htmlStyles } from './profile.styles'
 
 @connect(profileSelector)
-export default class OnBoarding extends Component {
+export default class idealRatingScreen extends Component {
 
   componentDidMount () {
     this.props.dispatch(getProfileContent())
@@ -25,7 +25,7 @@ export default class OnBoarding extends Component {
   }
   doneBtnHandle = () => {
     const {navigation} = this.props
-    navigation.navigate('idealRating')
+    navigation.navigate('idealRatingFinish')
   }
   nextBtnHandle = (index) => {
     console.log(index)
@@ -40,8 +40,8 @@ export default class OnBoarding extends Component {
 
   render () {
 
-    const {myself} = this.props
-    if (myself) {
+    const {myideal} = this.props
+    if (myideal) {
       return (
         <Swiper
           showDots={false}
@@ -51,7 +51,7 @@ export default class OnBoarding extends Component {
           onSkipBtnClick={this.onSkipBtnHandle}
           onSlideChange={this.onSlideChangeHandle}
           readMoreClick={this.readMoreHandle}
-          pageArray={myself}
+          pageArray={myideal}
           wrapperStyle={styles.wrapper}
           titleStyle={styles.title}
           descWrapperStyle={styles.descWrapper}

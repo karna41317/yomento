@@ -8,7 +8,9 @@ export default class GradientWrapper extends Component {
 
   getWrapper = (name) => {
     switch (name) {
-      case 'onBoarding':
+      case 'onBoarding' :
+      case 'intro' :
+      case 'default' :
         return (
           <LinearGradient colors={[
             '#0b0b44',

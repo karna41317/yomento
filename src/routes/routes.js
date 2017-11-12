@@ -9,8 +9,13 @@ import verificationCodeScreen from 'src/screens/auth/verificationCode/verificati
 import passwordScreen from 'src/screens/auth/password/password-screen'
 import profileScreen from 'src/screens/profile/profile-screen'
 import onBoarding from 'src/screens/on-boarding/on-boarding-screen'
-import idealRatingScreen from 'src/screens/profile/ideal-rating-screen'
+import selfRatingIntroScreen from 'src/screens/profile/self-rating-intro-screen'
 import selfRatingScreen from 'src/screens/profile/self-rating-screen'
+import selfRatingFinishScreen from 'src/screens/profile/self-rating-finish-screen'
+import idealRatingIntroScreen from 'src/screens/profile/ideal-rating-intro-screen'
+import idealRatingScreen from 'src/screens/profile/ideal-rating-screen'
+import idealRatingFinishScreen from 'src/screens/profile/ideal-rating-finish-screen'
+
 import demoScreen from 'src/screens/demo/demo-screen'
 import readMoreScreen from  'src/screens/profile/read-more'
 
@@ -19,13 +24,11 @@ const activeColor = 'white'
 
 export const AppNavigator = StackNavigator({
   home: {
-    screen: idealRatingScreen,
+    screen: profileScreen,
   },
+
   login: {
     screen: loginScreen,
-  },
-  onBoarding: {
-    screen: onBoarding,
   },
   password: {
     screen: passwordScreen,
@@ -39,17 +42,33 @@ export const AppNavigator = StackNavigator({
   verificationCode: {
     screen: verificationCodeScreen,
   },
-  profile: {
-    screen: profileScreen,
+
+  onBoarding: {
+    screen: onBoarding,
   },
-  idealRating: {
-    screen: idealRatingScreen
+  readMore:{
+    screen: readMoreScreen
+  },
+  selfRatingIntro: {
+    screen: selfRatingIntroScreen
   },
   selfRating: {
     screen: selfRatingScreen
   },
-  readMore:{
-    screen: readMoreScreen
+  selfRatingFinish: {
+    screen: selfRatingFinishScreen
+  },
+  idealRatingIntro: {
+    screen: idealRatingIntroScreen
+  },
+  idealRating: {
+    screen: idealRatingScreen
+  },
+  idealRatingFinish: {
+    screen: idealRatingFinishScreen
+  },
+  profile: {
+    screen: profileScreen,
   },
   demoScreen: {
     screen: demoScreen
