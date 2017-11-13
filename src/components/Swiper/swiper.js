@@ -15,12 +15,14 @@ import SkipButton from './components/SkipButton'
 import RenderDots from './components/Dots'
 import GradientWrapper from '../partials/gradientWrapper'
 import { styles, htmlStyles } from './swiper-styles'
+import { upperCase } from 'lodash'
 
 import { get } from 'lodash'
 import HTMLView from 'react-native-htmlview'
 import { RatingComponent } from '../rating/rating'
 import { saveProfileRating } from 'src/actions'
 import { profileSelector } from '../../selectors/common'
+import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base'
 
 const {width, height} = Dimensions.get('window')
 @connect(profileSelector)
@@ -124,6 +126,7 @@ export default class SwiperComponent extends Component {
     const {pageArray} = this.props
     const buttonText = get(pageArray[index], 'button_text', 'next')
     const readMoreText = get(pageArray[index], 'read_more', null)
+
     return (
       <View style={styles.paginationContainer}>
         {this.props.showSkipButton ? <SkipButton
@@ -134,17 +137,14 @@ export default class SwiperComponent extends Component {
             onSkipBtnClick={() => this.props.onSkipBtnClick(index)}/> :
           <View style={styles.btnContainer}/>
         }
-        {this.props.showDots && RenderDots(index, total, {
-          ...this.props,
-          styles: styles,
-        })}
+
         {this.props.showDoneButton ? <DoneButton
             {...this.props}
             {...this.state}
             nextBtnLabel={buttonText}
             doneBtnLabel={buttonText}
             isDoneBtnShow={isDoneBtnShow}
-            readMoreText={readMoreText}
+            readMoreLable={readMoreText}
             styles={styles}
             onNextBtnClick={this.onNextBtnClick.bind(this, context)}
             onDoneBtnClick={this.props.onDoneBtnClick}/> :
@@ -169,7 +169,28 @@ export default class SwiperComponent extends Component {
     }
   }
 
-  renderBasicSlidePage = (index, page) => {
+  getSwiperHeader = (index, total) => {
+    return (
+      <View backgroundColor={'transparent'} style={styles.headerStyle}>
+        <Button transparent onPress={this.props.backPress}>
+          <Icon name='arrow-back' style={{fontSize: 30, color: '#419BF9'}}/>
+        </Button>
+        <View>
+          <Text style={styles.headerTextStyle}>{this.props.name ? upperCase(
+            this.props.name) : null}</Text>
+          <View style={styles.dotContainer}>
+            {this.props.showDots && RenderDots(index, total, {
+              ...this.props, styles: styles,
+            })}
+          </View>
+        </View>
+        <Button transparent onPress={this.props.closePress}>
+          <Icon name='close' style={{fontSize: 30, color: '#419BF9'}}/>
+        </Button>
+      </View>
+    )
+  }
+  renderBasicSlidePage = (index, page, total) => {
     const {
       title,
       description,
@@ -179,19 +200,23 @@ export default class SwiperComponent extends Component {
     const htmlContent = `<div>${description}</div>`
 
     const pageView = (
+      <View style={wrapperStyle}>
+        <Animated.View>
+          <Text numberOfLines={3} style={titleStyle}>{title}</Text>
+        </Animated.View>
+        <Animated.View style={descWrapperStyle}>
+          <HTMLView value={htmlContent} stylesheet={descriptionStyle}/>
+        </Animated.View>
+        {this.getRatingComponent(page)}
+      </View>
+    )
+
+    return (
       <GradientWrapper key={index} name={content_type}>
-        <View style={wrapperStyle}>
-          <Animated.View>
-            <Text numberOfLines={3} style={titleStyle}>{title}</Text>
-          </Animated.View>
-          <Animated.View style={descWrapperStyle}>
-            <HTMLView value={htmlContent} stylesheet={descriptionStyle}/>
-          </Animated.View>
-          {this.getRatingComponent(page)}
-        </View>
+        {this.getSwiperHeader(index, total)}
+        {pageView}
       </GradientWrapper>
     )
-    return pageView
   }
 
   renderChild = (children, pageIndex, index) => {
@@ -246,7 +271,8 @@ export default class SwiperComponent extends Component {
     let pages = []
     let androidPages = null
     if (pageArray.length > 0) {
-      pages = pageArray.map((page, i) => this.renderBasicSlidePage(i, page))
+      pages = pageArray.map(
+        (page, i) => this.renderBasicSlidePage(i, page, pageArray.length))
     } else {
       if (Platform.OS === 'ios') {
         pages = childrens.map(
@@ -283,7 +309,7 @@ export default class SwiperComponent extends Component {
       <View style={{flex: 1}}>
         {androidPages}
         <Swiper
-          scrollEnabled={true}
+          scrollEnabled={false}
           scrollEventThrottle={50}
           loop={false}
           index={this.props.defaultIndex}
@@ -338,8 +364,8 @@ SwiperComponent.propTypes = {
 }
 
 SwiperComponent.defaultProps = {
-  dotColor: 'rgba(255,255,255,.3)',
-  activeDotColor: '#fff',
+  dotColor: '#B3B2BD',
+  activeDotColor: '#282553',
   rightTextColor: '#fff',
   leftTextColor: '#fff',
   pageArray: [],

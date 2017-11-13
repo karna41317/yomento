@@ -38,13 +38,23 @@ export default class selfRatingScreen extends Component {
     navigation.navigate('readMore')
   }
 
+  backPress = () => {
+    const {navigation} = this.props
+    navigation.goBack()
+  }
+
+  closePress = () => {
+    const {navigation} = this.props
+    navigation.navigate('selfRatingIntro')
+  }
   render () {
 
     const {myself} = this.props
     if (myself) {
       return (
         <Swiper
-          showDots={false}
+          name={'profile'}
+          showDots={true}
           showSkipButton={false}
           onNextBtnClick={this.nextBtnHandle}
           onDoneBtnClick={this.doneBtnHandle}
@@ -56,6 +66,8 @@ export default class selfRatingScreen extends Component {
           titleStyle={styles.title}
           descWrapperStyle={styles.descWrapper}
           descriptionStyle={htmlStyles}
+          backPress={this.backPress}
+          closePress={this.closePress}
         />
       )
     }

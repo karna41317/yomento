@@ -22,16 +22,16 @@ export const styles = StyleSheet.create({
 
   dotStyle: {
     backgroundColor: 'rgba(255,255,255,.3)',
-    width: 13,
-    height: 13,
-    borderRadius: 7,
-    marginLeft: 7,
-    marginRight: 7,
-    marginTop: 7,
-    marginBottom: 7,
+    width: 6,
+    height: 6,
+    borderRadius: 3,
+    marginLeft: 3,
+    marginRight: 3,
+    marginTop: 3,
+    marginBottom: 3,
   },
   activeDotStyle: {
-    backgroundColor: '#fff',
+    backgroundColor: '#282553',
   },
   paginationContainer: {
     position: 'absolute',
@@ -45,10 +45,12 @@ export const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   dotContainer: {
-    flex: 1,
+    flex:1,
     flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'flex-end',
+  },
+  headerTextStyle: {
+    ...regularTextMixin(14),
+    textAlign: 'center'
   },
   btnContainer: {
     flex: 1,
@@ -76,6 +78,14 @@ export const styles = StyleSheet.create({
   textDescription: {
     ...regularTextMixin(20)
   },
+  headerStyle: {
+    marginVertical: 40,
+    marginHorizontal: 20,
+    flex:1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  }
 })
 
 

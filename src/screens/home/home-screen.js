@@ -105,7 +105,6 @@ export default class Home extends Component {
   }
 
   render () {
-    console.log('printing', this.props)
     return (
       <GradientWrapper name={'default'}>
         <ViewWrapper style={styles.container}>
@@ -182,7 +181,7 @@ const styles = StyleSheet.create({
     ...regularTextMixin(20, '#FFF')
   },
   member: {
-    ...semiBoldTextMixin(12, '#FFF'),
+    ...semiBoldTextMixin(14, '#FFF'),
     textAlign: 'center',
   },
   rneButton: {

@@ -38,13 +38,24 @@ export default class idealRatingScreen extends Component {
     navigation.navigate('readMore')
   }
 
+  backPress = () => {
+    const {navigation} = this.props
+    navigation.goBack()
+  }
+
+  closePress = () => {
+    const {navigation} = this.props
+    navigation.navigate('idealRatingIntro')
+  }
+
   render () {
 
     const {myideal} = this.props
     if (myideal) {
       return (
         <Swiper
-          showDots={false}
+          name={'profile'}
+          showDots={true}
           showSkipButton={false}
           onNextBtnClick={this.nextBtnHandle}
           onDoneBtnClick={this.doneBtnHandle}
@@ -56,6 +67,8 @@ export default class idealRatingScreen extends Component {
           titleStyle={styles.title}
           descWrapperStyle={styles.descWrapper}
           descriptionStyle={htmlStyles}
+          backPress={this.backPress}
+          closePress={this.closePress}
         />
       )
     }

@@ -21,10 +21,10 @@
 
   
     #ifdef DEBUG
-          jsCodeLocation = [NSURL URLWithString:@"http://192.168.0.159:8081/index.ios.bundle?platform=ios&dev=true"];
+          jsCodeLocation = [NSURL URLWithString:@"http://192.168.36.130:8081/index.ios.bundle?platform=ios&dev=true"];
         //jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
     #else
-        jsCodeLocation = [CodePush bundleURL];android/app/src/main/java/com/pantapasenmobileapp/MainApplication.java
+        //jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
     #endif
 
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation

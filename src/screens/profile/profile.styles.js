@@ -7,7 +7,7 @@ import { extraBoldTextMixin, lightTextMixin, boldTextMixin, semiBoldTextMixin, r
 export const styles = StyleSheet.create({
   wrapper: {
     position: 'absolute',
-    top: 90,
+    top: 120,
     left: 40,
     right: 40
   },
