@@ -10,9 +10,9 @@ import GradientWrapper from 'src/components/partials/gradientWrapper'
 //import { View } from 'src/components/wrappers/viewWrapper'
 import { Container, Header, Left, Body, Right, Button as NativeButton, Icon, Title, Item, Input } from 'native-base'
 import { usernameChanged, passwordChanged, emailChanged, registerUser } from 'src/actions'
-import { PrimaryButton } from '../../../components/buttons/Button'
+import { PrimaryButton, SecondaryButton } from '../../../components/buttons/Button'
 import MonoLogo from 'src/components/logos/mono-logo'
-import { lightTextMixin, semiBoldTextMixin } from '../../../styles/mixins'
+import { lightTextMixin, regularTextMixin, semiBoldTextMixin } from '../../../styles/mixins'
 
 @connect(authSelector)
 export default class Home extends Component {
@@ -71,19 +71,26 @@ export default class Home extends Component {
     if (user && this.validation(user)) {
       dispatch(registerUser(user, navigation))
     }
-    navigation.navigate('login')
+    navigation.navigate('onBoarding')
   }
-
   onIconPress = () => {
     this.props.navigation.goBack()
   }
+  goToForgotPassword = () => {
+    const {navigation} = this.props
+    navigation.navigate('forgot')
+  }
+  goToContactSupport = () => {
+
+  }
+
 
   render () {
     return (
       <GradientWrapper name={'default'}>
         <View style={styles.formContainer}>
           <View style={styles.headerContainer}>
-            <Text style={styles.headerText}>Create Account</Text>
+            <Text style={styles.headerText}>Forgot password</Text>
             <TouchableOpacity onPress={this.onIconPress}>
               <Icon active name='close'
                     style={[styles.icon, styles.closeIcon]}/>
@@ -92,13 +99,7 @@ export default class Home extends Component {
           <View>
             <MonoLogo width={100} height={100} color={'#0079FF'}/>
           </View>
-          <Item rounded style={styles.item}>
-            <Icon active name='person' style={styles.icon}/>
-            <Input placeholder='Name'
-                   placeholderTextColor={'white'}
-                   onChangeText={this.onChange.bind(this, 'user')}
-                   style={styles.textInput}/>
-          </Item>
+          <Text style={styles.forgotText}>Forgot your password? Enter your email address to reset password.</Text>
           <Item rounded style={styles.item}>
             <Icon active name='ios-mail' style={styles.icon}/>
             <Input placeholder='Email'
@@ -107,18 +108,10 @@ export default class Home extends Component {
                    onChangeText={this.onChange.bind(this, 'email')}
                    style={styles.textInput}/>
           </Item>
-          <Item rounded style={styles.item}>
-            <Icon active name='lock' style={styles.icon}/>
-            <Input placeholder='Password'
-                   secureTextEntry
 
-                   placeholderTextColor={'white'}
-                   onChangeText={this.onChange.bind(this, 'pass')}
-                   style={styles.textInput}/>
-          </Item>
-          <PrimaryButton rounded full style={styles.buttonStyle}
+          <PrimaryButton rounded full style={styles.primaryButtonStyle}
                          onPress={this.signUpUser}>
-            Sign Up
+            Reset Password
           </PrimaryButton>
         </View>
       </GradientWrapper>
@@ -146,9 +139,15 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     width: Dimensions.get('window').width - 50,
   },
-  buttonStyle: {
+  primaryButtonStyle: {
     marginTop: 10,
     backgroundColor: '#0079FF',
+    width: Dimensions.get('window').width - 50,
+  },
+  secondaryButtonStyle: {
+    marginTop: 15,
+    backgroundColor: 'transparent',
+    borderWidth: 0,
     width: Dimensions.get('window').width - 50,
   },
   formContainer: {
@@ -174,4 +173,19 @@ const styles = StyleSheet.create({
     color: '#0079FF',
     marginLeft: 10,
   },
+  contactSupport: {
+    position: 'absolute',
+    bottom: 40
+  },
+  forgotText: {
+    ...regularTextMixin(20, '#FFFFFF'),
+    backgroundColor: 'transparent',
+    marginHorizontal: 20,
+    marginVertical: 10
+
+  },
+  contactText: {
+    ...semiBoldTextMixin(14, '#3EABFF'),
+    letterSpacing: 2
+  }
 })

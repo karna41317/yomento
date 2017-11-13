@@ -77,13 +77,12 @@ export default class Home extends Component {
     this.props.navigation.goBack()
   }
   goToForgotPassword = () => {
-
+    const {navigation} = this.props
+    navigation.navigate('forgot')
   }
   goToContactSupport = () => {
 
   }
-
-
   render () {
     return (
       <GradientWrapper name={'default'}>
