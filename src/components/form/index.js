@@ -1,5 +1,6 @@
 import Button from './customButton'
 import Input from './Input'
+import CustomTextInput from './textInput'
 
-export { Button, Input }
-export default {Button, Input}
+export { Button, Input, CustomTextInput }
+export default {Button, Input, CustomTextInput}

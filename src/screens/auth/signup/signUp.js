@@ -4,17 +4,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { View, Image, StyleSheet, TextInput, Dimensions, Text } from 'react-native'
+import { View, Image, StyleSheet, TextInput, Dimensions } from 'react-native'
 import { authSelector } from 'src/selectors'
 import GradientWrapper from 'src/components/partials/gradientWrapper'
-//import { View } from 'src/components/wrappers/viewWrapper'
+//import { ViewWrapper } from 'src/components/wrappers/viewWrapper'
 import { Container, Header, Left, Body, Right, Button as NativeButton, Icon, Title, Item, Input } from 'native-base'
 import { usernameChanged, passwordChanged, emailChanged, registerUser } from 'src/actions'
 import { PrimaryButton } from '../../../components/buttons/Button'
-import MonoLogo from 'src/components/logos/mono-logo'
-import { lightTextMixin } from '../../../styles/mixins'
+import {CustomTextInput } from 'src/components/form'
 @connect(authSelector)
-export default class Home extends Component {
+export default class SignUpScreenComponent extends Component {
 
   constructor (props) {
     super(props)
@@ -76,41 +75,29 @@ export default class Home extends Component {
   render () {
     return (
       <GradientWrapper name={'default'}>
-
-        {/*<View>
-          <Text style={styles.textInput}>
-              Create Account
-          </Text>
-          <Input placeholder='Name'
-                 placeholderTextColor={'white'}
-                 onChangeText={this.onChange.bind(this, 'user')}
-                 style={styles.textInput}/>
-        </View>*/}
         <View style={styles.formContainer}>
           <View>
-            <MonoLogo width={200} height={200} color={'#0079FF'}/>
+            <CustomTextInput rounded style={styles.item}>
+            </CustomTextInput>
           </View>
-          <Item rounded style={styles.item}>
-            <Icon active name='person' style={styles.icon}/>
-            <Input placeholder='Name'
-                   placeholderTextColor={'white'}
-                   onChangeText={this.onChange.bind(this, 'user')}
-                   style={styles.textInput}/>
-          </Item>
-          <Item rounded style={styles.item}>
-            <Icon active name='ios-mail' style={styles.icon}/>
-            <Input placeholder='Email'
-                   placeholderTextColor={'white'}
-                   onChangeText={this.onChange.bind(this, 'email')}
-                   style={styles.textInput}/>
-          </Item>
-          <Item rounded style={styles.item}>
-            <Icon active name='lock' style={styles.icon}/>
-            <Input placeholder='Password'
-                   placeholderTextColor={'white'}
-                   onChangeText={this.onChange.bind(this, 'pass')}
-                   style={styles.textInput}/>
-          </Item>
+          {/*<View>
+            <Item rounded style={styles.item}>
+              <Icon active name='ios-mail' style={styles.icon}/>
+              <Input placeholder='email'
+                     placeholderTextColor={'white'}
+                     onChangeText={this.onChange.bind(this, 'email')}
+                     style={styles.textInput}/>
+            </Item>
+          </View>
+          <View>
+            <Item rounded style={styles.item}>
+              <Icon active name='lock' style={styles.icon}/>
+              <Input placeholder='pass'
+                     placeholderTextColor={'white'}
+                     onChangeText={this.onChange.bind(this, 'pass')}
+                     style={styles.textInput}/>
+            </Item>
+          </View>*/}
           <PrimaryButton rounded full style={styles.buttonStyle}
                          onPress={this.signUpUser}>
             Sign Up
@@ -121,15 +108,10 @@ export default class Home extends Component {
   }
 }
 
-Home.propTypes = {
-  disableInteractionCheck: PropTypes.bool,
-}
-
 const styles = StyleSheet.create({
   icon: {
     fontSize: 25,
     color: 'white',
-    marginLeft: 10
   },
   logoText: {
     width: 250,
@@ -145,12 +127,10 @@ const styles = StyleSheet.create({
   },
   textInput: {
     color: 'white',
-    ...lightTextMixin(20, '#FFF')
   },
   item: {
     borderColor: '#007DFF',
-    marginVertical: 8,
-    width: Dimensions.get('window').width-50
+    margin: 5,
   },
 
   container: {
@@ -180,13 +160,9 @@ const styles = StyleSheet.create({
     opacity: 0.8,
   },
   buttonStyle: {
-    marginTop: 10,
     backgroundColor: '#0079FF',
-    width: Dimensions.get('window').width-50
   },
   formContainer: {
-    flex: 1,
-    justifyContent:'center',
-    alignItems:'center'
-  },
+  }
+
 })
