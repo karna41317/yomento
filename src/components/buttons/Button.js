@@ -4,11 +4,15 @@ import { upperCase } from 'lodash'
 import { boldTextMixin } from '../../styles/mixins'
 
 export class PrimaryButton extends Component {
+
   render () {
+    const {children, upper, onPress, style, textStyles} = this.props
     return (
-      <TouchableOpacity style={[styles.primaryContainer, this.props.style]}
-                        onPress={this.props.onPress}>
-        <Text style={styles.primaryText}>{upperCase(this.props.children)}</Text>
+      <TouchableOpacity style={[styles.primaryContainer, style]}
+                        onPress={onPress}>
+        <Text style={[styles.primaryText, textStyles]}>{upper
+          ? upperCase(children)
+          : children}</Text>
       </TouchableOpacity>
     )
   }
@@ -17,11 +21,13 @@ export class PrimaryButton extends Component {
 export class SecondaryButton extends Component {
 
   render () {
+    const {children, upper, onPress, style, textStyles} = this.props
     return (
-      <TouchableOpacity style={[styles.secondaryContainer, this.props.style]}
-                        onPress={this.props.onPress}>
-        <Text style={styles.secondaryText}>{upperCase(
-          this.props.children)}</Text>
+      <TouchableOpacity style={[styles.secondaryContainer, style]}
+                        onPress={onPress}>
+        <Text style={[styles.secondaryText, textStyles]}>{upper
+          ? upperCase(children)
+          : children}</Text>
       </TouchableOpacity>
     )
   }

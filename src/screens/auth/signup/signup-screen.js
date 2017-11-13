@@ -4,7 +4,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { View, Image, StyleSheet, TextInput, Dimensions, Text } from 'react-native'
+import { KeyboardAvoidingView, View, Image, StyleSheet, TextInput, Dimensions, Text, TouchableOpacity } from 'react-native'
 import { authSelector } from 'src/selectors'
 import GradientWrapper from 'src/components/partials/gradientWrapper'
 //import { View } from 'src/components/wrappers/viewWrapper'
@@ -12,7 +12,8 @@ import { Container, Header, Left, Body, Right, Button as NativeButton, Icon, Tit
 import { usernameChanged, passwordChanged, emailChanged, registerUser } from 'src/actions'
 import { PrimaryButton } from '../../../components/buttons/Button'
 import MonoLogo from 'src/components/logos/mono-logo'
-import { lightTextMixin } from '../../../styles/mixins'
+import { lightTextMixin, semiBoldTextMixin } from '../../../styles/mixins'
+
 @connect(authSelector)
 export default class Home extends Component {
 
@@ -72,23 +73,23 @@ export default class Home extends Component {
     }
     navigation.navigate('onBoarding')
   }
+  onIconPress = () => {
+    this.props.navigation.goBack()
+  }
 
   render () {
     return (
       <GradientWrapper name={'default'}>
-
-        {/*<View>
-          <Text style={styles.textInput}>
-              Create Account
-          </Text>
-          <Input placeholder='Name'
-                 placeholderTextColor={'white'}
-                 onChangeText={this.onChange.bind(this, 'user')}
-                 style={styles.textInput}/>
-        </View>*/}
         <View style={styles.formContainer}>
+          <View style={styles.headerContainer}>
+            <Text style={styles.headerText}>Create Account</Text>
+            <TouchableOpacity onPress={this.onIconPress}>
+              <Icon active name='close'
+                    style={[styles.icon, styles.closeIcon]}/>
+            </TouchableOpacity>
+          </View>
           <View>
-            <MonoLogo width={200} height={200} color={'#0079FF'}/>
+            <MonoLogo width={100} height={100} color={'#0079FF'}/>
           </View>
           <Item rounded style={styles.item}>
             <Icon active name='person' style={styles.icon}/>
@@ -100,6 +101,7 @@ export default class Home extends Component {
           <Item rounded style={styles.item}>
             <Icon active name='ios-mail' style={styles.icon}/>
             <Input placeholder='Email'
+                   keyboardType='email-address'
                    placeholderTextColor={'white'}
                    onChangeText={this.onChange.bind(this, 'email')}
                    style={styles.textInput}/>
@@ -107,6 +109,8 @@ export default class Home extends Component {
           <Item rounded style={styles.item}>
             <Icon active name='lock' style={styles.icon}/>
             <Input placeholder='Password'
+                   secureTextEntry
+
                    placeholderTextColor={'white'}
                    onChangeText={this.onChange.bind(this, 'pass')}
                    style={styles.textInput}/>
@@ -129,64 +133,44 @@ const styles = StyleSheet.create({
   icon: {
     fontSize: 25,
     color: 'white',
-    marginLeft: 10
-  },
-  logoText: {
-    width: 250,
-    height: 100,
-    marginTop: 50,
-    resizeMode: 'contain',
-  },
-  textWrapper: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 5,
+    marginLeft: 10,
   },
   textInput: {
     color: 'white',
     ...lightTextMixin(20, '#FFF')
   },
+
   item: {
     borderColor: '#007DFF',
-    marginVertical: 8,
-    width: Dimensions.get('window').width-50
-  },
-
-  container: {
-    flex: 1,
-    paddingTop: 24,
-    backgroundColor: 'white',
-  },
-  content: {
-    // not cool but good enough to make all inputs visible when keyboard is active
-    paddingBottom: 300,
-  },
-  card1: {
-    paddingVertical: 16,
-  },
-  card2: {
-    padding: 16,
-  },
-  input: {
-    marginTop: 4,
-  },
-  title: {
-    paddingBottom: 16,
-    textAlign: 'center',
-    color: '#404d5b',
-    fontSize: 20,
-    fontWeight: 'bold',
-    opacity: 0.8,
+    marginVertical: 5,
+    width: Dimensions.get('window').width - 50,
   },
   buttonStyle: {
     marginTop: 10,
     backgroundColor: '#0079FF',
-    width: Dimensions.get('window').width-50
+    width: Dimensions.get('window').width - 50,
   },
   formContainer: {
     flex: 1,
-    justifyContent:'center',
-    alignItems:'center'
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+
+  headerContainer: {
+    marginTop: 30,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+  },
+  headerText: {
+    backgroundColor: 'transparent',
+    ...semiBoldTextMixin(20, '#FFF'),
+  },
+  closeIcon: {
+    left: 70,
+    fontSize: 50,
+    color: '#0079FF',
+    marginLeft: 10,
   },
 })

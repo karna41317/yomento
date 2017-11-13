@@ -4,131 +4,204 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { View, StyleSheet, AsyncStorage, Text, Dimensions } from 'react-native'
-import { Button } from 'src/components/buttons'
-import LinkedinLogin from 'react-native-linkedin-login'
+import { KeyboardAvoidingView, View, Image, StyleSheet, TextInput, Dimensions, Text, TouchableOpacity } from 'react-native'
+import { authSelector } from 'src/selectors'
 import GradientWrapper from 'src/components/partials/gradientWrapper'
-import { loginWithLinkedIn, loginSuccess, loginFailure, loginLocal, linkedInLogout } from 'src/actions/auth-action'
-import * as Constans from 'src/constants'
-import { authSelector } from 'src/selectors/common'
+//import { View } from 'src/components/wrappers/viewWrapper'
+import { Container, Header, Left, Body, Right, Button as NativeButton, Icon, Title, Item, Input } from 'native-base'
+import { usernameChanged, passwordChanged, emailChanged, registerUser } from 'src/actions'
+import { PrimaryButton, SecondaryButton } from '../../../components/buttons/Button'
+import MonoLogo from 'src/components/logos/mono-logo'
+import { lightTextMixin, semiBoldTextMixin } from '../../../styles/mixins'
 
 @connect(authSelector)
-export default class LoginScreen extends Component {
+export default class Home extends Component {
+
   constructor (props) {
     super(props)
-
-    this.login = this.login.bind(this)
-    this.logout = this.logout.bind(this)
-
     this.state = {
-      user: null,
+      firstName: null,
+      lastName: null,
+      email: null,
+      password: null,
     }
   }
 
-  componentWillMount () {
-    const linkedInScopes = ['r_emailaddress', 'r_basicprofile']
-    LinkedinLogin.init(linkedInScopes)
-    this.getUserSession()
+  goToLogin = () => {
+    const {navigation} = this.props
+    navigation.navigate('login')
+  }
+  goToSignup = () => {
+    const {navigation} = this.props
+    navigation.navigate('signup')
   }
 
-  getUserSession () {
-    AsyncStorage.getItem('user', (err, result) => {
-      if (result) {
-        const user = JSON.parse(result)
-        LinkedinLogin.setSession(user.accessToken, user.expiresOn)
-      }
-    })
-
+  goBack = () => {
+    this.props.navigation.goBack()
   }
 
-  login () {
+  onChange = (name, text) => {
+    console.log('printing change text, name', text, name)
+
     const {dispatch} = this.props
-    dispatch(loginWithLinkedIn({
-      authType: Constans.LINKEDIN,
-    }))
-    LinkedinLogin.login().then((user) => {
-      AsyncStorage.setItem('user', JSON.stringify(user), () => {
-        this.getUserProfile(user)
-      })
+    switch (name) {
 
-    }).catch((e) => {
-      var err = JSON.parse(e.description)
-      alert('ERROR: ' + err.errorMessage)
-      dispatch(loginFailure({
-        authType: Constans.LINKEDIN,
-      }))
-    })
+      case 'user':
+        dispatch(usernameChanged(text))
+        break
 
+      case 'email':
+        dispatch(emailChanged(text))
+        break
+
+      case 'pass':
+        dispatch(passwordChanged(text))
+        break
+      default:
+        break
+    }
+  }
+
+  validation (user) {
     return true
   }
 
-  logout () {
-    LinkedinLogin.logout()
-    AsyncStorage.removeItem('user')
-    this.props.dispatch(linkedInLogout({
-      authType: Constans.LINKEDIN,
-    }))
+  signUpUser = () => {
+    const {user, dispatch, navigation} = this.props
+    if (user && this.validation(user)) {
+      dispatch(registerUser(user, navigation))
+    }
+    navigation.navigate('onBoarding')
+  }
+  onIconPress = () => {
+    this.props.navigation.goBack()
+  }
+  goToForgotPassword = () => {
+
+  }
+  goToContactSupport = () => {
+
   }
 
-  getUserProfile (user) {
-    LinkedinLogin.getProfile().then((data) => {
-      let userData = {
-        email: data.emailAddress,
-        firstName: data.firstName,
-        lastName: data.lastName,
-        authType: Constans.LINKEDIN,
-      }
-      this.props.dispatch(loginSuccess(userData))
-      /*AsyncStorage.setItem('user', JSON.stringify(userData), () => {
-        this.getUserProfileImage()
-      })*/
-    }).catch((e) => {
-      dispatch(loginFailure({
-        authType: Constans.LINKEDIN,
-      }))
-    })
-  }
-
-  /*getUserProfileImage () {
-    LinkedinLogin.getProfileImages().then((images) => {
-      const userdata = Object.assign({}, this.state.user, {images})
-      AsyncStorage.setItem('user', JSON.stringify(userdata), () => {
-        this.setState({user: userdata})
-      })
-
-    }).catch((e) => {
-    })
-  }*/
 
   render () {
-    console.log('printing', this.props, this.state)
-
     return (
-      <GradientWrapper>
-        <View style={styles.container}>
-          <View
-            style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-            <Button onPress={this.login}>
-              Login
-            </Button>
-            <Button onPress={this.logout}>
-              Logout
-            </Button>
+      <GradientWrapper name={'default'}>
+        <View style={styles.formContainer}>
+          <View style={styles.headerContainer}>
+            <Text style={styles.headerText}>Member login</Text>
+            <TouchableOpacity onPress={this.onIconPress}>
+              <Icon active name='close'
+                    style={[styles.icon, styles.closeIcon]}/>
+            </TouchableOpacity>
           </View>
+          <View>
+            <MonoLogo width={100} height={100} color={'#0079FF'}/>
+          </View>
+          <Item rounded style={styles.item}>
+            <Icon active name='ios-mail' style={styles.icon}/>
+            <Input placeholder='Email'
+                   keyboardType='email-address'
+                   placeholderTextColor={'white'}
+                   onChangeText={this.onChange.bind(this, 'email')}
+                   style={styles.textInput}/>
+          </Item>
+          <Item rounded style={styles.item}>
+            <Icon active name='lock' style={styles.icon}/>
+            <Input placeholder='Password'
+                   secureTextEntry
+
+                   placeholderTextColor={'white'}
+                   onChangeText={this.onChange.bind(this, 'pass')}
+                   style={styles.textInput}/>
+          </Item>
+          <PrimaryButton rounded full style={styles.primaryButtonStyle}
+                         onPress={this.signUpUser}>
+            Log In
+          </PrimaryButton>
+          <SecondaryButton
+            style={styles.secondaryButtonStyle}
+            textStyles={styles.forgotText}
+            onPress={this.goToForgotPassword}>
+            I forgot my password
+          </SecondaryButton>
+          <SecondaryButton
+            style={[styles.secondaryButtonStyle, styles.contactSupport]}
+            textStyles={styles.contactText}
+            onPress={this.goToContactSupport}>
+            Contact Support
+          </SecondaryButton>
+
         </View>
       </GradientWrapper>
     )
   }
 }
 
-LoginScreen.propTypes = {
+Home.propTypes = {
   disableInteractionCheck: PropTypes.bool,
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'space-between',
+  icon: {
+    fontSize: 25,
+    color: 'white',
+    marginLeft: 10,
   },
+  textInput: {
+    color: 'white',
+    ...lightTextMixin(20, '#FFF')
+  },
+
+  item: {
+    borderColor: '#007DFF',
+    marginVertical: 5,
+    width: Dimensions.get('window').width - 50,
+  },
+  primaryButtonStyle: {
+    marginTop: 10,
+    backgroundColor: '#0079FF',
+    width: Dimensions.get('window').width - 50,
+  },
+  secondaryButtonStyle: {
+    marginTop: 15,
+    backgroundColor: 'transparent',
+    borderWidth: 0,
+    width: Dimensions.get('window').width - 50,
+  },
+  formContainer: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+
+  headerContainer: {
+    marginTop: 30,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+  },
+  headerText: {
+    backgroundColor: 'transparent',
+    ...semiBoldTextMixin(20, '#FFF'),
+  },
+  closeIcon: {
+    left: 70,
+    fontSize: 50,
+    color: '#0079FF',
+    marginLeft: 10,
+  },
+  contactSupport: {
+    position: 'absolute',
+    bottom: 40
+  },
+  forgotText: {
+    ...semiBoldTextMixin(14, '#3EABFF'),
+    letterSpacing: 2
+  },
+  contactText: {
+    ...semiBoldTextMixin(14, '#3EABFF'),
+    letterSpacing: 2
+  }
 })
