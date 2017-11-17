@@ -31,8 +31,8 @@ type RadarAxisProps = {
 const defaultRadarAxisStyle = {
   axisOverreach: 1.1,
   labelOverreach: 1.3,
-  fontSize: 10,
-  ...regularTextMixin(10, '#FFF'),
+  fontSize: 8,
+  ...regularTextMixin(8, '#FFF'),
   textFill: '#FFF',
   axisWidth: 2,
 };
