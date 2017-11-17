@@ -16,7 +16,6 @@ import selfRatingFinishScreen from 'src/screens/profile/self-rating-finish-scree
 import idealRatingIntroScreen from 'src/screens/profile/ideal-rating-intro-screen'
 import idealRatingScreen from 'src/screens/profile/ideal-rating-screen'
 import idealRatingFinishScreen from 'src/screens/profile/ideal-rating-finish-screen'
-
 import demoScreen from 'src/screens/demo/demo-screen'
 import readMoreScreen from  'src/screens/profile/read-more'
 
@@ -25,7 +24,7 @@ const activeColor = 'white'
 
 export const AppNavigator = StackNavigator({
   home: {
-    screen: homeScreen,
+    screen: profileScreen,
   },
 
   login: {

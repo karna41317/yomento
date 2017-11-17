@@ -1,5 +1,5 @@
-//  Created by xudong wu on 24/02/2017.
-//  Copyright © 2017 wuxudong. All rights reserved.
+//  Created by karan on 24/02/2017.
+//  Copyright © 2017 karan. All rights reserved.
 //
 
 #import "React/RCTViewManager.h"

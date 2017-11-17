@@ -169,26 +169,33 @@ export default class SwiperComponent extends Component {
     }
   }
 
-  getSwiperHeader = (index, total) => {
-    return (
-      <View backgroundColor={'transparent'} style={styles.headerStyle}>
-        <Button transparent onPress={this.props.backPress}>
-          <Icon name='arrow-back' style={{fontSize: 30, color: '#419BF9'}}/>
-        </Button>
-        <View>
-          <Text style={styles.headerTextStyle}>{this.props.name ? upperCase(
-            this.props.name) : null}</Text>
-          <View style={styles.dotContainer}>
-            {this.props.showDots && RenderDots(index, total, {
-              ...this.props, styles: styles,
-            })}
+  shouldHaveHeader = (type) => {
+      return type === 'rate'
+  }
+
+  getSwiperHeader = (index, total, content_type) => {
+    if(this.shouldHaveHeader(content_type)) {
+      return (
+        <View backgroundColor={'transparent'} style={styles.headerStyle}>
+          <Button transparent onPress={this.props.backPress}>
+            <Icon name='arrow-back' style={{fontSize: 30, color: '#419BF9'}}/>
+          </Button>
+          <View>
+            <Text style={styles.headerTextStyle}>{this.props.name ? upperCase(
+              this.props.name) : null}</Text>
+            <View style={styles.dotContainer}>
+              {this.props.showDots && RenderDots(index, total, {
+                ...this.props, styles: styles,
+              })}
+            </View>
           </View>
+          <Button transparent onPress={this.props.closePress}>
+            <Icon name='close' style={{fontSize: 30, color: '#419BF9'}}/>
+          </Button>
         </View>
-        <Button transparent onPress={this.props.closePress}>
-          <Icon name='close' style={{fontSize: 30, color: '#419BF9'}}/>
-        </Button>
-      </View>
-    )
+      )
+    }
+    return null
   }
   renderBasicSlidePage = (index, page, total) => {
     const {
@@ -213,7 +220,7 @@ export default class SwiperComponent extends Component {
 
     return (
       <GradientWrapper key={index} name={content_type}>
-        {this.getSwiperHeader(index, total)}
+        {this.getSwiperHeader(index, total, content_type)}
         {pageView}
       </GradientWrapper>
     )

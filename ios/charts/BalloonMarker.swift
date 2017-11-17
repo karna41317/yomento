@@ -1,21 +1,6 @@
-//
-//  BalloonMarker.swift
-//  ChartsDemo
-//
-//  Created by Daniel Cohen Gindi on 19/3/15.
-//
-//  Copyright 2015 Daniel Cohen Gindi & Philipp Jahoda
-//  A port of MPAndroidChart for iOS
-//  Licensed under Apache License 2.0
-//
-//  https://github.com/danielgindi/ios-charts
-//  https://github.com/danielgindi/Charts/blob/1788e53f22eb3de79eb4f08574d8ea4b54b5e417/ChartsDemo/Classes/Components/BalloonMarker.swift
-//  Edit: Added textColor
 
 import Foundation;
-
 import Charts;
-
 import SwiftyJSON;
 
 open class BalloonMarker: MarkerView {

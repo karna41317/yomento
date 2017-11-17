@@ -4,7 +4,28 @@
 import { StyleSheet } from 'react-native'
 import { extraBoldTextMixin, lightTextMixin, boldTextMixin, semiBoldTextMixin, regularTextMixin } from 'src/styles'
 
+
 export const styles = StyleSheet.create({
+  /*Header*/
+
+  headerTextStyle: {
+    ...semiBoldTextMixin(18, '#FFF'),
+  },
+  profileSecondaryButtons:{
+    paddingHorizontal: 20,
+    borderColor: '#9595A4',
+    minWidth: 80,
+  },
+  headerStyle: {
+    marginTop: 30,
+    marginHorizontal: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  profileButtonText: {
+    ...semiBoldTextMixin(14, '#FFF')
+  },
   wrapper: {
     position: 'absolute',
     top: 120,
@@ -89,3 +110,6 @@ export const htmlStyles = StyleSheet.create({
     ...regularTextMixin(16)
   },
 })
+
+
+

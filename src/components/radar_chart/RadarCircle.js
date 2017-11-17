@@ -3,7 +3,23 @@ import React from 'react';
 import _ from 'lodash';
 import {radialLine, curveCardinalClosed} from 'd3-shape';
 import type {TickScale, RadarPoint} from './types';
-
+import Svg,{
+  Circle,
+  Ellipse,
+  G,
+  LinearGradient,
+  RadialGradient,
+  Line,
+  Path,
+  Polygon,
+  Polyline,
+  Rect,
+  Symbol,
+  Text,
+  Use,
+  Defs,
+  Stop
+} from 'react-native-svg';
 type RadarCircleProps = {
   points: Array<RadarPoint>,
   scales: {[variableKey: string]: TickScale},
@@ -15,11 +31,11 @@ type RadarCircleProps = {
 };
 
 const defaultCircleStyle = {
-  selectedFillOpacity: 0.5,
-  inactiveFillOpacity: 0.2,
-  selectedStrokeOpacity: 1.0,
-  inactiveStrokeOpacity: 0.7,
-  pointRadius: 3,
+  selectedFillOpacity: 0,
+  inactiveFillOpacity: 0,
+  selectedStrokeOpacity: 0.1,
+  inactiveStrokeOpacity: 1,
+  pointRadius: 4,
   selectedPointFill: 'white',
   selectedPointOpacity: 1.0,
   inactivePointOpacity: 0.7,
@@ -53,8 +69,8 @@ export default function RadarCircle(props: RadarCircleProps) {
 
   const pathData = lineFunction(points);
   return (
-    <g>
-      <path
+    <G>
+      <Path
         d={pathData}
         fill={color}
         fillOpacity={isSelected ? selectedFillOpacity : inactiveFillOpacity}
@@ -65,7 +81,7 @@ export default function RadarCircle(props: RadarCircleProps) {
       />
       {points.map(point => {
         return (
-          <circle
+          <Circle
             key={point.key}
             r={pointRadius}
             fill={
@@ -80,6 +96,6 @@ export default function RadarCircle(props: RadarCircleProps) {
           />
         );
       })}
-    </g>
+    </G>
   );
 }

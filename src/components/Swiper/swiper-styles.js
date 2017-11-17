@@ -35,9 +35,9 @@ export const styles = StyleSheet.create({
   },
   paginationContainer: {
     position: 'absolute',
-    bottom: 25,
+    bottom: 50,
     left: 0,
-    right: 0,
+    right: 40,
     flexDirection: 'row',
     flex: 1,
     justifyContent: 'flex-end',

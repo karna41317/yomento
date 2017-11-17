@@ -1,5 +1,5 @@
-//  Created by xudong wu on 24/02/2017.
-//  Copyright wuxudong
+//  Created by karan on 24/02/2017.
+//  Copyright karan
 //
 
 import Charts
@@ -12,11 +12,11 @@ open class RNBubbleChartView: RNChartViewBase {
     override var chart: BubbleChartView {
         return _chart
     }
-    
+
     override var dataExtract: DataExtract {
         return _dataExtract
     }
-    
+
 
     override init(frame: CoreGraphics.CGRect) {
 
@@ -24,7 +24,7 @@ open class RNBubbleChartView: RNChartViewBase {
         self._dataExtract = BubbleDataExtract()
 
         super.init(frame: frame)
-      
+
         self._chart.delegate = self
         self.addSubview(_chart)
 

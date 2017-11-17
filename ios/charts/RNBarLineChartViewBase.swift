@@ -1,6 +1,6 @@
 //
-// Created by xudong wu on 26/02/2017.
-// Copyright (c) wuxudong. All rights reserved.
+// Created by karan on 26/02/2017.
+// Copyright (c) karan. All rights reserved.
 //
 
 import Foundation
@@ -47,7 +47,7 @@ class RNBarLineChartViewBase: RNYAxisChartViewBase {
     }
 
     func setBorderColor(_ color: Int) {
-        
+
         barLineChart.borderColor = RCTConvert.uiColor(color);
     }
 

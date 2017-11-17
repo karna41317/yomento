@@ -13,8 +13,6 @@ const DoneButton = ({
                       readMoreLable,
                       doneFadeOpacity, skipFadeOpacity, nextOpacity,
                     }) => {
-  console.log('printing', nextBtnLabel, doneBtnLabel)
-
   return (
     <View style={styles.btnContainer}>
       <Animated.View>

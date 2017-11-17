@@ -1,6 +1,6 @@
 //
-// Created by xudong wu on 23/02/2017.
-// Copyright (c) wuxudong. All rights reserved.
+// Created by karan on 23/02/2017.
+// Copyright (c) karan. All rights reserved.
 //
 
 import Foundation
@@ -11,22 +11,22 @@ class BridgeUtils {
     static func toIOSAlpha(_ alpha: NSNumber) -> CGFloat {
         return CGFloat(Double(alpha) / 255.0);
     }
-    
+
     static func parseColors(_ array: [JSON]) -> [NSUIColor] {
         return array.map {
             return RCTConvert.uiColor($0.intValue);
         }
     }
-    
+
     static func toJson(_ dict: NSDictionary) -> JSON {
         let json = try! JSONSerialization.data(withJSONObject: dict);
-        
+
         return JSON.parse(NSString(data: json, encoding: String.Encoding.utf8.rawValue)! as String);
     }
-    
+
     static func parseLineChartMode(_ mode: String) -> LineChartDataSet.Mode {
         let iosEnumString = androidEnumToIOSEnum(mode)
-        
+
         switch iosEnumString {
         case "linear":
             return .linear
@@ -40,10 +40,10 @@ class BridgeUtils {
             return .linear
         }
     }
-    
+
     static func parseLegendPosition(_ position: String) -> Legend.Position {
         let iosEnumString = androidEnumToIOSEnum(position)
-        
+
         switch iosEnumString {
         case "rightOfChart":
             return .rightOfChart
@@ -75,10 +75,10 @@ class BridgeUtils {
             return .belowChartLeft
         }
     }
-    
+
     static func parseYAxisLabelPosition(_ position: String) -> YAxis.LabelPosition {
         let iosEnumString = androidEnumToIOSEnum(position)
-        
+
         switch iosEnumString {
         case "outsideChart":
             return .outsideChart
@@ -88,10 +88,10 @@ class BridgeUtils {
             return .outsideChart
         }
     }
-    
+
     static func parseXAxisLabelPosition(_ position: String) -> XAxis.LabelPosition {
         let iosEnumString = androidEnumToIOSEnum(position)
-        
+
         switch iosEnumString {
         case "top":
             return .top
@@ -107,11 +107,11 @@ class BridgeUtils {
             return .top
         }
     }
-    
+
     static func parseLegendForm(_ form: String) -> Legend.Form {
-        
+
         let iosEnumString = androidEnumToIOSEnum(form)
-        
+
         switch iosEnumString {
         case "none":
             return .none
@@ -129,10 +129,10 @@ class BridgeUtils {
             return .square
         }
     }
-    
+
     static func parseScatterShape(_ shape: String) -> ScatterChartDataSet.Shape {
         let iosEnumString = androidEnumToIOSEnum(shape)
-        
+
         switch iosEnumString {
         case "square":
             return .square
@@ -152,10 +152,10 @@ class BridgeUtils {
             return  .square
         }
     }
-    
+
     static func parseEasingOption(_ option: String) -> ChartEasingOption {
         let iosEnumString = androidEnumToIOSEnum(option)
-        
+
         switch iosEnumString {
         case "linear":
             return .linear
@@ -239,10 +239,10 @@ class BridgeUtils {
         }
 
     }
-        
+
     static func androidEnumToIOSEnum(_ desc: String) -> String {
         let components = desc.components(separatedBy: "_")
-        
+
         if components.count > 1 {
             return components.enumerated().reduce("") {
                 accumulate, current in
@@ -253,12 +253,12 @@ class BridgeUtils {
             return desc.lowercased();
         }
     }
-    
+
     // unfortunately, this function can only work with pure swift enum without @objc
     // check http://stackoverflow.com/questions/42513337/why-does-an-objc-enum-have-a-different-description-than-a-pure-swift-enum
     static func parseIntEnumFromString<T:RawRepresentable>(_ enumType: T.Type, desc: String) -> T? where T.RawValue == Int {
         let iosEnumString = androidEnumToIOSEnum(desc);
-        
+
         var i = 0
         while let item = enumType.init(rawValue: i) {
             if String(describing: item) == iosEnumString {

@@ -1,6 +1,3 @@
-/**
- * Created by Karan on 2017-10-22.
- */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
@@ -43,7 +40,6 @@ export default class Home extends Component {
         LinkedinLogin.setSession(user.accessToken, user.expiresOn)
       }
     })
-
   }
 
   goToLinkedInLogin () {
@@ -62,7 +58,6 @@ export default class Home extends Component {
         authType: Constans.LINKEDIN,
       }))
     })
-
     return true
   }
 

@@ -42,5 +42,5 @@ open class Description: ComponentBase
     open var font: NSUIFont
     
     /// Text color used for drawing the description text
-    open var textColor = NSUIColor.black
+    open var textColor = NSUIColor.white
 }

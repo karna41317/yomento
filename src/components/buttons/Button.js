@@ -10,7 +10,7 @@ export class PrimaryButton extends Component {
     return (
       <TouchableOpacity style={[styles.primaryContainer, style]}
                         onPress={onPress}>
-        <Text style={[styles.primaryText, textStyles]}>{upper
+        <Text style={[styles.primaryText, textStyles]} numberOfLine={1}>{upper
           ? upperCase(children)
           : children}</Text>
       </TouchableOpacity>
@@ -25,7 +25,7 @@ export class SecondaryButton extends Component {
     return (
       <TouchableOpacity style={[styles.secondaryContainer, style]}
                         onPress={onPress}>
-        <Text style={[styles.secondaryText, textStyles]}>{upper
+        <Text style={[styles.secondaryText, textStyles]} numberOfLine={1}>{upper
           ? upperCase(children)
           : children}</Text>
       </TouchableOpacity>
@@ -35,7 +35,7 @@ export class SecondaryButton extends Component {
 
 const styles = StyleSheet.create({
   primaryContainer: {
-    paddingVertical: 10,
+    paddingVertical: 12,
     paddingHorizontal: 30,
     backgroundColor: '#0079FF',
     borderRadius: 30,

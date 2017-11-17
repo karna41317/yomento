@@ -1,5 +1,5 @@
-//  Created by xudong wu on 24/02/2017.
-//  Copyright wuxudong
+//  Created by karan on 24/02/2017.
+//  Copyright karan
 //
 
 import Charts
@@ -13,10 +13,10 @@ class RNCombinedChartView: RNBarLineChartViewBase {
     override var chart: CombinedChartView {
         return _chart
     }
-    
+
     override var dataExtract: DataExtract {
         return _dataExtract
-    }    
+    }
 
     override init(frame: CoreGraphics.CGRect) {
 
@@ -32,7 +32,7 @@ class RNCombinedChartView: RNBarLineChartViewBase {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func setDrawValueAboveBar(_ enabled: Bool) {
         _chart.drawValueAboveBarEnabled = enabled
     }

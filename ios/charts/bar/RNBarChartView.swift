@@ -1,5 +1,5 @@
-//  Created by xudong wu on 24/02/2017.
-//  Copyright wuxudong
+//  Created by karan on 24/02/2017.
+//  Copyright karan
 //
 
 import Charts
@@ -9,15 +9,15 @@ class RNBarChartView: RNBarChartViewBase {
 
     let _chart: BarChartView
     let _dataExtract : BarDataExtract
-    
+
     override var chart: BarChartView {
         return _chart
     }
-    
+
     override var dataExtract: DataExtract {
         return _dataExtract
     }
-    
+
     override init(frame: CoreGraphics.CGRect) {
 
         self._chart = BarChartView(frame: frame)

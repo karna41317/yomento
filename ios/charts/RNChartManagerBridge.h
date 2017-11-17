@@ -2,8 +2,8 @@
 //  RNChartManagerBridge.h
 //  reactNativeCharts
 //
-//  Created by xudong wu on 25/02/2017.
-//  Copyright wuxudong
+//  Created by karan on 25/02/2017.
+//  Copyright karan
 //
 
 #ifndef RNChartManagerBridge_h

@@ -1,5 +1,5 @@
-//  Created by xudong wu on 24/02/2017.
-//  Copyright wuxudong
+//  Created by karan on 24/02/2017.
+//  Copyright karan
 //
 
 import Charts

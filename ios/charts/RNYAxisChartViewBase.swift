@@ -1,7 +1,3 @@
-//
-// Created by xudong wu on 26/02/2017.
-// Copyright (c) wuxudong. All rights reserved.
-//
 
 import Foundation
 import Charts

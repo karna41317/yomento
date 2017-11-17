@@ -4,6 +4,23 @@ import type {TickScale, RadarPoint, RadarVariable} from './types';
 import RadarAxis from './RadarAxis';
 import RadarCircle from './RadarCircle';
 import RadarRings from './RadarRings';
+import Svg,{
+  Circle,
+  Ellipse,
+  G,
+  LinearGradient,
+  RadialGradient,
+  Line,
+  Path,
+  Polygon,
+  Polyline,
+  Rect,
+  Symbol,
+  Text,
+  Use,
+  Defs,
+  Stop
+} from 'react-native-svg';
 
 type Props = {
   variables: Array<RadarVariable>,
@@ -26,8 +43,8 @@ type Props = {
 
 const defaultRadarStyle = {
   numRings: 4,
-  axisColor: '#cdcdcd',
-  ringColor: '#cdcdcd',
+  axisColor: '#272768',
+  ringColor: '#272768',
 };
 
 function getHovered(
@@ -63,7 +80,7 @@ export default class RadarWrapper extends Component {
   hoverMap = null;
 
   componentDidMount() {
-    if (this.hoverMap) {
+    /*if (this.hoverMap) {
       this.hoverMap.addEventListener('mousemove', (event: MouseEvent) => {
         const {onHover} = this.props;
         if (!onHover) {
@@ -74,7 +91,7 @@ export default class RadarWrapper extends Component {
           getHovered(event, height, width, padding, radius, voronoiDiagram),
         );
       });
-    }
+    }*/
   }
 
   render() {
@@ -104,14 +121,14 @@ export default class RadarWrapper extends Component {
     const tickFormat = backgroundScale.tickFormat(numRings);
 
     return (
-      <svg width={width} height={height}>
-        <g
+      <Svg width={width} height={height}>
+        <G
           transform={`translate(${padding}, ${padding})`}
           ref={c => {
             this.hoverMap = c;
           }}
         >
-          <rect
+          <Rect
             width={diameter}
             height={diameter}
             fill={'transparent'}
@@ -121,7 +138,7 @@ export default class RadarWrapper extends Component {
                 2})`
             }
           />
-          <g transform={`translate(${innerWidth / 2}, ${innerHeight / 2})`}>
+          <G transform={`translate(${innerWidth / 2}, ${innerHeight / 2})`}>
             <RadarRings
               ticks={ticks}
               scale={backgroundScale}
@@ -168,9 +185,9 @@ export default class RadarWrapper extends Component {
                 />
                 : null
             }
-          </g>
-        </g>
-      </svg>
+          </G>
+        </G>
+      </Svg>
     );
   }
 }

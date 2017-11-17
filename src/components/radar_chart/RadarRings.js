@@ -2,7 +2,24 @@
 import React from 'react';
 import _ from 'lodash';
 import type {TickScale} from './types';
-
+import Svg,{
+  Circle,
+  Ellipse,
+  G,
+  LinearGradient,
+  RadialGradient,
+  Line,
+  Path,
+  Polygon,
+  Polyline,
+  Rect,
+  Symbol,
+  Text,
+  Use,
+  Defs,
+  Stop
+} from 'react-native-svg';
+import { regularTextMixin } from '../../styles/mixins'
 type RadarRingsProps = {
   ticks: Array<number>,
   scale: TickScale,
@@ -12,10 +29,10 @@ type RadarRingsProps = {
 };
 
 const defaultRadarRingsStyle = {
-  fontFamily: 'sans-serif',
+  ...regularTextMixin(10, '#272768'),
   fontSize: 10,
-  ringOpacity: 0.1,
-  textFill: 'black',
+  ringOpacity: 0,
+  textFill: '#272768',
 };
 
 export default function RadarRings(props: RadarRingsProps) {
@@ -26,10 +43,10 @@ export default function RadarRings(props: RadarRingsProps) {
   };
   const outerFirst = _.reverse(ticks);
   return (
-    <g>
+    <G>
       {outerFirst.map(tickValue => {
         return (
-          <circle
+          <Circle
             key={`${tickValue}`}
             fillOpacity={ringOpacity}
             fill={color}
@@ -38,9 +55,9 @@ export default function RadarRings(props: RadarRingsProps) {
           />
         );
       })}
-      {outerFirst.map(tickValue => {
+      {/*{outerFirst.map(tickValue => {
         return (
-          <text
+          <Text
             key={`${tickValue}-tick`}
             x={0}
             y={-scale(tickValue)}
@@ -48,13 +65,13 @@ export default function RadarRings(props: RadarRingsProps) {
             dy={'0.4em'}
             fontFamily={fontFamily}
             fontSize={fontSize}
-            textAnchor={'left'}
+            textAnchor={'start'}
             fill={textFill}
           >
             {format(tickValue)}
-          </text>
+          </Text>
         );
-      })}
-    </g>
+      })}*/}
+    </G>
   );
 }

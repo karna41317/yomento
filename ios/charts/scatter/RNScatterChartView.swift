@@ -1,5 +1,5 @@
-//  Created by xudong wu on 24/02/2017.
-//  Copyright wuxudong
+//  Created by karan on 24/02/2017.
+//  Copyright karan
 //
 
 import Charts
@@ -16,7 +16,7 @@ class RNScatterChartView: RNBarLineChartViewBase {
     override var dataExtract: DataExtract {
         return _dataExtract
     }
-    
+
     override init(frame: CoreGraphics.CGRect) {
 
         self._chart = ScatterChartView(frame: frame);
@@ -34,5 +34,5 @@ class RNScatterChartView: RNBarLineChartViewBase {
     }
 
 
-  
+
 }
