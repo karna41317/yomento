@@ -1,17 +1,13 @@
 // @flow
-import React from 'react'
-import _ from 'lodash'
-import { radialLine, curveCardinalClosed } from 'd3-shape'
-import type { TickScale, RadarPoint } from './types'
-import {
-  Circle,
-  G,
-  Path
-} from 'react-native-svg';
+import React from 'react';
+import _ from 'lodash';
+import {radialLine, curveCardinalClosed} from 'd3-shape';
+import type {TickScale, RadarPoint} from './types';
+
 type RadarCircleProps = {
   points: Array<RadarPoint>,
-  scales: { [variableKey: string]: TickScale },
-  offsetAngles: { [variableKey: string]: number },
+  scales: {[variableKey: string]: TickScale},
+  offsetAngles: {[variableKey: string]: number},
   isSelected: boolean,
   selectedVariableKey: ?string,
   color: string,
@@ -27,9 +23,9 @@ const defaultCircleStyle = {
   selectedPointFill: 'white',
   selectedPointOpacity: 1.0,
   inactivePointOpacity: 0.7,
-}
+};
 
-export default function RadarCircle (props: RadarCircleProps) {
+export default function RadarCircle(props: RadarCircleProps) {
   const {
     points,
     scales,
@@ -38,7 +34,7 @@ export default function RadarCircle (props: RadarCircleProps) {
     color,
     selectedVariableKey,
     style,
-  } = props
+  } = props;
   const {
     selectedFillOpacity,
     inactiveFillOpacity,
@@ -48,17 +44,17 @@ export default function RadarCircle (props: RadarCircleProps) {
     selectedPointFill,
     selectedPointOpacity,
     inactivePointOpacity,
-  } = {...defaultCircleStyle, ...style}
+  } = {...defaultCircleStyle, ...style};
 
-  const lineFunction = radialLine().
-    radius((point: RadarPoint) => scales[point.variableKey](point.value)).
-    angle((point: RadarPoint) => _.round(offsetAngles[point.variableKey], 6)).
-    curve(curveCardinalClosed)
+  const lineFunction = radialLine()
+    .radius((point: RadarPoint) => scales[point.variableKey](point.value))
+    .angle((point: RadarPoint) => _.round(offsetAngles[point.variableKey], 6))
+    .curve(curveCardinalClosed);
 
-  const pathData = lineFunction(points)
+  const pathData = lineFunction(points);
   return (
-    <G>
-      <Path
+    <g>
+      <path
         d={pathData}
         fill={color}
         fillOpacity={isSelected ? selectedFillOpacity : inactiveFillOpacity}
@@ -69,7 +65,7 @@ export default function RadarCircle (props: RadarCircleProps) {
       />
       {points.map(point => {
         return (
-          <Circle
+          <circle
             key={point.key}
             r={pointRadius}
             fill={
@@ -82,8 +78,8 @@ export default function RadarCircle (props: RadarCircleProps) {
             cy={point.y}
             opacity={isSelected ? selectedPointOpacity : inactivePointOpacity}
           />
-        )
+        );
       })}
-    </G>
-  )
+    </g>
+  );
 }

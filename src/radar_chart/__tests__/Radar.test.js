@@ -1,7 +1,7 @@
 // @flow
-import React from 'react'
-import renderer from 'react-test-renderer'
-import Radar from '../Radar'
+import React from 'react';
+import renderer from 'react-test-renderer';
+import Radar from '../Radar';
 
 test('Renders component', () => {
   const component = renderer.create(
@@ -48,7 +48,7 @@ test('Renders component', () => {
         ],
       }}
     />,
-  )
-  let tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
-})
+  );
+  let tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});

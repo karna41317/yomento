@@ -1,23 +1,7 @@
 // @flow
-import React from 'react'
-import type { TickScale } from './types'
-import Svg,{
-  Circle,
-  Ellipse,
-  G,
-  LinearGradient,
-  RadialGradient,
-  Line,
-  Path,
-  Polygon,
-  Polyline,
-  Rect,
-  Symbol,
-  Text,
-  Use,
-  Defs,
-  Stop
-} from 'react-native-svg';
+import React from 'react';
+import type {TickScale} from './types';
+
 type RadarAxisProps = {
   scale: TickScale,
   offsetAngle: number,
@@ -34,10 +18,10 @@ const defaultRadarAxisStyle = {
   fontFamily: 'sans-serif',
   textFill: 'black',
   axisWidth: 2,
-}
+};
 
-export default function RadarAxis (props: RadarAxisProps) {
-  const {scale, offsetAngle, domainMax, label, color, style} = props
+export default function RadarAxis(props: RadarAxisProps) {
+  const {scale, offsetAngle, domainMax, label, color, style} = props;
   const {
     axisOverreach,
     labelOverreach,
@@ -45,12 +29,12 @@ export default function RadarAxis (props: RadarAxisProps) {
     fontFamily,
     textFill,
     axisWidth,
-  } = {...defaultRadarAxisStyle, style}
-  const xFactor = Math.cos(offsetAngle - Math.PI / 2)
-  const yFactor = Math.sin(offsetAngle - Math.PI / 2)
+  } = {...defaultRadarAxisStyle, style};
+  const xFactor = Math.cos(offsetAngle - Math.PI / 2);
+  const yFactor = Math.sin(offsetAngle - Math.PI / 2);
   return (
-    <G>
-      <Line
+    <g>
+      <line
         x1={0}
         y1={0}
         x2={scale(domainMax * axisOverreach) * xFactor}
@@ -58,7 +42,7 @@ export default function RadarAxis (props: RadarAxisProps) {
         stroke={color}
         strokeWidth={axisWidth}
       />
-      <Text
+      <text
         x={scale(domainMax * labelOverreach) * xFactor}
         y={scale(domainMax * labelOverreach) * yFactor}
         fontSize={fontSize}
@@ -68,7 +52,7 @@ export default function RadarAxis (props: RadarAxisProps) {
         dy={'0.35em'}
       >
         {label}
-      </Text>
-    </G>
-  )
+      </text>
+    </g>
+  );
 }

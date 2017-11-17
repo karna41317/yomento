@@ -1,12 +1,7 @@
 // @flow
-import React from 'react'
-import _ from 'lodash'
-import type { TickScale } from './types'
-import Svg,{
-  Circle,
-  G,
-  Text,
-} from 'react-native-svg';
+import React from 'react';
+import _ from 'lodash';
+import type {TickScale} from './types';
 
 type RadarRingsProps = {
   ticks: Array<number>,
@@ -21,31 +16,31 @@ const defaultRadarRingsStyle = {
   fontSize: 10,
   ringOpacity: 0.1,
   textFill: 'black',
-}
+};
 
-export default function RadarRings (props: RadarRingsProps) {
-  const {ticks, scale, color, format, style} = props
+export default function RadarRings(props: RadarRingsProps) {
+  const {ticks, scale, color, format, style} = props;
   const {fontFamily, fontSize, ringOpacity, textFill} = {
     ...defaultRadarRingsStyle,
     ...style,
-  }
-  const outerFirst = _.reverse(ticks)
+  };
+  const outerFirst = _.reverse(ticks);
   return (
-    <G>
+    <g>
       {outerFirst.map(tickValue => {
         return (
-          <Circle
+          <circle
             key={`${tickValue}`}
             fillOpacity={ringOpacity}
             fill={color}
             stroke={color}
             r={scale(tickValue)}
           />
-        )
+        );
       })}
       {outerFirst.map(tickValue => {
         return (
-          <Text
+          <text
             key={`${tickValue}-tick`}
             x={0}
             y={-scale(tickValue)}
@@ -53,13 +48,13 @@ export default function RadarRings (props: RadarRingsProps) {
             dy={'0.4em'}
             fontFamily={fontFamily}
             fontSize={fontSize}
-            textAnchor={'start'}
+            textAnchor={'left'}
             fill={textFill}
           >
             {format(tickValue)}
-          </Text>
-        )
+          </text>
+        );
       })}
-    </G>
-  )
+    </g>
+  );
 }
