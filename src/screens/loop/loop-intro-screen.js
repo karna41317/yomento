@@ -52,9 +52,13 @@ export default class LoopIntroScreen extends Component {
   }
 
   render () {
-console.log('printingLoopSwiperComponent', LoopSwiperComponent)
+    if(loop) {
+      const loopContent = eval(this.parseJson(loop.loop[0]))
+    }
 
 
+    const introduction_content = eval(
+      this.parseJson(loopContent.introduction_content))
     const {state} = this.props.navigation
     const introPages = state.params ? state.params : null
     if (introPages) {

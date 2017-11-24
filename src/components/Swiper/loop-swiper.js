@@ -130,7 +130,9 @@ export default class LoopSwiperComponent extends Component {
       isSkipBtnShow = true
     }
     const {pageArray} = this.props
-    const buttonText = get(pageArray[index], 'button_text', 'next')
+    console.log('printing pageArray', pageArray)
+    const buttonText = get(pageArray[index].buttons[0], 'text')
+    //const buttonText = get(pageArray[index], 'button_text', 'next')
     const readMoreText = get(pageArray[index], 'read_more', null)
 
     return (

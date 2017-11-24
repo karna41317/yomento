@@ -28,7 +28,7 @@ export default class LoopHowScreen extends Component {
   }
   doneBtnHandle = () => {
     const {navigation} = this.props
-    navigation.navigate('loophow')
+    navigation.navigate('loopHow')
   }
   nextBtnHandle = (index) => {
     console.log(index)
