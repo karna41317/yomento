@@ -12,7 +12,7 @@ import { styles, htmlStyles } from './profile.styles'
 import Button from '../../components/form/customButton'
 import { PrimaryButton } from '../../components/buttons/Button'
 import GradientWrapper from '../../components/partials/gradientWrapper'
-
+import {launchFirstTime} from 'src/actions'
 @connect()
 export default class selfRatingIntro extends Component {
 
@@ -20,6 +20,7 @@ export default class selfRatingIntro extends Component {
   }
 
   goToProfile = () => {
+    this.props.dispatch(launchFirstTime())
     this.props.navigation.navigate('profile')
   }
 

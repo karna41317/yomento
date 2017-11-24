@@ -1,23 +1,71 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
 import GradientWrapper from '../../components/partials/gradientWrapper'
-import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base'
+import { Container, Header, DeckSwiper, Card, CardItem, Thumbnail, Left, Body, Icon, Button } from 'native-base'
 import { styles } from './profile.styles'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
-import Radar from 'src/components/radar_chart/Radar';
+import Radar from 'src/components/radar_chart/Radar'
+import { connect } from 'react-redux'
+import { profileSelector } from 'src/selectors'
+import { profileLanunched } from 'src/actions'
 
+@connect(profileSelector)
 export default class ProfileScreen extends Component {
 
+  settingsPress = () => {
+    this.props.navigation.navigate('profileDetails')
+  }
+  closePress = () => {
+    this.props.navigation.navigate('dashboard')
+  }
+  getAllProfileButtons = () => {
+    return (
+      <View style={[
+        styles.headerStyle,
+        {
+          marginHorizontal: 10,
+          marginBottom: 30,
+        }]}>
+        <PrimaryButton
+          textStyles={styles.profileButtonText}
+          style={{backgroundColor: '#CE1CD4'}}>All user's
+          self-rate</PrimaryButton>
+        <PrimaryButton
+          textStyles={styles.profileButtonText}
+          style={{backgroundColor: '#0079FF'}}>All user's
+          Ideal</PrimaryButton>
+      </View>
+    )
+  }
+
+  launchDashboard = () => {
+    this.props.dispatch(profileLanunched())
+    this.props.navigation.navigate('dashboard')
+  }
+
+  getLaunchButton = () => {
+    return (
+      <PrimaryButton
+        onPress={this.launchDashboard}
+        upper
+        textStyles={styles.profileButtonText}
+        style={styles.profileFooterButtons}>
+        cool, what's next?
+      </PrimaryButton>
+    )
+  }
+
   render () {
+    console.log('printing', this.props)
 
     const data = {
       variables: [
-        {key: 'feedback', label: 'FEEDBACK'},
         {key: 'communication', label: 'COMMUNICATION'},
         {key: 'team', label: 'TEAM'},
         {key: 'delegation', label: 'DELEGATION'},
         {key: 'time_management', label: 'TIME MANAGEMENT'},
         {key: 'performance', label: 'PERFORMANCE'},
+        {key: 'feedback', label: 'FEEDBACK'},
       ],
       sets: [
         {
@@ -70,6 +118,7 @@ export default class ProfileScreen extends Component {
         },
       ],
     }
+
     return (
       <GradientWrapper name={'default'}>
         <View backgroundColor={'transparent'} style={styles.headerStyle}>
@@ -77,7 +126,7 @@ export default class ProfileScreen extends Component {
             <Icon name='settings' style={{fontSize: 30, color: '#419BF9'}}/>
           </Button>
           <Text style={styles.headerTextStyle}>Your Profile</Text>
-          <Button transparent onPress={this.props.closePress}>
+          <Button transparent onPress={this.closePress}>
             <Icon name='close' style={{fontSize: 40, color: '#419BF9'}}/>
           </Button>
         </View>
@@ -98,28 +147,23 @@ export default class ProfileScreen extends Component {
             My Team
           </SecondaryButton>
         </View>
-        <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
           <Radar
             width={400}
             height={400}
             padding={70}
             domainMax={10}
             highlighted={null}
-            onHover={() =>{}}
+            onHover={() => {}}
             data={data}
           />
-
-
         </View>
-        <View style={[styles.headerStyle, {marginHorizontal: 10, marginBottom:30}]}>
-          <PrimaryButton
-            textStyles={styles.profileButtonText}
-            style={{backgroundColor: '#CE1CD4'}}>All user's
-            self-rate</PrimaryButton>
-          <PrimaryButton
-            textStyles={styles.profileButtonText}
-            style={{backgroundColor: '#0079FF'}}>All user's
-            Ideal</PrimaryButton>
+        <View>
+          {
+            this.props.firstLaunch
+              ? this.getLaunchButton()
+              : this.getAllProfileButtons()
+          }
         </View>
       </GradientWrapper>
     )

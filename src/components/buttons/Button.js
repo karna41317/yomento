@@ -21,7 +21,7 @@ export class PrimaryButton extends Component {
 export class SecondaryButton extends Component {
 
   render () {
-    const {children, upper, onPress, style, textStyles} = this.props
+    const {children, upper, onPress, style, textStyles, transparent} = this.props
     return (
       <TouchableOpacity style={[styles.secondaryContainer, style]}
                         onPress={onPress}>
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     borderRadius: 30,
     borderColor: '#9595A4',
-    borderWidth: 1,
+    borderWidth:1,
     alignItems: 'stretch',
     minWidth: 150,
   },

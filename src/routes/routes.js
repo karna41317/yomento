@@ -9,6 +9,7 @@ import verfiyScreen from 'src/screens/auth/verify/verify-screen'
 import verificationCodeScreen from 'src/screens/auth/verificationCode/verification-code-screen'
 import passwordScreen from 'src/screens/auth/password/password-screen'
 import profileScreen from 'src/screens/profile/profile-screen'
+import profileDetailsScreen from 'src/screens/profile/profile-details-screen'
 import onBoarding from 'src/screens/on-boarding/on-boarding-screen'
 import selfRatingIntroScreen from 'src/screens/profile/self-rating-intro-screen'
 import selfRatingScreen from 'src/screens/profile/self-rating-screen'
@@ -17,14 +18,19 @@ import idealRatingIntroScreen from 'src/screens/profile/ideal-rating-intro-scree
 import idealRatingScreen from 'src/screens/profile/ideal-rating-screen'
 import idealRatingFinishScreen from 'src/screens/profile/ideal-rating-finish-screen'
 import demoScreen from 'src/screens/demo/demo-screen'
-import readMoreScreen from  'src/screens/profile/read-more'
+import readMoreScreen from 'src/screens/profile/read-more'
+import dashboardScreen from 'src/screens/dashboard/dashboard-screen'
+import initDashboardScreen from 'src/screens/dashboard/init-dashboard-screen'
+import LoopScreen from 'src/screens/loop/loop-screen'
+import loopIntroScreen from 'src/screens/loop/loop-intro-screen'
+import loopHowScreen from 'src/screens/loop/loop-how-screen'
 
 const headerColor = '#39babd'
 const activeColor = 'white'
 
 export const AppNavigator = StackNavigator({
   home: {
-    screen: profileScreen,
+    screen: dashboardScreen,
   },
 
   login: {
@@ -49,33 +55,52 @@ export const AppNavigator = StackNavigator({
   onBoarding: {
     screen: onBoarding,
   },
-  readMore:{
-    screen: readMoreScreen
+  readMore: {
+    screen: readMoreScreen,
   },
   selfRatingIntro: {
-    screen: selfRatingIntroScreen
+    screen: selfRatingIntroScreen,
   },
   selfRating: {
-    screen: selfRatingScreen
+    screen: selfRatingScreen,
   },
   selfRatingFinish: {
-    screen: selfRatingFinishScreen
+    screen: selfRatingFinishScreen,
   },
   idealRatingIntro: {
-    screen: idealRatingIntroScreen
+    screen: idealRatingIntroScreen,
   },
   idealRating: {
-    screen: idealRatingScreen
+    screen: idealRatingScreen,
   },
   idealRatingFinish: {
-    screen: idealRatingFinishScreen
+    screen: idealRatingFinishScreen,
   },
   profile: {
     screen: profileScreen,
   },
+  profileDetails: {
+    screen: profileDetailsScreen,
+  },
   demoScreen: {
-    screen: demoScreen
+    screen: demoScreen,
+  },
+  initDashboard: {
+    screen: initDashboardScreen,
+  },
+  dashboard: {
+    screen: dashboardScreen,
+  },
+  loop: {
+    screen: LoopScreen
+  },
+  loopIntro: {
+    screen: loopIntroScreen
+  },
+  loopHow: {
+    screen: loopHowScreen
   }
+
 }, {
   initialRouteName: 'home',
   headerMode: 'none',

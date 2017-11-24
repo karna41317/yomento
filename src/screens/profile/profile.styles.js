@@ -4,17 +4,52 @@
 import { StyleSheet } from 'react-native'
 import { extraBoldTextMixin, lightTextMixin, boldTextMixin, semiBoldTextMixin, regularTextMixin } from 'src/styles'
 
-
 export const styles = StyleSheet.create({
   /*Header*/
-
+  profileDetails: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  profileEmail: {
+    backgroundColor: 'transparent',
+    ...lightTextMixin(14, '#FFFFFF'),
+    marginVertical: 2,
+  },
+  profileName: {
+    backgroundColor: 'transparent',
+    ...semiBoldTextMixin(20, '#FFFFFF')
+  },
+  profileFooterButtons: {
+    position: 'absolute',
+    right: 30,
+    bottom: 20,
+  },
+  avatarCircle: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    backgroundColor: '#3E3E65',
+    justifyContent: 'center',
+  },
+  avatarIcon: {
+    fontSize: 80,
+    color: '#419BF9',
+    textAlign: 'center',
+  },
   headerTextStyle: {
     ...semiBoldTextMixin(18, '#FFF'),
   },
-  profileSecondaryButtons:{
+  profileSecondaryButtons: {
     paddingHorizontal: 20,
     borderColor: '#9595A4',
     minWidth: 80,
+  },
+  profileDetailsButtons: {
+    borderColor: '#007DFF',
+    marginVertical: 10,
+    width: 250,
   },
   headerStyle: {
     marginTop: 30,
@@ -23,14 +58,21 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
+  headerTextStyle: {
+    ...semiBoldTextMixin(18, '#FFF'),
+  },
   profileButtonText: {
-    ...semiBoldTextMixin(14, '#FFF')
+    ...semiBoldTextMixin(14, '#FFF'),
+    textAlign: 'center',
+  },
+  profileDetailsText: {
+    ...semiBoldTextMixin(14, '#007DFF')
   },
   wrapper: {
     position: 'absolute',
     top: 120,
     left: 40,
-    right: 40
+    right: 40,
   },
   title: {
     ...boldTextMixin(18),
@@ -44,7 +86,7 @@ export const styles = StyleSheet.create({
     marginTop: 5,
   },
   descWrapper: {
-    marginRight: 10
+    marginRight: 10,
   },
   textDescription: {
     ...regularTextMixin(20, '#FFF')
@@ -60,42 +102,42 @@ export const styles = StyleSheet.create({
     width: 345,
     height: 345,
     backgroundColor: '#F0F0EB',
-    borderRadius:10,
-    borderTopLeftRadius:0
+    borderRadius: 10,
+    borderTopLeftRadius: 0,
   },
   profileButton: {
     position: 'absolute',
     right: 10,
-    bottom: 20
+    bottom: 20,
   },
-  profileIntroHead: {
+  profileIntroHead: {
     position: 'absolute',
     left: 10,
     top: 20,
     ...boldTextMixin(12),
   },
-  profileIntroText: {
+  profileIntroText: {
     position: 'absolute',
     left: 10,
     top: 64,
     right: 120,
     ...boldTextMixin(28),
   },
-  profileFinishHead: {
+  profileFinishHead: {
     position: 'absolute',
     left: 40,
     top: 160,
     backgroundColor: 'transparent',
     ...extraBoldTextMixin(24, '#FFFFFF'),
   },
-  profileFinishText: {
+  profileFinishText: {
     position: 'absolute',
     left: 40,
     top: 210,
     right: 40,
     backgroundColor: 'transparent',
-      ...regularTextMixin(20, '#FFFFFF'),
-  }
+    ...regularTextMixin(20, '#FFFFFF'),
+  },
 })
 
 export const htmlStyles = StyleSheet.create({

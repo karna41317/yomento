@@ -11,11 +11,28 @@ const initialState = {
     'myself': [],
     'myideal': [],
   },
+  firstLaunch: false,
 }
 
 export default (state = initialState, {type, payload}) => {
 
   switch (type) {
+    case Types.FIRST_PROFILE_LAUNCH:
+      return {
+        ...state,
+        firstLaunch: true,
+      }
+    case Types.PROFILE_LAUNCHED:
+      return {
+        ...state,
+        firstLaunch: false,
+      }
+    case Types.ERROR_PROFILE_LAUNCHED:
+      return {
+        ...state,
+        firstLaunch: false,
+      }
+
     case Types.FETCH_PROFILE_CONTENT:
       return {
         ...state,

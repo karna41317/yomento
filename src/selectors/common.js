@@ -5,5 +5,7 @@
 export const rootSelector = x => x.root
 export const sessionSelector = x => x.session
 export const navigatorStateSelector = x => x.navigatorState
-export const authSelector = x => x.auth
+export const authState = x => x.auth
 export const profileSelector = x => x.profile
+export const dashboardState = x => x.dashboard
+export const loopState = x => x.loop

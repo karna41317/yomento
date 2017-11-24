@@ -39,3 +39,32 @@ export const saveProfileRating = (data) => {
   }
 }
 
+export const launchFirstTime = () => {
+  return dispatch => {
+    try {
+      dispatch({
+        type: Types.FIRST_PROFILE_LAUNCH,
+      })
+    } catch (err) {
+      dispatch({
+        type: Types.ERROR_PROFILE_LAUNCH,
+        payload: err,
+      })
+    }
+  }
+}
+
+export const profileLanunched = () => {
+  return dispatch => {
+    try {
+      dispatch({
+        type: Types.PROFILE_LAUNCHED,
+      })
+    } catch (err) {
+      dispatch({
+        type: Types.ERROR_PROFILE_LAUNCHED,
+        payload: err,
+      })
+    }
+  }
+}

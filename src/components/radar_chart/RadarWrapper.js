@@ -42,7 +42,7 @@ type Props = {
 };
 
 const defaultRadarStyle = {
-  numRings: 4,
+  numRings: 10,
   axisColor: '#272768',
   ringColor: '#272768',
 };

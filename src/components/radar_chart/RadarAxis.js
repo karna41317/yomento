@@ -51,14 +51,14 @@ export default function RadarAxis(props: RadarAxisProps) {
   const yFactor = Math.sin(offsetAngle - Math.PI / 2);
   return (
     <G>
-      {/*<Line
+      <Line
         x1={0}
         y1={0}
         x2={scale(domainMax * axisOverreach) * xFactor}
         y2={scale(domainMax * axisOverreach) * yFactor}
         stroke={color}
         strokeWidth={axisWidth}
-      />*/}
+      />
       <Text
         x={scale(domainMax * labelOverreach) * xFactor}
         y={scale(domainMax * labelOverreach) * yFactor}

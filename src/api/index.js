@@ -34,6 +34,16 @@ export function fetchOnBoardingContent () {
   return fetch(uri, getHeaders()).then(res => res.json())
 }
 
+export function fetchDashboardCards () {
+  const uri = `${API_END_POINT}/getAllCards`
+  return fetch(uri, getHeaders()).then(res => res.json())
+}
+
+export function fetchLoops () {
+  const uri = `${API_END_POINT}/getLoopDetails`
+  return fetch(uri, getHeaders()).then(res => res.json())
+}
+
 /*
 
 

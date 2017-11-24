@@ -85,6 +85,22 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center'
+  },
+  quoteText: {
+    ...boldTextMixin(24),
+    textAlign:'center',
+    justifyContent: 'center'
+  },
+  tapText: {
+    ...boldTextMixin(18),
+    textAlign:'center',
+    justifyContent: 'center'
+  },
+  authorText: {
+    marginTop: 20,
+    ...lightTextMixin(18),
+    textAlign:'center',
+    justifyContent: 'center'
   }
 })
 
