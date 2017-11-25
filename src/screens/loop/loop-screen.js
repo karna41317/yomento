@@ -27,11 +27,10 @@ export default class LoopScreen extends Component {
     const {state} = this.props.navigation
     const theme_id = state.params ? state.params.theme_id : null
 
-    console.log('printing', this.props)
-
     if (theme_id) {
       const {loop} = this.props
-      if (loop) {
+
+      if (loop.loop[0]) {
         const loopContent = eval(this.parseJson(loop.loop[0]))
         const coach_action_done_content = eval(
           this.parseJson(loopContent.coach_action_done_content))
@@ -49,11 +48,8 @@ export default class LoopScreen extends Component {
         const theme_id = this.parseJson(loopContent.theme_id)
         const title = this.parseJson(loopContent.title)
         const why_content = eval(this.parseJson(loopContent.why_content))
-        console.log('printing why_content', why_content)
-        console.log('printing introduction_content', introduction_content)
 
         const data = why_content[0].data[0]
-
         const htmlContent = `<p>${data.description}</p>`
         return (
           <GradientWrapper name={'default'}>

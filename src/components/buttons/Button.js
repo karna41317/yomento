@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { TouchableOpacity, StyleSheet, Text } from 'react-native'
 import { upperCase } from 'lodash'
-import { boldTextMixin } from '../../styles/mixins'
+import { boldTextMixin, semiBoldTextMixin } from '../../styles/mixins'
 
 export class PrimaryButton extends Component {
 
@@ -60,15 +60,11 @@ const styles = StyleSheet.create({
     minWidth: 150,
   },
   primaryText: {
-    color: '#FFF',
-    fontWeight: 'bold',
-    fontSize: 14,
     textAlign: 'center',
+    ...semiBoldTextMixin(14, '#FFF')
   },
   secondaryText: {
-    color: '#FFF',
-    fontWeight: 'bold',
-    fontSize: 14,
     textAlign: 'center',
+    ...semiBoldTextMixin(14, '#FFF')
   },
 })

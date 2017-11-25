@@ -12,7 +12,7 @@ import { Header, Left, Right, Body, Icon, Button } from 'native-base'
 import HTMLView from 'react-native-htmlview'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import LoopSwiperComponent from 'src/components/Swiper/loop-swiper'
-
+import {get} from 'lodash'
 @connect(loopSelector)
 export default class LoopIntroScreen extends Component {
 
@@ -28,7 +28,7 @@ export default class LoopIntroScreen extends Component {
   }
   doneBtnHandle = () => {
     const {navigation} = this.props
-    navigation.navigate('loopHow', {})
+    navigation.navigate('loopHow')
   }
   nextBtnHandle = (index) => {
     console.log(index)
@@ -52,13 +52,6 @@ export default class LoopIntroScreen extends Component {
   }
 
   render () {
-    if(loop) {
-      const loopContent = eval(this.parseJson(loop.loop[0]))
-    }
-
-
-    const introduction_content = eval(
-      this.parseJson(loopContent.introduction_content))
     const {state} = this.props.navigation
     const introPages = state.params ? state.params : null
     if (introPages) {

@@ -14,13 +14,13 @@ import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import LoopSwiperComponent from 'src/components/Swiper/loop-swiper'
 import {get} from 'lodash'
 @connect(loopSelector)
-export default class LoopHowScreen extends Component {
+export default class LoopReflectionScreen extends Component {
 
   parseJson = (content) => {
     return JSON.parse(JSON.stringify(content))
   }
   goToIntroScreen = () => {
-    this.props.navigation.navigate('loopCoach')
+    this.props.navigation.navigate('loopIntro')
   }
 
   onSkipBtnHandle = (index) => {
@@ -28,7 +28,7 @@ export default class LoopHowScreen extends Component {
   }
   doneBtnHandle = () => {
     const {navigation} = this.props
-    navigation.navigate('loopCoachReflectionIntro')
+    navigation.navigate('loopCoach', {})
   }
   nextBtnHandle = (index) => {
     console.log(index)
@@ -38,7 +38,7 @@ export default class LoopHowScreen extends Component {
   }
   readMoreHandle = () => {
     const {navigation} = this.props
-    navigation.navigate('loopReminder')
+    navigation.navigate('readMore')
   }
 
   backPress = () => {
@@ -61,7 +61,7 @@ export default class LoopHowScreen extends Component {
       if (how_content) {
         return (
           <LoopSwiperComponent
-            name={'loophow'}
+            name={'profile'}
             showDots={true}
             showSkipButton={false}
             onNextBtnClick={this.nextBtnHandle}

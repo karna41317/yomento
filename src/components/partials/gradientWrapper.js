@@ -2,6 +2,7 @@
  * Created by Karan on 2017-10-23.
  */
 import React, { Component } from 'react'
+import { View } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 
 export default class GradientWrapper extends Component {
@@ -35,6 +36,33 @@ export default class GradientWrapper extends Component {
             {this.props.children ? this.props.children : null}
           </LinearGradient>
         )
+      case 'reminder' :
+      case 'how' :
+      case 'loophow' :
+        return (
+          <LinearGradient colors={[
+            '#FFFBCD',
+            '#FFFBCD',
+            '#FFFBCD',
+            '#FFFBCD',
+            '#FFFBCD',
+          ]} style={{flex: 1}}>
+            {this.props.children ? this.props.children : null}
+          </LinearGradient>
+        )
+
+      case 'reflection' :
+        return (
+          <LinearGradient colors={[
+            '#D5EDFF',
+            '#D5EDFF',
+            '#D5EDFF',
+            '#D5EDFF',
+          ]} style={{flex: 1}}>
+            {this.props.children ? this.props.children : null}
+          </LinearGradient>
+        )
+
       default:
         return this.props.children ? this.props.children : null
     }

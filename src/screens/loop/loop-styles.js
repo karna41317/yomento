@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     top: 180,
     left: 20,
-    right: 20
+    right: 20,
   },
 
   profileFinishHead: {
@@ -31,6 +31,33 @@ export const styles = StyleSheet.create({
     right: 40,
     backgroundColor: 'transparent',
     ...regularTextMixin(20, '#FFFFFF'),
+  },
+
+  introWrapper: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  loopFinishHead: {
+    position: 'absolute',
+    left: 40,
+    top: 160,
+    backgroundColor: 'transparent',
+    ...extraBoldTextMixin(24, '#FFFFFF'),
+  },
+  loopFinishText: {
+    position: 'absolute',
+    left: 40,
+    top: 210,
+    right: 40,
+    backgroundColor: 'transparent',
+    ...regularTextMixin(20, '#FFFFFF'),
+  },
+  loopButton: {
+    position: 'absolute',
+    right: 10,
+    bottom: 20,
   },
   wrapper: {
     position: 'absolute',
@@ -49,7 +76,6 @@ export const styles = StyleSheet.create({
     marginRight: 10,
   },
 
-
   profileButton: {
     position: 'absolute',
     right: 10,
@@ -57,13 +83,13 @@ export const styles = StyleSheet.create({
   },
   headerStyle: {
     marginTop: 30,
-
+    marginHorizontal: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
   headerTextStyle: {
-    ...semiBoldTextMixin(18, '#FFF'),
+    ...regularTextMixin(14),
   },
 
   mainCard: {
@@ -72,7 +98,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#F0F0EB',
     borderRadius: 10,
     borderTopLeftRadius: 0,
-    margin:5
+    margin: 5,
   },
   nextCard: {
     justifyContent: 'center',
@@ -82,13 +108,9 @@ export const styles = StyleSheet.create({
     backgroundColor: '#F0F0EB',
     borderRadius: 10,
     borderTopLeftRadius: 0,
-    marginTop: 10
+    marginTop: 10,
   },
-  profileButton: {
-    position: 'absolute',
-    right: 10,
-    bottom: 20,
-  },
+
   profileIntroHead: {
     position: 'absolute',
     left: 10,
@@ -126,6 +148,29 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+  },
+  reminderWrapper: {
+    flex: 1,
+    backgroundColor: 'transparent',
+    justifyContent: 'center',
+  },
+  reminderText: {
+    position: 'absolute',
+    top: 50,
+    left: 40,
+    right: 30,
+    ...boldTextMixin(20)
+  },
+  dateTimePicker: {
+    backgroundColor: '#FFF',
+    margin: 20,
+    borderRadius: 8
+  },
+
+  confirmReminder: {
+    position:'absolute',
+    bottom: 50,
+    alignSelf:'center'
   }
 })
 
@@ -141,8 +186,6 @@ export const htmlStyles = StyleSheet.create({
     ...regularTextMixin(16)
   },
 })
-
-
 
 /**
  * Created by Karan on 2017-11-20.

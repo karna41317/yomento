@@ -7,6 +7,7 @@ export default StyleSheet.create({
   row: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
     marginVertical:2,
     borderRadius: 8,
 

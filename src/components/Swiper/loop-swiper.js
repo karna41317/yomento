@@ -19,7 +19,7 @@ import RenderDots from './components/Dots'
 import GradientWrapper from '../partials/gradientWrapper'
 import { styles, htmlStyles } from './swiper-styles'
 import { upperCase } from 'lodash'
-
+import {PadIcon} from 'src/components/icons'
 import { get } from 'lodash'
 import HTMLView from 'react-native-htmlview'
 import { RatingComponent } from '../rating/rating'
@@ -133,7 +133,7 @@ export default class LoopSwiperComponent extends Component {
     console.log('printing pageArray', pageArray)
     const buttonText = get(pageArray[index].buttons[0], 'text')
     //const buttonText = get(pageArray[index], 'button_text', 'next')
-    const readMoreText = get(pageArray[index], 'read_more', null)
+    const readMoreText = get(pageArray[index].buttons[1], 'text')
 
     return (
       <View style={styles.paginationContainer}>
@@ -178,7 +178,7 @@ export default class LoopSwiperComponent extends Component {
   }
 
   shouldHaveHeader = (type) => {
-    return type === 'rate' || 'quote' || 'tap'
+    return type === 'rate' || 'quote' || 'tap' || 'general'
   }
 
   getSwiperHeader = (index, total, content_type) => {
@@ -206,7 +206,7 @@ export default class LoopSwiperComponent extends Component {
     return null
   }
 
-  renderIntroPages = (dataObject) => {
+  renderIntroPages = (dataObject, seq_order) => {
     const {content_type} = dataObject
     if (content_type === 'quote') {
       const {Author, content_type, description, title} = dataObject
@@ -220,7 +220,6 @@ export default class LoopSwiperComponent extends Component {
       )
     } else if (content_type === 'tap') {
       const {title} = dataObject
-      console.log('printing', dataObject)
       let options = dataObject.options[0].data
       if(options) {
         return (
@@ -239,20 +238,45 @@ export default class LoopSwiperComponent extends Component {
         )
       }
       return null
+    } else if(content_type === 'general') {
+      const {title, description} = dataObject
+
+      htmlContent = `<p>${description}</p>`
+      if(seq_order === 1) {
+        return (
+          <View style={{position: 'absolute', top: 100, left: 20, right: 20}}>
+            <PadIcon />
+            <Text style={styles.tapText}>
+              {title}
+            </Text>
+          </View>
+        )
+      } else {
+        return (
+          <View style={{position: 'absolute', top: 100, left: 20, right: 20}}>
+            <Text style={styles.tapText}>
+              {title}
+            </Text>
+            <HTMLView value={htmlContent} stylesheet={htmlStyles}/>
+          </View>
+        )
+      }
+
     }
+
+    return null
   }
 
   renderBasicSlidePage = (index, page, total) => {
-    const {data} = page
+    const {data, seq_order} = page
     const dataObject = data[0]
     const {content_type} = dataObject
-    console.log('printing', dataObject)
 
     return (
-      <GradientWrapper key={index} name={content_type}>
+      <GradientWrapper key={index} name={this.props.name}>
         <View style={{flex:1}}>
           {this.getSwiperHeader(index, total, content_type)}
-          {this.renderIntroPages(dataObject)}
+          {this.renderIntroPages(dataObject, seq_order)}
         </View>
       </GradientWrapper>
     )

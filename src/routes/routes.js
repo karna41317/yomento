@@ -25,6 +25,12 @@ import LoopScreen from 'src/screens/loop/loop-screen'
 import loopIntroScreen from 'src/screens/loop/loop-intro-screen'
 import loopHowScreen from 'src/screens/loop/loop-how-screen'
 
+import loopReminderScreen from 'src/screens/loop/loop-reminder-screen'
+import loopCoachReminderEndScreen from 'src/screens/loop/loop-coach-reminder-end-screen'
+import loopCoachReminderEndNextScreen from 'src/screens/loop/loop-coach-reminder-end-next-screen'
+import loopCoachReflectionIntroScreen from 'src/screens/loop/loop-coach-reflection-intro-screen'
+import loopReflectionScreen from 'src/screens/loop/loop-coach-reflection-screen'
+import loopCoachReflectionAfterScreen from 'src/screens/loop/loop-coach-reflection-end-screen'
 const headerColor = '#39babd'
 const activeColor = 'white'
 
@@ -51,7 +57,6 @@ export const AppNavigator = StackNavigator({
   verificationCode: {
     screen: verificationCodeScreen,
   },
-
   onBoarding: {
     screen: onBoarding,
   },
@@ -99,8 +104,26 @@ export const AppNavigator = StackNavigator({
   },
   loopHow: {
     screen: loopHowScreen
-  }
+  },
+  loopReminder: {
+    screen: loopReminderScreen
+  },
 
+  loopCoachEnd: {
+    screen: loopCoachReminderEndScreen
+  },
+  loopCoachEndNext: {
+    screen: loopCoachReminderEndNextScreen
+  },
+  loopCoachReflectionIntro: {
+    screen: loopCoachReflectionIntroScreen
+  },
+  loopReflection: {
+    screen: loopReflectionScreen
+  },
+  loopCoachReflectionAfter: {
+    screen: loopCoachReflectionAfterScreen
+  }
 }, {
   initialRouteName: 'home',
   headerMode: 'none',

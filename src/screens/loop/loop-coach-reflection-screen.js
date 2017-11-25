@@ -1,4 +1,7 @@
 /**
+ * Created by Karan on 2017-11-25.
+ */
+/**
  * Created by Karan on 2017-11-20.
  */
 
@@ -14,7 +17,7 @@ import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import LoopSwiperComponent from 'src/components/Swiper/loop-swiper'
 import {get} from 'lodash'
 @connect(loopSelector)
-export default class LoopHowScreen extends Component {
+export default class LoopIntroScreen extends Component {
 
   parseJson = (content) => {
     return JSON.parse(JSON.stringify(content))
@@ -28,7 +31,7 @@ export default class LoopHowScreen extends Component {
   }
   doneBtnHandle = () => {
     const {navigation} = this.props
-    navigation.navigate('loopCoachReflectionIntro')
+    navigation.navigate('loopCoachReflectionAfter', {})
   }
   nextBtnHandle = (index) => {
     console.log(index)
@@ -38,7 +41,7 @@ export default class LoopHowScreen extends Component {
   }
   readMoreHandle = () => {
     const {navigation} = this.props
-    navigation.navigate('loopReminder')
+    navigation.navigate('readMore')
   }
 
   backPress = () => {
@@ -55,13 +58,11 @@ export default class LoopHowScreen extends Component {
     const {loop} = this.props
     if (loop) {
       const loopContent = eval(this.parseJson(loop.loop[0]))
-      const how_content = eval(this.parseJson(loopContent.how_content))
-      console.log('printing how_content', how_content)
-
-      if (how_content) {
+      const reflection_content = eval(this.parseJson(loopContent.reflection_content))
+      if (reflection_content) {
         return (
           <LoopSwiperComponent
-            name={'loophow'}
+            name={'reflection'}
             showDots={true}
             showSkipButton={false}
             onNextBtnClick={this.nextBtnHandle}
@@ -69,7 +70,7 @@ export default class LoopHowScreen extends Component {
             onSkipBtnClick={this.onSkipBtnHandle}
             onSlideChange={this.onSlideChangeHandle}
             readMoreClick={this.readMoreHandle}
-            pageArray={how_content}
+            pageArray={reflection_content}
             wrapperStyle={styles.wrapper}
             titleStyle={styles.title}
             descWrapperStyle={styles.descWrapper}
