@@ -22,3 +22,20 @@ export const getDashboardCards = () => {
     }
   }
 }
+
+export const updateDashboardCards = (cards) => {
+  return dispatch => {
+    try {
+      dispatch({
+        type: Types.UPDATE_DASHBOARD_CARDS,
+        payload: cards,
+      })
+    } catch (err) {
+      dispatch({
+        type: Types.ERROR_DASHBOARD_CARDS,
+        payload: err,
+      })
+    }
+  }
+}
+

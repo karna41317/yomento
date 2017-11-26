@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, Dimensions, Image, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, Dimensions, Image, ScrollView, ActivityIndicator } from 'react-native'
 import GradientWrapper from '../../components/partials/gradientWrapper'
-import { get, toUpper } from 'lodash'
+import { get, toUpper,head } from 'lodash'
 import { styles } from './dashboard.styles'
 import {
   Header, Button, Icon, Left, Body, Right, DeckSwiper,
 } from 'src/components/native-base'
 
 import { semiBoldTextMixin } from '../../styles/mixins'
-import { getDashboardCards, getLoops } from 'src/actions'
+import { getDashboardCards, getLoops, updateDashboardCards } from 'src/actions'
 import { connect } from 'react-redux'
 import { dashboard } from './dashboard-selector'
 import { PrimaryButton } from '../../components/buttons/Button'
@@ -20,9 +20,7 @@ export default class DashboardScreen extends Component {
   }
 
   componentDidMount () {
-    this.props.dispatch(getDashboardCards())
     this.props.dispatch(getLoops())
-
   }
 
   parseJson = (content) => {
@@ -30,18 +28,34 @@ export default class DashboardScreen extends Component {
   }
 
   goToLoop = (item) => {
+
+    const {dashboard: {mainCards}} = this.props
+    const updatedCards = this.moveCardBack(mainCards, 1)
+
+
+    this.props.dispatch(updateDashboardCards(updatedCards))
     this.props.navigation.navigate('loop', item)
+
+  }
+
+  moveCardBack= (arr, n) => {
+    var L = arr.length;
+    return arr.slice(L - n).concat(arr.slice(0, L - n));
   }
 
   render () {
-    const {dashboard: {dashboardCards}} = this.props
-    const mainCards = get(dashboardCards, 'main_card')
+    const {dashboard: {mainCards}} = this.props
+    /*const mainCards = get(dashboardCards, 'main_card')
     const completedCards = get(dashboardCards, 'completed_card')
     const nextCards = get(dashboardCards, 'next_card')
     const redoCards = get(dashboardCards, 'redo_card')
-
+    const mainCard = head(dashboardCards)*!/*/
 
     if (mainCards) {
+
+
+      const mainCard = head(mainCards)
+      console.log('printing toUpper(mainCard.theme_name)', toUpper(mainCard.theme_name))
       return (
         <GradientWrapper name={'default'}>
           <ScrollView style={{backgroundColor: 'transparent'}}>
@@ -69,56 +83,21 @@ export default class DashboardScreen extends Component {
               <Right></Right>
             </Header>
             <View style={styles.dashboardWrapper}>
-              <DeckSwiper
-                dataSource={mainCards}
-                renderItem={item =>
-                  <View style={styles.mainCard}>
-                    <Text style={styles.profileIntroHead}>{toUpper(
-                      item.theme_name)}</Text>
-                    <Text
-                      style={styles.profileIntroText}>{item.loop_title}</Text>
-                    <PrimaryButton style={styles.profileButton}
-                                   onPress={this.goToLoop.bind(this, item)}>START</PrimaryButton>
-                  </View>
-                }
-              />
-
-              {/*<View style={{marginTop: 100}}>
-                <View style={styles.nextCard}>
-                  <Text style={styles.profileIntroHead}>PROFILE</Text>
-                  <Text style={styles.profileIntroText}>Rate yourself as a
-                    leader</Text>
-                  <PrimaryButton style={styles.profileButton}
-                                 onPress={this.goToIdealRating}>START</PrimaryButton>
-                </View>
-                <View style={styles.nextCard}>
-                  <Text style={styles.profileIntroHead}>PROFILE</Text>
-                  <Text style={styles.profileIntroText}>Rate yourself as a
-                    leader</Text>
-                  <PrimaryButton style={styles.profileButton}
-                                 onPress={this.goToIdealRating}>START</PrimaryButton>
-                </View>
-                <View style={styles.nextCard}>
-                  <Text style={styles.profileIntroHead}>PROFILE</Text>
-                  <Text style={styles.profileIntroText}>Rate yourself as a
-                    leader</Text>
-                  <PrimaryButton style={styles.profileButton}
-                                 onPress={this.goToIdealRating}>START</PrimaryButton>
-                </View>
-                <View style={styles.nextCard}>
-                  <Text style={styles.profileIntroHead}>PROFILE</Text>
-                  <Text style={styles.profileIntroText}>Rate yourself as a
-                    leader</Text>
-                  <PrimaryButton style={styles.profileButton}
-                                 onPress={this.goToIdealRating}>START</PrimaryButton>
-                </View>
-              </View>*/}
+              <View style={styles.mainCard}>
+                <Text style={styles.profileIntroHead}>
+                  {toUpper(mainCard.theme_name)}
+                  </Text>
+                <Text
+                  style={styles.profileIntroText}>{mainCard.loop_title}</Text>
+                <PrimaryButton style={styles.profileButton}
+                               onPress={this.goToLoop.bind(this, mainCard)}>START</PrimaryButton>
+              </View>
             </View>
           </ScrollView>
         </GradientWrapper>
       )
     }
-    return null
+    return <ActivityIndicator />
 
   }
 }

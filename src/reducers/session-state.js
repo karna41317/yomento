@@ -1,6 +1,3 @@
-/**
- * Created by Karan on 2017-10-25.
- */
 import * as Types from './../action-types'
 
 const initialState = {

@@ -73,10 +73,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   closeIcon: {
+    width: 70,
     left: 70,
     fontSize: 50,
     color: '#0079FF',
-    marginLeft: 10,
+    marginLeft: 0,
   },
 })
 

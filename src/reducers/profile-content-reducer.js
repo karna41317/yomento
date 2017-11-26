@@ -1,7 +1,3 @@
-/**
- * Created by Karan on 2017-11-10.
- */
-
 import * as Types from './../action-types'
 import { find, set, map, extend, assign } from 'lodash'
 

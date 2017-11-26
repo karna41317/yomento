@@ -1,23 +1,13 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { extraBoldTextMixin, lightTextMixin, boldTextMixin, semiBoldTextMixin, regularTextMixin } from 'src/styles'
-import { ActivityIndicator, View, Text, StyleSheet } from 'react-native'
-
-import Button from '../../components/form/customButton'
+import { extraBoldTextMixin, boldTextMixin, regularTextMixin } from 'src/styles'
+import { View, Text, StyleSheet } from 'react-native'
 import { PrimaryButton } from '../../components/buttons/Button'
 import GradientWrapper from '../../components/partials/gradientWrapper'
-import {get} from 'lodash'
+import { get } from 'lodash'
+
 @connect()
 export default class loopCoachReminderEndScreen extends Component {
-
-  componentDidMount () {
-  }
 
   goToLoopEndNext = () => {
     this.props.navigation.navigate('loopCoachEndNext')
@@ -35,10 +25,11 @@ export default class loopCoachReminderEndScreen extends Component {
         <View style={styles.introWrapper}>
           <Text style={styles.profileFinishHead}>Great work!</Text>
           <Text style={styles.profileFinishText}>I will remind you to XXX on
-            {' <loop.theme.loopnumber.sequence.coachreminder.remindertime>' }</Text>
-          <PrimaryButton upper
-                         style={styles.profileButton}
-                         onPress={this.goToLoopEndNext}>ok, thanks </PrimaryButton>
+            {'<loop.theme.loopnumber.sequence.coachreminder.remindertime>'}</Text>
+          <PrimaryButton
+            upper
+            style={styles.profileButton}
+            onPress={this.goToLoopEndNext}>ok, thanks </PrimaryButton>
         </View>
       </GradientWrapper>
     )

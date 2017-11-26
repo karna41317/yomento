@@ -7,7 +7,7 @@ import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import Radar from 'src/components/radar_chart/Radar'
 import { connect } from 'react-redux'
 import { profileSelector } from 'src/selectors'
-import { profileLanunched } from 'src/actions'
+import { profileLanunched, getDashboardCards } from 'src/actions'
 
 @connect(profileSelector)
 export default class ProfileScreen extends Component {
@@ -40,6 +40,7 @@ export default class ProfileScreen extends Component {
 
   launchDashboard = () => {
     this.props.dispatch(profileLanunched())
+    this.props.dispatch(getDashboardCards())
     this.props.navigation.navigate('dashboard')
   }
 

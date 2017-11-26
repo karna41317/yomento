@@ -1,8 +1,6 @@
-import { Easing, Animated } from 'react-native'
 import { StackNavigator } from 'react-navigation'
-
-import homeScreen from 'src/screens/home/home-screen'
 import loginScreen from 'src/screens/auth/login/login-screen_no_animation'
+import homeScreen from 'src/screens/home/home-screen'
 import signupScreen from 'src/screens/auth/signup/signup-screen'
 import forgotScreen from 'src/screens/auth/forgot/forgot-screen'
 import verfiyScreen from 'src/screens/auth/verify/verify-screen'
@@ -24,19 +22,16 @@ import initDashboardScreen from 'src/screens/dashboard/init-dashboard-screen'
 import LoopScreen from 'src/screens/loop/loop-screen'
 import loopIntroScreen from 'src/screens/loop/loop-intro-screen'
 import loopHowScreen from 'src/screens/loop/loop-how-screen'
-
 import loopReminderScreen from 'src/screens/loop/loop-reminder-screen'
 import loopCoachReminderEndScreen from 'src/screens/loop/loop-coach-reminder-end-screen'
 import loopCoachReminderEndNextScreen from 'src/screens/loop/loop-coach-reminder-end-next-screen'
 import loopCoachReflectionIntroScreen from 'src/screens/loop/loop-coach-reflection-intro-screen'
 import loopReflectionScreen from 'src/screens/loop/loop-coach-reflection-screen'
 import loopCoachReflectionAfterScreen from 'src/screens/loop/loop-coach-reflection-end-screen'
-const headerColor = '#39babd'
-const activeColor = 'white'
 
 export const AppNavigator = StackNavigator({
   home: {
-    screen: dashboardScreen,
+    screen: homeScreen,
   },
 
   login: {

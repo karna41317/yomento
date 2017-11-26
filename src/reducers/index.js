@@ -1,6 +1,3 @@
-/**
- * Created by Karan on 2017-10-25.
- */
 import { combineReducers } from 'redux'
 import rootReducer from './root'
 import sessionStateReducer from './session-state'

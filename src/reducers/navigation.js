@@ -1,6 +1,3 @@
-/**
- * Created by Karan on 2017-10-25.
- */
 import { NavigationActions } from 'react-navigation'
 import includes from 'lodash/includes'
 
