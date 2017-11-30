@@ -5,7 +5,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { KeyboardAvoidingView, View, Image, StyleSheet, TextInput, Dimensions, Text, TouchableOpacity } from 'react-native'
-import { authSelector } from 'src/selectors'
+import { authState } from 'src/selectors'
 import GradientWrapper from 'src/components/partials/gradientWrapper'
 //import { View } from 'src/components/wrappers/viewWrapper'
 import { Container, Header, Left, Body, Right, Button as NativeButton, Icon, Title, Item, Input } from 'native-base'
@@ -14,7 +14,7 @@ import { PrimaryButton, SecondaryButton } from '../../../components/buttons/Butt
 import MonoLogo from 'src/components/logos/mono-logo'
 import { lightTextMixin, regularTextMixin, semiBoldTextMixin } from '../../../styles/mixins'
 
-@connect(authSelector)
+@connect(authState)
 export default class Home extends Component {
 
   constructor (props) {

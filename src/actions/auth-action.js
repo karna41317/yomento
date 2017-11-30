@@ -54,9 +54,8 @@ export const passwordChanged = (text) => {
 
 // register action
 export const registerUser = (user, navigation) => {
-  const {username, email, password} = user
+  //const {username, email, password} = user
   return dispatch => {
-    navigation.navigate('onBoarding')
     /*axios.post(API_CONST.baseUrl + API_CONST.register, {
       username: username,
       email: email,

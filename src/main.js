@@ -7,11 +7,15 @@ import { NavigationActions } from 'react-navigation'
 GLOBAL.XMLHttpRequest = GLOBAL.originalXMLHttpRequest || GLOBAL.XMLHttpRequest
 
 class yemonto extends Component {
+  componentDidMount() {
+    console.disableYellowBox = true;
+  }
 
   componentWillMount () {
     if (Platform.OS === 'android') {
       BackHandler.addEventListener('hardwareBackPress', this.navigateBack)
     }
+    console.disableYellowBox = true;
   }
 
   navigateBack () {

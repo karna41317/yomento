@@ -12,7 +12,6 @@ import {
   View,
   Easing,
   ViewPropTypes,
-  Dimensions,
 } from 'react-native'
 
 import PropTypes from 'prop-types'
@@ -36,8 +35,8 @@ Rect.prototype.containsPoint = function (x, y) {
 
 var DEFAULT_ANIMATION_CONFIGS = {
   spring: {
-    friction: 0,
-    tension: 0,
+    friction: 7,
+    tension: 100,
   },
   timing: {
     duration: 150,
@@ -52,20 +51,8 @@ var DEFAULT_ANIMATION_CONFIGS = {
 
 export class Slider extends PureComponent {
   static propTypes = {
-    /**
-     * Initial value of the slider. The value should be between minimumValue
-     * and maximumValue, which default to 0 and 1 respectively.
-     * Default value is 0.
-     *
-     * *This is not a controlled component*, e.g. if you don't update
-     * the value, the component won't be reset to its inital value.
-     */
     value: PropTypes.number,
 
-    /**
-     * If true the user won't be able to move the slider.
-     * Default value is false.
-     */
     disabled: PropTypes.bool,
 
     /**
@@ -170,14 +157,9 @@ export class Slider extends PureComponent {
     animationConfig: PropTypes.object,
 
     /**
-     * Used to determine the orientation of the slider. This allows for the orientation of the component to be both horizontal and vertical.
+     * Set to true if the slider is placed vertically
      */
-    orientation: PropTypes.oneOf(['horizontal', 'vertical']),
-
-    /**
-     * Set this to true to invert the swipe direction of the slider. Inversion is linked to the slider's orientation.
-     */
-    inverted: PropTypes.bool,
+    vertical: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -191,8 +173,7 @@ export class Slider extends PureComponent {
     thumbTouchSize: {width: 40, height: 40},
     debugTouchArea: false,
     animationType: 'timing',
-    orientation: 'horizontal',
-    inverted: false,
+    vertical: false,
   }
 
   state = {
@@ -406,12 +387,9 @@ export class Slider extends PureComponent {
 
   _getValue = (gestureState: Object) => {
     var length = this.state.containerSize.width - this.state.thumbSize.width
-    //var thumbLeft = this._previousLeft + gestureState.dx
-    var swipeMovement = this.props.orientation === 'vertical'
-      ? gestureState.dy
-      : gestureState.dx
-    var swipeDirection = this.props.inverted ? -swipeMovement : swipeMovement
-    var thumbLeft = this._previousLeft + swipeDirection
+
+    var distance = this.props.vertical ? gestureState.dy : gestureState.dx
+    var thumbLeft = this._previousLeft + distance
 
     var ratio = thumbLeft / length
 
@@ -547,7 +525,7 @@ export class Slider extends PureComponent {
 
 var defaultStyles = StyleSheet.create({
   container: {
-    height: Dimensions.get('window').height,
+    height: 40,
     justifyContent: 'center',
   },
   track: {

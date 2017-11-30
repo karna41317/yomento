@@ -27,9 +27,13 @@ export default class loopReminderScreen extends Component {
   componentDidMount () {
     this.props.dispatch(getLoops())
   }
+  goBack= () => {
+    this.props.navigation.goBack()
+  }
 
-  goToSelfRating = () => {
-    this.props.navigation.navigate('loopAction')
+
+  goToDashBoard = () => {
+    this.props.navigation.navigate('dashboard')
   }
 
   onDateChange = (date) => {
@@ -64,10 +68,6 @@ export default class loopReminderScreen extends Component {
       const coach_action_done_content = eval(
         this.parseJson(loopContent.coach_action_done_content))
 
-console.log('coach_end_contentafter', coach_end_content)
-console.log('printingcoach_action_done_contentbefore', coach_action_done_content)
-console.log('printingreminder_action_contentbefore', reminder_action_content)
-
       if (reminder_action_content) {
 
         const {title} = get(reminder_action_content[0], 'data[0]')
@@ -75,12 +75,12 @@ console.log('printingreminder_action_contentbefore', reminder_action_content)
         return (
           <GradientWrapper name='reminder'>
             <View backgroundColor={'transparent'} style={styles.headerStyle}>
-              <Button transparent onPress={this.settingsPress}>
+              <Button transparent onPress={this.goBack}>
                 <Icon name='settings' style={{fontSize: 30, color: '#419BF9'}}/>
               </Button>
               <Text style={[styles.headerTextStyle, {}]}>FEEDBACK
                 EXERCISE</Text>
-              <Button transparent onPress={this.closePress}>
+              <Button transparent onPress={this.goToDashBoard}>
                 <Icon name='close' style={{fontSize: 40, color: '#419BF9'}}/>
               </Button>
             </View>

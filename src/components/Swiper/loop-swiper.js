@@ -8,6 +8,7 @@ import {
   Text,
   View,
   Animated,
+  Image,
   Dimensions,
   Platform,
 } from 'react-native'
@@ -19,18 +20,18 @@ import RenderDots from './components/Dots'
 import GradientWrapper from '../partials/gradientWrapper'
 import { styles, htmlStyles } from './swiper-styles'
 import { upperCase } from 'lodash'
-import {PadIcon} from 'src/components/icons'
+import { PadIcon } from 'src/components/icons'
 import { get } from 'lodash'
 import HTMLView from 'react-native-htmlview'
 import { RatingComponent } from '../rating/rating'
 import { saveProfileRating } from 'src/actions'
-import { profileSelector } from '../../selectors/common'
+import { profileState } from '../../selectors/common'
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base'
 import data from '../../screens/profile/demo-data'
 import MultipleChoice from '../multi-select/index'
 
 const {width, height} = Dimensions.get('window')
-@connect(profileSelector)
+@connect(profileState)
 export default class LoopSwiperComponent extends Component {
 
   constructor (props) {
@@ -133,7 +134,9 @@ export default class LoopSwiperComponent extends Component {
     console.log('printing pageArray', pageArray)
     const buttonText = get(pageArray[index].buttons[0], 'text')
     //const buttonText = get(pageArray[index], 'button_text', 'next')
+
     const readMoreText = get(pageArray[index].buttons[1], 'text')
+    console.log('printing', readMoreText)
 
     return (
       <View style={styles.paginationContainer}>
@@ -182,6 +185,8 @@ export default class LoopSwiperComponent extends Component {
   }
 
   getSwiperHeader = (index, total, content_type) => {
+    console.log('printingcontent_type', content_type)
+
     if (this.shouldHaveHeader(content_type)) {
       return (
         <View backgroundColor={'transparent'} style={styles.headerStyle}>
@@ -205,7 +210,7 @@ export default class LoopSwiperComponent extends Component {
     }
     return null
   }
-
+  /*<Image source={require('src/images/background.png')} style={{flex: 1, resizeMode: 'cover'}} />*/
   renderIntroPages = (dataObject, seq_order) => {
     const {content_type} = dataObject
     if (content_type === 'quote') {
@@ -221,7 +226,7 @@ export default class LoopSwiperComponent extends Component {
     } else if (content_type === 'tap') {
       const {title} = dataObject
       let options = dataObject.options[0].data
-      if(options) {
+      if (options) {
         return (
           <View style={{position: 'absolute', top: 100, left: 20, right: 20}}>
             <Text style={styles.tapText}>
@@ -232,20 +237,20 @@ export default class LoopSwiperComponent extends Component {
               options={options}
               selectedOptions={[]}
               maxSelectedOptions={2}
-              onSelection={(option)=>{}}
+              onSelection={(option) => {}}
             />
           </View>
         )
       }
       return null
-    } else if(content_type === 'general') {
+    } else if (content_type === 'general') {
       const {title, description} = dataObject
 
       htmlContent = `<p>${description}</p>`
-      if(seq_order === 1) {
+      if (seq_order === 1) {
         return (
           <View style={{position: 'absolute', top: 100, left: 20, right: 20}}>
-            <PadIcon />
+            <PadIcon/>
             <Text style={styles.tapText}>
               {title}
             </Text>
@@ -274,7 +279,7 @@ export default class LoopSwiperComponent extends Component {
 
     return (
       <GradientWrapper key={index} name={this.props.name}>
-        <View style={{flex:1}}>
+        <View style={{flex: 1}}>
           {this.getSwiperHeader(index, total, content_type)}
           {this.renderIntroPages(dataObject, seq_order)}
         </View>

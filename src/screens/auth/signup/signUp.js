@@ -5,14 +5,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { View, Image, StyleSheet, TextInput, Dimensions } from 'react-native'
-import { authSelector } from 'src/selectors'
+import { authState } from 'src/selectors'
 import GradientWrapper from 'src/components/partials/gradientWrapper'
 //import { ViewWrapper } from 'src/components/wrappers/viewWrapper'
 import { Container, Header, Left, Body, Right, Button as NativeButton, Icon, Title, Item, Input } from 'native-base'
 import { usernameChanged, passwordChanged, emailChanged, registerUser } from 'src/actions'
 import { PrimaryButton } from '../../../components/buttons/Button'
 import {CustomTextInput } from 'src/components/form'
-@connect(authSelector)
+@connect(authState)
 export default class SignUpScreenComponent extends Component {
 
   constructor (props) {

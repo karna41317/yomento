@@ -40,13 +40,14 @@ export const styles = StyleSheet.create({
     right: 40,
     flexDirection: 'row',
     flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'flex-end',
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: 'transparent',
   },
   dotContainer: {
     flex:1,
     flexDirection: 'row',
+    justifyContent: 'center'
   },
   headerTextStyle: {
     ...regularTextMixin(14),

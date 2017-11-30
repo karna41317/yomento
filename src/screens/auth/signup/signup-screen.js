@@ -4,8 +4,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { KeyboardAvoidingView, View, Image, StyleSheet, TextInput, Dimensions, Text, TouchableOpacity } from 'react-native'
-import { authSelector } from 'src/selectors'
+import { KeyboardAvoidingView, View, Image, StyleSheet, TextInput, Dimensions, Text, TouchableOpacity, Alert, AsyncStorage } from 'react-native'
+import { authState } from 'src/selectors'
 import GradientWrapper from 'src/components/partials/gradientWrapper'
 //import { View } from 'src/components/wrappers/viewWrapper'
 import { Container, Header, Left, Body, Right, Button as NativeButton, Icon, Title, Item, Input } from 'native-base'
@@ -14,8 +14,8 @@ import { PrimaryButton } from '../../../components/buttons/Button'
 import MonoLogo from 'src/components/logos/mono-logo'
 import { lightTextMixin, semiBoldTextMixin } from '../../../styles/mixins'
 
-@connect(authSelector)
-export default class Home extends Component {
+@connect(authState)
+export default class SignUp extends Component {
 
   constructor (props) {
     super(props)
@@ -41,7 +41,6 @@ export default class Home extends Component {
   }
 
   onChange = (name, text) => {
-    console.log('printing change text, name', text, name)
 
     const {dispatch} = this.props
     switch (name) {
@@ -57,6 +56,7 @@ export default class Home extends Component {
       case 'pass':
         dispatch(passwordChanged(text))
         break
+
       default:
         break
     }
@@ -68,10 +68,35 @@ export default class Home extends Component {
 
   signUpUser = () => {
     const {user, dispatch, navigation} = this.props
+    console.log('printing user', this.props)
+
     if (user && this.validation(user)) {
       dispatch(registerUser(user, navigation))
+      try {
+        AsyncStorage.setItem('user', JSON.stringify(user));
+        Alert.alert(
+          'Success',
+          'Successfully signed',
+          [
+            {text: 'OK', onPress: () => navigation.navigate('onBoarding')},
+          ],
+          { cancelable: false }
+        )
+      } catch (error) {
+        Alert.alert(
+          'Error',
+          'Error saving user info',
+          [
+            {text: 'OK', onPress: () => {}},
+          ],
+          { cancelable: false }
+        )
+      }
     }
-    navigation.navigate('login')
+
+    console.log('printing', this.props)
+
+    //navigation.navigate('login')
   }
 
   onIconPress = () => {
@@ -126,7 +151,7 @@ export default class Home extends Component {
   }
 }
 
-Home.propTypes = {
+SignUp.propTypes = {
   disableInteractionCheck: PropTypes.bool,
 }
 

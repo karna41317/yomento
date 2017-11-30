@@ -141,10 +141,9 @@ export const styles = StyleSheet.create({
   },
   buttonsWrapper: {
     position: 'absolute',
-    bottom: 25,
+    bottom: 40,
   },
   why_buttons: {
-    flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',

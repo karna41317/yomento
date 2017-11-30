@@ -3,20 +3,43 @@ import {
   Text,
   View,
   Animated,
+  Dimensions
 } from 'react-native'
+import {toLower} from 'lodash'
 import { PrimaryButton, SecondaryButton } from '../../buttons/Button'
 
 const DoneButton = ({
                       styles, onDoneBtnClick, onNextBtnClick, readMoreClick,
-                      isDoneBtnShow,
+                      isDoneBtnShow, disable,
                       doneBtnLabel, nextBtnLabel,
                       readMoreLable,
                       doneFadeOpacity, skipFadeOpacity, nextOpacity,
                     }) => {
+  let textStyle={}
+  let buttonStyle ={}
+  let btnContainerStyle ={}
+  if(toLower(readMoreLable) === 'set reminder'){
+    textStyle={
+      color: '#0079FF',
+      fontSize: 14
+    }
+    buttonStyle={
+      paddingHorizontal: 0,
+      marginTop: 10,
+      borderWidth:0
+    }
+    btnContainerStyle={
+      position:'absolute',
+      bottom: 50,
+      alignSelf:'center',
+
+    }
+  }
   return (
-    <View style={styles.btnContainer}>
+    <View style={[styles.btnContainer, btnContainerStyle]}>
       <Animated.View>
         <PrimaryButton
+          disable
           upper
           onPress={isDoneBtnShow
             ? onDoneBtnClick
@@ -25,8 +48,13 @@ const DoneButton = ({
         </PrimaryButton>
       </Animated.View>
       {isDoneBtnShow && readMoreLable ? (
-        <SecondaryButton onPress={readMoreClick} style={{marginTop: 10}} upper>Read
-          more</SecondaryButton>) : null}
+        <SecondaryButton
+          onPress={readMoreClick}
+          textStyles={textStyle}
+          style={buttonStyle}
+          upper>
+          {readMoreLable}
+          </SecondaryButton>) : null}
     </View>
   )
 }

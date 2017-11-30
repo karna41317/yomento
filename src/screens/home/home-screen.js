@@ -10,13 +10,13 @@ import LinkedinLogin from 'react-native-linkedin-login'
 import GradientWrapper from 'src/components/partials/gradientWrapper'
 import { loginWithLinkedIn, loginSuccess, loginFailure, loginLocal, linkedInLogout } from 'src/actions/auth-action'
 import * as Constans from 'src/constants'
-import { authSelector } from 'src/selectors/common'
+import { authState } from 'src/selectors/common'
 import { regularTextMixin, semiBoldTextMixin } from '../../styles/mixins'
 import { SecondaryButton } from '../../components/buttons/Button'
 
 const logo = require('src/images/logoText.png')
 
-@connect(authSelector)
+@connect(authState)
 export default class Home extends Component {
 
   constructor (props) {

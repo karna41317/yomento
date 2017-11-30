@@ -10,10 +10,10 @@ import { ActivityIndicator } from 'react-native'
 import Swiper from 'src/components/Swiper/swiper'
 import demoData from './demo-data'
 import { getProfileContent } from 'src/actions'
-import { profileSelector } from 'src/selectors'
+import { profileState } from 'src/selectors'
 import { styles, htmlStyles } from './onboarding.styles'
 
-@connect(profileSelector)
+@connect(profileState)
 export default class OnBoarding extends Component {
 
   componentDidMount () {

@@ -6,18 +6,24 @@ import { styles } from './profile.styles'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import Radar from 'src/components/radar_chart/Radar'
 import { connect } from 'react-redux'
-import { profileSelector } from 'src/selectors'
+import { profileState } from 'src/selectors'
 import { profileLanunched, getDashboardCards } from 'src/actions'
 
-@connect(profileSelector)
+@connect(profileState)
 export default class ProfileScreen extends Component {
 
   settingsPress = () => {
     this.props.navigation.navigate('profileDetails')
   }
+
   closePress = () => {
     this.props.navigation.navigate('dashboard')
   }
+
+  componentDidMount = () => {
+    this.props.dispatch(getDashboardCards())
+  }
+
   getAllProfileButtons = () => {
     return (
       <View style={[
@@ -40,7 +46,6 @@ export default class ProfileScreen extends Component {
 
   launchDashboard = () => {
     this.props.dispatch(profileLanunched())
-    this.props.dispatch(getDashboardCards())
     this.props.navigation.navigate('dashboard')
   }
 

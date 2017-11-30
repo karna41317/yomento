@@ -80,10 +80,16 @@ export default class LoopScreen extends Component {
                   <HTMLView value={htmlContent} stylesheet={htmlStyles}/>
                 </Animated.View>
               </View>
+
               <View style={styles.buttonsWrapper}>
                 <View style={styles.why_buttons}>
-                  <SecondaryButton onPress={()=>this.props.navigation.goBack()}>Not Interested</SecondaryButton>
-                  <PrimaryButton onPress={this.goToIntroScreen.bind(this,introduction_content)}>Let's go</PrimaryButton>
+                  <SecondaryButton
+                    style={{left: 20}}
+                    textStyles={{color: '#0F0F3D'}}
+                    onPress={()=>this.props.navigation.goBack()}>Not Interested</SecondaryButton>
+                  <PrimaryButton
+                    style={{left: 40}}
+                    onPress={this.goToIntroScreen.bind(this,introduction_content)}>Let's go</PrimaryButton>
                 </View>
               </View>
             </View>

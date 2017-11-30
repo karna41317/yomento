@@ -6,7 +6,7 @@ import {
   loopState
 } from '../../selectors/common'
 
-export const dashboard = createSelector(
+export const dashboardSelector = createSelector(
   [dashboardState, authState, loopState],
   (dashboard, auth, loop) => ({
     dashboard,

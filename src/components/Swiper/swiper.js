@@ -20,16 +20,18 @@ import { upperCase } from 'lodash'
 import { get } from 'lodash'
 import HTMLView from 'react-native-htmlview'
 import { RatingComponent } from '../rating/rating'
+
 import { saveProfileRating } from 'src/actions'
-import { profileSelector } from '../../selectors/common'
+import { profileState } from '../../selectors/common'
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base'
 
 const {width, height} = Dimensions.get('window')
-@connect(profileSelector)
+@connect(profileState)
 export default class SwiperComponent extends Component {
   constructor (props) {
     super(props)
     this.state = {
+      disable: true,
       skipFadeOpacity: new Animated.Value(1),
       doneFadeOpacity: new Animated.Value(0),
       nextOpacity: new Animated.Value(1),
@@ -159,6 +161,7 @@ export default class SwiperComponent extends Component {
       result: value,
     }
     this.props.dispatch(saveProfileRating(profileData))
+    this.setState({disable: false})
   }
 
   getRatingComponent = (page) => {

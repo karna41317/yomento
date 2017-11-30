@@ -31,9 +31,8 @@ import loopCoachReflectionAfterScreen from 'src/screens/loop/loop-coach-reflecti
 
 export const AppNavigator = StackNavigator({
   home: {
-    screen: homeScreen,
+    screen: profileScreen,
   },
-
   login: {
     screen: loginScreen,
   },

@@ -1,34 +1,40 @@
-/**
- * Created by Karan on 2017-11-17.
- */
-/**
- * Created by Karan on 2017-11-09.
- */
-import { StyleSheet, Dimensions } from 'react-native'
-import { extraBoldTextMixin, lightTextMixin, boldTextMixin, semiBoldTextMixin, regularTextMixin } from 'src/styles'
+import {
+  StyleSheet,
+  Dimensions,
+} from 'react-native'
+import {
+  extraBoldTextMixin,
+  lightTextMixin,
+  boldTextMixin,
+  semiBoldTextMixin,
+  regularTextMixin,
+} from 'src/styles'
 
 export const styles = StyleSheet.create({
   /*Header*/
 
   dashboardWrapper: {
-    position: 'absolute',
-    top: 180,
-    left: 20,
-    right: 20
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignContent: 'center',
+    marginHorizontal: 20,
+    marginTop: 20,
   },
   nextCard: {
     position: 'absolute',
-    top:180,
+    top: 180,
     bottom: -10,
     left: 20,
-    right: 20
+    right: 20,
   },
+
   profileFinishHead: {
     position: 'absolute',
     left: 40,
     top: 160,
     backgroundColor: 'transparent',
-    ...extraBoldTextMixin(24, '#FFFFFF'),
+    ...extraBoldTextMixin(24,
+      '#FFFFFF'),
   },
   profileFinishText: {
     position: 'absolute',
@@ -36,13 +42,17 @@ export const styles = StyleSheet.create({
     top: 210,
     right: 40,
     backgroundColor: 'transparent',
-    ...regularTextMixin(20, '#FFFFFF'),
+    ...regularTextMixin(20,
+      '#FFFFFF'),
   },
 
-  profileButton: {
-    position: 'absolute',
-    right: 10,
-    bottom: 20,
+  ButtonsWrapper: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 10,
+    marginHorizontal: 10
   },
   headerStyle: {
     marginTop: 30,
@@ -52,45 +62,69 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   headerTextStyle: {
-    ...semiBoldTextMixin(18, '#FFF'),
+    ...semiBoldTextMixin(18,
+      '#FFF'),
   },
-
   mainCard: {
-    justifyContent: 'center',
-    alignItems: 'center',
     width: Dimensions.get('window').width - 40,
-    height: 345,
+    height: 300,
     backgroundColor: '#F0F0EB',
-    borderRadius: 10,
+    borderRadius: 15,
     borderTopLeftRadius: 0,
+    marginVertical: 10,
   },
-  nextCard: {
-    justifyContent: 'center',
-    alignItems: 'center',
+  profileButton: {
+    minWidth: 140,
+    alignSelf: 'flex-end',
+    marginRight: 20,
+    marginBottom: 20,
+
+  },
+  completedCard: {
     width: Dimensions.get('window').width - 40,
     height: 180,
     backgroundColor: '#F0F0EB',
-    borderRadius: 10,
+    borderRadius: 15,
     borderTopLeftRadius: 0,
-    marginTop: 10
   },
-  profileButton: {
-    position: 'absolute',
-    right: 10,
-    bottom: 20,
+  futureCards: {
+    opacity: 0.5,
+    width: Dimensions.get('window').width - 40,
+    height: 180,
+    backgroundColor: '#F0F0EB',
+    borderRadius: 15,
+    borderTopLeftRadius: 0,
+    marginTop: 10,
+  },
+
+  textWrapper: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    marginVertical: 25,
+    marginHorizontal: 15,
+  },
+  textHeadWrapper: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
   },
   profileIntroHead: {
-    position: 'absolute',
-    left: 10,
-    top: 20,
+
     ...boldTextMixin(12),
   },
   profileIntroText: {
-    position: 'absolute',
-    left: 10,
-    top: 64,
-    right: 120,
     ...boldTextMixin(28),
+    marginTop: 30,
+  },
+  reminderWrapper: {
+    borderRadius: 15,
+    borderWidth: 1,
+    marginTop: -15,
+    paddingLeft: 5,
+    paddingRight: 10,
+    paddingVertical: 4,
   },
 
 })

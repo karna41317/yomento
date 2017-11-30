@@ -3,8 +3,8 @@
  */
 
 import { createStructuredSelector } from 'reselect'
-import { navigatorStateSelector } from 'src/selectors'
+import { navigatorState } from 'src/selectors'
 
 export const navSelector = createStructuredSelector({
-  nav: navigatorStateSelector,
+  nav: navigatorState,
 })
