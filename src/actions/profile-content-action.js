@@ -1,14 +1,17 @@
 /**
  * Created by Karan on 2017-11-10.
  */
-import { fetchProfileContent } from 'src/api'
+import { apiModule } from 'src/api'
+import { reduxStore } from 'src/store/store'
 import * as Types from 'src/action-types'
+import { get } from 'lodash'
 
 export const getProfileContent = () => {
   return dispatch => {
-    dispatch({type: Types.FETCH_PROFILE_CONTENT})
+    const state = reduxStore.getState()
+    const token = get(state, 'auth.userData.authorization')
     try {
-      fetchProfileContent().then(data => {
+      apiModule.fetchProfileContent(token).then(data => {
         dispatch({
           type: Types.RECEIVE_PROFILE_CONTENT,
           payload: data,
@@ -22,6 +25,26 @@ export const getProfileContent = () => {
     }
   }
 }
+export const AddProfileContent = (profileRatings) => {
+  return dispatch => {
+    const state = reduxStore.getState()
+    const token = get(state, 'auth.userData.authorization')
+    try {
+      apiModule.AddProfileContent(token, profileRatings).then(data => {
+        dispatch({
+          type: Types.RECEIVE_PROFILE_RATINGS,
+          payload: data,
+        })
+      })
+    } catch (err) {
+      dispatch({
+        type: Types.ERROR_PROFILE_RATINGS,
+        payload: err,
+      })
+    }
+  }
+}
+
 
 export const saveProfileRating = (data) => {
   return dispatch => {

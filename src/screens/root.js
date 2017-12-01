@@ -52,7 +52,7 @@ export default class rootScreen extends Component {
     return (
       <GradientWrapper>
         <View style={{flex: 1}}>
-          <StatusBar backgroundColor='#0B0B48' barStyle="light-content"/>
+          <StatusBar hidden={true} backgroundColor='#0B0B48' barStyle="light-content"/>
           <NavigatorView/>
           {__DEV__ && <DeveloperMenu/>}
         </View>

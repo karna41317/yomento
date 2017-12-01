@@ -61,6 +61,6 @@ export default class Store extends PureComponent {
     )
   }
 }
-
+export const reduxStore = store
 export const bindActionCreators = reduxBindActionCreators
 export const connect = reactReduxConnect

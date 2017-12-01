@@ -16,7 +16,9 @@ const DoneButton = ({
                       doneFadeOpacity, skipFadeOpacity, nextOpacity,
                     }) => {
   let textStyle={}
-  let buttonStyle ={}
+  let buttonStyle ={
+    marginVertical: 10
+  }
   let btnContainerStyle ={}
   if(toLower(readMoreLable) === 'set reminder'){
     textStyle={

@@ -59,6 +59,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
     marginRight: 10,
+    marginBottom: 10
   },
 
   /*Styles with custome slide*/

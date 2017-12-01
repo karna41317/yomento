@@ -13,6 +13,7 @@ import { usernameChanged, passwordChanged, emailChanged, registerUser } from 'sr
 import { PrimaryButton } from '../../../components/buttons/Button'
 import MonoLogo from 'src/components/logos/mono-logo'
 import { lightTextMixin, semiBoldTextMixin } from '../../../styles/mixins'
+import SvgUri from 'react-native-svg-uri';
 
 @connect(authState)
 export default class SignUp extends Component {
@@ -71,7 +72,8 @@ export default class SignUp extends Component {
     console.log('printing user', this.props)
 
     if (user && this.validation(user)) {
-      dispatch(registerUser(user, navigation))
+      const userInfo = Object.assign({}, user, {source: 'email'})
+      dispatch(registerUser(userInfo, navigation))
       try {
         AsyncStorage.setItem('user', JSON.stringify(user));
         Alert.alert(
@@ -114,8 +116,8 @@ export default class SignUp extends Component {
                     style={[styles.icon, styles.closeIcon]}/>
             </TouchableOpacity>
           </View>
-          <View>
-            <MonoLogo width={100} height={100} color={'#0079FF'}/>
+          <View style={{marginVertical:20}}>
+            <Image source={require('src/images/mercury_logo.png')} style={{width: 100, height: 100}}/>
           </View>
           <Item rounded style={styles.item}>
             <Icon active name='person' style={styles.icon}/>

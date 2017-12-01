@@ -5,22 +5,14 @@ import { dashboard } from '../screens/dashboard/dashboard-selector'
 const initialState = {
   fetching: false,
   dashboardCards: [],
-  mainCards: [],
-  nextCards: [],
+  newCard: [],
+  futureCards: [],
+  nextCards:[],
   redoCards: [],
-  completedCards: [],
+  finishedCards:[],
+  reminderCards: [],
   firstLaunch: false,
 }
-
-/*
-
-const mainCards = get(dashboardCards, 'main_card')
-const completedCards = get(dashboardCards, 'completed_card')
-const nextCards = get(dashboardCards, 'next_card')
-const redoCards = get(dashboardCards, 'redo_card')
-const mainCard = head(dashboardCards)
-
-*/
 
 export default (state = initialState, {type, payload}) => {
 
@@ -34,10 +26,12 @@ export default (state = initialState, {type, payload}) => {
       return {
         ...state,
         dashboardCards: payload,
-        mainCards: payload.main_card,
-        nextCards: payload.next_card,
-        redoCards: payload.redo_card,
-        completedCards: payload.completed_card,
+        newCard: payload.new_card,
+        futureCards: payload.futured_cards,
+        nextCards: payload.next_cards,
+        redoCards: payload.redo_cards,
+        finishedCards: payload.finished_cards,
+        reminderCards: payload.reminder_cards,
         fetching: false,
       }
     case Types.ERROR_DASHBOARD_CARDS:

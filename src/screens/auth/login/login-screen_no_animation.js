@@ -71,7 +71,6 @@ export default class LoginScreen extends Component {
     if (user && this.validation(user)) {
       dispatch(registerUser(user, navigation))
     }
-    navigation.navigate('onBoarding')
   }
   onIconPress = () => {
     this.props.navigation.goBack()
@@ -94,8 +93,8 @@ export default class LoginScreen extends Component {
                     style={[styles.icon, styles.closeIcon]}/>
             </TouchableOpacity>
           </View>
-          <View>
-            <MonoLogo width={100} height={100} color={'#0079FF'}/>
+          <View style={{marginVertical:20}}>
+            <Image source={require('src/images/mercury_logo.png')} style={{width: 100, height: 100}}/>
           </View>
           <Item rounded style={styles.item}>
             <Icon active name='ios-mail' style={styles.icon}/>

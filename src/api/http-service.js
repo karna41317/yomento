@@ -1,9 +1,7 @@
 /**
  * Created by Karan on 2017-10-25.
  */
-import { ThemeUtils as Utils } from 'react-native-mdcore'
-
-const API_ENDPOINT = 'http://test.yomento.se/api/v1/'
+const API_ENDPOINT = 'http://test.yomento.se/api/v1'
 
 export const buildUrl = (baseUrl, {path, query, hash}) => {
   query = Object.keys(query).
@@ -28,24 +26,14 @@ export default class HttpService {
     return this.request({
       method: 'GET',
       path, query, headers,
-    }).then(res => {
-      const object = Utils.idx(res, res => res.object)
-      const objects = Utils.idx(res, res => res.objects)
-      if (object) {
-        return object
-      }
-      if (objects) {
-        return objects
-      }
-      return null
-    })
+    }).then(res => res)
   }
 
   post (path, body, headers) {
     return this.request({
       method: 'POST',
       path, body, headers,
-    }).then(res => Utils.idx(res, res => res.results.object))
+    }).then(res => res)
   }
 
   request ({method, path, query = {}, headers = {}, body = {}}) {
@@ -69,6 +57,6 @@ export default class HttpService {
         })
       }
       return res
-    }).then(res => Utils.idx(res, res => res.json().catch(() => null)))
+    }).then(res => res.json())
   }
 }

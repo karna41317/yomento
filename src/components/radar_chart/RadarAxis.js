@@ -66,7 +66,8 @@ export default function RadarAxis(props: RadarAxisProps) {
         fontFamily={'Tablet-gothic'}
         fill={'#FFF'}
         textAnchor={'middle'}
-        dy={'0.1em'}
+        dy={'0.2em'}
+        dx={'0.5em'}
       >
         {label}
       </Text>

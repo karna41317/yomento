@@ -2,6 +2,7 @@
  * Created by Karan on 2017-10-26.
  */
 import * as Types from 'src/action-types'
+import {apiModule} from 'src/api'
 import {Alert} from 'react-native'
 
 export const loginLocal = (user) => ({
@@ -56,16 +57,29 @@ export const passwordChanged = (text) => {
 export const registerUser = (user, navigation) => {
   //const {username, email, password} = user
   return dispatch => {
-    /*axios.post(API_CONST.baseUrl + API_CONST.register, {
-      username: username,
-      email: email,
-      password: password,
-    }).then((response) => {
-      if (response.data) {
-        // loginDone(dispatch,response)
-        navigation.navigate('NEWS')
+    apiModule.registerUser(user).then(data=> {
+      if(data.status !== 'success') {
+        dispatch({
+          type: Types.LOGIN_FAILURE,
+          payload: data.message
+        })
       }
-    }).catch((error) => console.warn('Something Went wrong!!!'))*/
+      if(data.status === 'success') {
+        const userData = {
+          ...data,
+          authorization: data.token_type + ' ' + data.token_access
+        }
+        dispatch({
+          type: Types.LOGIN_SUCCESS,
+          payload: userData
+        })
+        if(data.profile_created==='no') {
+          navigation.navigate('onBoarding')
+        } else {
+          navigation.navigate('dashboard')
+        }
+      }
+    })
   }
 }
 // login action

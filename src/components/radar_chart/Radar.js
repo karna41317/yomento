@@ -61,6 +61,7 @@ export default function Radar (props: Props) {
     style,
     onHover,
     highlighted,
+    colors
   } = props
   const {allPoints, scales, offsetAngles, radius, voronoiDiagram} = convertData(
     props,
@@ -70,16 +71,20 @@ export default function Radar (props: Props) {
 
   const backgroundScale = scales[data.variables[0].key]
 
-  const colors = {}
+  const colors_idx = {}
   forEachArray(allPoints, ({setKey}, idx) => {
-    colors[setKey] = schemeCategory10[idx]
+    console.log('printing', schemeCategory10[idx])
+
+    colors_idx[setKey] = schemeCategory10[idx]
+    console.log('printing colors', colors_idx)
+
   })
 
   const [highlightedPoints, regularPoints] = _.partition(
     allPoints,
     ({setKey}) => setKey === highlightedSetKey,
   )
-
+  console.log('printing colors', colors)
   return (
     <View>
       <RadarWrapper

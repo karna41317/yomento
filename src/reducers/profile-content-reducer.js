@@ -7,6 +7,7 @@ const initialState = {
     'myself': [],
     'myideal': [],
   },
+  profileRatingResponse: {},
   firstLaunch: false,
 }
 
@@ -54,6 +55,16 @@ export default (state = initialState, {type, payload}) => {
           ...state.profileRating,
           [payload.profile_type]: parsePayload(payload, profileRating),
         },
+      }
+    case Types.RECEIVE_PROFILE_RATINGS:
+      return {
+        ...state,
+        profileRatingResponse: payload,
+      }
+    case Types.ERROR_PROFILE_RATINGS:
+      return {
+        ...state,
+        profileRatingError: payload,
       }
     default:
       return state

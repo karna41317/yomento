@@ -1,48 +1,134 @@
-import { Platform } from 'react-native'
-import {
-  reduce,
-  uniq,
-  get,
-  map,
-  filter,
-  toString,
-  toLower,
-  trim,
-  first,
-  split,
-  includes,
-} from 'lodash'
+import HttpService from './http-service'
 
-const API_END_POINT = 'http://test.yomento.se/api/v1'
+const yomentoParams = {
+  'client-id': 4,
+  'client-secret': 'sfdd5V3HWQ1rCCIqnEG5TCgwLke45EsC7ksEo6C1',
+}
 
-function getHeaders () {
+
+class ApiModule extends HttpService {
+  registerUser (user) {
+    const path = '/register'
+    const body = user
+    const headers = {
+      ...yomentoParams
+    }
+    return this.post(path, body, headers)
+  }
+
+  loginUser (user) {
+    const path = '/register'
+    const body = user
+    const headers = {
+      ...yomentoParams
+    }
+    return this.post(path, body, headers)
+  }
+
+  fetchProfileContent (token) {
+    const path = '/getOnBoardingContent'
+    const headers = {
+      'authorization': token
+    }
+    const body = {}
+    return this.get(path, body, headers)
+  }
+
+  AddProfileContent(token, profileRatingContent) {
+    const path = '/addOnBoardingContent'
+    const headers = {
+      'authorization': token
+    }
+    const body = profileRatingContent
+    return this.post(path, body, headers)
+  }
+
+  fetchDashboardCards (token) {
+    const path = '/getAllCards'
+    const headers = {
+      'authorization': token
+    }
+    const body = {}
+    return this.get(path, body, headers)
+  }
+
+  fetchLoops(token){
+    const path = '/getLoopDetails'
+    const headers = {
+      'authorization': token
+    }
+    const body = {}
+    return this.get(path, body, headers)
+  }
+
+}
+
+export const apiModule = new ApiModule()
+
+/*const API_END_POINT = 'http://test.yomento.se/api/v1'
+
+export function getHeaders (token) {
   return {
     headers: {
       Accept: 'application/json',
-      'x-api-key': '',
+      'token': token,
     },
   }
 }
 
-export function fetchProfileContent () {
+export function registerUser (user) {
+  const path = '/register'
+  const body = user
+  const headers = {
+    client_id: 4,
+    client_secret: 'sfdd5V3HWQ1rCCIqnEG5TCgwLke45EsC7ksEo6C1',
+  }
+
+  HttpService.post(path, body, headers)
+}*/
+
+/*
+
+export function registerUser (user) {
   const uri = `${API_END_POINT}/getOnBoardingContent`
-  return fetch(uri, getHeaders()).then(res => res.json())
+  return fetch(uri, options).then(res => res.json())
 }
 
-export function fetchOnBoardingContent () {
+export function fetchProfileContent (token) {
   const uri = `${API_END_POINT}/getOnBoardingContent`
-  return fetch(uri, getHeaders()).then(res => res.json())
+  const options = {
+    method: 'POST',
+    getHeaders(token)
+  }
+  return fetch(uri, options).then(res => res.json())
 }
 
-export function fetchDashboardCards () {
+export function fetchOnBoardingContent (token) {
+  const options = {
+    method: 'POST',
+    getHeaders(token)
+  }
+  const uri = `${API_END_POINT}/getOnBoardingContent`
+  return fetch(uri, options).then(res => res.json())
+}
+
+export function fetchDashboardCards (token) {
+  const options = {
+    method: 'POST',
+    getHeaders(token)
+  }
   const uri = `${API_END_POINT}/getAllCards`
-  return fetch(uri, getHeaders()).then(res => res.json())
+  return fetch(uri, options).then(res => res.json())
 }
 
-export function fetchLoops () {
+export function fetchLoops (token) {
+  const options = {
+    method: 'POST',
+    getHeaders(token)
+  }
   const uri = `${API_END_POINT}/getLoopDetails`
-  return fetch(uri, getHeaders()).then(res => res.json())
-}
+  return fetch(uri, options).then(res => res.json())
+}*/
 
 /*
 

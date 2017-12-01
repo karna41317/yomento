@@ -56,7 +56,6 @@ export const styles = StyleSheet.create({
   },
   headerStyle: {
     marginTop: 30,
-
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -71,7 +70,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#F0F0EB',
     borderRadius: 15,
     borderTopLeftRadius: 0,
-    marginVertical: 10,
+    marginTop: 10,
   },
   profileButton: {
     minWidth: 140,
@@ -86,6 +85,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#F0F0EB',
     borderRadius: 15,
     borderTopLeftRadius: 0,
+    marginTop: 10,
   },
   futureCards: {
     opacity: 0.5,
@@ -126,6 +126,14 @@ export const styles = StyleSheet.create({
     paddingRight: 10,
     paddingVertical: 4,
   },
+  finishedCardStatusText: {
+    ...boldTextMixin(12, '#FFF'),
+  },
+
+  finishedCardStatusIcon: {
+    fontSize: 20,
+    color: '#FFF'
+  }
 
 })
 

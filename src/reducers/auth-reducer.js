@@ -17,7 +17,7 @@ export default (state = initialState, action = {}) => {
         //authType: action.payload['authType'],
         user: {
           ...state.user,
-          userName: action.payload,
+          name: action.payload,
         },
       }
     case Types.PASSWORD_CHANGE:
@@ -47,7 +47,7 @@ export default (state = initialState, action = {}) => {
         ...state,
         fetching: false,
         //authType: action.payload['authType'],
-        user: action.payload,
+        userData: action.payload,
       }
     case Types.LOGIN_WITH_LINKEDIN:
     case Types.LOGIN_LOCAL:
@@ -60,6 +60,7 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         fetching: false,
+        loginError: action.payload
         //authType: action.payload['authType'],
       }
     case Types.LOGOUT:

@@ -1,5 +1,5 @@
 {
-  "name": "yemonto",
+  "name": "yomento",
   "author": "Karan Reddy",
   "description": "Yemo app for leadership coaching",
   "license": "MIT",
@@ -91,6 +91,7 @@
     "react-native-share": "^1.0.23",
     "react-native-simple-login": "^1.1.0",
     "react-native-svg": "^6.0.0",
+    "react-native-svg-uri": "^1.2.3",
     "react-native-swipeable": "^0.6.0",
     "react-native-swiper": "^1.5.13",
     "react-native-textinput-effects": "^0.4.1",
@@ -134,5 +135,11 @@
     "react-test-renderer": "~15.4.2",
     "remote-redux-devtools": "^0.5.7",
     "rimraf": "^2.5.2"
+  },
+  "react-native": {
+    "fs": "react-native-level-fs"
+  },
+  "browser": {
+    "fs": "react-native-level-fs"
   }
 }

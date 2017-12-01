@@ -19,6 +19,7 @@ class yemonto extends Component {
   }
 
   navigateBack () {
+
     const navigatorState = store.getState().navigatorState
     const currentStackScreen = navigatorState.index
     const currentTab = navigatorState.routes[0].index

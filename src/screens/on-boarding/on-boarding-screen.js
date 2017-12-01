@@ -40,8 +40,7 @@ export default class OnBoarding extends Component {
 
   render () {
 
-    const {myself} = this.props
-    if (myself) {
+    if (demoData) {
       return (
         <Swiper
           showDots={false}

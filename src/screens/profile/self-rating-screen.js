@@ -1,15 +1,9 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { ActivityIndicator } from 'react-native'
 import Swiper from 'src/components/Swiper/swiper'
-import demoData from './demo-data'
-import { getProfileContent } from 'src/actions'
+import { get } from 'lodash'
+import { getProfileContent, AddProfileContent } from 'src/actions'
 import { profileState } from 'src/selectors'
 import { styles, htmlStyles } from './profile.styles'
 
@@ -24,8 +18,13 @@ export default class selfRatingScreen extends Component {
     console.log(index)
   }
   doneBtnHandle = () => {
-    const {navigation} = this.props
-    navigation.navigate('selfRatingFinish')
+    const {navigation, profileRating, dispatch} = this.props
+    const myself = get(profileRating, 'myself')
+    const myideal = get(profileRating, 'myideal')
+    if (myself.length && myideal.length) {
+      dispatch(AddProfileContent(profileRating))
+    }
+    //navigation.navigate('selfRatingFinish')
   }
   nextBtnHandle = (index) => {
     console.log(index)
@@ -47,6 +46,7 @@ export default class selfRatingScreen extends Component {
     const {navigation} = this.props
     navigation.navigate('selfRatingIntro')
   }
+
   render () {
 
     const {myself} = this.props
