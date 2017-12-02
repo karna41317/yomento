@@ -26,6 +26,7 @@ export default class LoopScreen extends Component {
 
     const {state} = this.props.navigation
     const theme_id = state.params ? state.params.theme_id : null
+console.log('printing', this.props)
 
     if (theme_id) {
       const {loop} = this.props

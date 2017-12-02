@@ -38,11 +38,13 @@ export default class DashboardScreen extends Component {
   }
 
   goToLoop = (item) => {
-
-    const {dashboard: {mainCards}} = this.props
+    console.log('printing item', item)
+    this.props.dispatch(getLoops())
+    /*const {dashboard: {mainCards}} = this.props
     const updatedCards = this.moveCardBack(mainCards, 1)
 
     this.props.dispatch(updateDashboardCards(updatedCards))
+    this.props.navigation.navigate('loop', item)*/
     this.props.navigation.navigate('loop', item)
 
   }

@@ -40,7 +40,7 @@ export default class SignUp extends Component {
       if(isValid) {
 
 
-        this.props.navigation.navigate('onBoarding')
+        this.props.navigation.navigate('dashboard')
       }
     }
   }
