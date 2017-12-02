@@ -80,6 +80,7 @@
     "react-native-image-slider": "^1.1.5",
     "react-native-keyboard-avoiding-view": "^1.0.0",
     "react-native-keyboard-aware-scroll-view": "^0.4.1",
+    "react-native-keyboard-aware-scrollview": "^1.1.7",
     "react-native-lazyload": "^1.1.0",
     "react-native-lightbox": "^0.7.0",
     "react-native-linear-gradient": "^2.3.0",

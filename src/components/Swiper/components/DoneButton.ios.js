@@ -3,9 +3,9 @@ import {
   Text,
   View,
   Animated,
-  Dimensions
+  Dimensions,
 } from 'react-native'
-import {toLower} from 'lodash'
+import { toLower } from 'lodash'
 import { PrimaryButton, SecondaryButton } from '../../buttons/Button'
 
 const DoneButton = ({
@@ -15,33 +15,42 @@ const DoneButton = ({
                       readMoreLable,
                       doneFadeOpacity, skipFadeOpacity, nextOpacity,
                     }) => {
-  let textStyle={}
-  let buttonStyle ={
-    marginVertical: 10
+  let textStyle = {}
+  let buttonStyle = {
+    marginVertical: 10,
   }
-  let btnContainerStyle ={}
-  if(toLower(readMoreLable) === 'set reminder'){
-    textStyle={
+  let btnContainerStyle = {}
+  if (toLower(readMoreLable) === 'set reminder') {
+    textStyle = {
       color: '#0079FF',
-      fontSize: 14
+      fontSize: 14,
     }
-    buttonStyle={
+    buttonStyle = {
       paddingHorizontal: 0,
       marginTop: 10,
-      borderWidth:0
+      borderWidth: 0,
     }
-    btnContainerStyle={
-      position:'absolute',
+    btnContainerStyle = {
+      position: 'absolute',
       bottom: 50,
-      alignSelf:'center',
+      alignSelf: 'center',
 
     }
+  }
+  let disabled
+
+  if (disable === 'undefined') {
+    disabled = false
+  } else {
+    console.log('printing disable', disable)
+
+    disabled = disable
   }
   return (
     <View style={[styles.btnContainer, btnContainerStyle]}>
       <Animated.View>
         <PrimaryButton
-          disable
+          disable={disabled}
           upper
           onPress={isDoneBtnShow
             ? onDoneBtnClick
@@ -56,7 +65,7 @@ const DoneButton = ({
           style={buttonStyle}
           upper>
           {readMoreLable}
-          </SecondaryButton>) : null}
+        </SecondaryButton>) : null}
     </View>
   )
 }

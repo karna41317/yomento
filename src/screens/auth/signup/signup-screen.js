@@ -4,7 +4,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { KeyboardAvoidingView, View, Image, StyleSheet, TextInput, Dimensions, Text, TouchableOpacity, Alert, AsyncStorage } from 'react-native'
+import { KeyboardAvoidingView, TextInput, View, Image, StyleSheet, Dimensions, Text, TouchableOpacity, Alert, AsyncStorage } from 'react-native'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview'
+
 import { authState } from 'src/selectors'
 import GradientWrapper from 'src/components/partials/gradientWrapper'
 //import { View } from 'src/components/wrappers/viewWrapper'
@@ -13,7 +15,8 @@ import { usernameChanged, passwordChanged, emailChanged, registerUser } from 'sr
 import { PrimaryButton } from '../../../components/buttons/Button'
 import MonoLogo from 'src/components/logos/mono-logo'
 import { lightTextMixin, semiBoldTextMixin } from '../../../styles/mixins'
-import SvgUri from 'react-native-svg-uri';
+import SvgUri from 'react-native-svg-uri'
+import {get} from 'lodash'
 
 @connect(authState)
 export default class SignUp extends Component {
@@ -25,6 +28,20 @@ export default class SignUp extends Component {
       lastName: null,
       email: null,
       password: null,
+    }
+  }
+
+  componentDidUpdate = () => {
+    const {userData} = this.props
+    if(userData) {
+      const token = get(userData, 'authorization')
+      const isValid = token.includes('Bearer')
+      console.log('printing', isValid)
+      if(isValid) {
+
+
+        this.props.navigation.navigate('onBoarding')
+      }
     }
   }
 
@@ -75,14 +92,14 @@ export default class SignUp extends Component {
       const userInfo = Object.assign({}, user, {source: 'email'})
       dispatch(registerUser(userInfo, navigation))
       try {
-        AsyncStorage.setItem('user', JSON.stringify(user));
+        AsyncStorage.setItem('user', JSON.stringify(user))
         Alert.alert(
           'Success',
           'Successfully signed',
           [
             {text: 'OK', onPress: () => navigation.navigate('onBoarding')},
           ],
-          { cancelable: false }
+          {cancelable: false},
         )
       } catch (error) {
         Alert.alert(
@@ -91,7 +108,7 @@ export default class SignUp extends Component {
           [
             {text: 'OK', onPress: () => {}},
           ],
-          { cancelable: false }
+          {cancelable: false},
         )
       }
     }
@@ -102,13 +119,18 @@ export default class SignUp extends Component {
   }
 
   onIconPress = () => {
+    console.log('printing', this.props)
+
     this.props.navigation.goBack()
   }
 
   render () {
     return (
       <GradientWrapper name={'default'}>
+
         <View style={styles.formContainer}>
+          {/*<View>*/}
+
           <View style={styles.headerContainer}>
             <Text style={styles.headerText}>Create Account</Text>
             <TouchableOpacity onPress={this.onIconPress}>
@@ -116,8 +138,11 @@ export default class SignUp extends Component {
                     style={[styles.icon, styles.closeIcon]}/>
             </TouchableOpacity>
           </View>
-          <View style={{marginVertical:20}}>
-            <Image source={require('src/images/mercury_logo.png')} style={{width: 100, height: 100}}/>
+
+
+          <View style={{marginVertical: 20, alignSelf: 'center'}}>
+            <Image source={require('src/images/mercury_logo.png')}
+                   style={{width: 100, height: 100}}/>
           </View>
           <Item rounded style={styles.item}>
             <Icon active name='person' style={styles.icon}/>
@@ -147,7 +172,9 @@ export default class SignUp extends Component {
                          onPress={this.signUpUser}>
             Sign Up
           </PrimaryButton>
+
         </View>
+
       </GradientWrapper>
     )
   }
@@ -158,6 +185,7 @@ SignUp.propTypes = {
 }
 
 const styles = StyleSheet.create({
+
   icon: {
     fontSize: 25,
     color: 'white',
@@ -192,13 +220,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   headerText: {
+    marginLeft: 80,
     backgroundColor: 'transparent',
     ...semiBoldTextMixin(20, '#FFF'),
   },
   closeIcon: {
-    left: 70,
-    fontSize: 50,
+    left: 50,
+    fontSize: 70,
+    width: 60,
     color: '#0079FF',
-    marginLeft: 10,
+    alignItems: 'center',
   },
 })

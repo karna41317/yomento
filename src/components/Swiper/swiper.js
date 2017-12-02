@@ -17,6 +17,7 @@ import GradientWrapper from '../partials/gradientWrapper'
 import { styles, htmlStyles } from './swiper-styles'
 import { upperCase } from 'lodash'
 
+import { Slider } from 'src/components/slider'
 import { get } from 'lodash'
 import HTMLView from 'react-native-htmlview'
 import { RatingComponent } from '../rating/rating'
@@ -31,13 +32,19 @@ export default class SwiperComponent extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      disable: true,
       skipFadeOpacity: new Animated.Value(1),
       doneFadeOpacity: new Animated.Value(0),
       nextOpacity: new Animated.Value(1),
       parallax: new Animated.Value(0),
     }
   }
+
+  componentDidMount = () => {
+    this.setState({
+      disable: this.props.name === 'profile' ? true : false,
+    })
+  }
+
 
   onNextBtnClick = (context) => {
     if (context.state.isScrolling || context.state.total < 2) return
@@ -55,6 +62,10 @@ export default class SwiperComponent extends Component {
         },
       })
     }
+    if(this.props.name === 'profile') {
+      this.setState({disable: true})
+    }
+
     this.props.onNextBtnClick(context.state.index)
   }
 
@@ -128,6 +139,7 @@ export default class SwiperComponent extends Component {
     const {pageArray} = this.props
     const buttonText = get(pageArray[index], 'button_text', 'next')
     const readMoreText = get(pageArray[index], 'read_more', null)
+    console.log('printing', this.state, this.props.name)
 
     return (
       <View style={styles.paginationContainer}>
@@ -155,7 +167,7 @@ export default class SwiperComponent extends Component {
       </View>
     )
   }
-  valueChanged = (page, value) => {
+  valueChanged = (value, page) => {
     const profileData = {
       ...page,
       result: value,
@@ -173,11 +185,11 @@ export default class SwiperComponent extends Component {
   }
 
   shouldHaveHeader = (type) => {
-      return type === 'rate'
+    return type === 'rate'
   }
 
   getSwiperHeader = (index, total, content_type) => {
-    if(this.shouldHaveHeader(content_type)) {
+    if (this.shouldHaveHeader(content_type)) {
       return (
         <View backgroundColor={'transparent'} style={styles.headerStyle}>
           <Button transparent onPress={this.props.backPress}>

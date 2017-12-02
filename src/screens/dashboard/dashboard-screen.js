@@ -53,10 +53,11 @@ export default class DashboardScreen extends Component {
   }
 
   finishedCards = () => {
-    const {finishedCards} = this.props
-    if(finishedCards.length > 0) {
+    const {dashboard: {finishedCards}} = this.props
+
+    if (finishedCards && finishedCards.length > 0) {
       return map(finishedCards, card => {
-        return(
+        return (
           <View style={styles.futureCards}>
             <View style={styles.textWrapper}>
               <Text style={styles.profileIntroHead}>
@@ -68,7 +69,8 @@ export default class DashboardScreen extends Component {
               </Text>
               <View style={styles.ButtonsWrapper}>
                 <Button transparent>
-                  <Icon name={'checkmark'} style={styles.finishedCardStatusIcon}/>
+                  <Icon name={'checkmark'}
+                        style={styles.finishedCardStatusIcon}/>
                   <Text style={styles.finishedCardStatusText}>Done</Text>
                 </Button>
               </View>
@@ -81,7 +83,7 @@ export default class DashboardScreen extends Component {
   }
 
   getActionCard = () => {
-    const {newCard} = this.props
+    const {dashboard: {newCard}} = this.props
     const isTimePassed = Moment(Date.now()).isAfter(1511913600)
     const reminderColor = isTimePassed ? '#FF0000' : '#12124B'
     const height = isTimePassed ? 300 : 170
@@ -89,7 +91,7 @@ export default class DashboardScreen extends Component {
       height: height,
       backgroundColor: '#FFFBCD',
     }
-    if(newCard.length>0) {
+    if (newCard && newCard.length > 0) {
       const mainCard = newCard[0]
       return (
         <View style={[styles.completedCard, style]}>
@@ -168,67 +170,78 @@ export default class DashboardScreen extends Component {
     )
   }
 
-  getMainCard = (mainCard) => {
-    const isTimePassed = Moment(Date.now()).isAfter(1511913600)
-    const height = isTimePassed ? 170 : 300
-    return (
-      <View style={[styles.mainCard, {height: height}]}>
-        <View style={styles.textWrapper}>
-          <Text style={styles.profileIntroHead}>
-            {toUpper(mainCard.theme_name)}
-          </Text>
-          <Text
-            style={styles.profileIntroText}>{mainCard.loop_title}</Text>
+  getMainCard = () => {
+    const {dashboard: {newCard}} = this.props
+    console.log('printing', newCard)
+
+    if (newCard && newCard.length > 0) {
+      const mainCard = newCard[0]
+      const isTimePassed = Moment(Date.now()).isAfter(1511913600)
+      const height = isTimePassed ? 170 : 300
+      return (
+        <View style={[styles.mainCard, {height: height}]}>
+          <View style={styles.textWrapper}>
+            <Text style={styles.profileIntroHead}>
+              {toUpper(mainCard.theme_name)}
+            </Text>
+            <Text
+              style={styles.profileIntroText}>{mainCard.loop_title}</Text>
+          </View>
+          <PrimaryButton
+            style={styles.profileButton}
+            onPress={this.goToLoop.bind(this,
+              mainCard)}>START</PrimaryButton>
         </View>
-        <PrimaryButton
-          style={styles.profileButton}
-          onPress={this.goToLoop.bind(this,
-            mainCard)}>START</PrimaryButton>
-      </View>
-    )
+      )
+    }
   }
 
-  getFutureCard = (mainCard) => {
-    return (
-      <View>
-        <View style={styles.futureCards}>
-          <View style={styles.textWrapper}>
-            <Text style={styles.profileIntroHead}>
-              {'DELEGATION'}
-            </Text>
-            <Text
-              style={styles.profileIntroText}>{'Send a message with positive feedback!'}</Text>
+  getFutureCard = () => {
+    const {dashboard: {futureCards, newCard}} = this.props
+    if (newCard && newCard.length > 0) {
+      const mainCard = newCard[0]
+      return (
+        <View>
+          <View style={styles.futureCards}>
+            <View style={styles.textWrapper}>
+              <Text style={styles.profileIntroHead}>
+                {'DELEGATION'}
+              </Text>
+              <Text
+                style={styles.profileIntroText}>{'Send a message with positive feedback!'}</Text>
+            </View>
+          </View>
+          <View style={styles.futureCards}>
+            <View style={styles.textWrapper}>
+              <Text style={styles.profileIntroHead}>
+                {toUpper(mainCard.theme_name)}
+              </Text>
+              <Text
+                style={styles.profileIntroText}>{mainCard.loop_title}</Text>
+            </View>
+          </View>
+          <View style={styles.futureCards}>
+            <View style={styles.textWrapper}>
+              <Text style={styles.profileIntroHead}>
+                {toUpper(mainCard.theme_name)}
+              </Text>
+              <Text
+                style={styles.profileIntroText}>{mainCard.loop_title}</Text>
+            </View>
+          </View>
+          <View style={styles.futureCards}>
+            <View style={styles.textWrapper}>
+              <Text style={styles.profileIntroHead}>
+                {toUpper(mainCard.theme_name)}
+              </Text>
+              <Text
+                style={styles.profileIntroText}>{mainCard.loop_title}</Text>
+            </View>
           </View>
         </View>
-        <View style={styles.futureCards}>
-          <View style={styles.textWrapper}>
-            <Text style={styles.profileIntroHead}>
-              {toUpper(mainCard.theme_name)}
-            </Text>
-            <Text
-              style={styles.profileIntroText}>{mainCard.loop_title}</Text>
-          </View>
-        </View>
-        <View style={styles.futureCards}>
-          <View style={styles.textWrapper}>
-            <Text style={styles.profileIntroHead}>
-              {toUpper(mainCard.theme_name)}
-            </Text>
-            <Text
-              style={styles.profileIntroText}>{mainCard.loop_title}</Text>
-          </View>
-        </View>
-        <View style={styles.futureCards}>
-          <View style={styles.textWrapper}>
-            <Text style={styles.profileIntroHead}>
-              {toUpper(mainCard.theme_name)}
-            </Text>
-            <Text
-              style={styles.profileIntroText}>{mainCard.loop_title}</Text>
-          </View>
-        </View>
-      </View>
-    )
+      )
+    }
+
   }
   refScrollView = view => {
     this.scrollView = view
@@ -267,27 +280,11 @@ export default class DashboardScreen extends Component {
   }
 
   render () {
-    const {dashboard, newCard, fetching} = this.props
-    /*
-        dashboardCards: [],
-          newCard: [],
-          futureCards: [],
-          nextCards:[],
-          redoCards: [],
-          finishedCards:[],
-          reminderCards: [],*/
-
-    const mainCards = get(dashboard, 'mainCards')
-    const finishedCards = get(dashboard, 'finishedCards')
-    const nextCards = get(dashboard, 'nextCards')
-    const redoCards = get(dashboard, 'redoCards')
-    console.log('printing', dashboard)
+    const {dashboard: {fetching}} = this.props
 
     if (fetching) {
       return <ActivityIndicator/>
     } else {
-      const mainCard = head(mainCards)
-
       return (
         <GradientWrapper name={'default'}>
           <View style={{backgroundColor: 'transparent'}}>
@@ -301,10 +298,10 @@ export default class DashboardScreen extends Component {
                 showsVerticalScrollIndicator={false}
               >
                 {this.finishedCards()}
-                {this.getActionCard(mainCard)}
-                {this.getReflectionCard(mainCard)}
-                {this.getMainCard(mainCard)}
-                {this.getFutureCard(mainCard)}
+                {this.getActionCard()}
+                {this.getReflectionCard()}
+                {this.getMainCard()}
+                {this.getFutureCard()}
               </ScrollView>
             </View>
           </View>

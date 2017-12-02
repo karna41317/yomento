@@ -48,6 +48,7 @@ const styles = {
   icon: {
     width: 300,
     height: 300,
+    fontSize: 50,
     marginLeft: 10,
     alignSelf: 'center',
   },

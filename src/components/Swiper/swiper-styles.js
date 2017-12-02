@@ -19,6 +19,14 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 20,
   },
+  slider: {
+    marginRight:-100,
+    marginLeft:-100,
+    width:250,
+    transform: [
+      { rotateZ : '-90deg' },
+    ],
+  },
 
   dotStyle: {
     backgroundColor: 'rgba(255,255,255,.3)',

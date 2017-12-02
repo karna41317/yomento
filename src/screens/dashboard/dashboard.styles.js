@@ -115,7 +115,7 @@ export const styles = StyleSheet.create({
     ...boldTextMixin(12),
   },
   profileIntroText: {
-    ...boldTextMixin(28),
+    ...boldTextMixin(24),
     marginTop: 30,
   },
   reminderWrapper: {

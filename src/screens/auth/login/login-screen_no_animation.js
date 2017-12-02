@@ -181,14 +181,16 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   headerText: {
+    marginLeft: 80,
     backgroundColor: 'transparent',
     ...semiBoldTextMixin(20, '#FFF'),
   },
   closeIcon: {
-    left: 70,
-    fontSize: 50,
+    left: 50,
+    fontSize: 80,
+    width: 60,
     color: '#0079FF',
-    marginLeft: 10,
+    alignItems:'center'
   },
   contactSupport: {
     position: 'absolute',

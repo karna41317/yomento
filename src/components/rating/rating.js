@@ -201,7 +201,7 @@ export class RatingComponent extends Component {
         : 1,
     })
     if (this.props.valueChanged) {
-      this.props.valueChanged(this.props.page, value)
+      this.props.valueChanged(value, this.props.page)
     }
   }
 
@@ -240,7 +240,9 @@ export class RatingComponent extends Component {
           />
         </TouchableOpacity>
         <View style={styles.circle}>
-          <Text style={styles.ratingText}>{this.state.value ? this.state.value: 'Rate'}</Text>
+          <Text style={styles.ratingText}>{this.state.value
+            ? this.state.value
+            : 'Rate'}</Text>
         </View>
 
         <TouchableOpacity

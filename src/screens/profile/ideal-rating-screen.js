@@ -56,7 +56,7 @@ export default class idealRatingScreen extends Component {
     if (myideal) {
       return (
         <Swiper
-          name={'profile'}
+          name={'profile'} // name={'profile'} TODO: another shitty hack to make it work for disabling
           showDots={true}
           showSkipButton={false}
           onNextBtnClick={this.nextBtnHandle}

@@ -6,7 +6,7 @@ import { styles } from './profile.styles'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import Radar from 'src/components/radar_chart/Radar'
 import { connect } from 'react-redux'
-import { profileState } from 'src/selectors'
+import { profileSelector } from './profile.selector'
 import { profileLanunched, getDashboardCards } from 'src/actions'
 import { map, get, each, snakeCase, toLower, toUpper, upperFirst, startCase, reject, has, some } from 'lodash'
 
@@ -14,8 +14,11 @@ const white = '#FFFFFF'
 const myIdealColor = '#FFFA67'
 const myTeamColor = '#A7FBA9'
 const textColor = '#12124B'
+const allSelfColor = '#CE1CD4'
+const allIdealColor = '#0079FF'
 
-@connect(profileState)
+
+@connect(profileSelector)
 export default class ProfileScreen extends Component {
   constructor () {
     super()
@@ -23,9 +26,9 @@ export default class ProfileScreen extends Component {
       mySelfActive: true,
       myTeamActive: false,
       myIdealActive: true,
-      allIdealActive: false,
-      allSelfActive: false,
-      keys: ['myideal', 'myself', 'myteam', 'allideal', 'allself'],
+      allIdealActive: true,
+      allSelfActive: true,
+      keys: ['myideal', 'myself', 'myteam', 'allideal_avg', 'allself_avg'],
     }
   }
 
@@ -49,18 +52,37 @@ export default class ProfileScreen extends Component {
           marginHorizontal: 10,
           marginBottom: 30,
         }]}>
-        <PrimaryButton
+        <SecondaryButton
           onPress={this.allSelfPress}
-          textStyles={styles.profileButtonText}
-          style={{backgroundColor: '#CE1CD4'}}>
+          style={[
+            styles.profileSecondaryButtons,
+            {
+              borderColor: allSelfColor,
+              backgroundColor: this.state.allSelfActive ? allSelfColor : 'transparent',
+            }]
+          }
+          textStyles={[
+            styles.profileButtonText, {
+              color: this.state.allSelfActive ? white : white,
+            }]}>
+
           All user's self-rate
-        </PrimaryButton>
-        <PrimaryButton
+        </SecondaryButton>
+        <SecondaryButton
           onPress={this.allIdealPress}
-          textStyles={styles.profileButtonText}
-          style={{backgroundColor: '#0079FF'}}>
+          style={[
+            styles.profileSecondaryButtons,
+            {
+              borderColor: allIdealColor,
+              backgroundColor: this.state.allIdealActive ? allIdealColor : 'transparent',
+            }]
+          }
+          textStyles={[
+            styles.profileButtonText, {
+              color: this.state.allIdealActive ? white : white,
+            }]}>
           All user's Ideal
-        </PrimaryButton>
+        </SecondaryButton>
       </View>
     )
   }
@@ -109,16 +131,16 @@ export default class ProfileScreen extends Component {
   allSelfPress = () => {
     this.setState({
       allSelfActive: !this.state.allSelfActive,
-      keys: this.state.allSelfActive ? this.getKeys('allself') : reject(
-        this.state.keys, o => o === 'allself'),
+      keys: !this.state.allSelfActive ? this.getKeys('allself_avg') : reject(
+        this.state.keys, o => o === 'allself_avg'),
     })
   }
 
   allIdealPress = () => {
     this.setState({
       allIdealActive: !this.state.allIdealActive,
-      keys: this.state.allIdealActive ? this.getKeys('allideal') : reject(
-        this.state.keys, o => o === 'allideal'),
+      keys: !this.state.allIdealActive ? this.getKeys('allideal_avg') : reject(
+        this.state.keys, o => o === 'allideal_avg'),
     })
   }
 
@@ -201,8 +223,9 @@ export default class ProfileScreen extends Component {
 
   render () {
 
-    const {profileRatingResponse} = this.props
-    console.log('this.state', this.state.keys)
+
+    console.log('this.stateprofileRatingResponse', this.props)
+    const {profile: {profileRatingResponse}} = this.props
     if (profileRatingResponse.length < 0) {
       return null
     } else {
@@ -224,8 +247,8 @@ export default class ProfileScreen extends Component {
       const colors = {
         myideal: '#FFFA67',
         myself: '#FFFFFF',
-        allself: '#CE1CD4',
-        allideal: '#0079FF',
+        allself_avg: '#CE1CD4',
+        allideal_avg: '#0079FF',
         myteam: '#A7FBA9',
       }
 

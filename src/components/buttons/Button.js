@@ -4,14 +4,37 @@ import { toUpper } from 'lodash'
 import { boldTextMixin, semiBoldTextMixin } from '../../styles/mixins'
 
 export class PrimaryButton extends Component {
+  disabled = () => {
+    console.log('printing disabled')
+  }
 
+  onPress = () => {
+    if(this.props.disable) {
+      this.disabled()
+    } else {
+      this.props.onPress()
+    }
+  }
   render () {
     const {children, upper, onPress, style, textStyles, disable} = this.props
     const textString = upper? toUpper(children) : children
 
+    const disableStyle = {
+      opacity: 0.5
+    }
+    console.log('printing', disable)
+
+    let stylesList
+    if(disable) {
+      stylesList =  [style, disableStyle]
+    } else {
+      stylesList =  [style]
+    }
+    console.log('printingstylesList', stylesList)
+
     return (
       <TouchableOpacity disable={disable} style={[styles.primaryContainer, style]}
-                        onPress={onPress}>
+                        onPress={this.onPress}>
         <Text style={[styles.primaryText, textStyles]} numberOfLines={1}>{textString}</Text>
       </TouchableOpacity>
     )
@@ -24,7 +47,7 @@ export class SecondaryButton extends Component {
     const {children, upper, onPress, style, textStyles, transparent, disable} = this.props
     return (
       <TouchableOpacity  disable={disable} style={[styles.secondaryContainer, style]}
-                        onPress={onPress}>
+                         onPress={onPress}>
         <Text style={[styles.secondaryText, textStyles]} numberOfLines={1}>{upper
           ? toUpper(children)
           : children}</Text>

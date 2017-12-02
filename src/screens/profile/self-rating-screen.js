@@ -24,7 +24,7 @@ export default class selfRatingScreen extends Component {
     if (myself.length && myideal.length) {
       dispatch(AddProfileContent(profileRating))
     }
-    //navigation.navigate('selfRatingFinish')
+    navigation.navigate('selfRatingFinish')
   }
   nextBtnHandle = (index) => {
     console.log(index)
@@ -53,7 +53,7 @@ export default class selfRatingScreen extends Component {
     if (myself) {
       return (
         <Swiper
-          name={'profile'}
+          name={'profile'} // name={'profile'} TODO: another shitty hack to make it work for disabling
           showDots={true}
           showSkipButton={false}
           onNextBtnClick={this.nextBtnHandle}

@@ -51,8 +51,20 @@ var DEFAULT_ANIMATION_CONFIGS = {
 
 export class Slider extends PureComponent {
   static propTypes = {
+    /**
+     * Initial value of the slider. The value should be between minimumValue
+     * and maximumValue, which default to 0 and 1 respectively.
+     * Default value is 0.
+     *
+     * *This is not a controlled component*, e.g. if you don't update
+     * the value, the component won't be reset to its inital value.
+     */
     value: PropTypes.number,
 
+    /**
+     * If true the user won't be able to move the slider.
+     * Default value is false.
+     */
     disabled: PropTypes.bool,
 
     /**
@@ -157,9 +169,14 @@ export class Slider extends PureComponent {
     animationConfig: PropTypes.object,
 
     /**
-     * Set to true if the slider is placed vertically
+     * Used to determine the orientation of the slider. This allows for the orientation of the component to be both horizontal and vertical.
      */
-    vertical: PropTypes.bool,
+    orientation: PropTypes.oneOf(['horizontal', 'vertical']),
+
+    /**
+     * Set this to true to invert the swipe direction of the slider. Inversion is linked to the slider's orientation.
+     */
+    inverted: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -173,7 +190,8 @@ export class Slider extends PureComponent {
     thumbTouchSize: {width: 40, height: 40},
     debugTouchArea: false,
     animationType: 'timing',
-    vertical: false,
+    orientation: 'horizontal',
+    inverted: false,
   }
 
   state = {
@@ -314,7 +332,7 @@ export class Slider extends PureComponent {
 
   _handlePanResponderGrant = (/*e: Object, gestureState: Object*/) => {
     this._previousLeft = this._getThumbLeft(this._getCurrentValue())
-    this._fireChangeEvent('onSlidingStart')
+    this._fireChangeEvent('onSlidingStart', this.props.page)
   }
 
   _handlePanResponderMove = (e: Object, gestureState: Object) => {
@@ -323,7 +341,7 @@ export class Slider extends PureComponent {
     }
 
     this._setCurrentValue(this._getValue(gestureState))
-    this._fireChangeEvent('onValueChange')
+    this._fireChangeEvent('onValueChange', this.props.page)
   }
 
   _handlePanResponderRequestEnd (e: Object, gestureState: Object) {
@@ -337,7 +355,7 @@ export class Slider extends PureComponent {
     }
 
     this._setCurrentValue(this._getValue(gestureState))
-    this._fireChangeEvent('onSlidingComplete')
+    this._fireChangeEvent('onSlidingComplete', this.props.page)
   }
 
   _measureContainer = (x: Object) => {
@@ -387,9 +405,11 @@ export class Slider extends PureComponent {
 
   _getValue = (gestureState: Object) => {
     var length = this.state.containerSize.width - this.state.thumbSize.width
-
-    var distance = this.props.vertical ? gestureState.dy : gestureState.dx
-    var thumbLeft = this._previousLeft + distance
+    var swipeMovement = this.props.orientation === 'vertical'
+      ? gestureState.dy
+      : gestureState.dx
+    var swipeDirection = this.props.inverted ? -swipeMovement : swipeMovement
+    var thumbLeft = this._previousLeft + swipeDirection
 
     var ratio = thumbLeft / length
 
@@ -431,9 +451,9 @@ export class Slider extends PureComponent {
     Animated[animationType](this.state.value, animationConfig).start()
   }
 
-  _fireChangeEvent = (event) => {
+  _fireChangeEvent = (event, page) => {
     if (this.props[event]) {
-      this.props[event](this._getCurrentValue())
+      this.props[event](this._getCurrentValue(), page)
     }
   }
 

@@ -1702,7 +1702,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -2013,10 +2013,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yomento.rnapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stardust.yomento;
 				PRODUCT_NAME = yemonto;
-				PROVISIONING_PROFILE = "07b0319e-547d-419b-8278-98826a88c040";
-				PROVISIONING_PROFILE_SPECIFIER = "dev-yomento-dev-provisioning";
+				PROVISIONING_PROFILE = "f95da774-45f8-4dc9-a567-cc8ff7e89d24";
+				PROVISIONING_PROFILE_SPECIFIER = "yomento stardust development";
 				SWIFT_OBJC_BRIDGING_HEADER = "yemonto-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -2031,6 +2031,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Yomento Management AB (2WECKNAJVA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2WECKNAJVA;
@@ -2055,10 +2056,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yomento.rnapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stardust.yomento;
 				PRODUCT_NAME = yemonto;
-				PROVISIONING_PROFILE = "797a5ccc-0d22-40bf-87d2-219ac2bc765b";
-				PROVISIONING_PROFILE_SPECIFIER = "yomento-appstore-testflight";
+				PROVISIONING_PROFILE = "2d6cea3f-295e-4c7e-902f-46d896e0253a";
+				PROVISIONING_PROFILE_SPECIFIER = "yomento stardust development";
 				SWIFT_OBJC_BRIDGING_HEADER = "yemonto-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
