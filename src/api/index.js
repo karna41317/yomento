@@ -5,7 +5,6 @@ const yomentoParams = {
   'client-secret': 'sfdd5V3HWQ1rCCIqnEG5TCgwLke45EsC7ksEo6C1',
 }
 
-
 class ApiModule extends HttpService {
   registerUser (user) {
     const path = '/register'
@@ -28,16 +27,16 @@ class ApiModule extends HttpService {
   fetchProfileContent (token) {
     const path = '/getOnBoardingContent'
     const headers = {
-      'authorization': token
+      'authorization': token,
     }
     const body = {}
     return this.get(path, body, headers)
   }
 
-  AddProfileContent(token, profileRatingContent) {
+  AddProfileContent (token, profileRatingContent) {
     const path = '/addOnBoardingContent'
     const headers = {
-      'authorization': token
+      'authorization': token,
     }
     const body = profileRatingContent
     return this.post(path, body, headers)
@@ -46,21 +45,39 @@ class ApiModule extends HttpService {
   fetchDashboardCards (token) {
     const path = '/getAllCards'
     const headers = {
-      'authorization': token
+      'authorization': token,
     }
     const body = {}
     return this.get(path, body, headers)
   }
 
-  fetchLoops(token){
+  fetchLoops (token) {
     const path = '/getLoopDetails'
     const headers = {
-      'authorization': token
+      'authorization': token,
     }
     const body = {}
     return this.get(path, body, headers)
   }
 
+  updateCard (token, params) {
+    const {pathParams, bodyParams} = params
+    const headers = {
+      'authorization': token,
+    }
+    const cardType = get(pathParams, 'card_type')
+    if (cardType === 'reflection') {
+      const {cardType, loop_id} = pathParams
+      const body = bodyParams
+      const path = `/updateCard?card_type=${cardType}&loop_id=${loop_id}`
+      return this.post(path, body, headers)
+    } else if (cardType === 'reminder') {
+      const body = {}
+      const {cardType, loop_id, reminder_time} = pathParams
+      const path = `/updateCard?card_type=${cardType}&reminder_time=${reminder_time}&loop_id=${loop_id}`
+      return this.post(path, body, headers)
+    }
+  }
 }
 
 export const apiModule = new ApiModule()

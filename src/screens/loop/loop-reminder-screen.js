@@ -11,6 +11,7 @@ import { ActivityIndicator, View, Text, DatePickerIOS } from 'react-native'
 import GradientWrapper from '../../components/partials/gradientWrapper'
 import { Button, Icon } from 'src/components/native-base'
 import { loopSelector } from './loopSelector'
+import {updateCards} from 'src/actions'
 import { getLoops } from 'src/actions'
 import { get } from 'lodash'
 import { PrimaryButton } from '../../components/buttons/Button'
@@ -27,10 +28,10 @@ export default class loopReminderScreen extends Component {
   componentDidMount () {
     this.props.dispatch(getLoops())
   }
-  goBack= () => {
+
+  goBack = () => {
     this.props.navigation.goBack()
   }
-
 
   goToDashBoard = () => {
     this.props.navigation.navigate('dashboard')
@@ -47,7 +48,16 @@ export default class loopReminderScreen extends Component {
     return JSON.parse(JSON.stringify(content))
   }
   confirmReminder = () => {
-    this.props.navigation.navigate('loopCoachEnd')
+    const {loop} = this.props
+    console.log('printing', loop)
+    const params = {
+      card_type: 'reminder',
+      reminder_time: this.state.date,
+      loop_id: get(loop,'loop_id'),
+      card_status: 'not_interested'
+    }
+    //this.props.dispatch(updateCards(params))
+    //this.props.navigation.navigate('loopCoachEnd')
   }
 
   render () {
@@ -60,7 +70,6 @@ export default class loopReminderScreen extends Component {
       const loopContent = eval(this.parseJson(loop.loop[0]))
       const reminder_action_content = eval(
         this.parseJson(loopContent.reminder_action_content))
-
 
       const coach_end_content = eval(
         this.parseJson(loopContent.coach_end_content))

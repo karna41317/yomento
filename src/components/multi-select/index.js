@@ -100,9 +100,10 @@ export default class MultipleChoice extends BaseComponent {
     }
 
     this._updateSelectedOptions(selectedOptions);
+    console.log('printingselectedOption', selectedOption)
 
     //run callback
-    this.props.onSelection(selectedOption);
+    this.props.onSelection(selectedOption, selectedOptions);
   }
 
   _isSelected(option) {

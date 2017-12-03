@@ -1,8 +1,15 @@
 use_frameworks!
+platform :ios, '9.0'
 
 target 'yemonto' do
   pod 'SwiftyJSON', '3.1.4'
   pod 'Charts', '3.0.1'
+  
+  pod 'AppCenter/Push', '~> 1.0.0'
+  pod 'AppCenter/Crashes', '~> 1.0.0'
+  pod 'AppCenter/Analytics', '~> 1.0.0'
+  pod 'AppCenterReactNativeShared', '~> 1.0.0'
+
 end
 
 post_install do |installer|

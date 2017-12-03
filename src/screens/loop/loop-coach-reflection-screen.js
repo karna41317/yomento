@@ -15,9 +15,18 @@ import { Header, Left, Right, Body, Icon, Button } from 'native-base'
 import HTMLView from 'react-native-htmlview'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import LoopSwiperComponent from 'src/components/Swiper/loop-swiper'
-import {get} from 'lodash'
+import { get } from 'lodash'
+import { updateCards } from '../../actions/loop-action'
+
 @connect(loopSelector)
 export default class LoopIntroScreen extends Component {
+
+  constructor () {
+    super()
+    this.state = {
+      selectedOptions: {},
+    }
+  }
 
   parseJson = (content) => {
     return JSON.parse(JSON.stringify(content))
@@ -29,10 +38,21 @@ export default class LoopIntroScreen extends Component {
   onSkipBtnHandle = (index) => {
     console.log(index)
   }
+
   doneBtnHandle = () => {
-    const {navigation} = this.props
-    navigation.navigate('loopCoachReflectionAfter', {})
+    const {navigation, dispatch, loop} = this.props
+    const pathParams = {
+      card_type: 'reflection',
+      loop_id: loop.loop_id,
+    }
+    bodyParams = {
+      tap: this.props.selectedOptions,
+      selectedText: '',
+    }
+    dispatch(updateCards(pathParams, bodyParams))
+    //navigation.navigate('loopCoachReflectionAfter', {})
   }
+
   nextBtnHandle = (index) => {
     console.log(index)
   }
@@ -42,6 +62,10 @@ export default class LoopIntroScreen extends Component {
   readMoreHandle = () => {
     const {navigation} = this.props
     navigation.navigate('readMore')
+  }
+
+  tapSelection = (option, selectedOptions) => {
+    this.setState({selectedOptions: selectedOptions})
   }
 
   backPress = () => {
@@ -58,12 +82,14 @@ export default class LoopIntroScreen extends Component {
     const {loop} = this.props
     if (loop) {
       const loopContent = eval(this.parseJson(loop.loop[0]))
-      const reflection_content = eval(this.parseJson(loopContent.reflection_content))
+      const reflection_content = eval(
+        this.parseJson(loopContent.reflection_content))
       if (reflection_content) {
         return (
           <LoopSwiperComponent
             name={'reflection'}
             showDots={true}
+            tapSelection={this.tapSelection}
             showSkipButton={false}
             onNextBtnClick={this.nextBtnHandle}
             onDoneBtnClick={this.doneBtnHandle}

@@ -1,4 +1,10 @@
 rootProject.name = 'yemonto'
+include ':appcenter-crashes'
+project(':appcenter-crashes').projectDir = new File(rootProject.projectDir, '../node_modules/appcenter-crashes/android')
+include ':appcenter-analytics'
+project(':appcenter-analytics').projectDir = new File(rootProject.projectDir, '../node_modules/appcenter-analytics/android')
+include ':appcenter'
+project(':appcenter').projectDir = new File(rootProject.projectDir, '../node_modules/appcenter/android')
 include ':react-native-charts-wrapper'
 project(':react-native-charts-wrapper').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-charts-wrapper/android')
 include ':react-native-svg'

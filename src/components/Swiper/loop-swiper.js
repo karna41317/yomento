@@ -25,13 +25,13 @@ import { get } from 'lodash'
 import HTMLView from 'react-native-htmlview'
 import { RatingComponent } from '../rating/rating'
 import { saveProfileRating } from 'src/actions'
-import { profileState } from '../../selectors/common'
+import { profileSelector } from 'src/screens/profile/profile.selector'
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base'
 import data from '../../screens/profile/demo-data'
 import MultipleChoice from '../multi-select/index'
 
 const {width, height} = Dimensions.get('window')
-@connect(profileState)
+@connect(profileSelector)
 export default class LoopSwiperComponent extends Component {
 
   constructor (props) {
@@ -185,8 +185,6 @@ export default class LoopSwiperComponent extends Component {
   }
 
   getSwiperHeader = (index, total, content_type) => {
-    console.log('printingcontent_type', content_type)
-
     if (this.shouldHaveHeader(content_type)) {
       return (
         <View backgroundColor={'transparent'} style={styles.headerStyle}>
@@ -224,20 +222,24 @@ export default class LoopSwiperComponent extends Component {
         </View>
       )
     } else if (content_type === 'tap') {
-      const {title} = dataObject
+      let {title} = dataObject
+      const {auth} = this.props
+      const userName = get(auth, 'user.name', '')
+      const updated = title.replace('<first_name>', userName)
       let options = dataObject.options[0].data
+      let max_select = dataObject.options[0].max_select
       if (options) {
         return (
           <View style={{position: 'absolute', top: 100, left: 20, right: 20}}>
             <Text style={styles.tapText}>
-              {title}
+              {updated}
             </Text>
             <Text style={styles.authorText}>select Option</Text>
             <MultipleChoice
               options={options}
               selectedOptions={[]}
-              maxSelectedOptions={2}
-              onSelection={(option) => {}}
+              maxSelectedOptions={max_select}
+              onSelection={(option) => {this.props.tapSelection}}
             />
           </View>
         )
@@ -249,9 +251,18 @@ export default class LoopSwiperComponent extends Component {
       htmlContent = `<p>${description}</p>`
       if (seq_order === 1) {
         return (
-          <View style={{position: 'absolute', top: 100, left: 20, right: 20}}>
-            <PadIcon/>
-            <Text style={styles.tapText}>
+          <View style={{position: 'absolute', top: 200, left: 20, right: 20}}>
+            <Image
+              style={{width: 72, height: 72, alignSelf: 'center'}}
+              source={require('src/images/padIcon.png')}
+            />
+            <Text style={[
+              styles.tapText,
+              {
+                fontSize: 24,
+                marginHorizontal: 30,
+                marginVertical: 20,
+              }]}>
               {title}
             </Text>
           </View>
@@ -259,16 +270,24 @@ export default class LoopSwiperComponent extends Component {
       } else {
         return (
           <View style={{position: 'absolute', top: 100, left: 20, right: 20}}>
-            <Text style={styles.tapText}>
+            <Image
+              style={{
+                width: 50,
+                height: 50,
+                alignSelf: 'center',
+                marginBottom: 30,
+              }}
+              source={require('src/images/padIcon.png')}
+            />
+            <Text
+              style={[styles.tapText, {fontSize: 20, marginHorizontal: 30}]}>
               {title}
             </Text>
             <HTMLView value={htmlContent} stylesheet={htmlStyles}/>
           </View>
         )
       }
-
     }
-
     return null
   }
 

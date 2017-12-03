@@ -29,6 +29,7 @@ export default class LoopReflectionScreen extends Component {
   doneBtnHandle = () => {
     const {navigation} = this.props
     navigation.navigate('loopCoach', {})
+
   }
   nextBtnHandle = (index) => {
     console.log(index)
