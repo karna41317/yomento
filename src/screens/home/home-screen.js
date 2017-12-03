@@ -14,7 +14,7 @@ import { authState } from 'src/selectors/common'
 import { regularTextMixin, semiBoldTextMixin } from '../../styles/mixins'
 import { SecondaryButton } from '../../components/buttons/Button'
 
-const logo = require('src/images/logoText.png')
+const logo = require('src/images/mercury_logo.png.png')
 
 @connect(authState)
 export default class Home extends Component {
