@@ -5,6 +5,9 @@ import React, { Component } from 'react'
 import { AppRegistry, BackHandler, Platform } from 'react-native'
 import { NavigationActions } from 'react-navigation'
 import CodePush from "react-native-code-push";
+const RN = require('react-native')
+
+console.log('printing', RN)
 
 GLOBAL.XMLHttpRequest = GLOBAL.originalXMLHttpRequest || GLOBAL.XMLHttpRequest
 

@@ -5,7 +5,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { KeyboardAvoidingView, TextInput, View, Image, StyleSheet, Dimensions, Text, TouchableOpacity, Alert, AsyncStorage } from 'react-native'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview'
+
 
 import { authState } from 'src/selectors'
 import GradientWrapper from 'src/components/partials/gradientWrapper'
@@ -15,7 +15,7 @@ import { usernameChanged, passwordChanged, emailChanged, registerUser } from 'sr
 import { PrimaryButton } from '../../../components/buttons/Button'
 import MonoLogo from 'src/components/logos/mono-logo'
 import { lightTextMixin, semiBoldTextMixin } from '../../../styles/mixins'
-import SvgUri from 'react-native-svg-uri'
+
 import {get} from 'lodash'
 
 @connect(authState)
