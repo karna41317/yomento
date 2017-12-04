@@ -167,16 +167,6 @@ export class Slider extends PureComponent {
      * Used to configure the animation parameters.  These are the same parameters in the Animated library.
      */
     animationConfig: PropTypes.object,
-
-    /**
-     * Used to determine the orientation of the slider. This allows for the orientation of the component to be both horizontal and vertical.
-     */
-    orientation: PropTypes.oneOf(['horizontal', 'vertical']),
-
-    /**
-     * Set this to true to invert the swipe direction of the slider. Inversion is linked to the slider's orientation.
-     */
-    inverted: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -190,8 +180,6 @@ export class Slider extends PureComponent {
     thumbTouchSize: {width: 40, height: 40},
     debugTouchArea: false,
     animationType: 'timing',
-    orientation: 'horizontal',
-    inverted: false,
   }
 
   state = {
@@ -332,7 +320,7 @@ export class Slider extends PureComponent {
 
   _handlePanResponderGrant = (/*e: Object, gestureState: Object*/) => {
     this._previousLeft = this._getThumbLeft(this._getCurrentValue())
-    this._fireChangeEvent('onSlidingStart', this.props.page)
+    this._fireChangeEvent('onSlidingStart')
   }
 
   _handlePanResponderMove = (e: Object, gestureState: Object) => {
@@ -341,7 +329,7 @@ export class Slider extends PureComponent {
     }
 
     this._setCurrentValue(this._getValue(gestureState))
-    this._fireChangeEvent('onValueChange', this.props.page)
+    this._fireChangeEvent('onValueChange')
   }
 
   _handlePanResponderRequestEnd (e: Object, gestureState: Object) {
@@ -355,7 +343,7 @@ export class Slider extends PureComponent {
     }
 
     this._setCurrentValue(this._getValue(gestureState))
-    this._fireChangeEvent('onSlidingComplete', this.props.page)
+    this._fireChangeEvent('onSlidingComplete')
   }
 
   _measureContainer = (x: Object) => {
@@ -405,11 +393,7 @@ export class Slider extends PureComponent {
 
   _getValue = (gestureState: Object) => {
     var length = this.state.containerSize.width - this.state.thumbSize.width
-    var swipeMovement = this.props.orientation === 'vertical'
-      ? gestureState.dy
-      : gestureState.dx
-    var swipeDirection = this.props.inverted ? -swipeMovement : swipeMovement
-    var thumbLeft = this._previousLeft + swipeDirection
+    var thumbLeft = this._previousLeft + gestureState.dx
 
     var ratio = thumbLeft / length
 
@@ -451,9 +435,9 @@ export class Slider extends PureComponent {
     Animated[animationType](this.state.value, animationConfig).start()
   }
 
-  _fireChangeEvent = (event, page) => {
+  _fireChangeEvent = (event) => {
     if (this.props[event]) {
-      this.props[event](this._getCurrentValue(), page)
+      this.props[event](this._getCurrentValue())
     }
   }
 

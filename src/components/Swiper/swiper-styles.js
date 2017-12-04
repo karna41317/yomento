@@ -111,6 +111,18 @@ export const styles = StyleSheet.create({
     ...lightTextMixin(18),
     textAlign:'center',
     justifyContent: 'center'
+  },
+  track: {
+    height: 10,
+    borderRadius: 2,
+  },
+  thumb: {
+    width: 30,
+    height: 30,
+    borderRadius: 30 / 2,
+    backgroundColor: 'white',
+    borderColor: '#419BF9',
+    borderWidth: 2,
   }
 })
 

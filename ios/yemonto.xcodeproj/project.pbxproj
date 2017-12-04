@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -17,6 +18,8 @@
 		087F422EBD0846DDBD6E811D /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D940209B5149A797F4FFE3 /* Zocial.ttf */; };
 		0B849D3D84904E6C87D62FBE /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 337261EAAB394352AA10F64E /* Ionicons.ttf */; };
 		0C363A6B983648A095E52EE8 /* TabletGothic-Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12D4CD199FEF4FFCAD080EFE /* TabletGothic-Oblique.ttf */; };
+		0E1CEADBEFC62A8EB0EC6677 /* Pods_yemontoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58556D0091BA5BEE5DC5DCD /* Pods_yemontoTests.framework */; };
+		1132586FA7052D85A513C96D /* libPods-yemonto-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC48306B85850479162FF03F /* libPods-yemonto-tvOSTests.a */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -28,18 +31,19 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		17FD54A7454148E2822B83AD /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 549CFD77A8A44AF3B5D0A1F4 /* Roboto_medium.ttf */; };
 		20D3FFD039144808A11BBA2C /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 627982A8096B4AB9AAB2DF0E /* EvilIcons.ttf */; };
+		23CC06E3AFDB4F78BAED02A8 /* Pods_yemonto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4207656802238F8EE3F796 /* Pods_yemonto.framework */; };
 		2C0A0D57C058429EADF1F097 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C57A5F507FB494BB2AB90C4 /* EvilIcons.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2D02E4C21E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C31E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C41E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C51E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C61E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C71E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C81E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C91E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C21E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C31E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C41E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C51E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C61E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C71E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C81E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C91E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		2DCD954D1E0B4F2C00145EB5 /* yemontoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* yemontoTests.m */; };
 		312208857A5C4B47AD681E4F /* TabletGothic-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48898C652878498080F12377 /* TabletGothic-ExtraBold.ttf */; };
 		317C3CA8ED7945EA9D7B6CE3 /* TabletGothic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA7DB2606513493D837FC985 /* TabletGothic-Bold.ttf */; };
@@ -53,6 +57,7 @@
 		44C5018FDB7D463D9F281D53 /* TabletGothic-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 360C4A0167334365B825B4B8 /* TabletGothic-Heavy.ttf */; };
 		529F2645EBBA476F974BD03E /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 904C4869B73049F6B23DE93E /* Ionicons.ttf */; };
 		54689D902A354D468B6EE79E /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6447C65F3E9460B8B9678AA /* Roboto.ttf */; };
+		57602C9FCCDB089643FD876A /* libPods-yemonto-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B411B9E327898719D497035C /* libPods-yemonto-tvOS.a */; };
 		67CC3C60DD834577A4CB2314 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C93E253114EBDB22EFED3 /* MaterialIcons.ttf */; };
 		70084ED911C4420B86069E11 /* TabletGothic-HeavyOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BAB670006DC6420B8C24B8B1 /* TabletGothic-HeavyOblique.ttf */; };
 		76C27BBF52494A01BF642ECD /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B50F6964A1C42BCA714D472 /* MaterialIcons.ttf */; };
@@ -138,7 +143,6 @@
 		ED2E9CFCFCD4474CBA9F0D53 /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4535FC3DEF34CB6A98F5601 /* AppCenter-Config.plist */; };
 		F10B14A302754791AC4887C2 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6448131701643E2ABD08175 /* Zocial.ttf */; };
 		F350D25EAB6C4B228A3A3553 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 909915B6F6B0438AAF741A24 /* Foundation.ttf */; };
-		F7ABFE9340D304E3874E5F22 /* Pods_yemonto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2856E67AB4193661EF4FA8B7 /* Pods_yemonto.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -461,6 +465,7 @@
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		00B248E6DED858C896332365 /* Pods-yemonto-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto-tvOS/Pods-yemonto-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
 		00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTGeolocation.xcodeproj; path = "../node_modules/react-native/Libraries/Geolocation/RCTGeolocation.xcodeproj"; sourceTree = "<group>"; };
 		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
@@ -488,21 +493,22 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = yemonto/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = yemonto/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
-		2856E67AB4193661EF4FA8B7 /* Pods_yemonto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yemonto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20DE2AD2304326048259E592 /* Pods-yemonto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto.release.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto/Pods-yemonto.release.xcconfig"; sourceTree = "<group>"; };
 		2941673DBCE44CC690250FF9 /* TabletGothic-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-Regular.ttf"; path = "../assets/fonts/TabletGothic-Regular.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* yemonto-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "yemonto-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* yemonto-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "yemonto-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		337261EAAB394352AA10F64E /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		360C4A0167334365B825B4B8 /* TabletGothic-Heavy.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-Heavy.ttf"; path = "../assets/fonts/TabletGothic-Heavy.ttf"; sourceTree = "<group>"; };
 		38244652825B442987EDEC5A /* TabletGothic-SemiBoldOblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-SemiBoldOblique.ttf"; path = "../assets/fonts/TabletGothic-SemiBoldOblique.ttf"; sourceTree = "<group>"; };
+		3C398B7816878A0D0B46CEA1 /* Pods-yemontoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemontoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yemontoTests/Pods-yemontoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E2CC884F8AE416396CCB468 /* TabletGothic-ThinOblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-ThinOblique.ttf"; path = "../assets/fonts/TabletGothic-ThinOblique.ttf"; sourceTree = "<group>"; };
 		42C5381DEE514F6B8EFD9A9C /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = ../assets/fonts/SimpleLineIcons.ttf; sourceTree = "<group>"; };
-		47A003E10C3DE58EC42E4E98 /* Pods-yemonto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto/Pods-yemonto.debug.xcconfig"; sourceTree = "<group>"; };
 		48898C652878498080F12377 /* TabletGothic-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-ExtraBold.ttf"; path = "../assets/fonts/TabletGothic-ExtraBold.ttf"; sourceTree = "<group>"; };
 		49530D7DB4084D61A4563B5D /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
 		4C08645563A140C5B91033D6 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		4C57A5F507FB494BB2AB90C4 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = ../assets/fonts/EvilIcons.ttf; sourceTree = "<group>"; };
 		4E3C93E253114EBDB22EFED3 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		50364BF387C3185A419B2206 /* Pods-yemontoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemontoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-yemontoTests/Pods-yemontoTests.release.xcconfig"; sourceTree = "<group>"; };
 		5222FB8474334BB48C50CAF1 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		528E7E2FDF3F4D068758713D /* libRNSVG.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSVG.a; sourceTree = "<group>"; };
 		534A3645E7A843A5A9B4F86D /* libAppCenterReactNative.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNative.a; sourceTree = "<group>"; };
@@ -525,7 +531,6 @@
 		8DD34AF6887946CBAE94B18E /* RNSVG.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; };
 		904C4869B73049F6B23DE93E /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = ../assets/fonts/Ionicons.ttf; sourceTree = "<group>"; };
 		909915B6F6B0438AAF741A24 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
-		9150514D803F9700DEE5B7F1 /* Pods-yemonto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto.release.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto/Pods-yemonto.release.xcconfig"; sourceTree = "<group>"; };
 		95436488DB024F0EA5930748 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		9B377479768943D0847FC712 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = ../assets/fonts/MaterialIcons.ttf; sourceTree = "<group>"; };
 		9D09EBDB574F4DA3B12A3E2C /* Raleway_bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Raleway_bold.ttf; path = ../assets/fonts/Raleway_bold.ttf; sourceTree = "<group>"; };
@@ -586,6 +591,8 @@
 		A899B06EA6D747DE993E8A12 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/native-base/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		A97CCAE14D8441D08590E11D /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../assets/fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
 		AC872D76D2C44DCBAF5B747B /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
+		B370FC139802A5490571B515 /* Pods-yemonto-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto-tvOS/Pods-yemonto-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		B411B9E327898719D497035C /* libPods-yemonto-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-yemonto-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7909EB3BBF5455EA481F9E6 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/native-base/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		B7CE5AC739B5468895CAF78D /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		B9164F8771DE429CA70489BF /* AppCenterReactNativeAnalytics.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeAnalytics.xcodeproj; path = "../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics.xcodeproj"; sourceTree = "<group>"; };
@@ -598,18 +605,24 @@
 		C69D10A639A0448C857CE752 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		C95610D1576C4A928B4497A0 /* TabletGothic-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-Light.ttf"; path = "../assets/fonts/TabletGothic-Light.ttf"; sourceTree = "<group>"; };
 		CA41E95FC33D41F58BD7A08C /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		CA4207656802238F8EE3F796 /* Pods_yemonto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yemonto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4535FC3DEF34CB6A98F5601 /* AppCenter-Config.plist */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.xml; name = "AppCenter-Config.plist"; path = "yemonto/AppCenter-Config.plist"; sourceTree = "<group>"; };
+		D568D464D439AE821A5A8DCA /* Pods-yemonto-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto-tvOSTests/Pods-yemonto-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		D7ADCE30FFFF445FB3253808 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		D910A28067D0E0052B564981 /* Pods-yemonto-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto-tvOSTests/Pods-yemonto-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DDC349224CA24E95B5705EF7 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = ../assets/fonts/Octicons.ttf; sourceTree = "<group>"; };
 		E57758625CB7481790116DF4 /* RCTLinkedinLogin.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTLinkedinLogin.xcodeproj; path = "../node_modules/react-native-linkedin-login/ios/RCTLinkedinLogin.xcodeproj"; sourceTree = "<group>"; };
 		E646686282324BB5A1A58925 /* AppCenterReactNativeCrashes.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeCrashes.xcodeproj; path = "../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes.xcodeproj"; sourceTree = "<group>"; };
 		E9BF50257C834DF59448F675 /* RNPhotoView.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNPhotoView.xcodeproj; path = "../node_modules/react-native-photo-view/ios/RNPhotoView.xcodeproj"; sourceTree = "<group>"; };
 		ED092326CDA049839F548044 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		F07A6457399F6FCA7535398B /* Pods-yemonto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto/Pods-yemonto.debug.xcconfig"; sourceTree = "<group>"; };
 		F08D0607EFC940929B7BD573 /* libRNPhotoView.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNPhotoView.a; sourceTree = "<group>"; };
+		F58556D0091BA5BEE5DC5DCD /* Pods_yemontoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yemontoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F806644D41874767B42889CE /* TabletGothic-LightOblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-LightOblique.ttf"; path = "../assets/fonts/TabletGothic-LightOblique.ttf"; sourceTree = "<group>"; };
 		F94D1E4187C24AC086DDC550 /* Raleway.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Raleway.ttf; path = ../assets/fonts/Raleway.ttf; sourceTree = "<group>"; };
 		F9D940209B5149A797F4FFE3 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		FA7DB2606513493D837FC985 /* TabletGothic-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-Bold.ttf"; path = "../assets/fonts/TabletGothic-Bold.ttf"; sourceTree = "<group>"; };
+		FC48306B85850479162FF03F /* libPods-yemonto-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-yemonto-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDC07598B0A45BCA3930091 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/native-base/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -619,6 +632,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
+				0E1CEADBEFC62A8EB0EC6677 /* Pods_yemontoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,7 +663,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				F7ABFE9340D304E3874E5F22 /* Pods_yemonto.framework in Frameworks */,
+				23CC06E3AFDB4F78BAED02A8 /* Pods_yemonto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,14 +671,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D02E4C91E0B4AEC006451C7 /* (null) in Frameworks */,
-				2D02E4C21E0B4AEC006451C7 /* (null) in Frameworks */,
-				2D02E4C31E0B4AEC006451C7 /* (null) in Frameworks */,
-				2D02E4C41E0B4AEC006451C7 /* (null) in Frameworks */,
-				2D02E4C51E0B4AEC006451C7 /* (null) in Frameworks */,
-				2D02E4C61E0B4AEC006451C7 /* (null) in Frameworks */,
-				2D02E4C71E0B4AEC006451C7 /* (null) in Frameworks */,
-				2D02E4C81E0B4AEC006451C7 /* (null) in Frameworks */,
+				2D02E4C91E0B4AEC006451C7 /* BuildFile in Frameworks */,
+				2D02E4C21E0B4AEC006451C7 /* BuildFile in Frameworks */,
+				2D02E4C31E0B4AEC006451C7 /* BuildFile in Frameworks */,
+				2D02E4C41E0B4AEC006451C7 /* BuildFile in Frameworks */,
+				2D02E4C51E0B4AEC006451C7 /* BuildFile in Frameworks */,
+				2D02E4C61E0B4AEC006451C7 /* BuildFile in Frameworks */,
+				2D02E4C71E0B4AEC006451C7 /* BuildFile in Frameworks */,
+				2D02E4C81E0B4AEC006451C7 /* BuildFile in Frameworks */,
+				57602C9FCCDB089643FD876A /* libPods-yemonto-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,6 +687,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1132586FA7052D85A513C96D /* libPods-yemonto-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,6 +820,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		10A1B4AA17B813BB9D8F45D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F07A6457399F6FCA7535398B /* Pods-yemonto.debug.xcconfig */,
+				20DE2AD2304326048259E592 /* Pods-yemonto.release.xcconfig */,
+				B370FC139802A5490571B515 /* Pods-yemonto-tvOS.debug.xcconfig */,
+				00B248E6DED858C896332365 /* Pods-yemonto-tvOS.release.xcconfig */,
+				D910A28067D0E0052B564981 /* Pods-yemonto-tvOSTests.debug.xcconfig */,
+				D568D464D439AE821A5A8DCA /* Pods-yemonto-tvOSTests.release.xcconfig */,
+				3C398B7816878A0D0B46CEA1 /* Pods-yemontoTests.debug.xcconfig */,
+				50364BF387C3185A419B2206 /* Pods-yemontoTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		139105B71AF99BAD00B5F7CC /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -853,15 +884,6 @@
 				9E7FF03C1FA10DAC000312A4 /* libdouble-conversion.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		6B7C04A58866CDA2B0295800 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				47A003E10C3DE58EC42E4E98 /* Pods-yemonto.debug.xcconfig */,
-				9150514D803F9700DEE5B7F1 /* Pods-yemonto.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
@@ -923,8 +945,8 @@
 				9E9A35BB1F99647C00A7A7C4 /* Recovered References */,
 				A37355ABFDC94E399E8D4DD6 /* Frameworks */,
 				9EB817FF1FB900A700CB26F6 /* yemonto-Bridging-Header.h */,
-				6B7C04A58866CDA2B0295800 /* Pods */,
 				D4535FC3DEF34CB6A98F5601 /* AppCenter-Config.plist */,
+				10A1B4AA17B813BB9D8F45D2 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -1181,7 +1203,10 @@
 			isa = PBXGroup;
 			children = (
 				81112987494743ED9BEB6A64 /* libz.tbd */,
-				2856E67AB4193661EF4FA8B7 /* Pods_yemonto.framework */,
+				CA4207656802238F8EE3F796 /* Pods_yemonto.framework */,
+				B411B9E327898719D497035C /* libPods-yemonto-tvOS.a */,
+				FC48306B85850479162FF03F /* libPods-yemonto-tvOSTests.a */,
+				F58556D0091BA5BEE5DC5DCD /* Pods_yemontoTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1201,9 +1226,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "yemontoTests" */;
 			buildPhases = (
+				FA929C1D69AE0CAC56886A05 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				4F0B6FC9F7F61E7D28524055 /* [CP] Embed Pods Frameworks */,
+				5C4421CC0DC38357764815BA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1219,13 +1247,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "yemonto" */;
 			buildPhases = (
-				A2734A2ECA34A712706B6F39 /* [CP] Check Pods Manifest.lock */,
+				5B54F937DD2E8E8D1C300194 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				32000E17CC263E6937444E56 /* [CP] Embed Pods Frameworks */,
-				1E4B39223DF50E2A9F90B677 /* [CP] Copy Pods Resources */,
+				9DD9FB01EE519F1BE77269C9 /* [CP] Embed Pods Frameworks */,
+				DAD861280800BD597941CAF9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1240,10 +1268,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "yemonto-tvOS" */;
 			buildPhases = (
+				85D408F21AD36DADFD9C5B33 /* [CP] Check Pods Manifest.lock */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
 				2D02E4791E0B4A5D006451C7 /* Resources */,
 				2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */,
+				F90393B3FA0F3B2833FF85D1 /* [CP] Embed Pods Frameworks */,
+				D19252239C671F4276BDC8EB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1258,9 +1289,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "yemonto-tvOSTests" */;
 			buildPhases = (
+				5CC6B6157054FA80E5B30318 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
+				E28D73E3DB924FA4013FCA1A /* [CP] Embed Pods Frameworks */,
+				E45E2C334DAF9847ADA346CB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1813,21 +1847,6 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		1E4B39223DF50E2A9F90B677 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemonto/Pods-yemonto-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1842,7 +1861,91 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
 		};
-		32000E17CC263E6937444E56 /* [CP] Embed Pods Frameworks */ = {
+		4F0B6FC9F7F61E7D28524055 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemontoTests/Pods-yemontoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B54F937DD2E8E8D1C300194 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-yemonto-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C4421CC0DC38357764815BA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemontoTests/Pods-yemontoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CC6B6157054FA80E5B30318 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-yemonto-tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85D408F21AD36DADFD9C5B33 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-yemonto-tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DD9FB01EE519F1BE77269C9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1862,7 +1965,82 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemonto/Pods-yemonto-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A2734A2ECA34A712706B6F39 /* [CP] Check Pods Manifest.lock */ = {
+		D19252239C671F4276BDC8EB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemonto-tvOS/Pods-yemonto-tvOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DAD861280800BD597941CAF9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemonto/Pods-yemonto-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E28D73E3DB924FA4013FCA1A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemonto-tvOSTests/Pods-yemonto-tvOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E45E2C334DAF9847ADA346CB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemonto-tvOSTests/Pods-yemonto-tvOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F90393B3FA0F3B2833FF85D1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemonto-tvOS/Pods-yemonto-tvOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA929C1D69AE0CAC56886A05 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1873,7 +2051,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-yemonto-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-yemontoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1992,6 +2170,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C398B7816878A0D0B46CEA1 /* Pods-yemontoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2044,6 +2223,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50364BF387C3185A419B2206 /* Pods-yemontoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2094,7 +2274,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47A003E10C3DE58EC42E4E98 /* Pods-yemonto.debug.xcconfig */;
+			baseConfigurationReference = F07A6457399F6FCA7535398B /* Pods-yemonto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -2145,7 +2325,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9150514D803F9700DEE5B7F1 /* Pods-yemonto.release.xcconfig */;
+			baseConfigurationReference = 20DE2AD2304326048259E592 /* Pods-yemonto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -2195,6 +2375,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B370FC139802A5490571B515 /* Pods-yemonto-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -2247,6 +2428,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00B248E6DED858C896332365 /* Pods-yemonto-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -2299,6 +2481,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D910A28067D0E0052B564981 /* Pods-yemonto-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -2333,6 +2516,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D568D464D439AE821A5A8DCA /* Pods-yemonto-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -2412,14 +2596,7 @@
 					"$(SRCROOT)/../node_modules/react-native-photo-view/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
 				);
-				"HEADER_SEARCH_PATHS[arch=*]" = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../node_modules/react-native/React/**",
-					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-					"$(SRCROOT)/../node_modules/react-native-photo-view/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-share/ios",
-				);
+				"HEADER_SEARCH_PATHS[arch=*]" = "$(inherited) /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include $(SRCROOT)/../node_modules/react-native/React/** $(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager $(SRCROOT)/../node_modules/react-native-photo-view/ios/** $(SRCROOT)/../node_modules/react-native-share/ios";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;

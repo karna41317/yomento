@@ -5,10 +5,10 @@ import React, {Component, PropTypes} from 'react';
 import {
   View, Text, Image, StyleSheet, Animated, InteractionManager
 } from 'react-native';
-import {Button, Logo, Heading, BackgroundWrapper, AlertStatus} from '../components';
+import {Button, Logo, Heading, BackgroundWrapper, AlertStatus} from 'src/components/form';
 import {Actions} from 'react-native-router-flux';
 
-export default class Home extends Component {
+export default class LoginScreen extends Component {
   state = {
     logoPositionTop: new Animated.Value(-228),
     groupHeadingPositionLeft: new Animated.Value(-614),
@@ -24,7 +24,7 @@ export default class Home extends Component {
     Actions.register();
   }
 
-  animateHome(){
+  animateLoginScreen(){
     const timingToZero = (stateValue) => Animated.timing(
       stateValue,
       {
@@ -48,11 +48,11 @@ export default class Home extends Component {
 
   componentDidMount(){
     if(this.props.disableInteractionCheck) {
-      this.animateHome();
+      this.animateLoginScreen();
     }
     else {
       InteractionManager.runAfterInteractions(() => {
-        this.animateHome();
+        this.animateLoginScreen();
       })
     }
   }
@@ -87,7 +87,7 @@ export default class Home extends Component {
   }
 }
 
-Home.propTypes = {
+LoginScreen.propTypes = {
   disableInteractionCheck: PropTypes.bool
 }
 

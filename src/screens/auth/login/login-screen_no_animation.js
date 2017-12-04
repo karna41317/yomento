@@ -9,10 +9,11 @@ import { authState } from 'src/selectors'
 import GradientWrapper from 'src/components/partials/gradientWrapper'
 //import { View } from 'src/components/wrappers/viewWrapper'
 import { Container, Header, Left, Body, Right, Button as NativeButton, Icon, Title, Item, Input } from 'native-base'
-import { usernameChanged, passwordChanged, emailChanged, registerUser } from 'src/actions'
+import { usernameChanged, passwordChanged, emailChanged, registerUser, loginUser } from 'src/actions'
 import { PrimaryButton, SecondaryButton } from '../../../components/buttons/Button'
 import MonoLogo from 'src/components/logos/mono-logo'
 import { lightTextMixin, semiBoldTextMixin } from '../../../styles/mixins'
+import {get} from 'lodash'
 
 @connect(authState)
 export default class LoginScreen extends Component {
@@ -20,10 +21,23 @@ export default class LoginScreen extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      firstName: null,
-      lastName: null,
+      userName: null,
       email: null,
       password: null,
+    }
+  }
+
+  componentDidMount = () => {
+    const {userData} = this.props
+    if(userData) {
+      const token = get(userData, 'authorization')
+      const isValid = token.includes('Bearer')
+      console.log('printing', isValid)
+      if(isValid) {
+
+
+        this.props.navigation.navigate('onBoarding')
+      }
     }
   }
 
@@ -41,44 +55,44 @@ export default class LoginScreen extends Component {
   }
 
   onChange = (name, text) => {
-    console.log('printing change text, name', text, name)
-
     const {dispatch} = this.props
+console.log('printing', name, text)
+
     switch (name) {
-
       case 'user':
-        dispatch(usernameChanged(text))
+        this.setState({userName: text})
         break
-
       case 'email':
-        dispatch(emailChanged(text))
+        this.setState({email: text})
         break
-
       case 'pass':
-        dispatch(passwordChanged(text))
+        this.setState({password: text})
         break
       default:
         break
     }
   }
 
-  validation (user) {
-    return true
+  validation () {
+    return this.state.email && this.state.password
   }
 
-  signUpUser = () => {
-    const {user, dispatch, navigation} = this.props
-    if (user && this.validation(user)) {
-      dispatch(registerUser(user, navigation))
+  goToLoginUser = () => {
+    const { dispatch, navigation} = this.props
+    if (this.validation()) {
+      dispatch(loginUser(this.state.email, this.state.password, navigation))
     }
   }
+
   onIconPress = () => {
     this.props.navigation.goBack()
   }
+
   goToForgotPassword = () => {
     const {navigation} = this.props
     navigation.navigate('forgot')
   }
+
   goToContactSupport = () => {
 
   }
@@ -108,13 +122,12 @@ export default class LoginScreen extends Component {
             <Icon active name='lock' style={styles.icon}/>
             <Input placeholder='Password'
                    secureTextEntry
-
                    placeholderTextColor={'white'}
                    onChangeText={this.onChange.bind(this, 'pass')}
                    style={styles.textInput}/>
           </Item>
           <PrimaryButton rounded full style={styles.primaryButtonStyle}
-                         onPress={this.signUpUser}>
+                         onPress={this.goToLoginUser}>
             Log In
           </PrimaryButton>
           <SecondaryButton

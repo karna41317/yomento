@@ -31,7 +31,7 @@ export default class SignUp extends Component {
     }
   }
 
-  componentDidUpdate = () => {
+  componentDidMount = () => {
     const {userData} = this.props
     if(userData) {
       const token = get(userData, 'authorization')
@@ -40,7 +40,7 @@ export default class SignUp extends Component {
       if(isValid) {
 
 
-        this.props.navigation.navigate('dashboard')
+        this.props.navigation.navigate('onBoarding')
       }
     }
   }

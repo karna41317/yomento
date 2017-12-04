@@ -25,9 +25,9 @@ open class AxisBase: ComponentBase
     fileprivate var _axisValueFormatter: IAxisValueFormatter?
     
     open var labelFont = NSUIFont.systemFont(ofSize: 10.0)
-    open var labelTextColor = NSUIColor.white
+    open var labelTextColor = NSUIColor.black
     
-    open var axisLineColor = NSUIColor.white
+    open var axisLineColor = NSUIColor.gray
     open var axisLineWidth = CGFloat(0.5)
     open var axisLineDashPhase = CGFloat(0.0)
     open var axisLineDashLengths: [CGFloat]!

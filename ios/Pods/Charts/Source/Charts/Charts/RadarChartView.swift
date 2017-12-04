@@ -24,10 +24,10 @@ open class RadarChartView: PieRadarChartViewBase
     open var innerWebLineWidth = CGFloat(0.75)
     
     /// color for the web lines that come from the center
-    open var webColor = NSUIColor(red: 255/255.0, green: 255/255.0, blue:255/255.0, alpha: 1.0)
+    open var webColor = NSUIColor(red: 122/255.0, green: 122/255.0, blue: 122.0/255.0, alpha: 1.0)
     
     /// color for the web lines in between the lines that come from the center.
-    open var innerWebColor = NSUIColor(red: 255/255.0, green: 255/255.0, blue: 255.0/255.0, alpha: 1.0)
+    open var innerWebColor = NSUIColor(red: 122/255.0, green: 122/255.0, blue: 122.0/255.0, alpha: 1.0)
     
     /// transparency the grid is drawn with (0.0 - 1.0)
     open var webAlpha: CGFloat = 150.0 / 255.0
@@ -65,7 +65,7 @@ open class RadarChartView: PieRadarChartViewBase
         _yAxisRenderer = YAxisRendererRadarChart(viewPortHandler: _viewPortHandler, yAxis: _yAxis, chart: self)
         _xAxisRenderer = XAxisRendererRadarChart(viewPortHandler: _viewPortHandler, xAxis: _xAxis, chart: self)
         
-        //self.highlighter = RadarHighlighter(chart: self)
+        self.highlighter = RadarHighlighter(chart: self)
     }
 
     internal override func calcMinMax()
@@ -109,7 +109,7 @@ open class RadarChartView: PieRadarChartViewBase
         let optionalContext = NSUIGraphicsGetCurrentContext()
         guard let context = optionalContext else { return }
         
-        if !_xAxis.isEnabled
+        if _xAxis.isEnabled
         {
             _xAxisRenderer.computeAxis(min: _xAxis._axisMinimum, max: _xAxis._axisMaximum, inverted: false)
         }
@@ -121,18 +121,18 @@ open class RadarChartView: PieRadarChartViewBase
             renderer!.drawExtras(context: context)
         }
         
-        //_yAxisRenderer.renderLimitLines(context: context)
+        _yAxisRenderer.renderLimitLines(context: context)
 
         renderer!.drawData(context: context)
 
-        if !valuesToHighlight()
+        if valuesToHighlight()
         {
             renderer!.drawHighlighted(context: context, indices: _indicesToHighlight)
         }
 
-        //_yAxisRenderer.renderAxisLabels(context: context)
+        _yAxisRenderer.renderAxisLabels(context: context)
 
-        //renderer!.drawValues(context: context)
+        renderer!.drawValues(context: context)
 
         _legendRenderer.renderLegend(context: context)
 

@@ -15,9 +15,9 @@ class ApiModule extends HttpService {
     return this.post(path, body, headers)
   }
 
-  loginUser (user) {
-    const path = '/register'
-    const body = user
+  loginUser (username, password) {
+    const path = `/login?email=${username}&password=${password}`
+    const body = {}
     const headers = {
       ...yomentoParams
     }

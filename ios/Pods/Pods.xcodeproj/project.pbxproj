@@ -12,6 +12,7 @@
 		05869F3C3509AAA9A31C7A4F982E45B5 /* IValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D050D694989A0E8675D53BC2E23610C /* IValueFormatter.swift */; };
 		0685520A676FF3BE32BAEA4C5C878CB9 /* MarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261FB779FEEE89A640EBDFEAE1E8D37 /* MarkerView.swift */; };
 		0A84B463BABCA1CD5CE63CD3252F323F /* LineScatterCandleRadarChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C755C42DCE37B52E0B10CC1371CA1E71 /* LineScatterCandleRadarChartDataSet.swift */; };
+		0E7AD8C4034B85EFBDE786D55D4E4A87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 572DBE63D5360AB71E5F80F979738FD0 /* Foundation.framework */; };
 		0F8D46B68AC42BADE9D9B28C546F769E /* LegendRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8CBE40C5BEBA073E8ABF59165C6955 /* LegendRenderer.swift */; };
 		0F91DA4887ED7547B48D7E6B13EC3215 /* ChevronUpShapeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0B3B46CF98920696C4601C262D8ABD /* ChevronUpShapeRenderer.swift */; };
 		0FD11274BC7D17C1FDEABC3A3F82C575 /* ChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D31ED0D22FD2E261AD9C51139A8B7D /* ChartDataEntry.swift */; };
@@ -31,7 +32,7 @@
 		2BBC1C57E014127C8A14791A000B224A /* ChartUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B5811ECF6E983EB580DBB8742F3291 /* ChartUtils.swift */; };
 		2D53683F3CD3086FDE356172B0735EA7 /* CombinedChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6535C09A2B22E4870B6842C15485EC28 /* CombinedChartData.swift */; };
 		2E4D314618B62AF4880C3721C15F5DC9 /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD10D359EC4C37FB40A86F1C464CD7E9 /* Description.swift */; };
-		381E3B98DFB9FFC6C552A8D266C0BB2E /* Pods-yemonto-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FAADD92B51F5536765CF4E5DC898A7F3 /* Pods-yemonto-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		381E3B98DFB9FFC6C552A8D266C0BB2E /* Pods-yemonto-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B6970B9853878EF2EE8D1CF18616F839 /* Pods-yemonto-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3892407590F7B7AAAA487B421A0869F4 /* RadarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9025A601A10370EA50623DBBC397193 /* RadarChartView.swift */; };
 		3B67CCA0C785525BE0189A952AC7560A /* LineRadarChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46762AE0AB0EC1FA616F25DBCB9327DC /* LineRadarChartDataSet.swift */; };
 		3BBB1AF62BFE74A4F2F260478D4D616A /* PieChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2179A269FBDBC4CA04ED99EBB75D87 /* PieChartDataEntry.swift */; };
@@ -54,14 +55,16 @@
 		60DB744CD51A579EF11E3A392E4CF9A2 /* CrossShapeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0EE87BDA31C9C993D1B206C55F635 /* CrossShapeRenderer.swift */; };
 		61A6FA55DEBB35A5E1B85F590CE5635D /* TriangleShapeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683180946AC5E8FA6496CF79776EC8D9 /* TriangleShapeRenderer.swift */; };
 		625CF48195B088519F8CB4DCDDCF2AEA /* CandleChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061A345478DBACA23B831CAE9E7BD09 /* CandleChartData.swift */; };
+		633B54DC63F05C610EEE2CFA00904238 /* Pods-yemontoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1720A278E8D81C885C54A5ECB6360CF3 /* Pods-yemontoTests-dummy.m */; };
 		6508389020FF1A5E4A7C8EAA8805DF57 /* IPieChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F56A70D04A005574764E42806E256DB /* IPieChartDataSet.swift */; };
 		65DB259F9962760A7EF8B1A3711B1C22 /* XAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CAAB61BED6FB067E231BBE300A1D4E /* XAxis.swift */; };
 		66C356E31E0E6A047F2E9C3E4E3C06A4 /* RadarChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0601EBAECFB5D013911449D5E2507D /* RadarChartRenderer.swift */; };
-		67BFD26739E786F6B37AA217A2ED53D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		67BFD26739E786F6B37AA217A2ED53D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D154F4805B9715F0E6D79B0363CE280 /* Foundation.framework */; };
 		681CA2A9C4CD6901C3EBD9789E9A833B /* CircleShapeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9740862B56A56AB56CFBBF50B859116 /* CircleShapeRenderer.swift */; };
 		69A842A40913722BBE029D7CAA1884EB /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F1D95C46F85815729552FD4B1B771 /* SwiftyJSON.swift */; };
+		69F2B0F24A81B09816D74FC1710CEA05 /* Pods-yemonto-tvOSTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A89AAF4330CDD3E0CB23AC4A0839D0 /* Pods-yemonto-tvOSTests-dummy.m */; };
 		6DA9F3609BC3BDA3D7B4A39416E5B5A5 /* DefaultValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D8FFD3EEB1420C84536F00F62C421E /* DefaultValueFormatter.swift */; };
-		6FDA626E2281B75AAB68B5CDD89C3844 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		6FDA626E2281B75AAB68B5CDD89C3844 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D154F4805B9715F0E6D79B0363CE280 /* Foundation.framework */; };
 		70248508816421AF31051CF7C71F0390 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93193EC1E28F0D6F316C54F2DFCCC7DA /* Animator.swift */; };
 		7113B3CE631C90090EA54CF71B111895 /* ChevronDownShapeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8694E3AF82028870338CB208116B4F /* ChevronDownShapeRenderer.swift */; };
 		728F05394E15F3402474866CA505D467 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 19D6B5B42AF363110FCB53CE4CC6AFC1 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -83,6 +86,7 @@
 		9019F5736B4E5F004C0B4A631CD757C1 /* PieHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6F05609689791D348CD52A7AB6729 /* PieHighlighter.swift */; };
 		926D18D0A6D781E5BD52333B3FE20073 /* ChartBaseDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AECDA298C668FF5820A6B91255734D /* ChartBaseDataSet.swift */; };
 		92B262492E42C63A689A12296DDAFBDC /* ChartDataEntryBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5B62BE087CE4B7555399D66B68FCDE /* ChartDataEntryBase.swift */; };
+		9363DE70D765023A53E6EE4E1FC6F059 /* Pods-yemontoTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EFECF43CA62FC3286E34399D9E7A61A /* Pods-yemontoTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93CBFD940BD0B22071BCD795A8A6D2BC /* Charts-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E4A550235586A3AB802D75B086280A28 /* Charts-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9593B5D179FF2FC4A2FA600E8EE0EAAD /* BarChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9395EB98C1412DED9273CD0293E60A2D /* BarChartDataEntry.swift */; };
 		96BC44579F7EB194DA8FD6F048E2E13F /* PieChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7C4B944F1167771757BEF210178A9 /* PieChartDataSet.swift */; };
@@ -103,7 +107,7 @@
 		AD8C85BF427C2E633E28F8863C5435C4 /* MarkerImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AE2CD3781BB190611A3A0CF92A0B4F /* MarkerImage.swift */; };
 		AE5CE8378B3C1C5BDF33BE0E44C91FEB /* ScatterChartDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFCD8EEBFEE116B642E16827DE8F53B /* ScatterChartDataProvider.swift */; };
 		AF3146F9CB65E3027D15B89B3A14C13A /* IFillFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFE8C884C685CF1BB4082166F9D2C5 /* IFillFormatter.swift */; };
-		AF90447CC45DEB9EE37111E1B6503DD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		AF90447CC45DEB9EE37111E1B6503DD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D154F4805B9715F0E6D79B0363CE280 /* Foundation.framework */; };
 		B104AE9D522AC75080ADA7A49DF5C1CA /* XShapeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BCD05B63373992A4730E59E96AA731 /* XShapeRenderer.swift */; };
 		B6DB9F4AA72BCBBBF9F2B868C889A116 /* AxisBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C81EC235AB9BED74B74329A1BA75538 /* AxisBase.swift */; };
 		B78A6384804BA5B98FCB191181F1F24D /* YAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0481F416CEA1143BDBC65E4D459E2B0 /* YAxis.swift */; };
@@ -117,7 +121,9 @@
 		C231DC3CD5B2A8CD0036E986271F2F5B /* CandleChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F410CDE316F40270927774708447B986 /* CandleChartDataEntry.swift */; };
 		C30159BFCA02E93ADC045DF753CD2105 /* BarLineScatterCandleBubbleRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BA5E70622F6B31FE23DBEA8B287B4 /* BarLineScatterCandleBubbleRenderer.swift */; };
 		C46D7FC074044E7BBFE9BFC32005BACF /* ChartHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C853D6DCDFE237D6DE93308C952EA337 /* ChartHighlighter.swift */; };
+		C784635C76F3F863DB05BC70652E2BCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 572DBE63D5360AB71E5F80F979738FD0 /* Foundation.framework */; };
 		C7E3F0B8CF661D0BEA763F1F4B012192 /* TransformerHorizontalBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DF9BA440A4AD2E25CFC399D7A166B /* TransformerHorizontalBarChart.swift */; };
+		C9AA95C760F31AE4FD10AE48528A8257 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D154F4805B9715F0E6D79B0363CE280 /* Foundation.framework */; };
 		CB86019144A24E76AABAE1A313EA6D17 /* ChartAnimationEasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FAF0174DFE4054DA510BA3DB1095CD /* ChartAnimationEasing.swift */; };
 		CC23CE88E3ABA48820EEF357CB742F3F /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C7BECD66A9BB174BEB79FE8DC6456A /* LineChartView.swift */; };
 		CDEC4F96128F02EC674D95A706126879 /* BubbleChartDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCE88FEC7EA5F08BBB550266CFB824 /* BubbleChartDataProvider.swift */; };
@@ -138,9 +144,10 @@
 		EDDE00478DBB95CFAE0313CE5639B01D /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD15802A688C2068764BEE2405208DC /* Highlight.swift */; };
 		EEFC93F000EA56262106801E61A1919E /* BarLineScatterCandleBubbleChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339996822BB999D930CC9A298E94F7BB /* BarLineScatterCandleBubbleChartData.swift */; };
 		EF9AD1412E6FABB78D64E421A5454B0D /* CombinedHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF1DF348208629D7BEE501DE05CB1A1 /* CombinedHighlighter.swift */; };
+		F040A257D334584769013B87E4D5D29D /* Pods-yemonto-tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C80E02D66DF39ED7A366A99221E75846 /* Pods-yemonto-tvOS-dummy.m */; };
 		F06D79CEC2584B0B69E2146182CBC8BB /* IMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A99B07E9028A35A7B61254F67857FBD /* IMarker.swift */; };
 		F098F6603287E1CB29D5584E85738379 /* IRadarChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E739F1A8080137585600D079EFA03DA4 /* IRadarChartDataSet.swift */; };
-		F22F5B6B6CDE5643474FA53245697992 /* Pods-yemonto-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA85C48CA0BEAE610DFFFD4AF83215C /* Pods-yemonto-dummy.m */; };
+		F22F5B6B6CDE5643474FA53245697992 /* Pods-yemonto-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 147E388B32C675CF10D98468C843901C /* Pods-yemonto-dummy.m */; };
 		F512C65E075972476EFAAF2E88F1B4A9 /* LineChartDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B991DDD6CC39260FBE49BE9DEB00E97 /* LineChartDataProvider.swift */; };
 		F580AE5D5960BE7E37A01263DFC1E05D /* ChartLimitLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB93FBEDF5F5D540DC0FEA96484F1992 /* ChartLimitLine.swift */; };
 		F5B3C687CE75F3A1D61739D494D86350 /* BubbleChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2B4074D16528C41A48DEFD7D3DB3B /* BubbleChartDataEntry.swift */; };
@@ -174,16 +181,23 @@
 		029B300260344C91EDDE8E4497C1284E /* IChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IChartDataSet.swift; path = Source/Charts/Data/Interfaces/IChartDataSet.swift; sourceTree = "<group>"; };
 		0567656BE45E4BCC55B10267F891D70D /* ChartViewBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartViewBase.swift; path = Source/Charts/Charts/ChartViewBase.swift; sourceTree = "<group>"; };
 		07D31ED0D22FD2E261AD9C51139A8B7D /* ChartDataEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartDataEntry.swift; path = Source/Charts/Data/Implementations/Standard/ChartDataEntry.swift; sourceTree = "<group>"; };
-		099C3A94BD2D0134D4227F409E11C690 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09A76AE2B999D20917D2768AF2D55042 /* Pods-yemontoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-yemontoTests.modulemap"; sourceTree = "<group>"; };
+		0A65BA779B9FAC2B67083EFC9960BFF0 /* Pods-yemonto-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-yemonto-acknowledgements.markdown"; sourceTree = "<group>"; };
 		0A8BA5E70622F6B31FE23DBEA8B287B4 /* BarLineScatterCandleBubbleRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarLineScatterCandleBubbleRenderer.swift; path = Source/Charts/Renderers/BarLineScatterCandleBubbleRenderer.swift; sourceTree = "<group>"; };
 		0A99B07E9028A35A7B61254F67857FBD /* IMarker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IMarker.swift; path = Source/Charts/Components/IMarker.swift; sourceTree = "<group>"; };
 		0BCAB699432DE337F43D594F6511D5FD /* Fill.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Fill.swift; path = Source/Charts/Utils/Fill.swift; sourceTree = "<group>"; };
 		0C1B3BCBD4AEF0BDB9DF81512EB0851E /* ViewPortJob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewPortJob.swift; path = Source/Charts/Jobs/ViewPortJob.swift; sourceTree = "<group>"; };
+		0D03128F55E362BA0C0A8497884FD3F1 /* libPods-yemonto-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-yemonto-tvOSTests.a"; path = "libPods-yemonto-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E4C4B3609DD9E76EFD521EE625BA29C /* MoveViewJob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MoveViewJob.swift; path = Source/Charts/Jobs/MoveViewJob.swift; sourceTree = "<group>"; };
+		0FD60BCB67A9D04BB13077B8ECB54578 /* Pods-yemonto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-yemonto.debug.xcconfig"; sourceTree = "<group>"; };
 		11ECDBD2A27CE3463D82AC6D410B6D8A /* AnimatedZoomViewJob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedZoomViewJob.swift; path = Source/Charts/Jobs/AnimatedZoomViewJob.swift; sourceTree = "<group>"; };
+		147E388B32C675CF10D98468C843901C /* Pods-yemonto-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-yemonto-dummy.m"; sourceTree = "<group>"; };
 		1496587093D717630319CF4C80E0CD59 /* LegendEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LegendEntry.swift; path = Source/Charts/Components/LegendEntry.swift; sourceTree = "<group>"; };
 		16BC0257CFD1AD85F527455E71192BCF /* PieChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieChartRenderer.swift; path = Source/Charts/Renderers/PieChartRenderer.swift; sourceTree = "<group>"; };
+		1720A278E8D81C885C54A5ECB6360CF3 /* Pods-yemontoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-yemontoTests-dummy.m"; sourceTree = "<group>"; };
+		1769A057F5DCDD7CB2A2BF2DAE744704 /* Pods-yemonto.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-yemonto.modulemap"; sourceTree = "<group>"; };
 		195B3FFA1C2601ABAB6427C763C36438 /* RadarChartDataEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarChartDataEntry.swift; path = Source/Charts/Data/Implementations/Standard/RadarChartDataEntry.swift; sourceTree = "<group>"; };
+		199872FEBABED1D56F3B1655D948CB02 /* Pods-yemonto-tvOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-yemonto-tvOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		19B0EE87BDA31C9C993D1B206C55F635 /* CrossShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CrossShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/CrossShapeRenderer.swift; sourceTree = "<group>"; };
 		19D6B5B42AF363110FCB53CE4CC6AFC1 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
 		1BC2B4074D16528C41A48DEFD7D3DB3B /* BubbleChartDataEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartDataEntry.swift; path = Source/Charts/Data/Implementations/Standard/BubbleChartDataEntry.swift; sourceTree = "<group>"; };
@@ -193,9 +207,11 @@
 		261AF892B6FF351892842588BE14395A /* AppCenterReactNativeShared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterReactNativeShared.framework; path = AppCenterReactNativeShared/AppCenterReactNativeShared.framework; sourceTree = "<group>"; };
 		27C1B5B10406FA41E2FB9EF57D3E0A2A /* LineChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineChartRenderer.swift; path = Source/Charts/Renderers/LineChartRenderer.swift; sourceTree = "<group>"; };
 		2804077414788351FE9F7F333F00253B /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = "AppCenter-SDK-Apple/iOS/AppCenter.framework"; sourceTree = "<group>"; };
+		29981BD49659903CDFA430905C000678 /* Pods_yemontoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_yemontoTests.framework; path = "Pods-yemontoTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B991DDD6CC39260FBE49BE9DEB00E97 /* LineChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineChartDataProvider.swift; path = Source/Charts/Interfaces/LineChartDataProvider.swift; sourceTree = "<group>"; };
 		2C81EC235AB9BED74B74329A1BA75538 /* AxisBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AxisBase.swift; path = Source/Charts/Components/AxisBase.swift; sourceTree = "<group>"; };
 		2CFED227000CE889FB5FFC307DD0808A /* CombinedChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombinedChartView.swift; path = Source/Charts/Charts/CombinedChartView.swift; sourceTree = "<group>"; };
+		2D154F4805B9715F0E6D79B0363CE280 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		2D4298CC667A0077CE5C99F348E1574F /* RadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/RadarChartDataSet.swift; sourceTree = "<group>"; };
 		301A023BEFED91D7BADF634EA94FBEC1 /* PieRadarChartViewBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieRadarChartViewBase.swift; path = Source/Charts/Charts/PieRadarChartViewBase.swift; sourceTree = "<group>"; };
 		316DE0E98CCA524324E83E645A92BE8A /* IAxisValueFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IAxisValueFormatter.swift; path = Source/Charts/Formatters/IAxisValueFormatter.swift; sourceTree = "<group>"; };
@@ -203,25 +219,33 @@
 		332593DE03A501D4EDED68FBB3D39A28 /* AppCenterPush.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterPush.framework; path = "AppCenter-SDK-Apple/iOS/AppCenterPush.framework"; sourceTree = "<group>"; };
 		339996822BB999D930CC9A298E94F7BB /* BarLineScatterCandleBubbleChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarLineScatterCandleBubbleChartData.swift; path = Source/Charts/Data/Implementations/Standard/BarLineScatterCandleBubbleChartData.swift; sourceTree = "<group>"; };
 		342679890BCB89AED62DC806461D006D /* Legend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Legend.swift; path = Source/Charts/Components/Legend.swift; sourceTree = "<group>"; };
-		34549268B75642978803924FD8B8738F /* Pods-yemonto-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-yemonto-resources.sh"; sourceTree = "<group>"; };
 		36D8FFD3EEB1420C84536F00F62C421E /* DefaultValueFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultValueFormatter.swift; path = Source/Charts/Formatters/DefaultValueFormatter.swift; sourceTree = "<group>"; };
 		37B32D28B86378B9341A6DCD7C7E7714 /* ChartDataRendererBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartDataRendererBase.swift; path = Source/Charts/Renderers/ChartDataRendererBase.swift; sourceTree = "<group>"; };
-		3C56893B574CD40114AC8F10CB8D5E9F /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Charts.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AC0B3D0B3C6090E496E363E5CDF2CE1 /* Pods-yemontoTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-yemontoTests-resources.sh"; sourceTree = "<group>"; };
+		3E76C9F1425A564B6CFEA00488E3E73E /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDA0B2F326D6D035950370AE504E9F5 /* Charts.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Charts.xcconfig; sourceTree = "<group>"; };
 		4137EDAAE822EB9669B247C271F919A9 /* IBarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IBarChartDataSet.swift; path = Source/Charts/Data/Interfaces/IBarChartDataSet.swift; sourceTree = "<group>"; };
+		4463034CB9B6DCAE5FB38998CD9B542F /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Charts.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4583844C8EF69812566F9715CC413641 /* CandleChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleChartDataProvider.swift; path = Source/Charts/Interfaces/CandleChartDataProvider.swift; sourceTree = "<group>"; };
 		46762AE0AB0EC1FA616F25DBCB9327DC /* LineRadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineRadarChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/LineRadarChartDataSet.swift; sourceTree = "<group>"; };
 		467632FC95202CAA4F071D3606D9194F /* AnimatedViewPortJob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedViewPortJob.swift; path = Source/Charts/Jobs/AnimatedViewPortJob.swift; sourceTree = "<group>"; };
 		499AB5FAF86FAC697C767AC4ED217D1E /* CombinedChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombinedChartDataProvider.swift; path = Source/Charts/Interfaces/CombinedChartDataProvider.swift; sourceTree = "<group>"; };
 		4A2179A269FBDBC4CA04ED99EBB75D87 /* PieChartDataEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieChartDataEntry.swift; path = Source/Charts/Data/Implementations/Standard/PieChartDataEntry.swift; sourceTree = "<group>"; };
+		4A3F01BB7E09151C800A183AB8FCD6B1 /* Pods-yemonto-tvOSTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-yemonto-tvOSTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		4BE7BE166AFB487F717E43111870AC65 /* ILineChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ILineChartDataSet.swift; path = Source/Charts/Data/Interfaces/ILineChartDataSet.swift; sourceTree = "<group>"; };
 		4EE46C2E8DCB5EF6D056DF4167E35395 /* ScatterChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartView.swift; path = Source/Charts/Charts/ScatterChartView.swift; sourceTree = "<group>"; };
 		4EF587156F60068A8F73328AB1D43BEA /* ScatterChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/ScatterChartDataSet.swift; sourceTree = "<group>"; };
+		4F48DB23F0F9F66AB446DB4780CE27BA /* Pods-yemonto-tvOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-yemonto-tvOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4FBCE88FEC7EA5F08BBB550266CFB824 /* BubbleChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartDataProvider.swift; path = Source/Charts/Interfaces/BubbleChartDataProvider.swift; sourceTree = "<group>"; };
 		50CCFC6481EBAFF2252C1BA5D15C219D /* BubbleChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartRenderer.swift; path = Source/Charts/Renderers/BubbleChartRenderer.swift; sourceTree = "<group>"; };
 		54F80BBD0C58439CF7884CA428144ECB /* Charts.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Charts.modulemap; sourceTree = "<group>"; };
+		561F1616FA0E08994EEA077A7DBF526F /* Pods-yemontoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-yemontoTests.release.xcconfig"; sourceTree = "<group>"; };
 		568D3D06ADF95C66DC5A594EBD0603BC /* IBarLineScatterCandleBubbleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IBarLineScatterCandleBubbleChartDataSet.swift; path = Source/Charts/Data/Interfaces/IBarLineScatterCandleBubbleChartDataSet.swift; sourceTree = "<group>"; };
+		572DBE63D5360AB71E5F80F979738FD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS10.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		57AECDA298C668FF5820A6B91255734D /* ChartBaseDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartBaseDataSet.swift; path = Source/Charts/Data/Implementations/ChartBaseDataSet.swift; sourceTree = "<group>"; };
+		590CDB4733DCB8BD8B90A862CAA4EEB3 /* Pods-yemonto-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-yemonto-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		5B1AADE82E09B6CE913D4039F2F703A4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D002FEE20C91DFC36126B9DCFEC1270 /* Pods-yemonto-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-yemonto-resources.sh"; sourceTree = "<group>"; };
 		5ED1D708FD4DDA5F44B27CF3CE474315 /* IScatterChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IScatterChartDataSet.swift; path = Source/Charts/Data/Interfaces/IScatterChartDataSet.swift; sourceTree = "<group>"; };
 		629F1147AC2294CE508A4667365EB86F /* AnimatedMoveViewJob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedMoveViewJob.swift; path = Source/Charts/Jobs/AnimatedMoveViewJob.swift; sourceTree = "<group>"; };
 		63943270B164161615D898FC4ADE32F9 /* IHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IHighlighter.swift; path = Source/Charts/Highlight/IHighlighter.swift; sourceTree = "<group>"; };
@@ -229,34 +253,36 @@
 		64FAF0174DFE4054DA510BA3DB1095CD /* ChartAnimationEasing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartAnimationEasing.swift; path = Source/Charts/Animation/ChartAnimationEasing.swift; sourceTree = "<group>"; };
 		6535C09A2B22E4870B6842C15485EC28 /* CombinedChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombinedChartData.swift; path = Source/Charts/Data/Implementations/Standard/CombinedChartData.swift; sourceTree = "<group>"; };
 		65BC5610986551D012D7593DA1F2054E /* IShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/IShapeRenderer.swift; sourceTree = "<group>"; };
-		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6679E9E307380905BCC310CDF3251A9E /* ScatterChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartRenderer.swift; path = Source/Charts/Renderers/ScatterChartRenderer.swift; sourceTree = "<group>"; };
 		67103C019DE2D0F7CEA1B7D55C367D64 /* HorizontalBarChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HorizontalBarChartView.swift; path = Source/Charts/Charts/HorizontalBarChartView.swift; sourceTree = "<group>"; };
 		6752FDEFDF43A988B75AFC554CA7203D /* LineScatterCandleRadarRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineScatterCandleRadarRenderer.swift; path = Source/Charts/Renderers/LineScatterCandleRadarRenderer.swift; sourceTree = "<group>"; };
 		683180946AC5E8FA6496CF79776EC8D9 /* TriangleShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TriangleShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/TriangleShapeRenderer.swift; sourceTree = "<group>"; };
-		6A0B3A20B783E0AA7EF72105BBCF3534 /* Pods-yemonto-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-yemonto-acknowledgements.markdown"; sourceTree = "<group>"; };
+		69EF1888D2DB064BEAA8D41585719C10 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B57289BC0255C10936E2551962E9D3A /* IBubbleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IBubbleChartDataSet.swift; path = Source/Charts/Data/Interfaces/IBubbleChartDataSet.swift; sourceTree = "<group>"; };
 		6E26AEC6F813E4C8348998AAC51A9502 /* YAxisRendererHorizontalBarChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YAxisRendererHorizontalBarChart.swift; path = Source/Charts/Renderers/YAxisRendererHorizontalBarChart.swift; sourceTree = "<group>"; };
 		6EC7C4B944F1167771757BEF210178A9 /* PieChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/PieChartDataSet.swift; sourceTree = "<group>"; };
 		6F56A70D04A005574764E42806E256DB /* IPieChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPieChartDataSet.swift; path = Source/Charts/Data/Interfaces/IPieChartDataSet.swift; sourceTree = "<group>"; };
 		71D588D9C058784B52AC7AABBB718E5B /* BarChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarChartView.swift; path = Source/Charts/Charts/BarChartView.swift; sourceTree = "<group>"; };
 		747BBDB13736C433996B521801286786 /* RadarChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarChartData.swift; path = Source/Charts/Data/Implementations/Standard/RadarChartData.swift; sourceTree = "<group>"; };
+		750E547FEE866CC39BAD8CF7CDE634ED /* Pods-yemonto-tvOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-yemonto-tvOS-resources.sh"; sourceTree = "<group>"; };
 		79B48FC96FB4063719E0661A46BD3887 /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = "AppCenter-SDK-Apple/iOS/AppCenterAnalytics.framework"; sourceTree = "<group>"; };
 		7ADD9436C3F5B2B424C68612B651E787 /* DefaultAxisValueFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultAxisValueFormatter.swift; path = Source/Charts/Formatters/DefaultAxisValueFormatter.swift; sourceTree = "<group>"; };
-		7C713E7DD5A2337C16B11791E904DA00 /* Pods-yemonto.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-yemonto.modulemap"; sourceTree = "<group>"; };
+		7E4A5A84AD74C01B3AD06411D6A9AC42 /* libPods-yemonto-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-yemonto-tvOS.a"; path = "libPods-yemonto-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EE1897CEE5BB975382215AB30BC3E66 /* Charts-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Charts-prefix.pch"; sourceTree = "<group>"; };
 		8061A345478DBACA23B831CAE9E7BD09 /* CandleChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleChartData.swift; path = Source/Charts/Data/Implementations/Standard/CandleChartData.swift; sourceTree = "<group>"; };
-		81BAA0002D5BFF45D47D3E50A964F5B8 /* Pods-yemonto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-yemonto.debug.xcconfig"; sourceTree = "<group>"; };
 		83826F967B8D45C2D08DC4C67D16CE6B /* AxisRendererBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AxisRendererBase.swift; path = Source/Charts/Renderers/AxisRendererBase.swift; sourceTree = "<group>"; };
 		83DEA9DAD0DD7FDE0E49CDFBB797D7C7 /* BarLineScatterCandleBubbleChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarLineScatterCandleBubbleChartDataProvider.swift; path = Source/Charts/Interfaces/BarLineScatterCandleBubbleChartDataProvider.swift; sourceTree = "<group>"; };
 		8674877A6171EDAFB277B66F45DCDEA5 /* Platform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Platform.swift; path = Source/Charts/Utils/Platform.swift; sourceTree = "<group>"; };
 		86A68D66160C69715344C76407165666 /* LineRadarRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineRadarRenderer.swift; path = Source/Charts/Renderers/LineRadarRenderer.swift; sourceTree = "<group>"; };
 		86B640873FD10579357395842781AFE5 /* IndexAxisValueFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IndexAxisValueFormatter.swift; path = Source/Charts/Formatters/IndexAxisValueFormatter.swift; sourceTree = "<group>"; };
 		87264FEEA4B1A47888B96F8CD30810AB /* BarChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarChartRenderer.swift; path = Source/Charts/Renderers/BarChartRenderer.swift; sourceTree = "<group>"; };
+		895973C6A84936C3B7F91D43313B9107 /* Pods-yemonto-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-yemonto-acknowledgements.plist"; sourceTree = "<group>"; };
 		8BB6F05609689791D348CD52A7AB6729 /* PieHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieHighlighter.swift; path = Source/Charts/Highlight/PieHighlighter.swift; sourceTree = "<group>"; };
 		8D050D694989A0E8675D53BC2E23610C /* IValueFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IValueFormatter.swift; path = Source/Charts/Formatters/IValueFormatter.swift; sourceTree = "<group>"; };
 		8D5B62BE087CE4B7555399D66B68FCDE /* ChartDataEntryBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartDataEntryBase.swift; path = Source/Charts/Data/Implementations/Standard/ChartDataEntryBase.swift; sourceTree = "<group>"; };
+		8EFECF43CA62FC3286E34399D9E7A61A /* Pods-yemontoTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-yemontoTests-umbrella.h"; sourceTree = "<group>"; };
 		8F322AA4C63E30CBA4C6057ACE2342EA /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		8FA7F9C4EA4762C70ECDD0F732814DE7 /* Pods-yemonto-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-yemonto-frameworks.sh"; sourceTree = "<group>"; };
 		918F5D4A6BE6CF998874551136E85550 /* YAxisRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YAxisRenderer.swift; path = Source/Charts/Renderers/YAxisRenderer.swift; sourceTree = "<group>"; };
 		93193EC1E28F0D6F316C54F2DFCCC7DA /* Animator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = Source/Charts/Animation/Animator.swift; sourceTree = "<group>"; };
 		9395EB98C1412DED9273CD0293E60A2D /* BarChartDataEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarChartDataEntry.swift; path = Source/Charts/Data/Implementations/Standard/BarChartDataEntry.swift; sourceTree = "<group>"; };
@@ -264,6 +290,7 @@
 		9543989824295532EB3773F44684CFFF /* Transformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Transformer.swift; path = Source/Charts/Utils/Transformer.swift; sourceTree = "<group>"; };
 		9598198DC5041416C7AB9B44B450A9E9 /* SquareShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SquareShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/SquareShapeRenderer.swift; sourceTree = "<group>"; };
 		95D1D7EA88331E6A32CFC420586E8922 /* BarLineChartViewBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarLineChartViewBase.swift; path = Source/Charts/Charts/BarLineChartViewBase.swift; sourceTree = "<group>"; };
+		97DFC91DACB780BAF6BA920585498509 /* Pods-yemonto-tvOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-yemonto-tvOS-frameworks.sh"; sourceTree = "<group>"; };
 		98421F5EA6831EA22AADD25A1B06C15A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BA1F5B6A1B9407461DC387A0CFD0AAE /* ICandleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ICandleChartDataSet.swift; path = Source/Charts/Data/Interfaces/ICandleChartDataSet.swift; sourceTree = "<group>"; };
 		9C0645B2F27B340AF02CA2ED262FF0EA /* LineChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/LineChartDataSet.swift; sourceTree = "<group>"; };
@@ -272,7 +299,9 @@
 		A15A0EDB754B6E03566FA359FB4F4F99 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2AE2CD3781BB190611A3A0CF92A0B4F /* MarkerImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MarkerImage.swift; path = Source/Charts/Components/MarkerImage.swift; sourceTree = "<group>"; };
 		A5A3C02ADFFA9918856785A8B3BC70F6 /* BarChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarChartDataProvider.swift; path = Source/Charts/Interfaces/BarChartDataProvider.swift; sourceTree = "<group>"; };
+		A600D8A3607D3EDFC1DEB2C6122927BD /* Pods-yemonto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-yemonto.release.xcconfig"; sourceTree = "<group>"; };
 		A727E2282C9A247F006ECD25EF0A16FA /* ILineRadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ILineRadarChartDataSet.swift; path = Source/Charts/Data/Interfaces/ILineRadarChartDataSet.swift; sourceTree = "<group>"; };
+		A8DFA03B1518EFA49F084B137E393A07 /* Pods-yemonto-tvOSTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-yemonto-tvOSTests-resources.sh"; sourceTree = "<group>"; };
 		AB040FED0CDFA7DE4F024930CAD4B1F7 /* ChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/ChartDataSet.swift; sourceTree = "<group>"; };
 		AB4C64624873D40F5A71F3D0585C71F0 /* DataApproximator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataApproximator.swift; path = Source/Charts/Filters/DataApproximator.swift; sourceTree = "<group>"; };
 		AC756986AB702C6B964195AEF8961527 /* BubbleChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartView.swift; path = Source/Charts/Charts/BubbleChartView.swift; sourceTree = "<group>"; };
@@ -281,25 +310,29 @@
 		B03204B35F075B16315ED73F668FABFD /* CandleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/CandleChartDataSet.swift; sourceTree = "<group>"; };
 		B0481F416CEA1143BDBC65E4D459E2B0 /* YAxis.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YAxis.swift; path = Source/Charts/Components/YAxis.swift; sourceTree = "<group>"; };
 		B06F2C46B5C5BACB173435DA13BC95D7 /* XAxisRendererRadarChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XAxisRendererRadarChart.swift; path = Source/Charts/Renderers/XAxisRendererRadarChart.swift; sourceTree = "<group>"; };
-		B12897CC18390BCE9120F7E805334FEE /* Pods-yemonto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-yemonto.release.xcconfig"; sourceTree = "<group>"; };
 		B2181B30D2FCE4EF36321770A2DDA21E /* CandleStickChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleStickChartRenderer.swift; path = Source/Charts/Renderers/CandleStickChartRenderer.swift; sourceTree = "<group>"; };
 		B35B91C53D3EA922706D438C428BAC8E /* Range.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Range.swift; path = Source/Charts/Highlight/Range.swift; sourceTree = "<group>"; };
 		B44D0490DA89506E290399031D97C373 /* Charts-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Charts-dummy.m"; sourceTree = "<group>"; };
-		B4C64E09D46630A467F75855E01F0AC0 /* Pods_yemonto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_yemonto.framework; path = "Pods-yemonto.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4935DE3DCEEDDAE8E0AB11C0E6FF6FC /* Pods-yemontoTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-yemontoTests-frameworks.sh"; sourceTree = "<group>"; };
+		B5D895D52A2299E97BB2BA244FB41D21 /* Pods_yemonto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_yemonto.framework; path = "Pods-yemonto.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EFC24544369F959C2456BFA34DB96D /* RadarHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarHighlighter.swift; path = Source/Charts/Highlight/RadarHighlighter.swift; sourceTree = "<group>"; };
+		B6970B9853878EF2EE8D1CF18616F839 /* Pods-yemonto-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-yemonto-umbrella.h"; sourceTree = "<group>"; };
 		B7B5811ECF6E983EB580DBB8742F3291 /* ChartUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartUtils.swift; path = Source/Charts/Utils/ChartUtils.swift; sourceTree = "<group>"; };
 		B9740862B56A56AB56CFBBF50B859116 /* CircleShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CircleShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/CircleShapeRenderer.swift; sourceTree = "<group>"; };
 		BB3C478DAFBAE084F1738BCBC391FD58 /* BarHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarHighlighter.swift; path = Source/Charts/Highlight/BarHighlighter.swift; sourceTree = "<group>"; };
-		BEA85C48CA0BEAE610DFFFD4AF83215C /* Pods-yemonto-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-yemonto-dummy.m"; sourceTree = "<group>"; };
 		C05BC17B64CF36E0E7A138B5EB99CDAB /* BarLineScatterCandleBubbleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarLineScatterCandleBubbleChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/BarLineScatterCandleBubbleChartDataSet.swift; sourceTree = "<group>"; };
-		C29EC9C822C3DC5CD871D374234C85A2 /* Pods-yemonto-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-yemonto-acknowledgements.plist"; sourceTree = "<group>"; };
 		C439734C171AFB08BC00C3BED2F72DFE /* PieChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieChartView.swift; path = Source/Charts/Charts/PieChartView.swift; sourceTree = "<group>"; };
 		C5AE9FAE916E9735E2458642902A2C01 /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
+		C6FEDA5ACBA9B32818A52A0463CA5995 /* Pods-yemonto-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-yemonto-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		C755C42DCE37B52E0B10CC1371CA1E71 /* LineScatterCandleRadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineScatterCandleRadarChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/LineScatterCandleRadarChartDataSet.swift; sourceTree = "<group>"; };
+		C76246C01E4F57BDC75033912C1EB117 /* Pods-yemonto-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-yemonto-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C7A7A888D81D4C39E31AA4E85CE763C7 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
 		C7C0DB91BE61744F235F12AE903927DA /* BubbleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/BubbleChartDataSet.swift; sourceTree = "<group>"; };
+		C80E02D66DF39ED7A366A99221E75846 /* Pods-yemonto-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-yemonto-tvOS-dummy.m"; sourceTree = "<group>"; };
 		C853D6DCDFE237D6DE93308C952EA337 /* ChartHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartHighlighter.swift; path = Source/Charts/Highlight/ChartHighlighter.swift; sourceTree = "<group>"; };
 		C9025A601A10370EA50623DBBC397193 /* RadarChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarChartView.swift; path = Source/Charts/Charts/RadarChartView.swift; sourceTree = "<group>"; };
+		C97CFBF6627323A5742509188794C2CE /* Pods-yemontoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-yemontoTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		C9B8D8E9CCF108D910044D22270D3755 /* Pods-yemonto-tvOSTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-yemonto-tvOSTests-frameworks.sh"; sourceTree = "<group>"; };
 		C9DFE8C884C685CF1BB4082166F9D2C5 /* IFillFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IFillFormatter.swift; path = Source/Charts/Formatters/IFillFormatter.swift; sourceTree = "<group>"; };
 		CA1F22BCA34C3576A13BD529D95C20BD /* XAxisRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XAxisRenderer.swift; path = Source/Charts/Renderers/XAxisRenderer.swift; sourceTree = "<group>"; };
 		CB9E5D7CFD924E430FF5AE676A182044 /* ViewPortHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewPortHandler.swift; path = Source/Charts/Utils/ViewPortHandler.swift; sourceTree = "<group>"; };
@@ -308,7 +341,7 @@
 		CED2F2861EE69BF5CD4CD2C1EEDC7E70 /* ComponentBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ComponentBase.swift; path = Source/Charts/Components/ComponentBase.swift; sourceTree = "<group>"; };
 		CF0601EBAECFB5D013911449D5E2507D /* RadarChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarChartRenderer.swift; path = Source/Charts/Renderers/RadarChartRenderer.swift; sourceTree = "<group>"; };
 		CF52CF7BD84682F47025CFBE9A7551B8 /* BarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/BarChartDataSet.swift; sourceTree = "<group>"; };
-		D4454037BAE64EDB23E12C38CE2666D0 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D26BE1CD7B96EAFDE4584CA2D6326C64 /* Pods-yemontoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-yemontoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D52469202CFE828643E0BE0EECE2CEB1 /* HorizontalBarHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HorizontalBarHighlighter.swift; path = Source/Charts/Highlight/HorizontalBarHighlighter.swift; sourceTree = "<group>"; };
 		D737D0129D0DC7573168678029833DCB /* ScatterChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartData.swift; path = Source/Charts/Data/Implementations/Standard/ScatterChartData.swift; sourceTree = "<group>"; };
 		D7BCD05B63373992A4730E59E96AA731 /* XShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/XShapeRenderer.swift; sourceTree = "<group>"; };
@@ -319,7 +352,9 @@
 		E739F1A8080137585600D079EFA03DA4 /* IRadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IRadarChartDataSet.swift; path = Source/Charts/Data/Interfaces/IRadarChartDataSet.swift; sourceTree = "<group>"; };
 		E9EAD32C0A0C40FE36DB741988144454 /* DefaultFillFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultFillFormatter.swift; path = Source/Charts/Formatters/DefaultFillFormatter.swift; sourceTree = "<group>"; };
 		EAFCD8EEBFEE116B642E16827DE8F53B /* ScatterChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartDataProvider.swift; path = Source/Charts/Interfaces/ScatterChartDataProvider.swift; sourceTree = "<group>"; };
+		EBF908C78B5D74D665357C47894738F8 /* Pods-yemonto-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-yemonto-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ED0B3B46CF98920696C4601C262D8ABD /* ChevronUpShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChevronUpShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/ChevronUpShapeRenderer.swift; sourceTree = "<group>"; };
+		ED690C62AB72E75FFCC2B3031E633F6A /* Pods-yemontoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-yemontoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		EF40A49ABEFF58C5BAA10DE6B8837509 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
 		F205DB7E22FE0D4284E84A0ADA7EA020 /* PieRadarHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieRadarHighlighter.swift; path = Source/Charts/Highlight/PieRadarHighlighter.swift; sourceTree = "<group>"; };
 		F2535CA98748D13D74B244B16A068EFB /* ChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartDataProvider.swift; path = Source/Charts/Interfaces/ChartDataProvider.swift; sourceTree = "<group>"; };
@@ -328,24 +363,48 @@
 		F3F357E4388B307F321A24425B02052D /* ChartColorTemplates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartColorTemplates.swift; path = Source/Charts/Utils/ChartColorTemplates.swift; sourceTree = "<group>"; };
 		F410CDE316F40270927774708447B986 /* CandleChartDataEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleChartDataEntry.swift; path = Source/Charts/Data/Implementations/Standard/CandleChartDataEntry.swift; sourceTree = "<group>"; };
 		F4C7BECD66A9BB174BEB79FE8DC6456A /* LineChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineChartView.swift; path = Source/Charts/Charts/LineChartView.swift; sourceTree = "<group>"; };
+		F50F4D974DB273DCDA622550AF72F400 /* Pods-yemonto-tvOSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-yemonto-tvOSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F7B69A96A39DEDC709BB70D7C1C1EBCE /* ChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartData.swift; path = Source/Charts/Data/Implementations/Standard/ChartData.swift; sourceTree = "<group>"; };
 		F7BF813A3C3A8DF31B682535F756D3CA /* XAxisRendererHorizontalBarChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XAxisRendererHorizontalBarChart.swift; path = Source/Charts/Renderers/XAxisRendererHorizontalBarChart.swift; sourceTree = "<group>"; };
 		F8623E79157A67F6E217B6FC4AF2B3CB /* CombinedChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombinedChartRenderer.swift; path = Source/Charts/Renderers/CombinedChartRenderer.swift; sourceTree = "<group>"; };
-		FAADD92B51F5536765CF4E5DC898A7F3 /* Pods-yemonto-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-yemonto-umbrella.h"; sourceTree = "<group>"; };
+		F9A89AAF4330CDD3E0CB23AC4A0839D0 /* Pods-yemonto-tvOSTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-yemonto-tvOSTests-dummy.m"; sourceTree = "<group>"; };
 		FB8694E3AF82028870338CB208116B4F /* ChevronDownShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChevronDownShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/ChevronDownShapeRenderer.swift; sourceTree = "<group>"; };
 		FB93FBEDF5F5D540DC0FEA96484F1992 /* ChartLimitLine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartLimitLine.swift; path = Source/Charts/Components/ChartLimitLine.swift; sourceTree = "<group>"; };
-		FC053BA26645DDFE9022A783DCF4B429 /* Pods-yemonto-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-yemonto-frameworks.sh"; sourceTree = "<group>"; };
 		FC380A518DFE333223A936BC1E5C910B /* BarChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarChartData.swift; path = Source/Charts/Data/Implementations/Standard/BarChartData.swift; sourceTree = "<group>"; };
 		FE8CBE40C5BEBA073E8ABF59165C6955 /* LegendRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LegendRenderer.swift; path = Source/Charts/Renderers/LegendRenderer.swift; sourceTree = "<group>"; };
 		FFD15802A688C2068764BEE2405208DC /* Highlight.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Highlight.swift; path = Source/Charts/Highlight/Highlight.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		04A1738F7E577AEE41EDD7EBEE1E371C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E7AD8C4034B85EFBDE786D55D4E4A87 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2D7616ACBE9B0601159D764F2C140659 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				67BFD26739E786F6B37AA217A2ED53D1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47010CF25B9B27C2EAFDB8090A23CD22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C784635C76F3F863DB05BC70652E2BCB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BBFC2B7A9CD5D8B24250C8372770F39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9AA95C760F31AE4FD10AE48528A8257 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +427,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		020C5EB8B6D1CF85619AAC9C7731F13C /* Pods-yemonto */ = {
+			isa = PBXGroup;
+			children = (
+				5B1AADE82E09B6CE913D4039F2F703A4 /* Info.plist */,
+				1769A057F5DCDD7CB2A2BF2DAE744704 /* Pods-yemonto.modulemap */,
+				0A65BA779B9FAC2B67083EFC9960BFF0 /* Pods-yemonto-acknowledgements.markdown */,
+				895973C6A84936C3B7F91D43313B9107 /* Pods-yemonto-acknowledgements.plist */,
+				147E388B32C675CF10D98468C843901C /* Pods-yemonto-dummy.m */,
+				8FA7F9C4EA4762C70ECDD0F732814DE7 /* Pods-yemonto-frameworks.sh */,
+				5D002FEE20C91DFC36126B9DCFEC1270 /* Pods-yemonto-resources.sh */,
+				B6970B9853878EF2EE8D1CF18616F839 /* Pods-yemonto-umbrella.h */,
+				0FD60BCB67A9D04BB13077B8ECB54578 /* Pods-yemonto.debug.xcconfig */,
+				A600D8A3607D3EDFC1DEB2C6122927BD /* Pods-yemonto.release.xcconfig */,
+			);
+			name = "Pods-yemonto";
+			path = "Target Support Files/Pods-yemonto";
+			sourceTree = "<group>";
+		};
 		09F8A96388E273BF8B28E242EDFA717D /* Charts */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +461,14 @@
 				332593DE03A501D4EDED68FBB3D39A28 /* AppCenterPush.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		20F731AE46C73F232AF0C168DC383CF9 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				572DBE63D5360AB71E5F80F979738FD0 /* Foundation.framework */,
+			);
+			name = tvOS;
 			sourceTree = "<group>";
 		};
 		3546490DA50F3613C9D76BEF6083BA9D /* Pods */ = {
@@ -403,6 +488,29 @@
 				0B0B478FCACE3B7B3A5236F49B48C201 /* Frameworks */,
 			);
 			name = Push;
+			sourceTree = "<group>";
+		};
+		58996781A54EE964D7111D73083A18A5 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2D154F4805B9715F0E6D79B0363CE280 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		6917CBDD0DF48BBC17DF5B519D1B2F0F /* Pods-yemonto-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				4F48DB23F0F9F66AB446DB4780CE27BA /* Pods-yemonto-tvOS-acknowledgements.markdown */,
+				199872FEBABED1D56F3B1655D948CB02 /* Pods-yemonto-tvOS-acknowledgements.plist */,
+				C80E02D66DF39ED7A366A99221E75846 /* Pods-yemonto-tvOS-dummy.m */,
+				97DFC91DACB780BAF6BA920585498509 /* Pods-yemonto-tvOS-frameworks.sh */,
+				750E547FEE866CC39BAD8CF7CDE634ED /* Pods-yemonto-tvOS-resources.sh */,
+				EBF908C78B5D74D665357C47894738F8 /* Pods-yemonto-tvOS.debug.xcconfig */,
+				590CDB4733DCB8BD8B90A862CAA4EEB3 /* Pods-yemonto-tvOS.release.xcconfig */,
+			);
+			name = "Pods-yemonto-tvOS";
+			path = "Target Support Files/Pods-yemonto-tvOS";
 			sourceTree = "<group>";
 		};
 		6DDC2B9E3D51B87A4FBC86E6287B3FE8 /* Analytics */ = {
@@ -425,10 +533,10 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				A42F72DC1D780481325DD00969B19BB6 /* Frameworks */,
 				3546490DA50F3613C9D76BEF6083BA9D /* Pods */,
-				DA1C0683E13797553B29A1825C69EC45 /* Products */,
-				AD7CEEE0CDEAD05823C2A542334E26CB /* Targets Support Files */,
+				A757F73F92FFC95A26943BEAD975B3D0 /* Products */,
+				E70BDC8F375A34488F45C1F1E9A6A6A0 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -454,6 +562,24 @@
 			path = "../Target Support Files/SwiftyJSON";
 			sourceTree = "<group>";
 		};
+		9436FF64A76951402587261148E414C5 /* Pods-yemontoTests */ = {
+			isa = PBXGroup;
+			children = (
+				69EF1888D2DB064BEAA8D41585719C10 /* Info.plist */,
+				09A76AE2B999D20917D2768AF2D55042 /* Pods-yemontoTests.modulemap */,
+				ED690C62AB72E75FFCC2B3031E633F6A /* Pods-yemontoTests-acknowledgements.markdown */,
+				C97CFBF6627323A5742509188794C2CE /* Pods-yemontoTests-acknowledgements.plist */,
+				1720A278E8D81C885C54A5ECB6360CF3 /* Pods-yemontoTests-dummy.m */,
+				B4935DE3DCEEDDAE8E0AB11C0E6FF6FC /* Pods-yemontoTests-frameworks.sh */,
+				3AC0B3D0B3C6090E496E363E5CDF2CE1 /* Pods-yemontoTests-resources.sh */,
+				8EFECF43CA62FC3286E34399D9E7A61A /* Pods-yemontoTests-umbrella.h */,
+				D26BE1CD7B96EAFDE4584CA2D6326C64 /* Pods-yemontoTests.debug.xcconfig */,
+				561F1616FA0E08994EEA077A7DBF526F /* Pods-yemontoTests.release.xcconfig */,
+			);
+			name = "Pods-yemontoTests";
+			path = "Target Support Files/Pods-yemontoTests";
+			sourceTree = "<group>";
+		};
 		A2EEE32A0D6CE5A201F228EC4908EBD2 /* AppCenterReactNativeShared */ = {
 			isa = PBXGroup;
 			children = (
@@ -463,20 +589,26 @@
 			path = AppCenterReactNativeShared;
 			sourceTree = "<group>";
 		};
-		AD7CEEE0CDEAD05823C2A542334E26CB /* Targets Support Files */ = {
+		A42F72DC1D780481325DD00969B19BB6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FB7A40D4E7A57A0D2E805AD42748777F /* Pods-yemonto */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+				58996781A54EE964D7111D73083A18A5 /* iOS */,
+				20F731AE46C73F232AF0C168DC383CF9 /* tvOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A757F73F92FFC95A26943BEAD975B3D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4463034CB9B6DCAE5FB38998CD9B542F /* Charts.framework */,
+				7E4A5A84AD74C01B3AD06411D6A9AC42 /* libPods-yemonto-tvOS.a */,
+				0D03128F55E362BA0C0A8497884FD3F1 /* libPods-yemonto-tvOSTests.a */,
+				B5D895D52A2299E97BB2BA244FB41D21 /* Pods_yemonto.framework */,
+				29981BD49659903CDFA430905C000678 /* Pods_yemontoTests.framework */,
+				3E76C9F1425A564B6CFEA00488E3E73E /* SwiftyJSON.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		BC9084EFBEE6B9C315FADCB9D98B55C6 /* Support Files */ = {
@@ -501,12 +633,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+		C81E44D230086CAD62F1C043EEE665B3 /* Pods-yemonto-tvOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+				F50F4D974DB273DCDA622550AF72F400 /* Pods-yemonto-tvOSTests-acknowledgements.markdown */,
+				4A3F01BB7E09151C800A183AB8FCD6B1 /* Pods-yemonto-tvOSTests-acknowledgements.plist */,
+				F9A89AAF4330CDD3E0CB23AC4A0839D0 /* Pods-yemonto-tvOSTests-dummy.m */,
+				C9B8D8E9CCF108D910044D22270D3755 /* Pods-yemonto-tvOSTests-frameworks.sh */,
+				A8DFA03B1518EFA49F084B137E393A07 /* Pods-yemonto-tvOSTests-resources.sh */,
+				C76246C01E4F57BDC75033912C1EB117 /* Pods-yemonto-tvOSTests.debug.xcconfig */,
+				C6FEDA5ACBA9B32818A52A0463CA5995 /* Pods-yemonto-tvOSTests.release.xcconfig */,
 			);
-			name = iOS;
+			name = "Pods-yemonto-tvOSTests";
+			path = "Target Support Files/Pods-yemonto-tvOSTests";
 			sourceTree = "<group>";
 		};
 		D4219A5C233B551F18A7BE588F242A67 /* Frameworks */ = {
@@ -515,16 +654,6 @@
 				261AF892B6FF351892842588BE14395A /* AppCenterReactNativeShared.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DA1C0683E13797553B29A1825C69EC45 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3C56893B574CD40114AC8F10CB8D5E9F /* Charts.framework */,
-				B4C64E09D46630A467F75855E01F0AC0 /* Pods_yemonto.framework */,
-				D4454037BAE64EDB23E12C38CE2666D0 /* SwiftyJSON.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		DF6799DE8A35D34C4E35B65714FC3A60 /* Core */ = {
@@ -686,22 +815,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FB7A40D4E7A57A0D2E805AD42748777F /* Pods-yemonto */ = {
+		E70BDC8F375A34488F45C1F1E9A6A6A0 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				099C3A94BD2D0134D4227F409E11C690 /* Info.plist */,
-				7C713E7DD5A2337C16B11791E904DA00 /* Pods-yemonto.modulemap */,
-				6A0B3A20B783E0AA7EF72105BBCF3534 /* Pods-yemonto-acknowledgements.markdown */,
-				C29EC9C822C3DC5CD871D374234C85A2 /* Pods-yemonto-acknowledgements.plist */,
-				BEA85C48CA0BEAE610DFFFD4AF83215C /* Pods-yemonto-dummy.m */,
-				FC053BA26645DDFE9022A783DCF4B429 /* Pods-yemonto-frameworks.sh */,
-				34549268B75642978803924FD8B8738F /* Pods-yemonto-resources.sh */,
-				FAADD92B51F5536765CF4E5DC898A7F3 /* Pods-yemonto-umbrella.h */,
-				81BAA0002D5BFF45D47D3E50A964F5B8 /* Pods-yemonto.debug.xcconfig */,
-				B12897CC18390BCE9120F7E805334FEE /* Pods-yemonto.release.xcconfig */,
+				020C5EB8B6D1CF85619AAC9C7731F13C /* Pods-yemonto */,
+				6917CBDD0DF48BBC17DF5B519D1B2F0F /* Pods-yemonto-tvOS */,
+				C81E44D230086CAD62F1C043EEE665B3 /* Pods-yemonto-tvOSTests */,
+				9436FF64A76951402587261148E414C5 /* Pods-yemontoTests */,
 			);
-			name = "Pods-yemonto";
-			path = "Target Support Files/Pods-yemonto";
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		FBA0C559EA0110ACDB11B716D964832B /* AppCenter */ = {
@@ -743,6 +865,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BD87D2296A524DB4F644EA05084026A2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9363DE70D765023A53E6EE4E1FC6F059 /* Pods-yemontoTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF6C50D9CA4607DA8F0FA1AB3E2C4395 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -754,6 +884,22 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		29E0158F115F7AF2ED08496EDDEEC653 /* Pods-yemonto-tvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D97652B9CC641CACA1C40262ED66AFD5 /* Build configuration list for PBXNativeTarget "Pods-yemonto-tvOSTests" */;
+			buildPhases = (
+				071322073E25A042E19BDC317C787FD1 /* Sources */,
+				47010CF25B9B27C2EAFDB8090A23CD22 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-yemonto-tvOSTests";
+			productName = "Pods-yemonto-tvOSTests";
+			productReference = 0D03128F55E362BA0C0A8497884FD3F1 /* libPods-yemonto-tvOSTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		2D47D11450D63C6956FF90A895D57801 /* Pods-yemonto */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 017AEBD384764C8E54660C056E74FBDF /* Build configuration list for PBXNativeTarget "Pods-yemonto" */;
@@ -770,7 +916,40 @@
 			);
 			name = "Pods-yemonto";
 			productName = "Pods-yemonto";
-			productReference = B4C64E09D46630A467F75855E01F0AC0 /* Pods_yemonto.framework */;
+			productReference = B5D895D52A2299E97BB2BA244FB41D21 /* Pods_yemonto.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2E5713B6F0E1473246C230F04AE1E7CC /* Pods-yemonto-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01BB9055A473EA10E87FAD060B766CEB /* Build configuration list for PBXNativeTarget "Pods-yemonto-tvOS" */;
+			buildPhases = (
+				EB5C681C2B4477DC48B58BB8867F6D6C /* Sources */,
+				04A1738F7E577AEE41EDD7EBEE1E371C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-yemonto-tvOS";
+			productName = "Pods-yemonto-tvOS";
+			productReference = 7E4A5A84AD74C01B3AD06411D6A9AC42 /* libPods-yemonto-tvOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		45E7E5D7DF354870D4FEC8963AE35031 /* Pods-yemontoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 583055A05B41DA32477621A90FA1C6F2 /* Build configuration list for PBXNativeTarget "Pods-yemontoTests" */;
+			buildPhases = (
+				3A7B523B21AFCB9D8024FC9811D51F46 /* Sources */,
+				5BBFC2B7A9CD5D8B24250C8372770F39 /* Frameworks */,
+				BD87D2296A524DB4F644EA05084026A2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-yemontoTests";
+			productName = "Pods-yemontoTests";
+			productReference = 29981BD49659903CDFA430905C000678 /* Pods_yemontoTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		806893985740F7C0876FC8A74767E5EF /* SwiftyJSON */ = {
@@ -787,7 +966,7 @@
 			);
 			name = SwiftyJSON;
 			productName = SwiftyJSON;
-			productReference = D4454037BAE64EDB23E12C38CE2666D0 /* SwiftyJSON.framework */;
+			productReference = 3E76C9F1425A564B6CFEA00488E3E73E /* SwiftyJSON.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F307B842FF76B2DE6C55DB67C0885325 /* Charts */ = {
@@ -804,7 +983,7 @@
 			);
 			name = Charts;
 			productName = Charts;
-			productReference = 3C56893B574CD40114AC8F10CB8D5E9F /* Charts.framework */;
+			productReference = 4463034CB9B6DCAE5FB38998CD9B542F /* Charts.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -824,18 +1003,29 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = DA1C0683E13797553B29A1825C69EC45 /* Products */;
+			productRefGroup = A757F73F92FFC95A26943BEAD975B3D0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				F307B842FF76B2DE6C55DB67C0885325 /* Charts */,
 				2D47D11450D63C6956FF90A895D57801 /* Pods-yemonto */,
+				2E5713B6F0E1473246C230F04AE1E7CC /* Pods-yemonto-tvOS */,
+				29E0158F115F7AF2ED08496EDDEEC653 /* Pods-yemonto-tvOSTests */,
+				45E7E5D7DF354870D4FEC8963AE35031 /* Pods-yemontoTests */,
 				806893985740F7C0876FC8A74767E5EF /* SwiftyJSON */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		071322073E25A042E19BDC317C787FD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69F2B0F24A81B09816D74FC1710CEA05 /* Pods-yemonto-tvOSTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		22C171F79503F550780E208F61498C9F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -845,11 +1035,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3A7B523B21AFCB9D8024FC9811D51F46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				633B54DC63F05C610EEE2CFA00904238 /* Pods-yemontoTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E33D2167F24B091AB5EA553B60154509 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F22F5B6B6CDE5643474FA53245697992 /* Pods-yemonto-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB5C681C2B4477DC48B58BB8867F6D6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F040A257D334584769013B87E4D5D29D /* Pods-yemonto-tvOS-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1013,38 +1219,23 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		007BFF1384B072D3C61EDA00BF566CC3 /* Release */ = {
+		4023419EC3E173450B08EB28FA0C6CFB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B12897CC18390BCE9120F7E805334FEE /* Pods-yemonto.release.xcconfig */;
+			baseConfigurationReference = C6FEDA5ACBA9B32818A52A0463CA5995 /* Pods-yemonto-tvOSTests.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-yemonto/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-yemonto/Pods-yemonto.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_yemonto;
-				SDKROOT = iphoneos;
+				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
 				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1080,9 +1271,9 @@
 			};
 			name = Release;
 		};
-		6A3C5F5A63DA2AD4DC2D2B8FE2CA0771 /* Debug */ = {
+		5028CDA1573FC03CA316980D5E385E2C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EDA0B2F326D6D035950370AE504E9F5 /* Charts.xcconfig */;
+			baseConfigurationReference = D26BE1CD7B96EAFDE4584CA2D6326C64 /* Pods-yemontoTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1093,82 +1284,28 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Charts/Charts-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Charts/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-yemontoTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Charts/Charts.modulemap";
-				PRODUCT_NAME = Charts;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-yemontoTests/Pods-yemontoTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_yemontoTests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		6F9224530522DD3C735EC96CF142642E /* Release */ = {
+		5F1B50D736FA404A1231666872D13E95 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		7B51C0C5A6B5E97FFA6DFDC2E1DF37E1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81BAA0002D5BFF45D47D3E50A964F5B8 /* Pods-yemonto.debug.xcconfig */;
+			baseConfigurationReference = 0FD60BCB67A9D04BB13077B8ECB54578 /* Pods-yemonto.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1193,6 +1330,36 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6A3C5F5A63DA2AD4DC2D2B8FE2CA0771 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EDA0B2F326D6D035950370AE504E9F5 /* Charts.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Charts/Charts-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Charts/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Charts/Charts.modulemap";
+				PRODUCT_NAME = Charts;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1264,7 +1431,59 @@
 			};
 			name = Debug;
 		};
-		B57951D085A1B98A97F8A1062A5E5C5B /* Debug */ = {
+		B552656CC7D0B8CC02C22B4343579B6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 561F1616FA0E08994EEA077A7DBF526F /* Pods-yemontoTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-yemontoTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-yemontoTests/Pods-yemontoTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_yemontoTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BAE350F71BD5B75B8857F47D36945967 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBF908C78B5D74D665357C47894738F8 /* Pods-yemonto-tvOS.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		C232D221F175C008C0805332639F13F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1321,8 +1540,138 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
+				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
 			name = Debug;
+		};
+		C5FA7E8DD856BB0AF9942F8052173FDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 590CDB4733DCB8BD8B90A862CAA4EEB3 /* Pods-yemonto-tvOS.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CA158D445DD360846B6529301D15FC97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C76246C01E4F57BDC75033912C1EB117 /* Pods-yemonto-tvOSTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		CFA609D59840A2D5159E2549AFDFF3D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A600D8A3607D3EDFC1DEB2C6122927BD /* Pods-yemonto.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-yemonto/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-yemonto/Pods-yemonto.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_yemonto;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F7E80D0695B04174379955F1B7D7BE75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1330,8 +1679,17 @@
 		017AEBD384764C8E54660C056E74FBDF /* Build configuration list for PBXNativeTarget "Pods-yemonto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7B51C0C5A6B5E97FFA6DFDC2E1DF37E1 /* Debug */,
-				007BFF1384B072D3C61EDA00BF566CC3 /* Release */,
+				5F1B50D736FA404A1231666872D13E95 /* Debug */,
+				CFA609D59840A2D5159E2549AFDFF3D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01BB9055A473EA10E87FAD060B766CEB /* Build configuration list for PBXNativeTarget "Pods-yemonto-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAE350F71BD5B75B8857F47D36945967 /* Debug */,
+				C5FA7E8DD856BB0AF9942F8052173FDF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1339,8 +1697,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B57951D085A1B98A97F8A1062A5E5C5B /* Debug */,
-				6F9224530522DD3C735EC96CF142642E /* Release */,
+				C232D221F175C008C0805332639F13F1 /* Debug */,
+				F7E80D0695B04174379955F1B7D7BE75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1354,11 +1712,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		583055A05B41DA32477621A90FA1C6F2 /* Build configuration list for PBXNativeTarget "Pods-yemontoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5028CDA1573FC03CA316980D5E385E2C /* Debug */,
+				B552656CC7D0B8CC02C22B4343579B6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B884B744051112994AC77F888AEB0925 /* Build configuration list for PBXNativeTarget "Charts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6A3C5F5A63DA2AD4DC2D2B8FE2CA0771 /* Debug */,
 				8B35BEED315DD60DCA722F95242FFD4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D97652B9CC641CACA1C40262ED66AFD5 /* Build configuration list for PBXNativeTarget "Pods-yemonto-tvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA158D445DD360846B6529301D15FC97 /* Debug */,
+				4023419EC3E173450B08EB28FA0C6CFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

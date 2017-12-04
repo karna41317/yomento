@@ -32,6 +32,7 @@ export default class SwiperComponent extends Component {
   constructor (props) {
     super(props)
     this.state = {
+      value: 0,
       skipFadeOpacity: new Animated.Value(1),
       doneFadeOpacity: new Animated.Value(0),
       nextOpacity: new Animated.Value(1),
@@ -44,7 +45,6 @@ export default class SwiperComponent extends Component {
       disable: this.props.name === 'profile' ? true : false,
     })
   }
-
 
   onNextBtnClick = (context) => {
     if (context.state.isScrolling || context.state.total < 2) return
@@ -62,8 +62,8 @@ export default class SwiperComponent extends Component {
         },
       })
     }
-    if(this.props.name === 'profile') {
-      this.setState({disable: true})
+    if (this.props.name === 'profile') {
+      this.setState({disable: true, value: 0})
     }
 
     this.props.onNextBtnClick(context.state.index)
@@ -139,8 +139,6 @@ export default class SwiperComponent extends Component {
     const {pageArray} = this.props
     const buttonText = get(pageArray[index], 'button_text', 'next')
     const readMoreText = get(pageArray[index], 'read_more', null)
-    console.log('printing', this.state, this.props.name)
-
     return (
       <View style={styles.paginationContainer}>
         {this.props.showSkipButton ? <SkipButton
@@ -172,14 +170,44 @@ export default class SwiperComponent extends Component {
       ...page,
       result: value,
     }
+
     this.props.dispatch(saveProfileRating(profileData))
-    this.setState({disable: false})
+    if(value > 0) {
+      this.setState({disable: false, value: value})
+    } else {
+      this.setState({disable: true, value: value})
+    }
+
   }
 
   getRatingComponent = (page) => {
+
     if (page.content_type === 'rate') {
       return (
-        <RatingComponent page={page} valueChanged={this.valueChanged}/>
+        <View>
+          <View style={{marginVertical: 40}}>
+            <Text style={{textAlign: 'center', fontSize: 80, color: '#419BF9'}}>
+              {this.state.value}
+            </Text>
+          </View>
+          <Slider
+            page={page}
+            minimumValue={0}
+            maximumValue={10}
+            step={1}
+            trackStyle={styles.track}
+            thumbStyle={styles.thumb}
+            minimumTrackTintColor='#419BF9'
+            maximumTrackTintColor={'#b3b3b3'}
+            thumbTintColor={'#bbbbbb'}
+            thumbTouchSize={{width: 40, height: 40}}
+            animationType={'spring'}
+            value={this.state.value}
+            onSlidingComplete={this.valueChanged}
+          />
+        </View>
+
+
       )
     }
   }

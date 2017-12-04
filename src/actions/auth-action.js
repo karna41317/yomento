@@ -60,6 +60,35 @@ export const registerUser = (user, navigation) => {
     apiModule.registerUser(user).then(data=> {
       if(data.status !== 'success') {
         dispatch({
+          type: Types.SIGNUP_FAILURE,
+          payload: data.message
+        })
+      }
+      if(data.status === 'success') {
+        const userData = {
+          ...data,
+          authorization: data.token_type + ' ' + data.token_access
+        }
+        dispatch({
+          type: Types.SIGNUP_SUCCESS,
+          payload: userData
+        })
+        if(data.profile_created==='no') {
+          navigation.navigate('onBoarding')
+        } else {
+          navigation.navigate('dashboard')
+        }
+      }
+    })
+  }
+}
+// login action
+export const loginUser = (username, password, navigation) => {
+  return dispatch => {
+
+    apiModule.loginUser(username, password).then(data=> {
+      if(data.status !== 'success') {
+        dispatch({
           type: Types.LOGIN_FAILURE,
           payload: data.message
         })
@@ -80,23 +109,6 @@ export const registerUser = (user, navigation) => {
         }
       }
     })
-  }
-}
-// login action
-export const userLogin = (username, password, navigation) => {
-  return dispatch => {
-    axios.post(API_CONST.baseUrl + API_CONST.login, {
-      username: username,
-      password: password,
-    }).then((response) => {
-      if (response.data.length > 0) {
-        loginDone(dispatch, response)
-        //  AsyncStorage.setItem('uid',response.data._id,(res)=> {})
-        navigation.navigate('NEWS')
-      } else {
-        loginFail(dispatch, response)
-      }
-    }).catch((response) => loginFail(dispatch, response))
   }
 }
 
