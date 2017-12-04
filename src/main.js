@@ -1,4 +1,5 @@
 import Store from './store'
+import { reduxStore } from 'src/store/store'
 import RootScreen from './screens/root'
 import React, { Component } from 'react'
 import { AppRegistry, BackHandler, Platform } from 'react-native'
@@ -94,11 +95,11 @@ class Yomento extends Component {
 
   navigateBack () {
 
-    const navigatorState = store.getState().navigatorState
+    const navigatorState = reduxStore.getState().navigatorState
     const currentStackScreen = navigatorState.index
     const currentTab = navigatorState.routes[0].index
     if (currentTab !== 0 || currentStackScreen !== 0) {
-      store.dispatch(NavigationActions.back())
+      reduxStore.dispatch(NavigationActions.back())
       return true
     }
     return false

@@ -6,12 +6,13 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Moment from 'moment'
 import { styles, htmlStyles } from './loop-styles'
 import { ActivityIndicator, View, Text, DatePickerIOS } from 'react-native'
 import GradientWrapper from '../../components/partials/gradientWrapper'
 import { Button, Icon } from 'src/components/native-base'
 import { loopSelector } from './loopSelector'
-import {updateCards} from 'src/actions'
+import { updateCards } from 'src/actions'
 import { getLoops } from 'src/actions'
 import { get } from 'lodash'
 import { PrimaryButton } from '../../components/buttons/Button'
@@ -47,40 +48,27 @@ export default class loopReminderScreen extends Component {
   parseJson = (content) => {
     return JSON.parse(JSON.stringify(content))
   }
-  confirmReminder = () => {
-    const {loop} = this.props
-    console.log('printing', loop)
+  confirmReminder = (currentLoop) => {
+    const {dispatch, navigation} = this.props
+    const dataInEpoch = Moment(this.state.date).unix()
     const params = {
       card_type: 'reminder',
-      reminder_time: this.state.date,
-      loop_id: get(loop,'loop_id'),
-      card_status: 'not_interested'
+      reminder_time: dataInEpoch,
+      loop_id: get(currentLoop, 'loop_id'),
     }
-    //this.props.dispatch(updateCards(params))
-    //this.props.navigation.navigate('loopCoachEnd')
+    dispatch(updateCards(params, navigation))
   }
 
   render () {
     const {loop} = this.props
-    console.log('printing loop', loop)
-
-    if (loop.loop[0]) {
-      console.log('printing loop.loop[0]', loop.loop[0])
-
-      const loopContent = eval(this.parseJson(loop.loop[0]))
+    const currentLoop = loop.loop[0]
+    if (currentLoop) {
+      const loopContent = eval(this.parseJson(currentLoop))
       const reminder_action_content = eval(
         this.parseJson(loopContent.reminder_action_content))
 
-      const coach_end_content = eval(
-        this.parseJson(loopContent.coach_end_content))
-
-      const coach_action_done_content = eval(
-        this.parseJson(loopContent.coach_action_done_content))
-
       if (reminder_action_content) {
-
         const {title} = get(reminder_action_content[0], 'data[0]')
-        console.log('printing', title)
         return (
           <GradientWrapper name='reminder'>
             <View backgroundColor={'transparent'} style={styles.headerStyle}>
@@ -105,7 +93,7 @@ export default class loopReminderScreen extends Component {
             </View>
             <View style={styles.confirmReminder}>
               <PrimaryButton
-                onPress={this.confirmReminder} upper>
+                onPress={this.confirmReminder.bind(this, currentLoop)} upper>
                 confirm
               </PrimaryButton>
             </View>

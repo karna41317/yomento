@@ -57,10 +57,14 @@ export default class LoopHowScreen extends Component {
       const loopContent = eval(this.parseJson(loop.loop[0]))
       const how_content = eval(this.parseJson(loopContent.how_content))
       console.log('printing how_content', how_content)
+      const {dashboard} = this.props
+      const headerName = get(dashboard, 'newCard[0].theme_name', 'Intro')
+      console.log('printing', headerName)
 
       if (how_content) {
         return (
           <LoopSwiperComponent
+            headerName={headerName}
             name={'loophow'}
             showDots={true}
             showSkipButton={false}

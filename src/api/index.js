@@ -65,18 +65,12 @@ class ApiModule extends HttpService {
     const headers = {
       'authorization': token,
     }
-    const cardType = get(pathParams, 'card_type')
-    if (cardType === 'reflection') {
-      const {cardType, loop_id} = pathParams
-      const body = bodyParams
-      const path = `/updateCard?card_type=${cardType}&loop_id=${loop_id}`
-      return this.post(path, body, headers)
-    } else if (cardType === 'reminder') {
-      const body = {}
-      const {cardType, loop_id, reminder_time} = pathParams
-      const path = `/updateCard?card_type=${cardType}&reminder_time=${reminder_time}&loop_id=${loop_id}`
-      return this.post(path, body, headers)
-    }
+    const {card_type, loop_id, reminder_time, card_status} = pathParams
+    console.log('printing', pathParams)
+
+    const body = bodyParams
+    const path = `/updateCard?card_type=${card_type}&loop_id=${loop_id}&card_status=${card_status}&reminder_time=${reminder_time}`
+    return this.post(path, body, headers)
   }
 }
 

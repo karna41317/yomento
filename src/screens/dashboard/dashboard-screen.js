@@ -19,6 +19,10 @@ export default class DashboardScreen extends Component {
     this.props.navigation.navigate('profile')
   }
 
+  componentWillMount () {
+    this.props.dispatch(getDashboardCards())
+  }
+
   componentDidMount () {
     this.props.dispatch(getLoops())
     this.skipFutureCards()
@@ -297,8 +301,7 @@ export default class DashboardScreen extends Component {
                 automaticallyAdjustContentInsets={false}
                 onScroll={() => { console.log('onScroll!') }}
                 scrollEventThrottle={200}
-                showsVerticalScrollIndicator={false}
-              >
+                showsVerticalScrollIndicator={false}>
                 {this.finishedCards()}
                 {this.getActionCard()}
                 {this.getReflectionCard()}

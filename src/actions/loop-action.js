@@ -33,22 +33,32 @@ export const getLoops = () => {
   }
 }
 
-export const updateCards = (pathParams, bodyParams) => {
+export const updateCards = (parameteres, navigation) => {
   return dispatch => {
     const state = reduxStore.getState()
     const token = get(state, 'auth.userData.authorization')
-    const params ={
-      pathParams: pathParams,
-      bodyParams: bodyParams
+    console.log('printing', params)
+    const params = {
+      pathParams: get(parameteres, 'pathParams'),
+      bodyParams: get(parameteres, 'bodyParams', {}),
     }
+    console.log('printing', params)
+
+    const card_type = get(params, 'pathParams.card_type')
     try {
       apiModule.updateCard(token, params).then(data => {
         if (data.status && data.status === 'success') {
+          if (card_type === 'reflection') {
+            navigation.navigate('loopCoachReflectionAfter')
+          } else {
+            navigation.navigate('dashboard')
+          }
           dispatch(getDashboardCards())
           dispatch({
             type: Types.UPDATE_CARD,
             payload: data,
           })
+
         }
       })
     } catch (err) {

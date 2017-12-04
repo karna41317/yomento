@@ -77,7 +77,8 @@ export default class Home extends Component {
         lastName: data.lastName,
         authType: Constans.LINKEDIN,
       }
-      this.props.dispatch(loginSuccess(userData))
+      const userInfo = Object.assign({}, user, {source: 'email'})
+      this.props.dispatch(registerUser(userData))
       this.props.navigation.navigate('onBoarding')
       /*AsyncStorage.setItem('user', JSON.stringify(userData), () => {
         this.getUserProfileImage()
@@ -115,6 +116,7 @@ export default class Home extends Component {
           <ViewWrapper>
             <TextFont style={styles.member}>Become a member</TextFont>
             <RNEButton onPress={this.goToLinkedInLogin}
+                       style={{backgroundColor:'transparent'}}
                        backgroundColor={'#2B7AB6'}
                        color={'white'}
                        buttonStyle={styles.rneButton}

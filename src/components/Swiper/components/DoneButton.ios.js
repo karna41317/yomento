@@ -33,8 +33,8 @@ const DoneButton = ({
     btnContainerStyle = {
       position: 'absolute',
       bottom: 50,
+      marginLeft: 10,
       alignSelf: 'center',
-
     }
   }
   let disabled

@@ -192,8 +192,8 @@ export default class LoopSwiperComponent extends Component {
             <Icon name='arrow-back' style={{fontSize: 30, color: '#419BF9'}}/>
           </Button>
           <View>
-            <Text style={styles.headerTextStyle}>{this.props.name ? upperCase(
-              this.props.name) : null}</Text>
+            <Text style={styles.headerTextStyle}>{this.props.headerName ? upperCase(
+              this.props.headerName) : null}</Text>
             <View style={styles.dotContainer}>
               {this.props.showDots && RenderDots(index, total, {
                 ...this.props, styles: styles,

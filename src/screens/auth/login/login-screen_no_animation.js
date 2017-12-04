@@ -13,7 +13,7 @@ import { usernameChanged, passwordChanged, emailChanged, registerUser, loginUser
 import { PrimaryButton, SecondaryButton } from '../../../components/buttons/Button'
 import MonoLogo from 'src/components/logos/mono-logo'
 import { lightTextMixin, semiBoldTextMixin } from '../../../styles/mixins'
-import {get} from 'lodash'
+import { get } from 'lodash'
 
 @connect(authState)
 export default class LoginScreen extends Component {
@@ -27,16 +27,15 @@ export default class LoginScreen extends Component {
     }
   }
 
-  componentDidMount = () => {
+  componentWillMount = () => {
     const {userData} = this.props
-    if(userData) {
+    if (userData) {
       const token = get(userData, 'authorization')
       const isValid = token.includes('Bearer')
       console.log('printing', isValid)
-      if(isValid) {
+      if (isValid) {
 
-
-        this.props.navigation.navigate('onBoarding')
+        this.props.navigation.navigate('dashboard')
       }
     }
   }
@@ -56,7 +55,7 @@ export default class LoginScreen extends Component {
 
   onChange = (name, text) => {
     const {dispatch} = this.props
-console.log('printing', name, text)
+    console.log('printing', name, text)
 
     switch (name) {
       case 'user':
@@ -78,7 +77,7 @@ console.log('printing', name, text)
   }
 
   goToLoginUser = () => {
-    const { dispatch, navigation} = this.props
+    const {dispatch, navigation} = this.props
     if (this.validation()) {
       dispatch(loginUser(this.state.email, this.state.password, navigation))
     }
@@ -96,6 +95,7 @@ console.log('printing', name, text)
   goToContactSupport = () => {
 
   }
+
   render () {
     return (
       <GradientWrapper name={'default'}>
@@ -107,8 +107,9 @@ console.log('printing', name, text)
                     style={[styles.icon, styles.closeIcon]}/>
             </TouchableOpacity>
           </View>
-          <View style={{marginVertical:20}}>
-            <Image source={require('src/images/mercury_logo.png')} style={{width: 100, height: 100}}/>
+          <View style={{marginVertical: 20}}>
+            <Image source={require('src/images/mercury_logo.png')}
+                   style={{width: 100, height: 100}}/>
           </View>
           <Item rounded style={styles.item}>
             <Icon active name='ios-mail' style={styles.icon}/>
@@ -203,18 +204,18 @@ const styles = StyleSheet.create({
     fontSize: 80,
     width: 60,
     color: '#0079FF',
-    alignItems:'center'
+    alignItems: 'center',
   },
   contactSupport: {
     position: 'absolute',
-    bottom: 40
+    bottom: 40,
   },
   forgotText: {
     ...semiBoldTextMixin(14, '#3EABFF'),
-    letterSpacing: 2
+    letterSpacing: 2,
   },
   contactText: {
     ...semiBoldTextMixin(14, '#3EABFF'),
-    letterSpacing: 2
-  }
+    letterSpacing: 2,
+  },
 })

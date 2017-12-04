@@ -49,8 +49,11 @@ export default class LoopIntroScreen extends Component {
       tap: this.props.selectedOptions,
       selectedText: '',
     }
-    dispatch(updateCards(pathParams, bodyParams))
-    //navigation.navigate('loopCoachReflectionAfter', {})
+    const params = {
+      pathParams,
+      bodyParams
+    }
+    dispatch(updateCards(params, navigation))
   }
 
   nextBtnHandle = (index) => {

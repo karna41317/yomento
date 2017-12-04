@@ -4,12 +4,14 @@
 import { createSelector } from 'reselect'
 
 import {
+  dashboardState,
   loopState,
 } from '../../selectors/common'
 
 export const loopSelector = createSelector(
-  [loopState],
-  (loop) => ({
+  [dashboardState, loopState],
+  (dashboard, loop) => ({
+    dashboard,
     loop,
   }),
 )
