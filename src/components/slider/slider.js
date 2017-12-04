@@ -437,7 +437,7 @@ export class Slider extends PureComponent {
 
   _fireChangeEvent = (event) => {
     if (this.props[event]) {
-      this.props[event](this._getCurrentValue())
+      this.props[event](this._getCurrentValue(), this.props.page)
     }
   }
 

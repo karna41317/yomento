@@ -55,7 +55,7 @@ export const saveProfileRating = (data) => {
       })
     } catch (err) {
       dispatch({
-        type: Types.ERROR_PROFILE_RATING,
+        type: Types.ERROR_PROFILE_RATINGS,
         payload: err,
       })
     }

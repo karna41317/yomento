@@ -209,6 +209,8 @@ export default class ProfileScreen extends Component {
   }
 
   parseDataforRadar = (keys, inputData) => {
+    console.log('printing', inputData)
+
     return map(keys, (key) => {
       const keyExist = inputData.some(o => key in o)
       if (keyExist) {

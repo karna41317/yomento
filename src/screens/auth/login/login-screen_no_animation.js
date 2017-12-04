@@ -30,12 +30,21 @@ export default class LoginScreen extends Component {
   componentWillMount = () => {
     const {userData} = this.props
     if (userData) {
+      console.log('printinguserData', userData)
+
       const token = get(userData, 'authorization')
+
       const isValid = token.includes('Bearer')
       console.log('printing', isValid)
       if (isValid) {
+        const profileCreated = get(userData, 'profile_created')
+        if(profileCreated === 'no') {
+          this.props.navigation.navigate('onBoarding')
+        } else {
+          this.props.navigation.navigate('dashboard')
+        }
 
-        this.props.navigation.navigate('dashboard')
+
       }
     }
   }

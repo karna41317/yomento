@@ -165,11 +165,13 @@ export default class SwiperComponent extends Component {
       </View>
     )
   }
+
   valueChanged = (value, page) => {
     const profileData = {
       ...page,
       result: value,
     }
+    console.log('printingprofileData', profileData)
 
     this.props.dispatch(saveProfileRating(profileData))
     if(value > 0) {
