@@ -14,6 +14,10 @@ GLOBAL.XMLHttpRequest = GLOBAL.originalXMLHttpRequest || GLOBAL.XMLHttpRequest
 class Yomento extends Component {
   componentDidMount() {
     console.disableYellowBox = true;
+    codePush.sync({
+      updateDialog: true,
+      installMode: codePush.InstallMode.IMMEDIATE
+    })
   }
 
   constructor() {

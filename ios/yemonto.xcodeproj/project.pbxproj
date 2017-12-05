@@ -2365,8 +2365,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardust.yomento;
 				PRODUCT_NAME = yemonto;
-				PROVISIONING_PROFILE = "53e75a74-d96b-4ace-a84d-d3348c3153a3";
-				PROVISIONING_PROFILE_SPECIFIER = ios_distribution_provisioning;
+				PROVISIONING_PROFILE = "e2f711e1-2533-4df0-9f19-5c2eaa122d62";
+				PROVISIONING_PROFILE_SPECIFIER = "ad-hoc profile";
 				SWIFT_OBJC_BRIDGING_HEADER = "yemonto-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
