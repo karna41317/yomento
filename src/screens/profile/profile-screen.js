@@ -17,7 +17,6 @@ const textColor = '#12124B'
 const allSelfColor = '#CE1CD4'
 const allIdealColor = '#0079FF'
 
-
 @connect(profileSelector)
 export default class ProfileScreen extends Component {
   constructor () {
@@ -58,7 +57,9 @@ export default class ProfileScreen extends Component {
             styles.profileSecondaryButtons,
             {
               borderColor: allSelfColor,
-              backgroundColor: this.state.allSelfActive ? allSelfColor : 'transparent',
+              backgroundColor: this.state.allSelfActive
+                ? allSelfColor
+                : 'transparent',
             }]
           }
           textStyles={[
@@ -74,7 +75,9 @@ export default class ProfileScreen extends Component {
             styles.profileSecondaryButtons,
             {
               borderColor: allIdealColor,
-              backgroundColor: this.state.allIdealActive ? allIdealColor : 'transparent',
+              backgroundColor: this.state.allIdealActive
+                ? allIdealColor
+                : 'transparent',
             }]
           }
           textStyles={[
@@ -207,10 +210,85 @@ export default class ProfileScreen extends Component {
       </View>
     )
   }
+  getGraph = (colors) => {
+    const {profile: {profileRatingResponse}} = this.props
+    let radarGraphData
+    if (profileRatingResponse.length > 0) {
+      const variables = map(profileRatingResponse, profile => {
+        return {
+          key: snakeCase(toLower(profile.theme_name)),
+          label: toUpper(profile.theme_name),
+        }
+      })
+
+      const parsedData = this.parseDataforRadar(this.state.keys,
+        profileRatingResponse)
+      radarGraphData = {
+        variables: variables,
+        sets: parsedData,
+      }
+    } else {
+      radarGraphData = {
+        variables: [
+          {key: 'COMMUNICATION', label: 'COMMUNICATION'},
+          {key: 'TEAM', label: 'TEAM'},
+          {key: 'DELEGATION', label: 'DELEGATION'},
+          {key: 'TIME MANAGEMENT', label: 'TIME MANAGEMENT'},
+          {key: 'PERFORMANCE', label: 'PERFORMANCE'},
+          {key: 'FEEDBACK', label: 'FEEDBACK'},
+        ],
+        sets: [
+          {
+            key: 'my Ideal',
+            label: 'my Ideal',
+            values: {
+              resilience: 0,
+              strength: 0,
+              adaptability: 0,
+              creativity: 0,
+              openness: 0,
+              confidence: 0,
+            },
+          },
+          {
+            key: 'my Self',
+            label: 'my Self',
+            values: {
+              resilience: 0,
+              strength: 0,
+              adaptability: 0,
+              creativity: 0,
+              openness: 0,
+              confidence: 0,
+            },
+          },
+        ],
+      }
+    }
+    return (
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'flex-start',
+          alignItems: 'center',
+          marginTop: 10,
+          marginHorizontal: 10,
+        }}>
+        <Radar
+          width={Dimensions.get('window').width}
+          height={400}
+          padding={70}
+          domainMax={10}
+          highlighted={null}
+          onHover={() => {}}
+          data={radarGraphData}
+          colors={colors}
+        />
+      </View>
+    )
+  }
 
   parseDataforRadar = (keys, inputData) => {
-    console.log('printing', inputData)
-
     return map(keys, (key) => {
       const keyExist = inputData.some(o => key in o)
       if (keyExist) {
@@ -225,78 +303,37 @@ export default class ProfileScreen extends Component {
 
   render () {
 
-
-    console.log('this.stateprofileRatingResponse', this.props)
-    const {profile: {profileRatingResponse}} = this.props
-    if (profileRatingResponse.length < 0) {
-      return null
-    } else {
-      const variables = map(profileRatingResponse, profile => {
-        return {
-          key: snakeCase(toLower(profile.theme_name)),
-          label: toUpper(profile.theme_name),
-        }
-      })
-
-      const parsedData = this.parseDataforRadar(this.state.keys,
-        profileRatingResponse)
-      const data = {
-        variables: variables,
-        sets: parsedData,
-      }
-
-      console.log('printing parsedData', parsedData)
-      const colors = {
-        myideal: '#FFFA67',
-        myself: '#FFFFFF',
-        allself_avg: '#CE1CD4',
-        allideal_avg: '#0079FF',
-        myteam: '#A7FBA9',
-      }
-
-      return (
-        <GradientWrapper name={'default'}>
-          <View backgroundColor={'transparent'} style={styles.headerStyle}>
-            <Button transparent onPress={this.settingsPress}>
-              <Icon name='settings' style={{fontSize: 30, color: '#419BF9'}}/>
-            </Button>
-            <Text style={styles.headerTextStyle}>Your Profile</Text>
-            <Button transparent onPress={this.closePress}>
-              <Icon name='close' style={{fontSize: 40, color: '#419BF9'}}/>
-            </Button>
-          </View>
-
-          {this.getMyRatingButtons()}
-
-          <View
-            style={{
-              flex: 1,
-              justifyContent: 'flex-start',
-              alignItems: 'center',
-              marginTop: 10,
-              marginHorizontal: 10,
-            }}>
-            <Radar
-              width={Dimensions.get('window').width}
-              height={400}
-              padding={70}
-              domainMax={10}
-              highlighted={null}
-              onHover={() => {}}
-              data={data}
-              colors={colors}
-            />
-          </View>
-          <View>
-            {
-              this.props.firstLaunch
-                ? this.getLaunchButton()
-                : this.getAllProfileButtons()
-            }
-          </View>
-        </GradientWrapper>
-      )
+    const colors = {
+      myideal: '#FFFA67',
+      myself: '#FFFFFF',
+      allself_avg: '#CE1CD4',
+      allideal_avg: '#0079FF',
+      myteam: '#A7FBA9',
     }
+
+    return (
+      <GradientWrapper name={'default'}>
+        <View backgroundColor={'transparent'} style={styles.headerStyle}>
+          <Button transparent onPress={this.settingsPress}>
+            <Icon name='settings' style={{fontSize: 30, color: '#419BF9'}}/>
+          </Button>
+          <Text style={styles.headerTextStyle}>Your Profile</Text>
+          <Button transparent onPress={this.closePress}>
+            <Icon name='close' style={{fontSize: 40, color: '#419BF9'}}/>
+          </Button>
+        </View>
+
+        {this.getMyRatingButtons()}
+        {this.getGraph(colors)}
+        <View>
+          {
+            this.props.firstLaunch
+              ? this.getLaunchButton()
+              : this.getAllProfileButtons()
+          }
+        </View>
+      </GradientWrapper>
+    )
   }
 }
 

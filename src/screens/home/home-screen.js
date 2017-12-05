@@ -70,6 +70,7 @@ export default class Home extends Component {
   }
 
   getUserProfile (user) {
+    //TODO : fix linkedIn loggin
     LinkedinLogin.getProfile().then((data) => {
       let userData = {
         email: data.emailAddress,

@@ -36,14 +36,14 @@
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2D02E4C21E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C31E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C41E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C51E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C61E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C71E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C81E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C91E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C21E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C31E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C41E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C51E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C61E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C71E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C81E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C91E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		2DCD954D1E0B4F2C00145EB5 /* yemontoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* yemontoTests.m */; };
 		312208857A5C4B47AD681E4F /* TabletGothic-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48898C652878498080F12377 /* TabletGothic-ExtraBold.ttf */; };
 		317C3CA8ED7945EA9D7B6CE3 /* TabletGothic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA7DB2606513493D837FC985 /* TabletGothic-Bold.ttf */; };
@@ -671,14 +671,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D02E4C91E0B4AEC006451C7 /* BuildFile in Frameworks */,
-				2D02E4C21E0B4AEC006451C7 /* BuildFile in Frameworks */,
-				2D02E4C31E0B4AEC006451C7 /* BuildFile in Frameworks */,
-				2D02E4C41E0B4AEC006451C7 /* BuildFile in Frameworks */,
-				2D02E4C51E0B4AEC006451C7 /* BuildFile in Frameworks */,
-				2D02E4C61E0B4AEC006451C7 /* BuildFile in Frameworks */,
-				2D02E4C71E0B4AEC006451C7 /* BuildFile in Frameworks */,
-				2D02E4C81E0B4AEC006451C7 /* BuildFile in Frameworks */,
+				2D02E4C91E0B4AEC006451C7 /* (null) in Frameworks */,
+				2D02E4C21E0B4AEC006451C7 /* (null) in Frameworks */,
+				2D02E4C31E0B4AEC006451C7 /* (null) in Frameworks */,
+				2D02E4C41E0B4AEC006451C7 /* (null) in Frameworks */,
+				2D02E4C51E0B4AEC006451C7 /* (null) in Frameworks */,
+				2D02E4C61E0B4AEC006451C7 /* (null) in Frameworks */,
+				2D02E4C71E0B4AEC006451C7 /* (null) in Frameworks */,
+				2D02E4C81E0B4AEC006451C7 /* (null) in Frameworks */,
 				57602C9FCCDB089643FD876A /* libPods-yemonto-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2314,7 +2314,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardust.yomento;
 				PRODUCT_NAME = yemonto;
-				PROVISIONING_PROFILE = "f95da774-45f8-4dc9-a567-cc8ff7e89d24";
+				PROVISIONING_PROFILE = "2d6cea3f-295e-4c7e-902f-46d896e0253a";
 				PROVISIONING_PROFILE_SPECIFIER = "yomento stardust development";
 				SWIFT_OBJC_BRIDGING_HEADER = "yemonto-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2330,7 +2330,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Yomento Management AB (2WECKNAJVA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2WECKNAJVA;
@@ -2365,8 +2365,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardust.yomento;
 				PRODUCT_NAME = yemonto;
-				PROVISIONING_PROFILE = "2d6cea3f-295e-4c7e-902f-46d896e0253a";
-				PROVISIONING_PROFILE_SPECIFIER = "yomento stardust development";
+				PROVISIONING_PROFILE = "53e75a74-d96b-4ace-a84d-d3348c3153a3";
+				PROVISIONING_PROFILE_SPECIFIER = ios_distribution_provisioning;
 				SWIFT_OBJC_BRIDGING_HEADER = "yemonto-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2596,7 +2596,14 @@
 					"$(SRCROOT)/../node_modules/react-native-photo-view/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
 				);
-				"HEADER_SEARCH_PATHS[arch=*]" = "$(inherited) /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include $(SRCROOT)/../node_modules/react-native/React/** $(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager $(SRCROOT)/../node_modules/react-native-photo-view/ios/** $(SRCROOT)/../node_modules/react-native-share/ios";
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-photo-view/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-share/ios",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;

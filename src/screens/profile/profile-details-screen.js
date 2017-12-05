@@ -14,6 +14,10 @@ export default class ProfileDetailsScreen extends Component {
     this.props.navigation.goBack()
   }
 
+  goToLeadership = () => {
+    this.props.navigation.navigate('readMore')
+  }
+
   render () {
 
     return (
@@ -42,6 +46,7 @@ export default class ProfileDetailsScreen extends Component {
             Get Yommento
             PRO!</PrimaryButton>
           <SecondaryButton
+            onPress={this.goToLeadership}
             style={[
               styles.profileSecondaryButtons,
               styles.profileDetailsButtons]}

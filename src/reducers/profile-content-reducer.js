@@ -8,6 +8,7 @@ const initialState = {
     'myideal': [],
   },
   profileRatingResponse: {},
+  profileCreated: false,
   firstLaunch: false,
 }
 
