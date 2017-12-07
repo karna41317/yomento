@@ -20,7 +20,11 @@ const DoneButton = ({
     marginVertical: 10,
   }
   let btnContainerStyle = {}
-  if (toLower(readMoreLable) === 'set reminder') {
+
+
+
+  if (toLower(readMoreLable).includes('reminder')) {
+
     textStyle = {
       color: '#0079FF',
       fontSize: 14,
@@ -42,8 +46,6 @@ const DoneButton = ({
   if (disable === 'undefined') {
     disabled = false
   } else {
-    console.log('printing disable', disable)
-
     disabled = disable
   }
   return (

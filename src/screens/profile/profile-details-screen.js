@@ -1,13 +1,18 @@
 /**
  * Created by Karan on 2017-11-17.
  */
+import { connect } from 'react-redux'
 import React, { Component } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Linking } from 'react-native'
 import GradientWrapper from '../../components/partials/gradientWrapper'
-import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base'
+import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'src/components/native-base'
 import { styles } from './profile.styles'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
+import { profileSelector } from './profile.selector'
+import { get, toLower } from 'lodash'
+import {logOut} from 'src/actions'
 
+@connect(profileSelector)
 export default class ProfileDetailsScreen extends Component {
 
   closePress = () => {
@@ -18,8 +23,51 @@ export default class ProfileDetailsScreen extends Component {
     this.props.navigation.navigate('readMore')
   }
 
+  openUrl = (url) => {
+    Linking.canOpenURL(url).then(supported => {
+      if (!supported) {
+        console.log('Can\'t handle url: ' + url)
+        Alert.alert(
+          'Error',
+          `Can not open ${url}`,
+          [
+            {
+              text: 'Cancel',
+              onPress: () => console.log('Cancel Pressed'),
+              style: 'cancel',
+            },
+          ],
+          {cancelable: false},
+        )
+      } else {
+        return Linking.openURL(url)
+      }
+    }).catch(err => console.error('An error occurred', err))
+  }
+  logOutUser = () => {
+    this.props.dispatch(logOut())
+    this.props.navigation.navigate('home')
+  }
+
   render () {
 
+    const {auth} = this.props
+    const memberShipDetails = get(auth, 'userData.membership_details')
+
+    let userType
+    if (memberShipDetails) {
+      userType = memberShipDetails[0].type
+    }
+
+
+    const proButtonText = toLower(userType) === 'basic'
+      ? 'Get YommentoPRO!'
+      : 'PRO member'
+    proButtonStyle = {
+      backgroundColor: toLower(userType) === 'basic' ? '#0079FF' : '#C1C1C1',
+      borderColor: toLower(userType) === 'basic' ? '#0079FF' : '#C1C1C1',
+      width: 250,
+    }
     return (
       <GradientWrapper name={'default'}>
         <View backgroundColor={'transparent'} style={styles.headerStyle}>
@@ -42,9 +90,9 @@ export default class ProfileDetailsScreen extends Component {
           </View>
           <PrimaryButton
             textStyles={styles.profileButtonText}
-            style={{backgroundColor: '#0079FF', width: 250}}>
-            Get Yommento
-            PRO!</PrimaryButton>
+            style={proButtonStyle}>
+            {proButtonText}
+          </PrimaryButton>
           <SecondaryButton
             onPress={this.goToLeadership}
             style={[
@@ -54,6 +102,7 @@ export default class ProfileDetailsScreen extends Component {
             Leadership Approach
           </SecondaryButton>
           <SecondaryButton
+            onPress = {this.openUrl.bind(this, 'http://www.yomento.com/faq')}
             style={[
               styles.profileSecondaryButtons,
               styles.profileDetailsButtons]}
@@ -61,6 +110,7 @@ export default class ProfileDetailsScreen extends Component {
             FAQ
           </SecondaryButton>
           <SecondaryButton
+            onPress = {this.openUrl.bind(this, 'mailto:hello@yomento.com')}
             style={[
               styles.profileSecondaryButtons,
               styles.profileDetailsButtons]}
@@ -68,6 +118,7 @@ export default class ProfileDetailsScreen extends Component {
             Send Feedback
           </SecondaryButton>
           <SecondaryButton
+            onPress={this.logOutUser}
             style={[
               styles.profileSecondaryButtons,
               styles.profileDetailsButtons,
@@ -76,10 +127,12 @@ export default class ProfileDetailsScreen extends Component {
             Sign out
           </SecondaryButton>
           <SecondaryButton
+            onPress = {this.openUrl.bind(this, 'http://www.yomento.com/toc')}
             style={[styles.profileSecondaryButtons, {borderWidth: 0}]}
             textStyles={styles.profileDetailsText}>
             Terms and confitions</SecondaryButton>
           <SecondaryButton
+            onPress = {this.openUrl.bind(this, 'http://www.yomento.com/privacy-policy')}
             style={[styles.profileSecondaryButtons, {borderWidth: 0}]}
             textStyles={styles.profileDetailsText}>
             Privacy policy</SecondaryButton>

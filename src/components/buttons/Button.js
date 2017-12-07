@@ -5,7 +5,7 @@ import { boldTextMixin, semiBoldTextMixin } from '../../styles/mixins'
 
 export class PrimaryButton extends Component {
   disabled = () => {
-    console.log('printing disabled')
+
   }
 
   onPress = () => {
@@ -22,7 +22,7 @@ export class PrimaryButton extends Component {
     const disableStyle = {
       opacity: 0.5
     }
-    console.log('printing', disable)
+
 
     let stylesList
     if(disable) {
@@ -30,7 +30,7 @@ export class PrimaryButton extends Component {
     } else {
       stylesList =  [style]
     }
-    console.log('printingstylesList', stylesList)
+
 
     return (
       <TouchableOpacity disable={disable} style={[styles.primaryContainer, style]}

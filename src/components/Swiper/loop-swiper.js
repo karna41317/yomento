@@ -26,7 +26,7 @@ import HTMLView from 'react-native-htmlview'
 import { RatingComponent } from '../rating/rating'
 import { saveProfileRating } from 'src/actions'
 import { profileSelector } from 'src/screens/profile/profile.selector'
-import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base'
+import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'src/components/native-base'
 import data from '../../screens/profile/demo-data'
 import MultipleChoice from '../multi-select/index'
 
@@ -131,12 +131,12 @@ export default class LoopSwiperComponent extends Component {
       isSkipBtnShow = true
     }
     const {pageArray} = this.props
-    console.log('printing pageArray', pageArray)
+
     const buttonText = get(pageArray[index].buttons[0], 'text')
     //const buttonText = get(pageArray[index], 'button_text', 'next')
 
     const readMoreText = get(pageArray[index].buttons[1], 'text')
-    console.log('printing', readMoreText)
+
 
     return (
       <View style={styles.paginationContainer}>
@@ -211,6 +211,7 @@ export default class LoopSwiperComponent extends Component {
   /*<Image source={require('src/images/background.png')} style={{flex: 1, resizeMode: 'cover'}} />*/
   renderIntroPages = (dataObject, seq_order) => {
     const {content_type} = dataObject
+
     if (content_type === 'quote') {
       const {Author, content_type, description, title} = dataObject
       return (
@@ -226,6 +227,8 @@ export default class LoopSwiperComponent extends Component {
       const {auth} = this.props
       const userName = get(auth, 'user.name', '')
       const updated = title.replace('<first_name>', userName)
+
+
       let options = dataObject.options[0].data
       let max_select = dataObject.options[0].max_select
       if (options) {

@@ -5,20 +5,14 @@ import { reduxStore } from 'src/store/store'
 import { apiModule } from 'src/api'
 import { get } from 'lodash'
 
-export const getLoops = () => {
+export const getLoops = (loop_id) => {
   return dispatch => {
 
     const state = reduxStore.getState()
-
     const token = get(state, 'auth.userData.authorization')
-    console.log('printing', token)
     dispatch({type: Types.FETCH_LOOPS})
-    console.log('printing', token)
-
     try {
-      apiModule.fetchLoops(token).then(data => {
-        console.log('printing data', data)
-
+      apiModule.fetchLoops(token, loop_id).then(data => {
         dispatch({
           type: Types.RECEIVE_LOOPS,
           payload: data,
@@ -37,13 +31,11 @@ export const updateCards = (parameteres, navigation) => {
   return dispatch => {
     const state = reduxStore.getState()
     const token = get(state, 'auth.userData.authorization')
-    console.log('printing', params)
+
     const params = {
       pathParams: get(parameteres, 'pathParams'),
       bodyParams: get(parameteres, 'bodyParams', {}),
     }
-    console.log('printing', params)
-
     const card_type = get(params, 'pathParams.card_type')
     try {
       apiModule.updateCard(token, params).then(data => {

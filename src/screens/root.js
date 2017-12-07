@@ -29,11 +29,12 @@ export default class rootScreen extends Component {
   componentDidMount () {
     snapshotUtil.resetSnapshot().then(snapshot => {
       const {dispatch} = this.props
-      if (snapshot) {
+      /*if (snapshot) {
         dispatch(SessionStateActions.resetSessionStateFromSnapshot(snapshot))
       } else {
-        dispatch(SessionStateActions.initializeSessionState())
-      }
+
+      }*/
+      dispatch(SessionStateActions.initializeSessionState())
       store.subscribe(() => {
         snapshotUtil.saveSnapshot(store.getState())
       })
@@ -48,6 +49,7 @@ export default class rootScreen extends Component {
         </View>
       )
     }
+
 
     return (
       <GradientWrapper>

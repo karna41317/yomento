@@ -8,11 +8,12 @@ import { connect } from 'react-redux'
 import { loopSelector } from './loopSelector'
 import { styles, htmlStyles } from './loop-styles'
 import GradientWrapper from '../../components/partials/gradientWrapper'
-import { Header, Left, Right, Body, Icon, Button } from 'native-base'
+import { Header, Left, Right, Body, Icon, Button } from 'src/components/native-base'
 import HTMLView from 'react-native-htmlview'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import LoopSwiperComponent from 'src/components/Swiper/loop-swiper'
-import {get} from 'lodash'
+import { get } from 'lodash'
+
 @connect(loopSelector)
 export default class LoopHowScreen extends Component {
 
@@ -54,12 +55,12 @@ export default class LoopHowScreen extends Component {
   render () {
     const {loop} = this.props
     if (loop) {
+
+
       const loopContent = eval(this.parseJson(loop.loop[0]))
       const how_content = eval(this.parseJson(loopContent.how_content))
-      console.log('printing how_content', how_content)
       const {dashboard} = this.props
       const headerName = get(dashboard, 'newCard[0].theme_name', 'Intro')
-      console.log('printing', headerName)
 
       if (how_content) {
         return (

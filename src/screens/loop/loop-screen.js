@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 import { loopSelector } from './loopSelector'
 import { styles, htmlStyles } from './loop-styles'
 import GradientWrapper from '../../components/partials/gradientWrapper'
-import { Header, Left, Right, Body, Icon, Button } from 'native-base'
+import { Header, Left, Right, Body, Icon, Button } from 'src/components/native-base'
 import HTMLView from 'react-native-htmlview'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import { updateCards } from '../../actions/loop-action'
@@ -24,6 +24,9 @@ export default class LoopScreen extends Component {
     this.props.navigation.navigate('loopIntro', introduction_content)
   }
 
+  goToDashboard= () => {
+    this.props.navigation.navigate('dashboard')
+  }
   notInterested = (currentLoop) => {
     const pathParams = {
       card_type: 'finished',
@@ -33,7 +36,7 @@ export default class LoopScreen extends Component {
     const params = {
       pathParams: pathParams
     }
-    console.log('printingpathParamspathParams', params)
+
 
     const {dispatch, navigation} = this.props
     dispatch(updateCards(params, navigation))
@@ -46,7 +49,9 @@ export default class LoopScreen extends Component {
     const theme_id = state.params ? state.params.theme_id : null
     if (theme_id) {
       const {loop} = this.props
+      console.log('print', loop)
       const currentLoop = loop.loop[0]
+      //const currentLoop = false
       if (currentLoop) {
         const loopContent = eval(this.parseJson(currentLoop))
         const introduction_content = eval(
@@ -68,7 +73,7 @@ export default class LoopScreen extends Component {
                 </Button>
                 </Body>
                 <Right>
-                  <Button transparent onPress={this.goToSetting}>
+                  <Button transparent onPress={this.goToDashboard}>
                     <Icon name='close'
                           style={{fontSize: 35, color: '#419BF9'}}/>
                   </Button>

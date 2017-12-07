@@ -18,7 +18,7 @@ export default class loopCoachReminderEndScreen extends Component {
   }
 
   render () {
-    console.log('printing', this.props)
+
 
     return (
       <GradientWrapper name={'intro'}>

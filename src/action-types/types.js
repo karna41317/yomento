@@ -27,7 +27,7 @@ export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS'
 export const LOGIN_FAILURE = 'LOGIN_FAILURE'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_LOCAL = 'LOGIN_LOCAL'
-export const LOGOUT = 'LOGOUT'
+export const LOG_OUT = 'LOG_OUT'
 
 export const EXPERIENCES_LOADED = 'EXPERIENCES_LOADED'
 export const LISTINGS_LOADED = 'LISTINGS_LOADED'

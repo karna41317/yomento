@@ -8,7 +8,6 @@ const initialState = {
     'myideal': [],
   },
   profileRatingResponse: {},
-  profileCreated: false,
   firstLaunch: false,
 }
 
@@ -18,12 +17,14 @@ export default (state = initialState, {type, payload}) => {
     case Types.FIRST_PROFILE_LAUNCH:
       return {
         ...state,
+        profileCreated: false,
         firstLaunch: true,
       }
     case Types.PROFILE_LAUNCHED:
       return {
         ...state,
         firstLaunch: false,
+        profileCreated: true,
       }
     case Types.ERROR_PROFILE_LAUNCHED:
       return {

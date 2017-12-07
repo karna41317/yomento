@@ -17,7 +17,7 @@ import { styles, htmlStyles } from './profile.styles'
 export default class idealRatingScreen extends Component {
 
   componentDidMount () {
-    console.log('printing in did mount')
+
 
     this.props.dispatch(getProfileContent())
   }

@@ -9,7 +9,7 @@ export default (state = initialState, action = {}) => {
   switch (action.type) {
 
     case Types.USERNAME_CHANGE:
-      console.log('printing reducer', state, action.payload)
+
 
       return {
         ...state,
@@ -63,11 +63,12 @@ export default (state = initialState, action = {}) => {
         loginError: action.payload
         //authType: action.payload['authType'],
       }
-    case Types.LOGOUT:
+    case Types.LOG_OUT:
       return {
         ...state,
         fetching: false,
         user: null,
+        userData:null
         //authType: null,
       }
     default:

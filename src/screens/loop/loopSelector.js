@@ -6,12 +6,14 @@ import { createSelector } from 'reselect'
 import {
   dashboardState,
   loopState,
+  authState
 } from '../../selectors/common'
 
 export const loopSelector = createSelector(
-  [dashboardState, loopState],
-  (dashboard, loop) => ({
+  [dashboardState, loopState, authState],
+  (dashboard, loop,auth) => ({
     dashboard,
     loop,
+    auth
   }),
 )

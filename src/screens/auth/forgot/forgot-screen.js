@@ -8,7 +8,7 @@ import { KeyboardAvoidingView, View, Image, StyleSheet, TextInput, Dimensions, T
 import { authState } from 'src/selectors'
 import GradientWrapper from 'src/components/partials/gradientWrapper'
 //import { View } from 'src/components/wrappers/viewWrapper'
-import { Container, Header, Left, Body, Right, Button as NativeButton, Icon, Title, Item, Input } from 'native-base'
+import { Container, Header, Left, Body, Right, Button as NativeButton, Icon, Title, Item, Input } from 'src/components/native-base'
 import { usernameChanged, passwordChanged, emailChanged, registerUser } from 'src/actions'
 import { PrimaryButton, SecondaryButton } from '../../../components/buttons/Button'
 import MonoLogo from 'src/components/logos/mono-logo'
@@ -41,7 +41,7 @@ export default class Home extends Component {
   }
 
   onChange = (name, text) => {
-    console.log('printing change text, name', text, name)
+
 
     const {dispatch} = this.props
     switch (name) {

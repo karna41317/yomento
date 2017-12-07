@@ -9,7 +9,7 @@ import {
   Image,
   ListView
 } from 'react-native';
-import {Icon} from 'native-base'
+import {Icon} from 'src/components/native-base'
 
 import Styles from './styles'
 
@@ -100,14 +100,14 @@ export default class MultipleChoice extends BaseComponent {
     }
 
     this._updateSelectedOptions(selectedOptions);
-    console.log('printingselectedOption', selectedOption)
+
 
     //run callback
     this.props.onSelection(selectedOption, selectedOptions);
   }
 
   _isSelected(option) {
-    console.log('printingthis.state.selectedOptions.',option, this.state.selectedOptions)
+
 
     return this.state.selectedOptions.indexOf(option) !== -1;
   }

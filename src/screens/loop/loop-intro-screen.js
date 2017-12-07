@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 import { loopSelector } from './loopSelector'
 import { styles, htmlStyles } from './loop-styles'
 import GradientWrapper from '../../components/partials/gradientWrapper'
-import { Header, Left, Right, Body, Icon, Button } from 'native-base'
+import { Header, Left, Right, Body, Icon, Button } from 'src/components/native-base'
 import HTMLView from 'react-native-htmlview'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import LoopSwiperComponent from 'src/components/Swiper/loop-swiper'
@@ -56,7 +56,7 @@ export default class LoopIntroScreen extends Component {
     const introPages = state.params ? state.params : null
     const {dashboard} = this.props
     const headerName = get(dashboard, 'newCard[0].theme_name', 'Intro')
-    console.log('printing', headerName)
+
 
     if (introPages) {
       return (

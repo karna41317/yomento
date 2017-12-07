@@ -24,7 +24,7 @@ import { RatingComponent } from '../rating/rating'
 
 import { saveProfileRating } from 'src/actions'
 import { profileState } from '../../selectors/common'
-import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base'
+import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'src/components/native-base'
 
 const {width, height} = Dimensions.get('window')
 @connect(profileState)
@@ -171,7 +171,7 @@ export default class SwiperComponent extends Component {
       ...page,
       result: value,
     }
-    console.log('printingprofileData', profileData)
+
 
     this.props.dispatch(saveProfileRating(profileData))
     if(value > 0) {

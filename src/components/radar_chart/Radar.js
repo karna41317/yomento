@@ -73,10 +73,10 @@ export default function Radar (props: Props) {
 
   const colors_idx = {}
   forEachArray(allPoints, ({setKey}, idx) => {
-    console.log('printing', schemeCategory10[idx])
+
 
     colors_idx[setKey] = schemeCategory10[idx]
-    console.log('printing colors', colors_idx)
+
 
   })
 
@@ -84,7 +84,7 @@ export default function Radar (props: Props) {
     allPoints,
     ({setKey}) => setKey === highlightedSetKey,
   )
-  console.log('printing colors', colors)
+
   return (
     <View>
       <RadarWrapper

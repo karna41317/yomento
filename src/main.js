@@ -1,22 +1,24 @@
 import Store from './store'
 import { reduxStore } from 'src/store/store'
+import { connect } from 'react-redux'
 import RootScreen from './screens/root'
 import React, { Component } from 'react'
 import { AppRegistry, BackHandler, Platform } from 'react-native'
 import { NavigationActions } from 'react-navigation'
 import CodePush from "react-native-code-push";
 const RN = require('react-native')
+import {sessionSelector} from 'src/selectors'
 
-console.log('printing', RN)
 
 GLOBAL.XMLHttpRequest = GLOBAL.originalXMLHttpRequest || GLOBAL.XMLHttpRequest
+
 
 class Yomento extends Component {
   componentDidMount() {
     console.disableYellowBox = true;
-    codePush.sync({
+    CodePush.sync({
       updateDialog: true,
-      installMode: codePush.InstallMode.IMMEDIATE
+      installMode: CodePush.InstallMode.IMMEDIATE
     })
   }
 
@@ -113,6 +115,8 @@ class Yomento extends Component {
   }
 
   render () {
+
+
     return (
       <Store>
         <RootScreen/>

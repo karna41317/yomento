@@ -2,8 +2,8 @@
  * Created by Karan on 2017-10-26.
  */
 import * as Types from 'src/action-types'
-import {apiModule} from 'src/api'
-import {Alert} from 'react-native'
+import { apiModule } from 'src/api'
+import { Alert } from 'react-native'
 
 export const loginLocal = (user) => ({
   type: Types.LOGIN_LOCAL,
@@ -30,9 +30,11 @@ export const linkedInLogout = (user) => ({
   payload: user,
 })
 
-export const usernameChanged = (text) => {
-  console.log('printing actiom', text)
+export const logOut = (dispatch, response) => ({
+  type: Types.LOG_OUT,
+})
 
+export const usernameChanged = (text) => {
   return {
     type: Types.USERNAME_CHANGE,
     payload: text,
@@ -57,23 +59,23 @@ export const passwordChanged = (text) => {
 export const registerUser = (user, navigation) => {
   //const {username, email, password} = user
   return dispatch => {
-    apiModule.registerUser(user).then(data=> {
-      if(data.status !== 'success') {
+    apiModule.registerUser(user).then(data => {
+      if (data.status !== 'success') {
         dispatch({
           type: Types.SIGNUP_FAILURE,
-          payload: data.message
+          payload: data.message,
         })
       }
-      if(data.status === 'success') {
+      if (data.status === 'success') {
         const userData = {
           ...data,
-          authorization: data.token_type + ' ' + data.token_access
+          authorization: data.token_type + ' ' + data.token_access,
         }
         dispatch({
           type: Types.SIGNUP_SUCCESS,
-          payload: userData
+          payload: userData,
         })
-        if(data.profile_created==='no') {
+        if (data.profile_created === 'no') {
           navigation.navigate('onBoarding')
         } else {
           navigation.navigate('dashboard')
@@ -86,23 +88,23 @@ export const registerUser = (user, navigation) => {
 export const loginUser = (username, password, navigation) => {
   return dispatch => {
 
-    apiModule.loginUser(username, password).then(data=> {
-      if(data.status !== 'success') {
+    apiModule.loginUser(username, password).then(data => {
+      if (data.status !== 'success') {
         dispatch({
           type: Types.LOGIN_FAILURE,
-          payload: data.message
+          payload: data.message,
         })
       }
-      if(data.status === 'success') {
+      if (data.status === 'success') {
         const userData = {
           ...data,
-          authorization: data.token_type + ' ' + data.token_access
+          authorization: data.token_type + ' ' + data.token_access,
         }
         dispatch({
           type: Types.LOGIN_SUCCESS,
-          payload: userData
+          payload: userData,
         })
-        if(data.profile_created==='no') {
+        if (data.profile_created === 'no') {
           navigation.navigate('onBoarding')
         } else {
           navigation.navigate('dashboard')

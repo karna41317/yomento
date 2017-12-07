@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 import { loopSelector } from './loopSelector'
 import { styles, htmlStyles } from './loop-styles'
 import GradientWrapper from '../../components/partials/gradientWrapper'
-import { Header, Left, Right, Body, Icon, Button } from 'native-base'
+import { Header, Left, Right, Body, Icon, Button } from 'src/components/native-base'
 import HTMLView from 'react-native-htmlview'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import LoopSwiperComponent from 'src/components/Swiper/loop-swiper'
@@ -57,7 +57,7 @@ export default class LoopReflectionScreen extends Component {
     if (loop) {
       const loopContent = eval(this.parseJson(loop.loop[0]))
       const how_content = eval(this.parseJson(loopContent.how_content))
-      console.log('printing how_content', how_content)
+
 
       if (how_content) {
         return (

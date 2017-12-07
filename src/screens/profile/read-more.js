@@ -5,7 +5,7 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Dimensions } from 'react-native'
 import readMoreData from './read-more-data'
-import { Icon } from 'native-base'
+import { Icon } from 'src/components/native-base'
 import { boldTextMixin, extraBoldTextMixin, regularTextMixin, semiBoldTextMixin } from '../../styles/mixins'
 import GradientWrapper from '../../components/partials/gradientWrapper'
 import HTMLView from 'react-native-htmlview'

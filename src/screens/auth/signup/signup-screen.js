@@ -10,7 +10,7 @@ import { KeyboardAvoidingView, TextInput, View, Image, StyleSheet, Dimensions, T
 import { authState } from 'src/selectors'
 import GradientWrapper from 'src/components/partials/gradientWrapper'
 //import { View } from 'src/components/wrappers/viewWrapper'
-import { Container, Header, Left, Body, Right, Button as NativeButton, Icon, Title, Item, Input } from 'native-base'
+import { Container, Header, Left, Body, Right, Button as NativeButton, Icon, Title, Item, Input } from 'src/components/native-base'
 import { usernameChanged, passwordChanged, emailChanged, registerUser } from 'src/actions'
 import { PrimaryButton } from '../../../components/buttons/Button'
 import MonoLogo from 'src/components/logos/mono-logo'
@@ -36,7 +36,7 @@ export default class SignUp extends Component {
     if(userData) {
       const token = get(userData, 'authorization')
       const isValid = token.includes('Bearer')
-      console.log('printing', isValid)
+
       if(isValid) {
 
 
@@ -86,7 +86,7 @@ export default class SignUp extends Component {
 
   signUpUser = () => {
     const {user, dispatch, navigation} = this.props
-    console.log('printing user', this.props)
+
 
     if (user && this.validation(user)) {
       const userInfo = Object.assign({}, user, {source: 'email'})
@@ -113,13 +113,13 @@ export default class SignUp extends Component {
       }
     }
 
-    console.log('printing', this.props)
+
 
     //navigation.navigate('login')
   }
 
   onIconPress = () => {
-    console.log('printing', this.props)
+
 
     this.props.navigation.goBack()
   }

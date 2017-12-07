@@ -8,7 +8,7 @@ import { View, Image, StyleSheet, TextInput, Dimensions } from 'react-native'
 import { authState } from 'src/selectors'
 import GradientWrapper from 'src/components/partials/gradientWrapper'
 //import { ViewWrapper } from 'src/components/wrappers/viewWrapper'
-import { Container, Header, Left, Body, Right, Button as NativeButton, Icon, Title, Item, Input } from 'native-base'
+import { Container, Header, Left, Body, Right, Button as NativeButton, Icon, Title, Item, Input } from 'src/components/native-base'
 import { usernameChanged, passwordChanged, emailChanged, registerUser } from 'src/actions'
 import { PrimaryButton } from '../../../components/buttons/Button'
 import {CustomTextInput } from 'src/components/form'
@@ -39,7 +39,7 @@ export default class SignUpScreenComponent extends Component {
   }
 
   onChange = (name, text) => {
-    console.log('printing change text, name', text, name)
+
 
     const {dispatch} = this.props
     switch (name) {

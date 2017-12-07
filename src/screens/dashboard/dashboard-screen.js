@@ -24,7 +24,6 @@ export default class DashboardScreen extends Component {
   }
 
   componentDidMount () {
-    this.props.dispatch(getLoops())
     this.skipFutureCards()
   }
 
@@ -42,8 +41,8 @@ export default class DashboardScreen extends Component {
   }
 
   goToLoop = (item) => {
-    console.log('printing item', item)
-    this.props.dispatch(getLoops())
+
+    this.props.dispatch(getLoops(item.loop_id))
     /*const {dashboard: {mainCards}} = this.props
     const updatedCards = this.moveCardBack(mainCards, 1)
 
@@ -178,7 +177,7 @@ export default class DashboardScreen extends Component {
 
   getMainCard = () => {
     const {dashboard: {newCard}} = this.props
-    console.log('printing', newCard)
+
 
     if (newCard && newCard.length > 0) {
       const mainCard = newCard[0]

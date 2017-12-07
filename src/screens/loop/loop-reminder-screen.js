@@ -27,7 +27,7 @@ export default class loopReminderScreen extends Component {
   }
 
   componentDidMount () {
-    this.props.dispatch(getLoops())
+    //this.props.dispatch(getLoops())
   }
 
   goBack = () => {
@@ -39,7 +39,7 @@ export default class loopReminderScreen extends Component {
   }
 
   onDateChange = (date) => {
-    console.log('printing', date)
+
     this.setState({
       date: date,
     })

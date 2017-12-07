@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, Dimensions } from 'react-native'
 import GradientWrapper from '../../components/partials/gradientWrapper'
-import { Container, Header, DeckSwiper, Card, CardItem, Thumbnail, Left, Body, Icon, Button } from 'native-base'
+import { Container, Header, DeckSwiper, Card, CardItem, Thumbnail, Left, Body, Icon, Button } from 'src/components/native-base'
 import { styles } from './profile.styles'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import Radar from 'src/components/radar_chart/Radar'
@@ -303,6 +303,7 @@ export default class ProfileScreen extends Component {
 
   render () {
 
+
     const colors = {
       myideal: '#FFFA67',
       myself: '#FFFFFF',
@@ -327,7 +328,7 @@ export default class ProfileScreen extends Component {
         {this.getGraph(colors)}
         <View>
           {
-            this.props.firstLaunch
+            !this.props.profileCreated
               ? this.getLaunchButton()
               : this.getAllProfileButtons()
           }

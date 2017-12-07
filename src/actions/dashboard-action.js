@@ -12,6 +12,8 @@ export const getDashboardCards = () => {
   return dispatch => {
     const state = reduxStore.getState()
     const token = get(state, 'auth.userData.authorization')
+
+
     dispatch({type: Types.FETCH_DASHBOARD_CARDS})
     try {
       apiModule.fetchDashboardCards(token).then(data => {

@@ -76,7 +76,7 @@ export const styles = StyleSheet.create({
     minWidth: 140,
     alignSelf: 'flex-end',
     marginRight: 20,
-    marginBottom: 20,
+    marginVertical: 20,
 
   },
   completedCard: {
@@ -115,8 +115,8 @@ export const styles = StyleSheet.create({
     ...boldTextMixin(12),
   },
   profileIntroText: {
-    ...boldTextMixin(24),
-    marginTop: 30,
+    ...boldTextMixin(22),
+    marginVertical: 30,
   },
   reminderWrapper: {
     borderRadius: 15,

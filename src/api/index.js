@@ -51,8 +51,8 @@ class ApiModule extends HttpService {
     return this.get(path, body, headers)
   }
 
-  fetchLoops (token) {
-    const path = '/getLoopDetails'
+  fetchLoops (token, loop_id) {
+    const path = `/getLoopDetails?loop_id=${loop_id}`
     const headers = {
       'authorization': token,
     }
@@ -66,7 +66,6 @@ class ApiModule extends HttpService {
       'authorization': token,
     }
     const {card_type, loop_id, reminder_time, card_status} = pathParams
-    console.log('printing', pathParams)
 
     const body = bodyParams
     const path = `/updateCard?card_type=${card_type}&loop_id=${loop_id}&card_status=${card_status}&reminder_time=${reminder_time}`

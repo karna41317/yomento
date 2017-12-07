@@ -4,18 +4,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { KeyboardAvoidingView, View, Image, StyleSheet, TextInput, Dimensions, Text, TouchableOpacity } from 'react-native'
-import { authState } from 'src/selectors'
+import { View, Image, StyleSheet, Dimensions, Text, TouchableOpacity } from 'react-native'
+import { authSelector } from './../auth-selector'
 import GradientWrapper from 'src/components/partials/gradientWrapper'
-//import { View } from 'src/components/wrappers/viewWrapper'
-import { Container, Header, Left, Body, Right, Button as NativeButton, Icon, Title, Item, Input } from 'native-base'
-import { usernameChanged, passwordChanged, emailChanged, registerUser, loginUser } from 'src/actions'
+import { Icon, Item, Input } from 'src/components/native-base'
+import { loginUser, usernameChanged, passwordChanged, emailChanged,  } from 'src/actions'
 import { PrimaryButton, SecondaryButton } from '../../../components/buttons/Button'
-import MonoLogo from 'src/components/logos/mono-logo'
+
 import { lightTextMixin, semiBoldTextMixin } from '../../../styles/mixins'
 import { get } from 'lodash'
 
-@connect(authState)
+@connect(authSelector)
 export default class LoginScreen extends Component {
 
   constructor (props) {
@@ -28,34 +27,19 @@ export default class LoginScreen extends Component {
   }
 
   componentWillMount = () => {
-    const {userData} = this.props
+    const {auth: {userData}, profile} = this.props
     if (userData) {
-      console.log('printinguserData', userData)
-
       const token = get(userData, 'authorization')
-
       const isValid = token.includes('Bearer')
-      console.log('printing', isValid)
       if (isValid) {
-        const profileCreated = get(userData, 'profile_created')
-        if(profileCreated === 'no') {
+        const profileCreated = get(profile, 'profileCreated')
+        if(!profileCreated) {
           this.props.navigation.navigate('onBoarding')
         } else {
           this.props.navigation.navigate('dashboard')
         }
-
-
       }
     }
-  }
-
-  goToLogin = () => {
-    const {navigation} = this.props
-    navigation.navigate('login')
-  }
-  goToSignup = () => {
-    const {navigation} = this.props
-    navigation.navigate('signup')
   }
 
   goBack = () => {
@@ -64,16 +48,18 @@ export default class LoginScreen extends Component {
 
   onChange = (name, text) => {
     const {dispatch} = this.props
-    console.log('printing', name, text)
-
     switch (name) {
       case 'user':
+        dispatch(usernameChanged(text))
         this.setState({userName: text})
         break
       case 'email':
+        dispatch(emailChanged(text))
         this.setState({email: text})
         break
       case 'pass':
+
+        dispatch(passwordChanged(text))
         this.setState({password: text})
         break
       default:
