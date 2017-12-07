@@ -116,7 +116,20 @@ export default class Home extends Component {
           </ViewWrapper>
           <ViewWrapper>
             <TextFont style={styles.member}>Become a member</TextFont>
-
+            <RNEButton onPress={this.goToLinkedInLogin}
+                       style={{backgroundColor:'transparent'}}
+                       backgroundColor={'#2B7AB6'}
+                       color={'white'}
+                       buttonStyle={styles.rneButton}
+                       borderRadius={30}
+                       raised
+                       large
+                       leftIcon={{
+                         name: 'logo-linkedin',
+                         type: 'ionicon',
+                         color: 'white',
+                       }}
+                       title='Sign in with LinkedIn'/>
             <RNEButton onPress={this.goToSignUp}
                        backgroundColor={'#D5EDFF'}
                        color={'black'}
