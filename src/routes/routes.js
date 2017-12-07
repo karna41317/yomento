@@ -29,6 +29,41 @@ import loopCoachReflectionIntroScreen from 'src/screens/loop/loop-coach-reflecti
 import loopReflectionScreen from 'src/screens/loop/loop-coach-reflection-screen'
 import loopCoachReflectionAfterScreen from 'src/screens/loop/loop-coach-reflection-end-screen'
 
+/*
+let MyTransition = (index, position) => {
+  const inputRange = [index - 1, index, index + 1]
+  const opacity = position.interpolate({
+    inputRange,
+    outputRange: [.1, 1, 1],
+  })
+
+  const scaleY = position.interpolate({
+    inputRange,
+    outputRange: ([0.1, 1, 1]),
+  })
+
+  return {
+    opacity,
+    transform: [
+      {scaleY},
+    ],
+  }
+}
+
+let TransitionConfiguration = () => {
+  return {
+    // Define scene interpolation, eq. custom transition
+    screenInterpolator: (sceneProps) => {
+
+      const {position, scene} = sceneProps
+      const {index} = scene
+
+      return MyTransition(index, position)
+    },
+  }
+}
+*/
+
 export const AppNavigator = StackNavigator({
   home: {
     screen: homeScreen,
@@ -91,39 +126,42 @@ export const AppNavigator = StackNavigator({
     screen: dashboardScreen,
   },
   loop: {
-    screen: LoopScreen
+    screen: LoopScreen,
   },
   loopIntro: {
-    screen: loopIntroScreen
+    screen: loopIntroScreen,
   },
   loopHow: {
-    screen: loopHowScreen
+    screen: loopHowScreen,
   },
   loopReminder: {
-    screen: loopReminderScreen
+    screen: loopReminderScreen,
   },
 
   loopCoachEnd: {
-    screen: loopCoachReminderEndScreen
+    screen: loopCoachReminderEndScreen,
   },
   loopCoachEndNext: {
-    screen: loopCoachReminderEndNextScreen
+    screen: loopCoachReminderEndNextScreen,
   },
   loopCoachReflectionIntro: {
-    screen: loopCoachReflectionIntroScreen
+    screen: loopCoachReflectionIntroScreen,
   },
   loopReflection: {
-    screen: loopReflectionScreen
+    screen: loopReflectionScreen,
   },
   loopCoachReflectionAfter: {
-    screen: loopCoachReflectionAfterScreen
-  }
+    screen: loopCoachReflectionAfterScreen,
+  },
 }, {
-  header:null,
+  header: null,
   initialRouteName: 'home',
   headerMode: 'none',
   navigationOptions: {
     gesturesEnabled: false,
   },
+  /*transitionConfig: TransitionConfiguration,*/
 })
+
+
 
