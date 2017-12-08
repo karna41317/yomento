@@ -4,29 +4,18 @@ PODS:
   - AppCenter/Core (1.0.1)
   - AppCenter/Crashes (1.0.1):
     - AppCenter/Core
-  - AppCenter/Push (1.0.1):
-    - AppCenter/Core
   - AppCenterReactNativeShared (1.0.1):
     - AppCenter/Core (= 1.0.1)
-  - Charts (3.0.1):
-    - Charts/Core (= 3.0.1)
-  - Charts/Core (3.0.1)
-  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
-  - AppCenter/Analytics (~> 1.0.0)
-  - AppCenter/Crashes (~> 1.0.0)
-  - AppCenter/Push (~> 1.0.0)
-  - AppCenterReactNativeShared (~> 1.0.0)
-  - Charts (= 3.0.1)
-  - SwiftyJSON (= 3.1.4)
+  - AppCenter/Analytics (~> 1.0.1)
+  - AppCenter/Crashes (~> 1.0.1)
+  - AppCenterReactNativeShared (~> 1.0.1)
 
 SPEC CHECKSUMS:
   AppCenter: 1d9e08e4ffe7a8eab6e9741a12d27e44074e73a7
   AppCenterReactNativeShared: d7238832c02bd37019083045ed9fa24ba3193779
-  Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 18ec13498c9258a9f2d8db079c82fd193e6ab1d0
+PODFILE CHECKSUM: 94a9474d5ce86106563f29f302074708fb1a5363
 
 COCOAPODS: 1.4.0.beta.2
