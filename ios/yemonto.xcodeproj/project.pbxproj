@@ -14,12 +14,11 @@
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* yemontoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* yemontoTests.m */; };
 		01DC712D1E3C15570081C922 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01DC71131E3C150F0081C922 /* libRCTAnimation.a */; };
+		03D15201170643BF8985B6BA /* libAppCenterReactNativeAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB468D71BF9446CBB1283D1 /* libAppCenterReactNativeAnalytics.a */; };
 		071590C08883478D974063E7 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED092326CDA049839F548044 /* EvilIcons.ttf */; };
 		087F422EBD0846DDBD6E811D /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D940209B5149A797F4FFE3 /* Zocial.ttf */; };
 		0B849D3D84904E6C87D62FBE /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 337261EAAB394352AA10F64E /* Ionicons.ttf */; };
 		0C363A6B983648A095E52EE8 /* TabletGothic-Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12D4CD199FEF4FFCAD080EFE /* TabletGothic-Oblique.ttf */; };
-		0E1CEADBEFC62A8EB0EC6677 /* Pods_yemontoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58556D0091BA5BEE5DC5DCD /* Pods_yemontoTests.framework */; };
-		1132586FA7052D85A513C96D /* libPods-yemonto-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC48306B85850479162FF03F /* libPods-yemonto-tvOSTests.a */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -31,37 +30,32 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		17FD54A7454148E2822B83AD /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 549CFD77A8A44AF3B5D0A1F4 /* Roboto_medium.ttf */; };
 		20D3FFD039144808A11BBA2C /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 627982A8096B4AB9AAB2DF0E /* EvilIcons.ttf */; };
-		23CC06E3AFDB4F78BAED02A8 /* Pods_yemonto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4207656802238F8EE3F796 /* Pods_yemonto.framework */; };
 		2C0A0D57C058429EADF1F097 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C57A5F507FB494BB2AB90C4 /* EvilIcons.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2D02E4C21E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C31E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C41E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C51E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C61E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C71E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C81E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C91E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		2DCD954D1E0B4F2C00145EB5 /* yemontoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* yemontoTests.m */; };
+		2E3299C268F4F01428FCA877 /* Pods_yemonto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF72924978A8BB831E04E423 /* Pods_yemonto.framework */; };
 		312208857A5C4B47AD681E4F /* TabletGothic-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48898C652878498080F12377 /* TabletGothic-ExtraBold.ttf */; };
 		317C3CA8ED7945EA9D7B6CE3 /* TabletGothic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA7DB2606513493D837FC985 /* TabletGothic-Bold.ttf */; };
 		31913DF946654D4994520F45 /* TabletGothic-SemiBoldOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38244652825B442987EDEC5A /* TabletGothic-SemiBoldOblique.ttf */; };
 		327FF4C28B304A55B8D62433 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA41E95FC33D41F58BD7A08C /* FontAwesome.ttf */; };
+		34E1768D0EA44BF79D70E900 /* libAppCenterReactNativeCrashes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63687D0A21BE468CB62DE7B9 /* libAppCenterReactNativeCrashes.a */; };
+		376F097D55CE4FE2A83BB783 /* libAppCenterReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8111C629A5B64324BBB75444 /* libAppCenterReactNative.a */; };
 		3B26D5A864FC4B47AA903364 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1303B353A454471DB80A201F /* Foundation.ttf */; };
 		3C4607F958F24A93957D4A0F /* TabletGothic-ThinOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E2CC884F8AE416396CCB468 /* TabletGothic-ThinOblique.ttf */; };
 		3CB43EA6802A4F11B2E8B9CA /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7909EB3BBF5455EA481F9E6 /* FontAwesome.ttf */; };
 		3FC41AA4DFD0489FAE3B6831 /* TabletGothic-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78F25701B20A4BE493E8953E /* TabletGothic-Thin.ttf */; };
 		40BBC6C2367B492D8F040F7B /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BAF01D900B96404583259299 /* Entypo.ttf */; };
 		44C5018FDB7D463D9F281D53 /* TabletGothic-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 360C4A0167334365B825B4B8 /* TabletGothic-Heavy.ttf */; };
+		48D9F8A1DF3FDD40074E3E42 /* libPods-yemonto-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE93D374E37F1A007E5D93F /* libPods-yemonto-tvOS.a */; };
 		529F2645EBBA476F974BD03E /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 904C4869B73049F6B23DE93E /* Ionicons.ttf */; };
 		54689D902A354D468B6EE79E /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6447C65F3E9460B8B9678AA /* Roboto.ttf */; };
-		57602C9FCCDB089643FD876A /* libPods-yemonto-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B411B9E327898719D497035C /* libPods-yemonto-tvOS.a */; };
 		67CC3C60DD834577A4CB2314 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C93E253114EBDB22EFED3 /* MaterialIcons.ttf */; };
 		70084ED911C4420B86069E11 /* TabletGothic-HeavyOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BAB670006DC6420B8C24B8B1 /* TabletGothic-HeavyOblique.ttf */; };
 		76C27BBF52494A01BF642ECD /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B50F6964A1C42BCA714D472 /* MaterialIcons.ttf */; };
 		7FA72488B6E5463C9FB90F06 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A899B06EA6D747DE993E8A12 /* Foundation.ttf */; };
+		808524D35938FEB3EC9A05D6 /* libPods-yemonto-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD32CA314B1A1E0BFE46F588 /* libPods-yemonto-tvOSTests.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		860E50332B2B456CA228CDA8 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5222FB8474334BB48C50CAF1 /* SimpleLineIcons.ttf */; };
 		8CF9215C7601418A9196E9B5 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7ADCE30FFFF445FB3253808 /* Entypo.ttf */; };
@@ -69,9 +63,6 @@
 		9A1E48476C1E4B63BA678F7C /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A97CCAE14D8441D08590E11D /* rubicon-icon-font.ttf */; };
 		9AD68C9FE0C44BE1812488DC /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D48CDB6E1594FF69439C93D /* Octicons.ttf */; };
 		9CA6361B915A4B718AD48CFA /* TabletGothic-ExtraBoldOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C309AE6995EC4393B3EA2040 /* TabletGothic-ExtraBoldOblique.ttf */; };
-		9E133DCA1FD335630063D2D0 /* libAppCenterReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E133C671FD322C20063D2D0 /* libAppCenterReactNative.a */; };
-		9E133DCB1FD335630063D2D0 /* libAppCenterReactNativeAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E133CC11FD322DD0063D2D0 /* libAppCenterReactNativeAnalytics.a */; };
-		9E133DCC1FD335640063D2D0 /* libAppCenterReactNativeCrashes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E133D071FD322FF0063D2D0 /* libAppCenterReactNativeCrashes.a */; };
 		9E133DCD1FD335DA0063D2D0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 81112987494743ED9BEB6A64 /* libz.tbd */; };
 		9E3D48DE1FACEE8100E99E4A /* libRNPhotoView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7FF3071FA3DB6D000312A4 /* libRNPhotoView.a */; };
 		9E3D48DF1FACEE8B00E99E4A /* libRNShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7FF30C1FA3DB6D000312A4 /* libRNShare.a */; };
@@ -81,55 +72,11 @@
 		9E75CC3D1F9D04DA00402736 /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9A360F1F99662F00A7A7C4 /* libCodePush.a */; };
 		9E7FEF531FA0D409000312A4 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E75CC381F9D00CA00402736 /* libBVLinearGradient.a */; };
 		9E7FF0CF1FA2269C000312A4 /* libRCTLinkedinLogin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7FEFE31FA0F368000312A4 /* libRCTLinkedinLogin.a */; };
-		9EB818621FB900A900CB26F6 /* RNBarChartViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8182A1FB900A800CB26F6 /* RNBarChartViewBase.swift */; };
-		9EB818631FB900A900CB26F6 /* BarDataExtract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8182B1FB900A800CB26F6 /* BarDataExtract.swift */; };
-		9EB818641FB900A900CB26F6 /* RNHorizontalBarChartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8182C1FB900A800CB26F6 /* RNHorizontalBarChartManager.swift */; };
-		9EB818651FB900A900CB26F6 /* RNBarChartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8182D1FB900A800CB26F6 /* RNBarChartManager.swift */; };
-		9EB818661FB900A900CB26F6 /* RNBarChartManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8182E1FB900A800CB26F6 /* RNBarChartManagerBridge.m */; };
-		9EB818671FB900A900CB26F6 /* RNBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8182F1FB900A800CB26F6 /* RNBarChartView.swift */; };
-		9EB818681FB900A900CB26F6 /* RNHorizontalBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818301FB900A800CB26F6 /* RNHorizontalBarChartView.swift */; };
-		9EB818691FB900A900CB26F6 /* RNHorizontalBarChartManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818311FB900A800CB26F6 /* RNHorizontalBarChartManagerBridge.m */; };
-		9EB8186A1FB900A900CB26F6 /* RNLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818331FB900A800CB26F6 /* RNLineChartView.swift */; };
-		9EB8186B1FB900A900CB26F6 /* RNLineChartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818341FB900A800CB26F6 /* RNLineChartManager.swift */; };
-		9EB8186C1FB900A900CB26F6 /* RNLineChartManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818351FB900A800CB26F6 /* RNLineChartManagerBridge.m */; };
-		9EB8186D1FB900A900CB26F6 /* LineDataExtract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818361FB900A800CB26F6 /* LineDataExtract.swift */; };
-		9EB8186E1FB900A900CB26F6 /* RNPieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818381FB900A800CB26F6 /* RNPieChartView.swift */; };
-		9EB8186F1FB900A900CB26F6 /* RNPieChartManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818391FB900A800CB26F6 /* RNPieChartManagerBridge.m */; };
-		9EB818701FB900A900CB26F6 /* PieDataExtract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8183A1FB900A800CB26F6 /* PieDataExtract.swift */; };
-		9EB818711FB900A900CB26F6 /* RNPieChartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8183B1FB900A800CB26F6 /* RNPieChartManager.swift */; };
-		9EB818721FB900A900CB26F6 /* RNChartViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8183C1FB900A800CB26F6 /* RNChartViewBase.swift */; };
-		9EB818731FB900A900CB26F6 /* RNBarLineChartViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8183E1FB900A800CB26F6 /* RNBarLineChartViewBase.swift */; };
-		9EB818741FB900A900CB26F6 /* EntryToDictionaryUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818401FB900A800CB26F6 /* EntryToDictionaryUtils.swift */; };
-		9EB818751FB900A900CB26F6 /* ChartDataSetConfigUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818411FB900A800CB26F6 /* ChartDataSetConfigUtils.swift */; };
-		9EB818761FB900A900CB26F6 /* BridgeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818421FB900A800CB26F6 /* BridgeUtils.swift */; };
-		9EB818771FB900A900CB26F6 /* RNScatterChartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818441FB900A800CB26F6 /* RNScatterChartManager.swift */; };
-		9EB818781FB900A900CB26F6 /* RNScatterChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818451FB900A800CB26F6 /* RNScatterChartView.swift */; };
-		9EB818791FB900A900CB26F6 /* RNScatterChartManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818461FB900A800CB26F6 /* RNScatterChartManagerBridge.m */; };
-		9EB8187A1FB900A900CB26F6 /* ScatterDataExtract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818471FB900A800CB26F6 /* ScatterDataExtract.swift */; };
-		9EB8187B1FB900A900CB26F6 /* CandleDataExtract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818491FB900A800CB26F6 /* CandleDataExtract.swift */; };
-		9EB8187C1FB900A900CB26F6 /* RNCandleStickChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8184A1FB900A800CB26F6 /* RNCandleStickChartView.swift */; };
-		9EB8187D1FB900A900CB26F6 /* RNCandleStickChartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8184B1FB900A800CB26F6 /* RNCandleStickChartManager.swift */; };
-		9EB8187E1FB900A900CB26F6 /* RNCandleStickChartManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8184C1FB900A800CB26F6 /* RNCandleStickChartManagerBridge.m */; };
-		9EB8187F1FB900A900CB26F6 /* RNCombinedChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8184E1FB900A900CB26F6 /* RNCombinedChartView.swift */; };
-		9EB818801FB900A900CB26F6 /* RNCombinedChartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8184F1FB900A900CB26F6 /* RNCombinedChartManager.swift */; };
-		9EB818811FB900A900CB26F6 /* RNCombinedChartManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818501FB900A900CB26F6 /* RNCombinedChartManagerBridge.m */; };
-		9EB818821FB900A900CB26F6 /* CombinedDataExtract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818511FB900A900CB26F6 /* CombinedDataExtract.swift */; };
-		9EB818831FB900A900CB26F6 /* DataExtract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818521FB900A900CB26F6 /* DataExtract.swift */; };
-		9EB818841FB900A900CB26F6 /* RadarDataExtract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818541FB900A900CB26F6 /* RadarDataExtract.swift */; };
-		9EB818851FB900A900CB26F6 /* RNRadarChartManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818551FB900A900CB26F6 /* RNRadarChartManagerBridge.m */; };
-		9EB818861FB900A900CB26F6 /* RNRadarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818561FB900A900CB26F6 /* RNRadarChartView.swift */; };
-		9EB818871FB900A900CB26F6 /* RNRadarChartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818571FB900A900CB26F6 /* RNRadarChartManager.swift */; };
-		9EB818881FB900A900CB26F6 /* RNYAxisChartViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818581FB900A900CB26F6 /* RNYAxisChartViewBase.swift */; };
-		9EB818891FB900A900CB26F6 /* RNBubbleChartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8185A1FB900A900CB26F6 /* RNBubbleChartManager.swift */; };
-		9EB8188A1FB900A900CB26F6 /* RNBubbleChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8185B1FB900A900CB26F6 /* RNBubbleChartView.swift */; };
-		9EB8188B1FB900A900CB26F6 /* BubbleDataExtract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8185C1FB900A900CB26F6 /* BubbleDataExtract.swift */; };
-		9EB8188C1FB900A900CB26F6 /* RNBubbleChartManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8185D1FB900A900CB26F6 /* RNBubbleChartManagerBridge.m */; };
-		9EB8188D1FB900A900CB26F6 /* LargeValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8185F1FB900A900CB26F6 /* LargeValueFormatter.swift */; };
-		9EB8188E1FB900A900CB26F6 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB818611FB900A900CB26F6 /* BalloonMarker.swift */; };
 		A0E45EC10FE74E28886FBD62 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83537835E113468480D0F6A2 /* Ionicons.ttf */; };
 		A26E0B597FFC41809D07593C /* TabletGothic-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D6DD25A4F7B41529D41AC0F /* TabletGothic-SemiBold.ttf */; };
 		AEB333E4C637491784F83811 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFDC07598B0A45BCA3930091 /* Octicons.ttf */; };
 		B1A6E9BBF1464CD3891CDEB4 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C683AA59481F427C94997448 /* FontAwesome.ttf */; };
+		B74B347C94596CC3FCCB45DF /* Pods_yemontoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E518B8D419ABFAB3C57057 /* Pods_yemontoTests.framework */; };
 		B8376ECF94C4477B99B0DB46 /* TabletGothic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C95610D1576C4A928B4497A0 /* TabletGothic-Light.ttf */; };
 		C4FADCD86A37417E95563781 /* TabletGothic-BoldOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76A95E3C81F24D398A8DD908 /* TabletGothic-BoldOblique.ttf */; };
 		C84446338D134D50AD888987 /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A084FB918343439A8B98668A /* rubicon-icon-font.ttf */; };
@@ -286,27 +233,6 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
-		9E133C661FD322C20063D2D0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7484A3B43933422E8D27109B /* AppCenterReactNative.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C35AEC211EF91F9300931F0C;
-			remoteInfo = AppCenterReactNative;
-		};
-		9E133CC01FD322DD0063D2D0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9164F8771DE429CA70489BF /* AppCenterReactNativeAnalytics.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 548694001D8384E600E6685A;
-			remoteInfo = AppCenterReactNativeAnalytics;
-		};
-		9E133D061FD322FF0063D2D0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E646686282324BB5A1A58925 /* AppCenterReactNativeCrashes.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5419C2701D824AA700DDF3A1;
-			remoteInfo = AppCenterReactNativeCrashes;
-		};
 		9E75CC371F9D00CA00402736 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AC872D76D2C44DCBAF5B747B /* BVLinearGradient.xcodeproj */;
@@ -412,6 +338,27 @@
 			remoteGlobalIDString = 9EC852411FABD7D000AE7C23;
 			remoteInfo = "RNSVG-tvOS";
 		};
+		9EFF70B31FDB3DDD00438906 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D55586477EC4AD8A64CD653 /* AppCenterReactNativeAnalytics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 548694001D8384E600E6685A;
+			remoteInfo = AppCenterReactNativeAnalytics;
+		};
+		9EFF70B81FDB3DDD00438906 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE007BDE82DD4996BB35D0BB /* AppCenterReactNative.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C35AEC211EF91F9300931F0C;
+			remoteInfo = AppCenterReactNative;
+		};
+		9EFF70BD1FDB3DDD00438906 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B422E50ADBCD488782A790B3 /* AppCenterReactNativeCrashes.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5419C2701D824AA700DDF3A1;
+			remoteInfo = AppCenterReactNativeCrashes;
+		};
 		EE2BEE5F1E2EDFEA008A6295 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
@@ -465,7 +412,6 @@
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00B248E6DED858C896332365 /* Pods-yemonto-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto-tvOS/Pods-yemonto-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
 		00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTGeolocation.xcodeproj; path = "../node_modules/react-native/Libraries/Geolocation/RCTGeolocation.xcodeproj"; sourceTree = "<group>"; };
 		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
@@ -493,14 +439,14 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = yemonto/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = yemonto/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
-		20DE2AD2304326048259E592 /* Pods-yemonto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto.release.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto/Pods-yemonto.release.xcconfig"; sourceTree = "<group>"; };
+		1D55586477EC4AD8A64CD653 /* AppCenterReactNativeAnalytics.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeAnalytics.xcodeproj; path = "../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics.xcodeproj"; sourceTree = "<group>"; };
 		2941673DBCE44CC690250FF9 /* TabletGothic-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-Regular.ttf"; path = "../assets/fonts/TabletGothic-Regular.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* yemonto-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "yemonto-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* yemonto-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "yemonto-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		337261EAAB394352AA10F64E /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		360C4A0167334365B825B4B8 /* TabletGothic-Heavy.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-Heavy.ttf"; path = "../assets/fonts/TabletGothic-Heavy.ttf"; sourceTree = "<group>"; };
 		38244652825B442987EDEC5A /* TabletGothic-SemiBoldOblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-SemiBoldOblique.ttf"; path = "../assets/fonts/TabletGothic-SemiBoldOblique.ttf"; sourceTree = "<group>"; };
-		3C398B7816878A0D0B46CEA1 /* Pods-yemontoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemontoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yemontoTests/Pods-yemontoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		39E518B8D419ABFAB3C57057 /* Pods_yemontoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yemontoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E2CC884F8AE416396CCB468 /* TabletGothic-ThinOblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-ThinOblique.ttf"; path = "../assets/fonts/TabletGothic-ThinOblique.ttf"; sourceTree = "<group>"; };
 		42C5381DEE514F6B8EFD9A9C /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = ../assets/fonts/SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		48898C652878498080F12377 /* TabletGothic-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-ExtraBold.ttf"; path = "../assets/fonts/TabletGothic-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -508,121 +454,74 @@
 		4C08645563A140C5B91033D6 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		4C57A5F507FB494BB2AB90C4 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = ../assets/fonts/EvilIcons.ttf; sourceTree = "<group>"; };
 		4E3C93E253114EBDB22EFED3 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
-		50364BF387C3185A419B2206 /* Pods-yemontoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemontoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-yemontoTests/Pods-yemontoTests.release.xcconfig"; sourceTree = "<group>"; };
+		4F1C66DD839AA233D33E60C7 /* Pods-yemonto-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto-tvOSTests/Pods-yemonto-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		5222FB8474334BB48C50CAF1 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		528E7E2FDF3F4D068758713D /* libRNSVG.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSVG.a; sourceTree = "<group>"; };
-		534A3645E7A843A5A9B4F86D /* libAppCenterReactNative.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNative.a; sourceTree = "<group>"; };
 		549CFD77A8A44AF3B5D0A1F4 /* Roboto_medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto_medium.ttf; path = "../node_modules/native-base/Fonts/Roboto_medium.ttf"; sourceTree = "<group>"; };
-		54AA108ADDD04F2AB4CECD8D /* libAppCenterReactNativeAnalytics.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNativeAnalytics.a; sourceTree = "<group>"; };
 		5CD9779D6A7D48DF8B0E784F /* Raleway_medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Raleway_medium.ttf; path = ../assets/fonts/Raleway_medium.ttf; sourceTree = "<group>"; };
 		627982A8096B4AB9AAB2DF0E /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/native-base/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		63687D0A21BE468CB62DE7B9 /* libAppCenterReactNativeCrashes.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNativeCrashes.a; sourceTree = "<group>"; };
 		64916CC2701E445397810001 /* libRNShare.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNShare.a; sourceTree = "<group>"; };
+		67AD795BA146F5C34E5423F7 /* Pods-yemontoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemontoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-yemontoTests/Pods-yemontoTests.release.xcconfig"; sourceTree = "<group>"; };
 		6BDC8D91025F4940B5A1F4B4 /* libRCTLinkedinLogin.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTLinkedinLogin.a; sourceTree = "<group>"; };
 		6F9BD4EC449C4BD8AA95FBBD /* libCodePush.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libCodePush.a; sourceTree = "<group>"; };
-		7484A3B43933422E8D27109B /* AppCenterReactNative.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNative.xcodeproj; path = ../node_modules/appcenter/ios/AppCenterReactNative.xcodeproj; sourceTree = "<group>"; };
+		71040B6C4AFF0C4ADEBF207B /* Pods-yemonto-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto-tvOS/Pods-yemonto-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		76A95E3C81F24D398A8DD908 /* TabletGothic-BoldOblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-BoldOblique.ttf"; path = "../assets/fonts/TabletGothic-BoldOblique.ttf"; sourceTree = "<group>"; };
 		78748F56B2494CFE8016AC03 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Medium.ttf"; path = "../assets/fonts/Rubik-Medium.ttf"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		78F25701B20A4BE493E8953E /* TabletGothic-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-Thin.ttf"; path = "../assets/fonts/TabletGothic-Thin.ttf"; sourceTree = "<group>"; };
+		7EB468D71BF9446CBB1283D1 /* libAppCenterReactNativeAnalytics.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNativeAnalytics.a; sourceTree = "<group>"; };
 		81112987494743ED9BEB6A64 /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		8111C629A5B64324BBB75444 /* libAppCenterReactNative.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNative.a; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		83537835E113468480D0F6A2 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/native-base/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		89AAF1DE41C94502911D4BA7 /* CodePush.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
 		8DD34AF6887946CBAE94B18E /* RNSVG.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; };
+		8DE93D374E37F1A007E5D93F /* libPods-yemonto-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-yemonto-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		904C4869B73049F6B23DE93E /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = ../assets/fonts/Ionicons.ttf; sourceTree = "<group>"; };
 		909915B6F6B0438AAF741A24 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		95436488DB024F0EA5930748 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		9B377479768943D0847FC712 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = ../assets/fonts/MaterialIcons.ttf; sourceTree = "<group>"; };
 		9D09EBDB574F4DA3B12A3E2C /* Raleway_bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Raleway_bold.ttf; path = ../assets/fonts/Raleway_bold.ttf; sourceTree = "<group>"; };
 		9D48CDB6E1594FF69439C93D /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		9D4B88EAE8082B6EA19DFF14 /* Pods-yemonto-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto-tvOS/Pods-yemonto-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		9EB817FF1FB900A700CB26F6 /* yemonto-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yemonto-Bridging-Header.h"; sourceTree = "<group>"; };
-		9EB818281FB900A800CB26F6 /* RNChartManagerBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNChartManagerBridge.h; sourceTree = "<group>"; };
-		9EB8182A1FB900A800CB26F6 /* RNBarChartViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNBarChartViewBase.swift; sourceTree = "<group>"; };
-		9EB8182B1FB900A800CB26F6 /* BarDataExtract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarDataExtract.swift; sourceTree = "<group>"; };
-		9EB8182C1FB900A800CB26F6 /* RNHorizontalBarChartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNHorizontalBarChartManager.swift; sourceTree = "<group>"; };
-		9EB8182D1FB900A800CB26F6 /* RNBarChartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNBarChartManager.swift; sourceTree = "<group>"; };
-		9EB8182E1FB900A800CB26F6 /* RNBarChartManagerBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNBarChartManagerBridge.m; sourceTree = "<group>"; };
-		9EB8182F1FB900A800CB26F6 /* RNBarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNBarChartView.swift; sourceTree = "<group>"; };
-		9EB818301FB900A800CB26F6 /* RNHorizontalBarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNHorizontalBarChartView.swift; sourceTree = "<group>"; };
-		9EB818311FB900A800CB26F6 /* RNHorizontalBarChartManagerBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNHorizontalBarChartManagerBridge.m; sourceTree = "<group>"; };
-		9EB818331FB900A800CB26F6 /* RNLineChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNLineChartView.swift; sourceTree = "<group>"; };
-		9EB818341FB900A800CB26F6 /* RNLineChartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNLineChartManager.swift; sourceTree = "<group>"; };
-		9EB818351FB900A800CB26F6 /* RNLineChartManagerBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNLineChartManagerBridge.m; sourceTree = "<group>"; };
-		9EB818361FB900A800CB26F6 /* LineDataExtract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineDataExtract.swift; sourceTree = "<group>"; };
-		9EB818381FB900A800CB26F6 /* RNPieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNPieChartView.swift; sourceTree = "<group>"; };
-		9EB818391FB900A800CB26F6 /* RNPieChartManagerBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNPieChartManagerBridge.m; sourceTree = "<group>"; };
-		9EB8183A1FB900A800CB26F6 /* PieDataExtract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieDataExtract.swift; sourceTree = "<group>"; };
-		9EB8183B1FB900A800CB26F6 /* RNPieChartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNPieChartManager.swift; sourceTree = "<group>"; };
-		9EB8183C1FB900A800CB26F6 /* RNChartViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNChartViewBase.swift; sourceTree = "<group>"; };
-		9EB8183D1FB900A800CB26F6 /* RNBarLineChartManagerBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNBarLineChartManagerBridge.h; sourceTree = "<group>"; };
-		9EB8183E1FB900A800CB26F6 /* RNBarLineChartViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNBarLineChartViewBase.swift; sourceTree = "<group>"; };
-		9EB818401FB900A800CB26F6 /* EntryToDictionaryUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryToDictionaryUtils.swift; sourceTree = "<group>"; };
-		9EB818411FB900A800CB26F6 /* ChartDataSetConfigUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDataSetConfigUtils.swift; sourceTree = "<group>"; };
-		9EB818421FB900A800CB26F6 /* BridgeUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeUtils.swift; sourceTree = "<group>"; };
-		9EB818441FB900A800CB26F6 /* RNScatterChartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNScatterChartManager.swift; sourceTree = "<group>"; };
-		9EB818451FB900A800CB26F6 /* RNScatterChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNScatterChartView.swift; sourceTree = "<group>"; };
-		9EB818461FB900A800CB26F6 /* RNScatterChartManagerBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNScatterChartManagerBridge.m; sourceTree = "<group>"; };
-		9EB818471FB900A800CB26F6 /* ScatterDataExtract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScatterDataExtract.swift; sourceTree = "<group>"; };
-		9EB818491FB900A800CB26F6 /* CandleDataExtract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandleDataExtract.swift; sourceTree = "<group>"; };
-		9EB8184A1FB900A800CB26F6 /* RNCandleStickChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNCandleStickChartView.swift; sourceTree = "<group>"; };
-		9EB8184B1FB900A800CB26F6 /* RNCandleStickChartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNCandleStickChartManager.swift; sourceTree = "<group>"; };
-		9EB8184C1FB900A800CB26F6 /* RNCandleStickChartManagerBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCandleStickChartManagerBridge.m; sourceTree = "<group>"; };
-		9EB8184E1FB900A900CB26F6 /* RNCombinedChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNCombinedChartView.swift; sourceTree = "<group>"; };
-		9EB8184F1FB900A900CB26F6 /* RNCombinedChartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNCombinedChartManager.swift; sourceTree = "<group>"; };
-		9EB818501FB900A900CB26F6 /* RNCombinedChartManagerBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCombinedChartManagerBridge.m; sourceTree = "<group>"; };
-		9EB818511FB900A900CB26F6 /* CombinedDataExtract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinedDataExtract.swift; sourceTree = "<group>"; };
-		9EB818521FB900A900CB26F6 /* DataExtract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtract.swift; sourceTree = "<group>"; };
-		9EB818541FB900A900CB26F6 /* RadarDataExtract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarDataExtract.swift; sourceTree = "<group>"; };
-		9EB818551FB900A900CB26F6 /* RNRadarChartManagerBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNRadarChartManagerBridge.m; sourceTree = "<group>"; };
-		9EB818561FB900A900CB26F6 /* RNRadarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNRadarChartView.swift; sourceTree = "<group>"; };
-		9EB818571FB900A900CB26F6 /* RNRadarChartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNRadarChartManager.swift; sourceTree = "<group>"; };
-		9EB818581FB900A900CB26F6 /* RNYAxisChartViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNYAxisChartViewBase.swift; sourceTree = "<group>"; };
-		9EB8185A1FB900A900CB26F6 /* RNBubbleChartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNBubbleChartManager.swift; sourceTree = "<group>"; };
-		9EB8185B1FB900A900CB26F6 /* RNBubbleChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNBubbleChartView.swift; sourceTree = "<group>"; };
-		9EB8185C1FB900A900CB26F6 /* BubbleDataExtract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleDataExtract.swift; sourceTree = "<group>"; };
-		9EB8185D1FB900A900CB26F6 /* RNBubbleChartManagerBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNBubbleChartManagerBridge.m; sourceTree = "<group>"; };
-		9EB8185F1FB900A900CB26F6 /* LargeValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeValueFormatter.swift; sourceTree = "<group>"; };
-		9EB818601FB900A900CB26F6 /* RNYAxisChartManagerBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNYAxisChartManagerBridge.h; sourceTree = "<group>"; };
-		9EB818611FB900A900CB26F6 /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
 		A084FB918343439A8B98668A /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
-		A2C0EEE6CFDF4BF79E3FE257 /* libAppCenterReactNativeCrashes.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNativeCrashes.a; sourceTree = "<group>"; };
 		A6447C65F3E9460B8B9678AA /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
 		A6448131701643E2ABD08175 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		A899B06EA6D747DE993E8A12 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/native-base/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		A97CCAE14D8441D08590E11D /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../assets/fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
 		AC872D76D2C44DCBAF5B747B /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
-		B370FC139802A5490571B515 /* Pods-yemonto-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto-tvOS/Pods-yemonto-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		B411B9E327898719D497035C /* libPods-yemonto-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-yemonto-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B422E50ADBCD488782A790B3 /* AppCenterReactNativeCrashes.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeCrashes.xcodeproj; path = "../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes.xcodeproj"; sourceTree = "<group>"; };
 		B7909EB3BBF5455EA481F9E6 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/native-base/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		B7CE5AC739B5468895CAF78D /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
-		B9164F8771DE429CA70489BF /* AppCenterReactNativeAnalytics.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeAnalytics.xcodeproj; path = "../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics.xcodeproj"; sourceTree = "<group>"; };
 		BAB670006DC6420B8C24B8B1 /* TabletGothic-HeavyOblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-HeavyOblique.ttf"; path = "../assets/fonts/TabletGothic-HeavyOblique.ttf"; sourceTree = "<group>"; };
 		BAF01D900B96404583259299 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = ../assets/fonts/Entypo.ttf; sourceTree = "<group>"; };
 		BCB39F33C62B4DA1BBCC4790 /* libRNImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImagePicker.a; sourceTree = "<group>"; };
 		BD605424007940018E3B1D92 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/native-base/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		BE007BDE82DD4996BB35D0BB /* AppCenterReactNative.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNative.xcodeproj; path = ../node_modules/appcenter/ios/AppCenterReactNative.xcodeproj; sourceTree = "<group>"; };
+		C1B293AD49AD69F946CE32B3 /* Pods-yemontoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemontoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yemontoTests/Pods-yemontoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C309AE6995EC4393B3EA2040 /* TabletGothic-ExtraBoldOblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-ExtraBoldOblique.ttf"; path = "../assets/fonts/TabletGothic-ExtraBoldOblique.ttf"; sourceTree = "<group>"; };
 		C683AA59481F427C94997448 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = ../assets/fonts/FontAwesome.ttf; sourceTree = "<group>"; };
 		C69D10A639A0448C857CE752 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		C95610D1576C4A928B4497A0 /* TabletGothic-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-Light.ttf"; path = "../assets/fonts/TabletGothic-Light.ttf"; sourceTree = "<group>"; };
 		CA41E95FC33D41F58BD7A08C /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
-		CA4207656802238F8EE3F796 /* Pods_yemonto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yemonto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFE46A3B872DC4E6D3C9DB18 /* Pods-yemonto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto.release.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto/Pods-yemonto.release.xcconfig"; sourceTree = "<group>"; };
+		D3606970CF028B284A59EE86 /* Pods-yemonto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto/Pods-yemonto.debug.xcconfig"; sourceTree = "<group>"; };
 		D4535FC3DEF34CB6A98F5601 /* AppCenter-Config.plist */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.xml; name = "AppCenter-Config.plist"; path = "yemonto/AppCenter-Config.plist"; sourceTree = "<group>"; };
-		D568D464D439AE821A5A8DCA /* Pods-yemonto-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto-tvOSTests/Pods-yemonto-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		D7ADCE30FFFF445FB3253808 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
-		D910A28067D0E0052B564981 /* Pods-yemonto-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto-tvOSTests/Pods-yemonto-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DDC349224CA24E95B5705EF7 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = ../assets/fonts/Octicons.ttf; sourceTree = "<group>"; };
+		DF9D901726516E9CEE39AB57 /* Pods-yemonto-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto-tvOSTests/Pods-yemonto-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E57758625CB7481790116DF4 /* RCTLinkedinLogin.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTLinkedinLogin.xcodeproj; path = "../node_modules/react-native-linkedin-login/ios/RCTLinkedinLogin.xcodeproj"; sourceTree = "<group>"; };
-		E646686282324BB5A1A58925 /* AppCenterReactNativeCrashes.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeCrashes.xcodeproj; path = "../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes.xcodeproj"; sourceTree = "<group>"; };
 		E9BF50257C834DF59448F675 /* RNPhotoView.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNPhotoView.xcodeproj; path = "../node_modules/react-native-photo-view/ios/RNPhotoView.xcodeproj"; sourceTree = "<group>"; };
 		ED092326CDA049839F548044 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		F07A6457399F6FCA7535398B /* Pods-yemonto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto/Pods-yemonto.debug.xcconfig"; sourceTree = "<group>"; };
+		EF72924978A8BB831E04E423 /* Pods_yemonto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yemonto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08D0607EFC940929B7BD573 /* libRNPhotoView.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNPhotoView.a; sourceTree = "<group>"; };
-		F58556D0091BA5BEE5DC5DCD /* Pods_yemontoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yemontoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F806644D41874767B42889CE /* TabletGothic-LightOblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-LightOblique.ttf"; path = "../assets/fonts/TabletGothic-LightOblique.ttf"; sourceTree = "<group>"; };
 		F94D1E4187C24AC086DDC550 /* Raleway.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Raleway.ttf; path = ../assets/fonts/Raleway.ttf; sourceTree = "<group>"; };
 		F9D940209B5149A797F4FFE3 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		FA7DB2606513493D837FC985 /* TabletGothic-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-Bold.ttf"; path = "../assets/fonts/TabletGothic-Bold.ttf"; sourceTree = "<group>"; };
-		FC48306B85850479162FF03F /* libPods-yemonto-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-yemonto-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD32CA314B1A1E0BFE46F588 /* libPods-yemonto-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-yemonto-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDC07598B0A45BCA3930091 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/native-base/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -632,7 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
-				0E1CEADBEFC62A8EB0EC6677 /* Pods_yemontoTests.framework in Frameworks */,
+				B74B347C94596CC3FCCB45DF /* Pods_yemontoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,9 +540,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E133DCD1FD335DA0063D2D0 /* libz.tbd in Frameworks */,
-				9E133DCA1FD335630063D2D0 /* libAppCenterReactNative.a in Frameworks */,
-				9E133DCB1FD335630063D2D0 /* libAppCenterReactNativeAnalytics.a in Frameworks */,
-				9E133DCC1FD335640063D2D0 /* libAppCenterReactNativeCrashes.a in Frameworks */,
 				9E3D48E11FACEEA200E99E4A /* libRNSVG.a in Frameworks */,
 				9E3D48E01FACEE9600E99E4A /* libRNImagePicker.a in Frameworks */,
 				9E3D48DF1FACEE8B00E99E4A /* libRNShare.a in Frameworks */,
@@ -663,7 +559,10 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				23CC06E3AFDB4F78BAED02A8 /* Pods_yemonto.framework in Frameworks */,
+				376F097D55CE4FE2A83BB783 /* libAppCenterReactNative.a in Frameworks */,
+				2E3299C268F4F01428FCA877 /* Pods_yemonto.framework in Frameworks */,
+				03D15201170643BF8985B6BA /* libAppCenterReactNativeAnalytics.a in Frameworks */,
+				34E1768D0EA44BF79D70E900 /* libAppCenterReactNativeCrashes.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,15 +570,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D02E4C91E0B4AEC006451C7 /* (null) in Frameworks */,
-				2D02E4C21E0B4AEC006451C7 /* (null) in Frameworks */,
-				2D02E4C31E0B4AEC006451C7 /* (null) in Frameworks */,
-				2D02E4C41E0B4AEC006451C7 /* (null) in Frameworks */,
-				2D02E4C51E0B4AEC006451C7 /* (null) in Frameworks */,
-				2D02E4C61E0B4AEC006451C7 /* (null) in Frameworks */,
-				2D02E4C71E0B4AEC006451C7 /* (null) in Frameworks */,
-				2D02E4C81E0B4AEC006451C7 /* (null) in Frameworks */,
-				57602C9FCCDB089643FD876A /* libPods-yemonto-tvOS.a in Frameworks */,
+				48D9F8A1DF3FDD40074E3E42 /* libPods-yemonto-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,7 +578,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1132586FA7052D85A513C96D /* libPods-yemonto-tvOSTests.a in Frameworks */,
+				808524D35938FEB3EC9A05D6 /* libPods-yemonto-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -820,21 +711,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		10A1B4AA17B813BB9D8F45D2 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F07A6457399F6FCA7535398B /* Pods-yemonto.debug.xcconfig */,
-				20DE2AD2304326048259E592 /* Pods-yemonto.release.xcconfig */,
-				B370FC139802A5490571B515 /* Pods-yemonto-tvOS.debug.xcconfig */,
-				00B248E6DED858C896332365 /* Pods-yemonto-tvOS.release.xcconfig */,
-				D910A28067D0E0052B564981 /* Pods-yemonto-tvOSTests.debug.xcconfig */,
-				D568D464D439AE821A5A8DCA /* Pods-yemonto-tvOSTests.release.xcconfig */,
-				3C398B7816878A0D0B46CEA1 /* Pods-yemontoTests.debug.xcconfig */,
-				50364BF387C3185A419B2206 /* Pods-yemontoTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		139105B71AF99BAD00B5F7CC /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -886,6 +762,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		736C2265FA2CA5FC8C2625BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3606970CF028B284A59EE86 /* Pods-yemonto.debug.xcconfig */,
+				CFE46A3B872DC4E6D3C9DB18 /* Pods-yemonto.release.xcconfig */,
+				71040B6C4AFF0C4ADEBF207B /* Pods-yemonto-tvOS.debug.xcconfig */,
+				9D4B88EAE8082B6EA19DFF14 /* Pods-yemonto-tvOS.release.xcconfig */,
+				DF9D901726516E9CEE39AB57 /* Pods-yemonto-tvOSTests.debug.xcconfig */,
+				4F1C66DD839AA233D33E60C7 /* Pods-yemonto-tvOSTests.release.xcconfig */,
+				C1B293AD49AD69F946CE32B3 /* Pods-yemontoTests.debug.xcconfig */,
+				67AD795BA146F5C34E5423F7 /* Pods-yemontoTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -917,9 +808,9 @@
 				089448C2F8A548FFA5FF7EF8 /* RNShare.xcodeproj */,
 				0BDFB23822124282AB07ED11 /* RNImagePicker.xcodeproj */,
 				8DD34AF6887946CBAE94B18E /* RNSVG.xcodeproj */,
-				7484A3B43933422E8D27109B /* AppCenterReactNative.xcodeproj */,
-				B9164F8771DE429CA70489BF /* AppCenterReactNativeAnalytics.xcodeproj */,
-				E646686282324BB5A1A58925 /* AppCenterReactNativeCrashes.xcodeproj */,
+				BE007BDE82DD4996BB35D0BB /* AppCenterReactNative.xcodeproj */,
+				1D55586477EC4AD8A64CD653 /* AppCenterReactNativeAnalytics.xcodeproj */,
+				B422E50ADBCD488782A790B3 /* AppCenterReactNativeCrashes.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -936,7 +827,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				9E1BA8841FB992F300D31CC1 /* charts */,
 				13B07FAE1A68108700A75B9A /* yemonto */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* yemontoTests */,
@@ -946,7 +836,7 @@
 				A37355ABFDC94E399E8D4DD6 /* Frameworks */,
 				9EB817FF1FB900A700CB26F6 /* yemonto-Bridging-Header.h */,
 				D4535FC3DEF34CB6A98F5601 /* AppCenter-Config.plist */,
-				10A1B4AA17B813BB9D8F45D2 /* Pods */,
+				736C2265FA2CA5FC8C2625BF /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -961,55 +851,6 @@
 				2D02E4901E0B4A5D006451C7 /* yemonto-tvOSTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		9E133C631FD322C20063D2D0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9E133C671FD322C20063D2D0 /* libAppCenterReactNative.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9E133CBD1FD322DD0063D2D0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9E133CC11FD322DD0063D2D0 /* libAppCenterReactNativeAnalytics.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9E133D031FD322FF0063D2D0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9E133D071FD322FF0063D2D0 /* libAppCenterReactNativeCrashes.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9E1BA8841FB992F300D31CC1 /* charts */ = {
-			isa = PBXGroup;
-			children = (
-				9EB818611FB900A900CB26F6 /* BalloonMarker.swift */,
-				9EB818291FB900A800CB26F6 /* bar */,
-				9EB818591FB900A900CB26F6 /* bubble */,
-				9EB818481FB900A800CB26F6 /* candlestick */,
-				9EB8184D1FB900A900CB26F6 /* combine */,
-				9EB818521FB900A900CB26F6 /* DataExtract.swift */,
-				9EB8185E1FB900A900CB26F6 /* formatters */,
-				9EB818321FB900A800CB26F6 /* line */,
-				9EB818371FB900A800CB26F6 /* pie */,
-				9EB818531FB900A900CB26F6 /* radar */,
-				9EB8183D1FB900A800CB26F6 /* RNBarLineChartManagerBridge.h */,
-				9EB8183E1FB900A800CB26F6 /* RNBarLineChartViewBase.swift */,
-				9EB818281FB900A800CB26F6 /* RNChartManagerBridge.h */,
-				9EB8183C1FB900A800CB26F6 /* RNChartViewBase.swift */,
-				9EB818601FB900A900CB26F6 /* RNYAxisChartManagerBridge.h */,
-				9EB818581FB900A900CB26F6 /* RNYAxisChartViewBase.swift */,
-				9EB818431FB900A800CB26F6 /* scatter */,
-				9EB8183F1FB900A800CB26F6 /* utils */,
-			);
-			path = charts;
 			sourceTree = "<group>";
 		};
 		9E75CC331F9D00CA00402736 /* Products */ = {
@@ -1056,9 +897,9 @@
 				64916CC2701E445397810001 /* libRNShare.a */,
 				BCB39F33C62B4DA1BBCC4790 /* libRNImagePicker.a */,
 				528E7E2FDF3F4D068758713D /* libRNSVG.a */,
-				534A3645E7A843A5A9B4F86D /* libAppCenterReactNative.a */,
-				54AA108ADDD04F2AB4CECD8D /* libAppCenterReactNativeAnalytics.a */,
-				A2C0EEE6CFDF4BF79E3FE257 /* libAppCenterReactNativeCrashes.a */,
+				8111C629A5B64324BBB75444 /* libAppCenterReactNative.a */,
+				7EB468D71BF9446CBB1283D1 /* libAppCenterReactNativeAnalytics.a */,
+				63687D0A21BE468CB62DE7B9 /* libAppCenterReactNativeCrashes.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -1070,116 +911,6 @@
 				9E7FF0161FA10DAC000312A4 /* libCodePush.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		9EB818291FB900A800CB26F6 /* bar */ = {
-			isa = PBXGroup;
-			children = (
-				9EB8182A1FB900A800CB26F6 /* RNBarChartViewBase.swift */,
-				9EB8182B1FB900A800CB26F6 /* BarDataExtract.swift */,
-				9EB8182C1FB900A800CB26F6 /* RNHorizontalBarChartManager.swift */,
-				9EB8182D1FB900A800CB26F6 /* RNBarChartManager.swift */,
-				9EB8182E1FB900A800CB26F6 /* RNBarChartManagerBridge.m */,
-				9EB8182F1FB900A800CB26F6 /* RNBarChartView.swift */,
-				9EB818301FB900A800CB26F6 /* RNHorizontalBarChartView.swift */,
-				9EB818311FB900A800CB26F6 /* RNHorizontalBarChartManagerBridge.m */,
-			);
-			path = bar;
-			sourceTree = "<group>";
-		};
-		9EB818321FB900A800CB26F6 /* line */ = {
-			isa = PBXGroup;
-			children = (
-				9EB818331FB900A800CB26F6 /* RNLineChartView.swift */,
-				9EB818341FB900A800CB26F6 /* RNLineChartManager.swift */,
-				9EB818351FB900A800CB26F6 /* RNLineChartManagerBridge.m */,
-				9EB818361FB900A800CB26F6 /* LineDataExtract.swift */,
-			);
-			path = line;
-			sourceTree = "<group>";
-		};
-		9EB818371FB900A800CB26F6 /* pie */ = {
-			isa = PBXGroup;
-			children = (
-				9EB818381FB900A800CB26F6 /* RNPieChartView.swift */,
-				9EB818391FB900A800CB26F6 /* RNPieChartManagerBridge.m */,
-				9EB8183A1FB900A800CB26F6 /* PieDataExtract.swift */,
-				9EB8183B1FB900A800CB26F6 /* RNPieChartManager.swift */,
-			);
-			path = pie;
-			sourceTree = "<group>";
-		};
-		9EB8183F1FB900A800CB26F6 /* utils */ = {
-			isa = PBXGroup;
-			children = (
-				9EB818401FB900A800CB26F6 /* EntryToDictionaryUtils.swift */,
-				9EB818411FB900A800CB26F6 /* ChartDataSetConfigUtils.swift */,
-				9EB818421FB900A800CB26F6 /* BridgeUtils.swift */,
-			);
-			path = utils;
-			sourceTree = "<group>";
-		};
-		9EB818431FB900A800CB26F6 /* scatter */ = {
-			isa = PBXGroup;
-			children = (
-				9EB818441FB900A800CB26F6 /* RNScatterChartManager.swift */,
-				9EB818451FB900A800CB26F6 /* RNScatterChartView.swift */,
-				9EB818461FB900A800CB26F6 /* RNScatterChartManagerBridge.m */,
-				9EB818471FB900A800CB26F6 /* ScatterDataExtract.swift */,
-			);
-			path = scatter;
-			sourceTree = "<group>";
-		};
-		9EB818481FB900A800CB26F6 /* candlestick */ = {
-			isa = PBXGroup;
-			children = (
-				9EB818491FB900A800CB26F6 /* CandleDataExtract.swift */,
-				9EB8184A1FB900A800CB26F6 /* RNCandleStickChartView.swift */,
-				9EB8184B1FB900A800CB26F6 /* RNCandleStickChartManager.swift */,
-				9EB8184C1FB900A800CB26F6 /* RNCandleStickChartManagerBridge.m */,
-			);
-			path = candlestick;
-			sourceTree = "<group>";
-		};
-		9EB8184D1FB900A900CB26F6 /* combine */ = {
-			isa = PBXGroup;
-			children = (
-				9EB8184E1FB900A900CB26F6 /* RNCombinedChartView.swift */,
-				9EB8184F1FB900A900CB26F6 /* RNCombinedChartManager.swift */,
-				9EB818501FB900A900CB26F6 /* RNCombinedChartManagerBridge.m */,
-				9EB818511FB900A900CB26F6 /* CombinedDataExtract.swift */,
-			);
-			path = combine;
-			sourceTree = "<group>";
-		};
-		9EB818531FB900A900CB26F6 /* radar */ = {
-			isa = PBXGroup;
-			children = (
-				9EB818541FB900A900CB26F6 /* RadarDataExtract.swift */,
-				9EB818551FB900A900CB26F6 /* RNRadarChartManagerBridge.m */,
-				9EB818561FB900A900CB26F6 /* RNRadarChartView.swift */,
-				9EB818571FB900A900CB26F6 /* RNRadarChartManager.swift */,
-			);
-			path = radar;
-			sourceTree = "<group>";
-		};
-		9EB818591FB900A900CB26F6 /* bubble */ = {
-			isa = PBXGroup;
-			children = (
-				9EB8185A1FB900A900CB26F6 /* RNBubbleChartManager.swift */,
-				9EB8185B1FB900A900CB26F6 /* RNBubbleChartView.swift */,
-				9EB8185C1FB900A900CB26F6 /* BubbleDataExtract.swift */,
-				9EB8185D1FB900A900CB26F6 /* RNBubbleChartManagerBridge.m */,
-			);
-			path = bubble;
-			sourceTree = "<group>";
-		};
-		9EB8185E1FB900A900CB26F6 /* formatters */ = {
-			isa = PBXGroup;
-			children = (
-				9EB8185F1FB900A900CB26F6 /* LargeValueFormatter.swift */,
-			);
-			path = formatters;
 			sourceTree = "<group>";
 		};
 		9EC852671FABD7D100AE7C23 /* Products */ = {
@@ -1199,14 +930,38 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9EFF70B01FDB3DDD00438906 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9EFF70B41FDB3DDD00438906 /* libAppCenterReactNativeAnalytics.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9EFF70B51FDB3DDD00438906 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9EFF70B91FDB3DDD00438906 /* libAppCenterReactNative.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9EFF70BA1FDB3DDD00438906 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9EFF70BE1FDB3DDD00438906 /* libAppCenterReactNativeCrashes.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A37355ABFDC94E399E8D4DD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				81112987494743ED9BEB6A64 /* libz.tbd */,
-				CA4207656802238F8EE3F796 /* Pods_yemonto.framework */,
-				B411B9E327898719D497035C /* libPods-yemonto-tvOS.a */,
-				FC48306B85850479162FF03F /* libPods-yemonto-tvOSTests.a */,
-				F58556D0091BA5BEE5DC5DCD /* Pods_yemontoTests.framework */,
+				EF72924978A8BB831E04E423 /* Pods_yemonto.framework */,
+				8DE93D374E37F1A007E5D93F /* libPods-yemonto-tvOS.a */,
+				FD32CA314B1A1E0BFE46F588 /* libPods-yemonto-tvOSTests.a */,
+				39E518B8D419ABFAB3C57057 /* Pods_yemontoTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1226,12 +981,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "yemontoTests" */;
 			buildPhases = (
-				FA929C1D69AE0CAC56886A05 /* [CP] Check Pods Manifest.lock */,
+				C54C295C434C93C0279BEA63 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				4F0B6FC9F7F61E7D28524055 /* [CP] Embed Pods Frameworks */,
-				5C4421CC0DC38357764815BA /* [CP] Copy Pods Resources */,
+				000B5457BF59A4A75B1CBA92 /* [CP] Embed Pods Frameworks */,
+				37143F418E57329C9FDA3D25 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1247,13 +1002,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "yemonto" */;
 			buildPhases = (
-				5B54F937DD2E8E8D1C300194 /* [CP] Check Pods Manifest.lock */,
+				70B47B10DD715F15CF48E016 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				9DD9FB01EE519F1BE77269C9 /* [CP] Embed Pods Frameworks */,
-				DAD861280800BD597941CAF9 /* [CP] Copy Pods Resources */,
+				3FE1A8FFC16287DC73C9D8CA /* [CP] Embed Pods Frameworks */,
+				1991C497A18C586DC2A6DE6D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1268,13 +1023,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "yemonto-tvOS" */;
 			buildPhases = (
-				85D408F21AD36DADFD9C5B33 /* [CP] Check Pods Manifest.lock */,
+				3F299E895F0D23CF0B32517C /* [CP] Check Pods Manifest.lock */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
 				2D02E4791E0B4A5D006451C7 /* Resources */,
 				2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */,
-				F90393B3FA0F3B2833FF85D1 /* [CP] Embed Pods Frameworks */,
-				D19252239C671F4276BDC8EB /* [CP] Copy Pods Resources */,
+				02475D3A8342CDCEA5DDCEDA /* [CP] Embed Pods Frameworks */,
+				A38B4E89EB25856D1A43B3AE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1289,12 +1044,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "yemonto-tvOSTests" */;
 			buildPhases = (
-				5CC6B6157054FA80E5B30318 /* [CP] Check Pods Manifest.lock */,
+				145B7FBA52A5D7578861D1A7 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
-				E28D73E3DB924FA4013FCA1A /* [CP] Embed Pods Frameworks */,
-				E45E2C334DAF9847ADA346CB /* [CP] Copy Pods Resources */,
+				AF5F6C5D3F462C96091ECE8E /* [CP] Embed Pods Frameworks */,
+				5AA4013B48D99DB78A5D4C6E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1350,16 +1105,16 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 9E133C631FD322C20063D2D0 /* Products */;
-					ProjectRef = 7484A3B43933422E8D27109B /* AppCenterReactNative.xcodeproj */;
+					ProductGroup = 9EFF70B51FDB3DDD00438906 /* Products */;
+					ProjectRef = BE007BDE82DD4996BB35D0BB /* AppCenterReactNative.xcodeproj */;
 				},
 				{
-					ProductGroup = 9E133CBD1FD322DD0063D2D0 /* Products */;
-					ProjectRef = B9164F8771DE429CA70489BF /* AppCenterReactNativeAnalytics.xcodeproj */;
+					ProductGroup = 9EFF70B01FDB3DDD00438906 /* Products */;
+					ProjectRef = 1D55586477EC4AD8A64CD653 /* AppCenterReactNativeAnalytics.xcodeproj */;
 				},
 				{
-					ProductGroup = 9E133D031FD322FF0063D2D0 /* Products */;
-					ProjectRef = E646686282324BB5A1A58925 /* AppCenterReactNativeCrashes.xcodeproj */;
+					ProductGroup = 9EFF70BA1FDB3DDD00438906 /* Products */;
+					ProjectRef = B422E50ADBCD488782A790B3 /* AppCenterReactNativeCrashes.xcodeproj */;
 				},
 				{
 					ProductGroup = 9E75CC331F9D00CA00402736 /* Products */;
@@ -1575,27 +1330,6 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9E133C671FD322C20063D2D0 /* libAppCenterReactNative.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libAppCenterReactNative.a;
-			remoteRef = 9E133C661FD322C20063D2D0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9E133CC11FD322DD0063D2D0 /* libAppCenterReactNativeAnalytics.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libAppCenterReactNativeAnalytics.a;
-			remoteRef = 9E133CC01FD322DD0063D2D0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9E133D071FD322FF0063D2D0 /* libAppCenterReactNativeCrashes.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libAppCenterReactNativeCrashes.a;
-			remoteRef = 9E133D061FD322FF0063D2D0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		9E75CC381F9D00CA00402736 /* libBVLinearGradient.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1699,6 +1433,27 @@
 			fileType = archive.ar;
 			path = "libRNSVG-tvOS.a";
 			remoteRef = 9EC852721FABD7D200AE7C23 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9EFF70B41FDB3DDD00438906 /* libAppCenterReactNativeAnalytics.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAppCenterReactNativeAnalytics.a;
+			remoteRef = 9EFF70B31FDB3DDD00438906 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9EFF70B91FDB3DDD00438906 /* libAppCenterReactNative.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAppCenterReactNative.a;
+			remoteRef = 9EFF70B81FDB3DDD00438906 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9EFF70BE1FDB3DDD00438906 /* libAppCenterReactNativeCrashes.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAppCenterReactNativeCrashes.a;
+			remoteRef = 9EFF70BD1FDB3DDD00438906 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		EE2BEE601E2EDFEA008A6295 /* libRCTLinking-tvOS.a */ = {
@@ -1833,35 +1588,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Bundle React Native code and images";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
-		};
-		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Bundle React Native Code And Images";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
-		};
-		4F0B6FC9F7F61E7D28524055 /* [CP] Embed Pods Frameworks */ = {
+		000B5457BF59A4A75B1CBA92 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1876,40 +1603,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemontoTests/Pods-yemontoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5B54F937DD2E8E8D1C300194 /* [CP] Check Pods Manifest.lock */ = {
+		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		02475D3A8342CDCEA5DDCEDA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-yemonto-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5C4421CC0DC38357764815BA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemontoTests/Pods-yemontoTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemonto-tvOS/Pods-yemonto-tvOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5CC6B6157054FA80E5B30318 /* [CP] Check Pods Manifest.lock */ = {
+		145B7FBA52A5D7578861D1A7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1927,7 +1650,51 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		85D408F21AD36DADFD9C5B33 /* [CP] Check Pods Manifest.lock */ = {
+		1991C497A18C586DC2A6DE6D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemonto/Pods-yemonto-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native Code And Images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
+		};
+		37143F418E57329C9FDA3D25 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemontoTests/Pods-yemontoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F299E895F0D23CF0B32517C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1945,72 +1712,22 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9DD9FB01EE519F1BE77269C9 /* [CP] Embed Pods Frameworks */ = {
+		3FE1A8FFC16287DC73C9D8CA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-yemonto/Pods-yemonto-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemonto/Pods-yemonto-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D19252239C671F4276BDC8EB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemonto-tvOS/Pods-yemonto-tvOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DAD861280800BD597941CAF9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemonto/Pods-yemonto-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E28D73E3DB924FA4013FCA1A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemonto-tvOSTests/Pods-yemonto-tvOSTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E45E2C334DAF9847ADA346CB /* [CP] Copy Pods Resources */ = {
+		5AA4013B48D99DB78A5D4C6E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2025,7 +1742,40 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemonto-tvOSTests/Pods-yemonto-tvOSTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F90393B3FA0F3B2833FF85D1 /* [CP] Embed Pods Frameworks */ = {
+		70B47B10DD715F15CF48E016 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-yemonto-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A38B4E89EB25856D1A43B3AE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemonto-tvOS/Pods-yemonto-tvOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF5F6C5D3F462C96091ECE8E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2037,10 +1787,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemonto-tvOS/Pods-yemonto-tvOS-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yemonto-tvOSTests/Pods-yemonto-tvOSTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FA929C1D69AE0CAC56886A05 /* [CP] Check Pods Manifest.lock */ = {
+		C54C295C434C93C0279BEA63 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2073,53 +1823,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EB8187A1FB900A900CB26F6 /* ScatterDataExtract.swift in Sources */,
-				9EB8186B1FB900A900CB26F6 /* RNLineChartManager.swift in Sources */,
-				9EB8187F1FB900A900CB26F6 /* RNCombinedChartView.swift in Sources */,
-				9EB818781FB900A900CB26F6 /* RNScatterChartView.swift in Sources */,
-				9EB818701FB900A900CB26F6 /* PieDataExtract.swift in Sources */,
-				9EB8186E1FB900A900CB26F6 /* RNPieChartView.swift in Sources */,
-				9EB818651FB900A900CB26F6 /* RNBarChartManager.swift in Sources */,
-				9EB8188C1FB900A900CB26F6 /* RNBubbleChartManagerBridge.m in Sources */,
-				9EB818671FB900A900CB26F6 /* RNBarChartView.swift in Sources */,
-				9EB818661FB900A900CB26F6 /* RNBarChartManagerBridge.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				9EB818761FB900A900CB26F6 /* BridgeUtils.swift in Sources */,
-				9EB818631FB900A900CB26F6 /* BarDataExtract.swift in Sources */,
-				9EB818861FB900A900CB26F6 /* RNRadarChartView.swift in Sources */,
-				9EB8187C1FB900A900CB26F6 /* RNCandleStickChartView.swift in Sources */,
-				9EB818731FB900A900CB26F6 /* RNBarLineChartViewBase.swift in Sources */,
-				9EB818721FB900A900CB26F6 /* RNChartViewBase.swift in Sources */,
-				9EB8188E1FB900A900CB26F6 /* BalloonMarker.swift in Sources */,
-				9EB8188A1FB900A900CB26F6 /* RNBubbleChartView.swift in Sources */,
-				9EB8186C1FB900A900CB26F6 /* RNLineChartManagerBridge.m in Sources */,
-				9EB818811FB900A900CB26F6 /* RNCombinedChartManagerBridge.m in Sources */,
-				9EB8188D1FB900A900CB26F6 /* LargeValueFormatter.swift in Sources */,
-				9EB818691FB900A900CB26F6 /* RNHorizontalBarChartManagerBridge.m in Sources */,
-				9EB818821FB900A900CB26F6 /* CombinedDataExtract.swift in Sources */,
-				9EB8186A1FB900A900CB26F6 /* RNLineChartView.swift in Sources */,
-				9EB818841FB900A900CB26F6 /* RadarDataExtract.swift in Sources */,
-				9EB818711FB900A900CB26F6 /* RNPieChartManager.swift in Sources */,
-				9EB818801FB900A900CB26F6 /* RNCombinedChartManager.swift in Sources */,
-				9EB8187D1FB900A900CB26F6 /* RNCandleStickChartManager.swift in Sources */,
-				9EB818851FB900A900CB26F6 /* RNRadarChartManagerBridge.m in Sources */,
-				9EB8188B1FB900A900CB26F6 /* BubbleDataExtract.swift in Sources */,
-				9EB818791FB900A900CB26F6 /* RNScatterChartManagerBridge.m in Sources */,
-				9EB818871FB900A900CB26F6 /* RNRadarChartManager.swift in Sources */,
-				9EB818681FB900A900CB26F6 /* RNHorizontalBarChartView.swift in Sources */,
-				9EB818621FB900A900CB26F6 /* RNBarChartViewBase.swift in Sources */,
-				9EB8187E1FB900A900CB26F6 /* RNCandleStickChartManagerBridge.m in Sources */,
-				9EB818771FB900A900CB26F6 /* RNScatterChartManager.swift in Sources */,
-				9EB818741FB900A900CB26F6 /* EntryToDictionaryUtils.swift in Sources */,
-				9EB818881FB900A900CB26F6 /* RNYAxisChartViewBase.swift in Sources */,
-				9EB818831FB900A900CB26F6 /* DataExtract.swift in Sources */,
-				9EB8187B1FB900A900CB26F6 /* CandleDataExtract.swift in Sources */,
-				9EB8186F1FB900A900CB26F6 /* RNPieChartManagerBridge.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				9EB818641FB900A900CB26F6 /* RNHorizontalBarChartManager.swift in Sources */,
-				9EB8186D1FB900A900CB26F6 /* LineDataExtract.swift in Sources */,
-				9EB818891FB900A900CB26F6 /* RNBubbleChartManager.swift in Sources */,
-				9EB818751FB900A900CB26F6 /* ChartDataSetConfigUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2170,9 +1875,8 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C398B7816878A0D0B46CEA1 /* Pods-yemontoTests.debug.xcconfig */;
+			baseConfigurationReference = C1B293AD49AD69F946CE32B3 /* Pods-yemontoTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2WECKNAJVA;
@@ -2201,14 +1905,6 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -2223,9 +1919,8 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50364BF387C3185A419B2206 /* Pods-yemontoTests.release.xcconfig */;
+			baseConfigurationReference = 67AD795BA146F5C34E5423F7 /* Pods-yemontoTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -2252,14 +1947,6 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -2274,7 +1961,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F07A6457399F6FCA7535398B /* Pods-yemonto.debug.xcconfig */;
+			baseConfigurationReference = D3606970CF028B284A59EE86 /* Pods-yemonto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -2301,9 +1988,9 @@
 					"$(SRCROOT)/../node_modules/react-native-share/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
-					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative/**",
-					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics/**",
-					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes/**",
+					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
+					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
+					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
 				);
 				INFOPLIST_FILE = yemonto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2325,7 +2012,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20DE2AD2304326048259E592 /* Pods-yemonto.release.xcconfig */;
+			baseConfigurationReference = CFE46A3B872DC4E6D3C9DB18 /* Pods-yemonto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -2352,9 +2039,9 @@
 					"$(SRCROOT)/../node_modules/react-native-share/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
-					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative/**",
-					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics/**",
-					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes/**",
+					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
+					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
+					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
 				);
 				INFOPLIST_FILE = yemonto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2375,7 +2062,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B370FC139802A5490571B515 /* Pods-yemonto-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 71040B6C4AFF0C4ADEBF207B /* Pods-yemonto-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -2403,13 +2090,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -2428,7 +2108,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00B248E6DED858C896332365 /* Pods-yemonto-tvOS.release.xcconfig */;
+			baseConfigurationReference = 9D4B88EAE8082B6EA19DFF14 /* Pods-yemonto-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -2459,13 +2139,6 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -2481,7 +2154,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D910A28067D0E0052B564981 /* Pods-yemonto-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = DF9D901726516E9CEE39AB57 /* Pods-yemonto-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -2498,13 +2171,6 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.yemonto-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2516,7 +2182,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D568D464D439AE821A5A8DCA /* Pods-yemonto-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 4F1C66DD839AA233D33E60C7 /* Pods-yemonto-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -2530,13 +2196,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
