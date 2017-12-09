@@ -49,16 +49,19 @@ export default class LoopScreen extends Component {
     const theme_id = state.params ? state.params.theme_id : null
     if (theme_id) {
       const {loop} = this.props
-      console.log('print', loop)
       const currentLoop = loop.loop[0]
-      //const currentLoop = false
       if (currentLoop) {
         const loopContent = eval(this.parseJson(currentLoop))
+        console.log('printingloopContent', loopContent)
+
         const introduction_content = eval(
           this.parseJson(loopContent.introduction_content))
+
         const why_content = eval(this.parseJson(loopContent.why_content))
         const data = why_content[0].data[0]
         const htmlContent = `<p>${data.description}</p>`
+        console.log('printingwhy_content', why_content)
+
         return (
           <GradientWrapper name={'default'}>
             <View style={styles.mainCard}>

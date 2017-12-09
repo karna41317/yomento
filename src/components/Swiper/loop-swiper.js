@@ -11,6 +11,7 @@ import {
   Image,
   Dimensions,
   Platform,
+  WebView,
 } from 'react-native'
 import { connect } from 'react-redux'
 import Swiper from './components/swiper'
@@ -29,6 +30,7 @@ import { profileSelector } from 'src/screens/profile/profile.selector'
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'src/components/native-base'
 import data from '../../screens/profile/demo-data'
 import MultipleChoice from '../multi-select/index'
+import HTML from 'react-native-render-html'
 
 const {width, height} = Dimensions.get('window')
 @connect(profileSelector)
@@ -137,7 +139,6 @@ export default class LoopSwiperComponent extends Component {
 
     const readMoreText = get(pageArray[index].buttons[1], 'text')
 
-
     return (
       <View style={styles.paginationContainer}>
         {this.props.showSkipButton ? <SkipButton
@@ -192,8 +193,10 @@ export default class LoopSwiperComponent extends Component {
             <Icon name='arrow-back' style={{fontSize: 30, color: '#419BF9'}}/>
           </Button>
           <View>
-            <Text style={styles.headerTextStyle}>{this.props.headerName ? upperCase(
-              this.props.headerName) : null}</Text>
+            <Text style={styles.headerTextStyle}>{this.props.headerName
+              ? upperCase(
+                this.props.headerName)
+              : null}</Text>
             <View style={styles.dotContainer}>
               {this.props.showDots && RenderDots(index, total, {
                 ...this.props, styles: styles,
@@ -228,9 +231,10 @@ export default class LoopSwiperComponent extends Component {
       const userName = get(auth, 'user.name', '')
       const updated = title.replace('<first_name>', userName)
 
-
       let options = dataObject.options[0].data
       let max_select = dataObject.options[0].max_select
+      console.log('printingmax_select', max_select)
+
       if (options) {
         return (
           <View style={{position: 'absolute', top: 100, left: 20, right: 20}}>
@@ -242,7 +246,9 @@ export default class LoopSwiperComponent extends Component {
               options={options}
               selectedOptions={[]}
               maxSelectedOptions={max_select}
-              onSelection={(option) => {this.props.tapSelection}}
+              onSelection={(option, options) => {
+                this.props.tapSelection.bind(option, options)
+              }}
             />
           </View>
         )
@@ -250,8 +256,28 @@ export default class LoopSwiperComponent extends Component {
       return null
     } else if (content_type === 'general') {
       const {title, description} = dataObject
+      const htmlContent = `<p>${description}</p>`
+      const classesStyles = {
+        'how-paragraph': {
+          textAlign: 'right',
+          color: 'teal',
+          fontWeight: '800',
+        },
+        'refle-paragraph': {
+          textAlign: 'right',
+          color: 'teal',
+          fontWeight: '800',
+        },
+      }
+      const tagsStyles = {
+        i: {
+          fontWeight: '800',
+          color: 'blue',
+        },
+      }
+      const htmlData = `<p class="last-paragraph">hello this sis grey content</p><img src="https://i.imgur.com/dHLmxfO.jpg?2" /><i>Finally, this paragraph is styled through the classesStyles prop</i>`
+      console.log('printinghtmlContent', htmlContent)
 
-      htmlContent = `<p>${description}</p>`
       if (seq_order === 1) {
         return (
           <View style={{position: 'absolute', top: 200, left: 20, right: 20}}>
@@ -286,7 +312,10 @@ export default class LoopSwiperComponent extends Component {
               style={[styles.tapText, {fontSize: 20, marginHorizontal: 30}]}>
               {title}
             </Text>
-            <HTMLView value={htmlContent} stylesheet={htmlStyles}/>
+            <HTML
+              html={htmlData}
+              tagsStyles={tagsStyles}
+              classesStyles={classesStyles}/>
           </View>
         )
       }

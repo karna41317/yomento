@@ -1,10 +1,3 @@
-/**
- * Created by Karan on 2017-11-25.
- */
-/**
- * Created by Karan on 2017-11-20.
- */
-
 import React, { Component } from 'react'
 import { View, Text, Animated, ActivityIndicator } from 'react-native'
 import { connect } from 'react-redux'
@@ -19,7 +12,7 @@ import { get } from 'lodash'
 import { updateCards } from '../../actions/loop-action'
 
 @connect(loopSelector)
-export default class LoopIntroScreen extends Component {
+export default class LoopReflectionScreen extends Component {
 
   constructor () {
     super()
@@ -41,19 +34,24 @@ export default class LoopIntroScreen extends Component {
 
   doneBtnHandle = () => {
     const {navigation, dispatch, loop} = this.props
-    const pathParams = {
-      card_type: 'reflection',
-      loop_id: loop.loop_id,
+    console.log('printing', this.props)
+    const loopId = get(loop, 'loop[0].loop_id')
+
+    if(loopId) {
+      const pathParams = {
+        card_type: 'reflection',
+        loop_id: loopId,
+      }
+      bodyParams = {
+        tap: this.state.selectedOptions,
+        selectedText: '',
+      }
+      const params = {
+        pathParams,
+        bodyParams
+      }
+      dispatch(updateCards(params, navigation))
     }
-    bodyParams = {
-      tap: this.props.selectedOptions,
-      selectedText: '',
-    }
-    const params = {
-      pathParams,
-      bodyParams
-    }
-    dispatch(updateCards(params, navigation))
   }
 
   nextBtnHandle = (index) => {

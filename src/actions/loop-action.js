@@ -37,6 +37,8 @@ export const updateCards = (parameteres, navigation) => {
       bodyParams: get(parameteres, 'bodyParams', {}),
     }
     const card_type = get(params, 'pathParams.card_type')
+    console.log('printing', card_type)
+
     try {
       apiModule.updateCard(token, params).then(data => {
         if (data.status && data.status === 'success') {

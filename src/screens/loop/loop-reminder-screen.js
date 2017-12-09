@@ -48,13 +48,22 @@ export default class loopReminderScreen extends Component {
   parseJson = (content) => {
     return JSON.parse(JSON.stringify(content))
   }
+
   confirmReminder = (currentLoop) => {
     const {dispatch, navigation} = this.props
+
+
     const dataInEpoch = Moment(this.state.date).unix()
-    const params = {
+
+    const pathParams = {
       card_type: 'reminder',
       reminder_time: dataInEpoch,
       loop_id: get(currentLoop, 'loop_id'),
+    }
+    const bodyParams = {}
+    const params ={
+      pathParams,
+      bodyParams
     }
     dispatch(updateCards(params, navigation))
   }

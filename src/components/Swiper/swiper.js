@@ -187,8 +187,8 @@ export default class SwiperComponent extends Component {
     if (page.content_type === 'rate') {
       return (
         <View>
-          <View style={{marginVertical: 40}}>
-            <Text style={{textAlign: 'center', fontSize: 80, color: '#419BF9'}}>
+          <View style={{marginVertical: 30}}>
+            <Text style={styles.ratingResult}>
               {this.state.value}
             </Text>
           </View>
@@ -207,6 +207,14 @@ export default class SwiperComponent extends Component {
             value={this.state.value}
             onSlidingComplete={this.valueChanged}
           />
+          <View style={styles.ratingRange}>
+            <Text style={styles.rangeText}>
+              1
+            </Text>
+            <Text style={styles.rangeText}>
+              10
+            </Text>
+          </View>
         </View>
 
 

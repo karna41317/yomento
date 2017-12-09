@@ -14,7 +14,6 @@
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* yemontoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* yemontoTests.m */; };
 		01DC712D1E3C15570081C922 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01DC71131E3C150F0081C922 /* libRCTAnimation.a */; };
-		03D15201170643BF8985B6BA /* libAppCenterReactNativeAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB468D71BF9446CBB1283D1 /* libAppCenterReactNativeAnalytics.a */; };
 		071590C08883478D974063E7 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED092326CDA049839F548044 /* EvilIcons.ttf */; };
 		087F422EBD0846DDBD6E811D /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D940209B5149A797F4FFE3 /* Zocial.ttf */; };
 		0B849D3D84904E6C87D62FBE /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 337261EAAB394352AA10F64E /* Ionicons.ttf */; };
@@ -40,8 +39,6 @@
 		317C3CA8ED7945EA9D7B6CE3 /* TabletGothic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA7DB2606513493D837FC985 /* TabletGothic-Bold.ttf */; };
 		31913DF946654D4994520F45 /* TabletGothic-SemiBoldOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38244652825B442987EDEC5A /* TabletGothic-SemiBoldOblique.ttf */; };
 		327FF4C28B304A55B8D62433 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA41E95FC33D41F58BD7A08C /* FontAwesome.ttf */; };
-		34E1768D0EA44BF79D70E900 /* libAppCenterReactNativeCrashes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63687D0A21BE468CB62DE7B9 /* libAppCenterReactNativeCrashes.a */; };
-		376F097D55CE4FE2A83BB783 /* libAppCenterReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8111C629A5B64324BBB75444 /* libAppCenterReactNative.a */; };
 		3B26D5A864FC4B47AA903364 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1303B353A454471DB80A201F /* Foundation.ttf */; };
 		3C4607F958F24A93957D4A0F /* TabletGothic-ThinOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E2CC884F8AE416396CCB468 /* TabletGothic-ThinOblique.ttf */; };
 		3CB43EA6802A4F11B2E8B9CA /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7909EB3BBF5455EA481F9E6 /* FontAwesome.ttf */; };
@@ -68,10 +65,15 @@
 		9E3D48DF1FACEE8B00E99E4A /* libRNShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7FF30C1FA3DB6D000312A4 /* libRNShare.a */; };
 		9E3D48E01FACEE9600E99E4A /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC8526D1FABD7D200AE7C23 /* libRNImagePicker.a */; };
 		9E3D48E11FACEEA200E99E4A /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC852711FABD7D200AE7C23 /* libRNSVG.a */; };
+		9E70F75A1FDC4BB500E51A21 /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E70F73C1FDC4BA200E51A21 /* libRCTPushNotification.a */; };
 		9E75CC3C1F9D04CC00402736 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2BEE781E2EDFEA008A6295 /* libRNVectorIcons.a */; };
 		9E75CC3D1F9D04DA00402736 /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9A360F1F99662F00A7A7C4 /* libCodePush.a */; };
 		9E7FEF531FA0D409000312A4 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E75CC381F9D00CA00402736 /* libBVLinearGradient.a */; };
 		9E7FF0CF1FA2269C000312A4 /* libRCTLinkedinLogin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7FEFE31FA0F368000312A4 /* libRCTLinkedinLogin.a */; };
+		9EFF71CC1FDB489B00438906 /* libAppCenterReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFF70B91FDB3DDD00438906 /* libAppCenterReactNative.a */; };
+		9EFF71CD1FDB48CE00438906 /* libAppCenterReactNativeAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFF70B41FDB3DDD00438906 /* libAppCenterReactNativeAnalytics.a */; };
+		9EFF71CE1FDB48CE00438906 /* libAppCenterReactNativeCrashes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFF70BE1FDB3DDD00438906 /* libAppCenterReactNativeCrashes.a */; };
+		9EFF71CF1FDB48CE00438906 /* libRNMixpanel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFF711F1FDB41C000438906 /* libRNMixpanel.a */; };
 		A0E45EC10FE74E28886FBD62 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83537835E113468480D0F6A2 /* Ionicons.ttf */; };
 		A26E0B597FFC41809D07593C /* TabletGothic-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D6DD25A4F7B41529D41AC0F /* TabletGothic-SemiBold.ttf */; };
 		AEB333E4C637491784F83811 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFDC07598B0A45BCA3930091 /* Octicons.ttf */; };
@@ -233,6 +235,20 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		9E70F73B1FDC4BA200E51A21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E70F7241FDC4BA200E51A21 /* RCTPushNotification.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RCTPushNotification;
+		};
+		9E70F73D1FDC4BA200E51A21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E70F7241FDC4BA200E51A21 /* RCTPushNotification.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D05745F1DE6004600184BB4;
+			remoteInfo = "RCTPushNotification-tvOS";
+		};
 		9E75CC371F9D00CA00402736 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AC872D76D2C44DCBAF5B747B /* BVLinearGradient.xcodeproj */;
@@ -359,6 +375,20 @@
 			remoteGlobalIDString = 5419C2701D824AA700DDF3A1;
 			remoteInfo = AppCenterReactNativeCrashes;
 		};
+		9EFF711E1FDB41C000438906 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AC1591684E64D88BC13BD54 /* RNMixpanel.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FDC64AF01BF1690D0044C1B4;
+			remoteInfo = RNMixpanel;
+		};
+		9EFF71201FDB41C000438906 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AC1591684E64D88BC13BD54 /* RNMixpanel.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5EAEEA411F0555B100C6FED8;
+			remoteInfo = "RNMixpanel-tvOS";
+		};
 		EE2BEE5F1E2EDFEA008A6295 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
@@ -439,6 +469,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = yemonto/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = yemonto/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		1AC1591684E64D88BC13BD54 /* RNMixpanel.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNMixpanel.xcodeproj; path = "../node_modules/react-native-mixpanel/RNMixpanel.xcodeproj"; sourceTree = "<group>"; };
 		1D55586477EC4AD8A64CD653 /* AppCenterReactNativeAnalytics.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeAnalytics.xcodeproj; path = "../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics.xcodeproj"; sourceTree = "<group>"; };
 		2941673DBCE44CC690250FF9 /* TabletGothic-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-Regular.ttf"; path = "../assets/fonts/TabletGothic-Regular.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* yemonto-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "yemonto-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -447,6 +478,7 @@
 		360C4A0167334365B825B4B8 /* TabletGothic-Heavy.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-Heavy.ttf"; path = "../assets/fonts/TabletGothic-Heavy.ttf"; sourceTree = "<group>"; };
 		38244652825B442987EDEC5A /* TabletGothic-SemiBoldOblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-SemiBoldOblique.ttf"; path = "../assets/fonts/TabletGothic-SemiBoldOblique.ttf"; sourceTree = "<group>"; };
 		39E518B8D419ABFAB3C57057 /* Pods_yemontoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yemontoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DC3E750F7A345FA9647ADC0 /* libRNMixpanel-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNMixpanel-tvOS.a"; sourceTree = "<group>"; };
 		3E2CC884F8AE416396CCB468 /* TabletGothic-ThinOblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-ThinOblique.ttf"; path = "../assets/fonts/TabletGothic-ThinOblique.ttf"; sourceTree = "<group>"; };
 		42C5381DEE514F6B8EFD9A9C /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = ../assets/fonts/SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		48898C652878498080F12377 /* TabletGothic-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-ExtraBold.ttf"; path = "../assets/fonts/TabletGothic-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -471,6 +503,7 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		78F25701B20A4BE493E8953E /* TabletGothic-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-Thin.ttf"; path = "../assets/fonts/TabletGothic-Thin.ttf"; sourceTree = "<group>"; };
 		7EB468D71BF9446CBB1283D1 /* libAppCenterReactNativeAnalytics.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNativeAnalytics.a; sourceTree = "<group>"; };
+		805C95F8298C4627867353B3 /* libRNMixpanel.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNMixpanel.a; sourceTree = "<group>"; };
 		81112987494743ED9BEB6A64 /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		8111C629A5B64324BBB75444 /* libAppCenterReactNative.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNative.a; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
@@ -485,6 +518,8 @@
 		9D09EBDB574F4DA3B12A3E2C /* Raleway_bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Raleway_bold.ttf; path = ../assets/fonts/Raleway_bold.ttf; sourceTree = "<group>"; };
 		9D48CDB6E1594FF69439C93D /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		9D4B88EAE8082B6EA19DFF14 /* Pods-yemonto-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto-tvOS/Pods-yemonto-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		9E70F7241FDC4BA200E51A21 /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
+		9E70F75B1FDC4CA000E51A21 /* yemonto.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = yemonto.entitlements; path = yemonto/yemonto.entitlements; sourceTree = "<group>"; };
 		9EB817FF1FB900A700CB26F6 /* yemonto-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yemonto-Bridging-Header.h"; sourceTree = "<group>"; };
 		A084FB918343439A8B98668A /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
 		A6447C65F3E9460B8B9678AA /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
@@ -539,6 +574,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E70F75A1FDC4BB500E51A21 /* libRCTPushNotification.a in Frameworks */,
+				9EFF71CD1FDB48CE00438906 /* libAppCenterReactNativeAnalytics.a in Frameworks */,
+				9EFF71CE1FDB48CE00438906 /* libAppCenterReactNativeCrashes.a in Frameworks */,
+				9EFF71CF1FDB48CE00438906 /* libRNMixpanel.a in Frameworks */,
+				9EFF71CC1FDB489B00438906 /* libAppCenterReactNative.a in Frameworks */,
 				9E133DCD1FD335DA0063D2D0 /* libz.tbd in Frameworks */,
 				9E3D48E11FACEEA200E99E4A /* libRNSVG.a in Frameworks */,
 				9E3D48E01FACEE9600E99E4A /* libRNImagePicker.a in Frameworks */,
@@ -559,10 +599,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				376F097D55CE4FE2A83BB783 /* libAppCenterReactNative.a in Frameworks */,
 				2E3299C268F4F01428FCA877 /* Pods_yemonto.framework in Frameworks */,
-				03D15201170643BF8985B6BA /* libAppCenterReactNativeAnalytics.a in Frameworks */,
-				34E1768D0EA44BF79D70E900 /* libAppCenterReactNativeCrashes.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,6 +769,7 @@
 		13B07FAE1A68108700A75B9A /* yemonto */ = {
 			isa = PBXGroup;
 			children = (
+				9E70F75B1FDC4CA000E51A21 /* yemonto.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -789,6 +827,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				9E70F7241FDC4BA200E51A21 /* RCTPushNotification.xcodeproj */,
 				01DC710C1E3C150E0081C922 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -811,6 +850,7 @@
 				BE007BDE82DD4996BB35D0BB /* AppCenterReactNative.xcodeproj */,
 				1D55586477EC4AD8A64CD653 /* AppCenterReactNativeAnalytics.xcodeproj */,
 				B422E50ADBCD488782A790B3 /* AppCenterReactNativeCrashes.xcodeproj */,
+				1AC1591684E64D88BC13BD54 /* RNMixpanel.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -849,6 +889,15 @@
 				00E356EE1AD99517003FC87E /* yemontoTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* yemonto-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* yemonto-tvOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9E70F7251FDC4BA200E51A21 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9E70F73C1FDC4BA200E51A21 /* libRCTPushNotification.a */,
+				9E70F73E1FDC4BA200E51A21 /* libRCTPushNotification-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -900,6 +949,8 @@
 				8111C629A5B64324BBB75444 /* libAppCenterReactNative.a */,
 				7EB468D71BF9446CBB1283D1 /* libAppCenterReactNativeAnalytics.a */,
 				63687D0A21BE468CB62DE7B9 /* libAppCenterReactNativeCrashes.a */,
+				805C95F8298C4627867353B3 /* libRNMixpanel.a */,
+				3DC3E750F7A345FA9647ADC0 /* libRNMixpanel-tvOS.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -950,6 +1001,15 @@
 			isa = PBXGroup;
 			children = (
 				9EFF70BE1FDB3DDD00438906 /* libAppCenterReactNativeCrashes.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9EFF711A1FDB41C000438906 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9EFF711F1FDB41C000438906 /* libRNMixpanel.a */,
+				9EFF71211FDB41C000438906 /* libRNMixpanel-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1080,6 +1140,11 @@
 						DevelopmentTeam = 2WECKNAJVA;
 						LastSwiftMigration = 900;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1153,6 +1218,10 @@
 					ProjectRef = 00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */;
 				},
 				{
+					ProductGroup = 9E70F7251FDC4BA200E51A21 /* Products */;
+					ProjectRef = 9E70F7241FDC4BA200E51A21 /* RCTPushNotification.xcodeproj */;
+				},
+				{
 					ProductGroup = 139105B71AF99BAD00B5F7CC /* Products */;
 					ProjectRef = 139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */;
 				},
@@ -1175,6 +1244,10 @@
 				{
 					ProductGroup = 9EC852671FABD7D100AE7C23 /* Products */;
 					ProjectRef = 0BDFB23822124282AB07ED11 /* RNImagePicker.xcodeproj */;
+				},
+				{
+					ProductGroup = 9EFF711A1FDB41C000438906 /* Products */;
+					ProjectRef = 1AC1591684E64D88BC13BD54 /* RNMixpanel.xcodeproj */;
 				},
 				{
 					ProductGroup = 9E7FF3031FA3DB6D000312A4 /* Products */;
@@ -1330,6 +1403,20 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		9E70F73C1FDC4BA200E51A21 /* libRCTPushNotification.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTPushNotification.a;
+			remoteRef = 9E70F73B1FDC4BA200E51A21 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9E70F73E1FDC4BA200E51A21 /* libRCTPushNotification-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTPushNotification-tvOS.a";
+			remoteRef = 9E70F73D1FDC4BA200E51A21 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		9E75CC381F9D00CA00402736 /* libBVLinearGradient.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1454,6 +1541,20 @@
 			fileType = archive.ar;
 			path = libAppCenterReactNativeCrashes.a;
 			remoteRef = 9EFF70BD1FDB3DDD00438906 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9EFF711F1FDB41C000438906 /* libRNMixpanel.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNMixpanel.a;
+			remoteRef = 9EFF711E1FDB41C000438906 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9EFF71211FDB41C000438906 /* libRNMixpanel-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNMixpanel-tvOS.a";
+			remoteRef = 9EFF71201FDB41C000438906 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		EE2BEE601E2EDFEA008A6295 /* libRCTLinking-tvOS.a */ = {
@@ -1718,9 +1819,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-yemonto/Pods-yemonto-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Mixpanel/Mixpanel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mixpanel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1896,12 +2000,15 @@
 					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
+					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 				);
 				INFOPLIST_FILE = yemontoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1938,12 +2045,15 @@
 					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
+					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 				);
 				INFOPLIST_FILE = yemontoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1965,17 +2075,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = yemonto/yemonto.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 2WECKNAJVA;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)/**",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/SwiftyJSON\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Charts\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)/**";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -1991,6 +2098,7 @@
 					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
+					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 				);
 				INFOPLIST_FILE = yemonto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2016,17 +2124,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = yemonto/yemonto.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Yomento Management AB (2WECKNAJVA)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2WECKNAJVA;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)/**",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Charts\"/**",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/SwiftyJSON\"/**",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)/**";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -2042,6 +2147,7 @@
 					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
+					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 				);
 				INFOPLIST_FILE = yemonto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2085,11 +2191,14 @@
 					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
+					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 				);
 				INFOPLIST_FILE = "yemonto-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -2131,11 +2240,14 @@
 					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
+					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 				);
 				INFOPLIST_FILE = "yemonto-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -2171,6 +2283,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.yemonto-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2196,6 +2310,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
