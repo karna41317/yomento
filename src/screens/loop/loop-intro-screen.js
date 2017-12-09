@@ -50,7 +50,9 @@ export default class LoopIntroScreen extends Component {
     const {navigation} = this.props
     navigation.navigate('loopIntro')
   }
+  tapSelection = () => {
 
+  }
   render () {
     const {state} = this.props.navigation
     const introPages = state.params ? state.params : null
@@ -61,6 +63,7 @@ export default class LoopIntroScreen extends Component {
     if (introPages) {
       return (
         <LoopSwiperComponent
+          tapSelection={this.tapSelection}
           headerName={headerName}
           name={'profile'}
           showDots={true}

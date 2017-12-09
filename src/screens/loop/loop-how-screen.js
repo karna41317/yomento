@@ -51,7 +51,9 @@ export default class LoopHowScreen extends Component {
     const {navigation} = this.props
     navigation.navigate('loopIntro')
   }
+  tapSelection = () => {
 
+  }
   render () {
     const {loop} = this.props
     if (loop) {
@@ -65,6 +67,7 @@ export default class LoopHowScreen extends Component {
       if (how_content) {
         return (
           <LoopSwiperComponent
+            tapSelection={this.tapSelection}
             headerName={headerName}
             name={'loophow'}
             showDots={true}

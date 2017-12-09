@@ -19,6 +19,17 @@ export default class DashboardScreen extends Component {
     this.props.navigation.navigate('profile')
   }
 
+  constructor () {
+    super()
+    this.state = {
+      showMainCard: this.showMainCard(),
+    }
+  }
+
+  showMainCard = () => {
+    return true
+  }
+
   componentWillMount () {
     this.props.dispatch(getDashboardCards())
   }
@@ -28,11 +39,9 @@ export default class DashboardScreen extends Component {
   }
 
   skipFutureCards = () => {
-
-
-    //this.scrollView.scrollTo({y: 0,animated: true})
-    //_scrollView.scrollTo({y: 760,animated: true})
-    /*ScrollView.scrollTo(options: {x: number = 0; y: number = 0; animated: boolean = true})*/
+    if(this.scrollView) {
+      this.scrollView.scrollTo({y: 760, animated: true})
+    }
 
   }
 
@@ -40,16 +49,22 @@ export default class DashboardScreen extends Component {
     return JSON.parse(JSON.stringify(content))
   }
 
+  goToReflect = (item) => {
+    const {navigation, dispatch} = this.props
+    dispatch(getLoops(item.loop_id))
+    navigation.navigate('loopReflection', item)
+  }
+
+  goToHow = (item) => {
+    const {navigation, dispatch} = this.props
+    dispatch(getLoops(item.loop_id))
+    navigation.navigate('loop', item)
+  }
+
   goToLoop = (item) => {
-
-    this.props.dispatch(getLoops(item.loop_id))
-    /*const {dashboard: {mainCards}} = this.props
-    const updatedCards = this.moveCardBack(mainCards, 1)
-
-    this.props.dispatch(updateDashboardCards(updatedCards))
-    this.props.navigation.navigate('loop', item)*/
-    this.props.navigation.navigate('loop', item)
-
+    const {navigation, dispatch} = this.props
+    dispatch(getLoops(item.loop_id))
+    navigation.navigate('loop', item)
   }
 
   moveCardBack = (arr, n) => {
@@ -59,7 +74,6 @@ export default class DashboardScreen extends Component {
 
   finishedCards = () => {
     const {dashboard: {finishedCards}} = this.props
-
     if (finishedCards && finishedCards.length > 0) {
       return map(finishedCards, card => {
         return (
@@ -87,166 +101,152 @@ export default class DashboardScreen extends Component {
     return null
   }
 
-  getActionCard = () => {
-    const {dashboard: {newCard}} = this.props
-    const isTimePassed = Moment(Date.now()).isAfter(1511913600)
-    const reminderColor = isTimePassed ? '#FF0000' : '#12124B'
-    const height = isTimePassed ? 300 : 170
-    const style = {
-      height: height,
-      backgroundColor: '#FFFBCD',
-    }
-    if (newCard && newCard.length > 0) {
-      const mainCard = newCard[0]
-      return (
-        <View style={[styles.completedCard, style]}>
-          <View style={styles.textWrapper}>
-            <View style={styles.textHeadWrapper}>
-              <Text style={styles.profileIntroHead}>
-                {'FEEDBACK'}
-              </Text>
-              <Text style={[
-                styles.profileIntroHead,
-                styles.reminderWrapper]}>
-                <Icon name={'ios-time-outline'}
-                      style={{fontSize: 20, color: reminderColor}}/>
-                {'    '}
-                <Text style={{fontSize: 15, color: reminderColor}}>
-                  {Moment(Date.now()).format('Do MMM h:mm')}</Text>
+  getReminderCard = () => {
+    const {dashboard: {reminderCards}} = this.props
+    if (reminderCards && reminderCards.length > 0) {
+      return map(reminderCards, card => {
+        //console.log('printingreminder_time', card.reminder_time)
+        const isTimePassed = Moment(Date.now()).isAfter(Number(card.reminder_time))
+        const reminderColor = isTimePassed ? '#FF0000' : '#12124B'
+        const height = isTimePassed ? 300 : 170
+        const style = {
+          height: height,
+          backgroundColor: '#FFFBCD',
+        }
+
+        const reminderTime = Moment(new Date(Number(card.reminder_time))).format('Do MMM h:mm')
+
+        return (
+          <View style={[styles.completedCard, style]}>
+            <View style={styles.textWrapper}>
+              <View style={styles.textHeadWrapper}>
+                <Text style={styles.profileIntroHead}>
+                  {'FEEDBACK'}
+                </Text>
+                <Text style={[
+                  styles.profileIntroHead,
+                  styles.reminderWrapper]}>
+                  <Icon name={'ios-time-outline'}
+                        style={{fontSize: 20, color: reminderColor}}/>
+                  {'    '}
+                  <Text style={{fontSize: 15, color: reminderColor}}>
+                    {reminderTime}</Text>
+                </Text>
+              </View>
+              <Text
+                style={styles.profileIntroText}>
+                {'Send a message with positive feedback!'}
               </Text>
             </View>
-            <Text
-              style={styles.profileIntroText}>
-              {'Send a message with positive feedback!'}
-            </Text>
+            <View style={styles.ButtonsWrapper}>
+              <SecondaryButton
+                upper
+                style={{minWidth: 80}}
+                textStyles={{color: '#0D0B3F'}}
+                onPress={this.goToHow.bind(this,
+                  card)}>How?</SecondaryButton>
+              <PrimaryButton
+                upper
+                onPress={this.goToReflect.bind(this,
+                  card)}>Finish</PrimaryButton>
+            </View>
           </View>
-          <View style={styles.ButtonsWrapper}>
-            <SecondaryButton
-              upper
-              style={{minWidth: 80}}
-              textStyles={{color: '#0D0B3F'}}
-              onPress={this.goToLoop.bind(this,
-                mainCard)}>How?</SecondaryButton>
-            <PrimaryButton
-              upper
-              onPress={this.goToLoop.bind(this,
-                mainCard)}>Finish</PrimaryButton>
-          </View>
-        </View>
-      )
+        )
+      })
     }
     return null
   }
 
-  getReflectionCard = (mainCard) => {
-    const isTimePassed = Moment(Date.now()).isAfter(1511913600)
-    const reminderColor = isTimePassed ? '#FF0000' : '#12124B'
-    const height = 170
-    const style = {
-      height: height,
-      backgroundColor: '#D5EDFF',
-    }
-    return (
-      <View style={[styles.completedCard, style]}>
-        <View style={styles.textWrapper}>
-          <View style={styles.textHeadWrapper}>
-            <Text style={styles.profileIntroHead}>
-              {'FEEDBACK'}
-            </Text>
+  getReflectionCard = () => {
+    const {dashboard: {reflectionCards}} = this.props
+    console.log('printingreflectionCards', this.props)
+    if (reflectionCards && reflectionCards.length > 0) {
+
+      const isTimePassed = Moment(Date.now()).isAfter(1511913600)
+      const reminderColor = isTimePassed ? '#FF0000' : '#12124B'
+      const height = 170
+      const style = {
+        height: height,
+        backgroundColor: '#D5EDFF',
+      }
+      console.log('printingreflectionCards', reflectionCards)
+
+      return map(reflectionCards, card => {
+        return (
+          <View style={[styles.completedCard, style]}>
+            <View style={styles.textWrapper}>
+              <View style={styles.textHeadWrapper}>
+                <Text style={styles.profileIntroHead}>
+                  {'FEEDBACK'}
+                </Text>
+              </View>
+              <Text
+                style={styles.profileIntroText}>
+                {'Send a message with positive feedback!'}
+              </Text>
+            </View>
+            <View style={styles.ButtonsWrapper}>
+              <SecondaryButton
+                upper
+                style={{minWidth: 80}}
+                textStyles={{color: '#0D0B3F'}}
+                onPress={this.goToHow.bind(this,
+                  card)}>How?</SecondaryButton>
+              <PrimaryButton
+                upper
+                onPress={this.goToReflect.bind(this,
+                  card)}>Lets reflect</PrimaryButton>
+            </View>
           </View>
-          <Text
-            style={styles.profileIntroText}>
-            {'Send a message with positive feedback!'}
-          </Text>
-        </View>
-        <View style={styles.ButtonsWrapper}>
-          <SecondaryButton
-            upper
-            style={{minWidth: 80}}
-            textStyles={{color: '#0D0B3F'}}
-            onPress={this.goToLoop.bind(this,
-              mainCard)}>How?</SecondaryButton>
-          <PrimaryButton
-            upper
-            onPress={this.goToLoop.bind(this,
-              mainCard)}>Lets reflect</PrimaryButton>
-        </View>
-      </View>
-    )
+        )
+      })
+    }
+    return null
   }
 
   getMainCard = () => {
-    const {dashboard: {newCard}} = this.props
-
-
-    if (newCard && newCard.length > 0) {
-      const mainCard = newCard[0]
-      const isTimePassed = Moment(Date.now()).isAfter(1511913600)
-      const height = isTimePassed ? 170 : 300
-      return (
-        <View style={[styles.mainCard, {height: height}]}>
-          <View style={styles.textWrapper}>
-            <Text style={styles.profileIntroHead}>
-              {toUpper(mainCard.theme_name)}
-            </Text>
-            <Text
-              style={styles.profileIntroText}>{mainCard.loop_title}</Text>
+    if (this.state.showMainCard) {
+      const {dashboard: {newCard}} = this.props
+      if (newCard && newCard.length > 0) {
+        const mainCard = newCard[0]
+        const isTimePassed = Moment(Date.now()).isAfter(1511913600)
+        const height = isTimePassed ? 170 : 300
+        return (
+          <View style={[styles.mainCard, {height: height}]}>
+            <View style={styles.textWrapper}>
+              <Text style={styles.profileIntroHead}>
+                {toUpper(mainCard.theme_name)}
+              </Text>
+              <Text
+                style={styles.profileIntroText}>{mainCard.loop_title}</Text>
+            </View>
+            <PrimaryButton
+              style={styles.profileButton}
+              onPress={this.goToLoop.bind(this,
+                mainCard)}>START</PrimaryButton>
           </View>
-          <PrimaryButton
-            style={styles.profileButton}
-            onPress={this.goToLoop.bind(this,
-              mainCard)}>START</PrimaryButton>
-        </View>
-      )
+        )
+      }
     }
   }
 
-  getFutureCard = () => {
-    const {dashboard: {futureCards, newCard}} = this.props
-    if (newCard && newCard.length > 0) {
-      const mainCard = newCard[0]
-      return (
-        <View>
+  getFutureCards = (futureCards) => {
+    if (futureCards && futureCards.length > 0) {
+      return map(futureCards, card => {
+        return (
           <View style={styles.futureCards}>
             <View style={styles.textWrapper}>
               <Text style={styles.profileIntroHead}>
-                {'DELEGATION'}
+                {toUpper(card.theme_name)}
               </Text>
               <Text
-                style={styles.profileIntroText}>{'Send a message with positive feedback!'}</Text>
+                style={styles.profileIntroText}>{card.loop_title}</Text>
             </View>
           </View>
-          <View style={styles.futureCards}>
-            <View style={styles.textWrapper}>
-              <Text style={styles.profileIntroHead}>
-                {toUpper(mainCard.theme_name)}
-              </Text>
-              <Text
-                style={styles.profileIntroText}>{mainCard.loop_title}</Text>
-            </View>
-          </View>
-          <View style={styles.futureCards}>
-            <View style={styles.textWrapper}>
-              <Text style={styles.profileIntroHead}>
-                {toUpper(mainCard.theme_name)}
-              </Text>
-              <Text
-                style={styles.profileIntroText}>{mainCard.loop_title}</Text>
-            </View>
-          </View>
-          <View style={styles.futureCards}>
-            <View style={styles.textWrapper}>
-              <Text style={styles.profileIntroHead}>
-                {toUpper(mainCard.theme_name)}
-              </Text>
-              <Text
-                style={styles.profileIntroText}>{mainCard.loop_title}</Text>
-            </View>
-          </View>
-        </View>
-      )
+        )
+      })
     }
-
+    return null
   }
   refScrollView = view => {
     this.scrollView = view
@@ -254,7 +254,6 @@ export default class DashboardScreen extends Component {
   scrollToFinished = () => {
     this.scrollView.scrollTo({y: 0, animated: true})
   }
-
   getHeader = () => {
     return (
       <Header backgroundColor={'transparent'} style={customStyles.header}>
@@ -286,10 +285,21 @@ export default class DashboardScreen extends Component {
 
   render () {
     const {dashboard: {fetching}} = this.props
-
     if (fetching) {
       return <ActivityIndicator/>
     } else {
+      const {
+        dashboard: {
+          newCard,
+          futureCards,
+          nextCards,
+          redoCards,
+          finishedCards,
+          reminderCards,
+          reflectionCards,
+        },
+      } = this.props
+
       return (
         <GradientWrapper name={'default'}>
           <View style={{backgroundColor: 'transparent'}}>
@@ -298,14 +308,14 @@ export default class DashboardScreen extends Component {
               <ScrollView
                 ref={this.refScrollView}
                 automaticallyAdjustContentInsets={false}
-                onScroll={() => { console.log('onScroll!') }}
+                onScroll={() => {}}
                 scrollEventThrottle={200}
                 showsVerticalScrollIndicator={false}>
-                {this.finishedCards()}
-                {this.getActionCard()}
-                {this.getReflectionCard()}
-                {this.getMainCard()}
-                {this.getFutureCard()}
+                {this.finishedCards(finishedCards)}
+                {this.getReminderCard(reminderCards)}
+                {this.getReflectionCard(reflectionCards)}
+                {this.getMainCard(newCard)}
+                {this.getFutureCards(futureCards)}
               </ScrollView>
             </View>
           </View>

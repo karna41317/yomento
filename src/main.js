@@ -3,27 +3,55 @@ import { reduxStore } from 'src/store/store'
 import { connect } from 'react-redux'
 import RootScreen from './screens/root'
 import React, { Component } from 'react'
-import { AppRegistry, BackHandler, Platform } from 'react-native'
+import { AppRegistry, BackHandler, Platform, AppState } from 'react-native'
 import { NavigationActions } from 'react-navigation'
 import CodePush from "react-native-code-push";
-const RN = require('react-native')
-import {sessionSelector} from 'src/selectors'
 
+
+import PushController from './pushNotificationController';
+import PushNotification from 'react-native-push-notification';
 
 GLOBAL.XMLHttpRequest = GLOBAL.originalXMLHttpRequest || GLOBAL.XMLHttpRequest
 
 
 class Yomento extends Component {
+
   componentDidMount() {
     console.disableYellowBox = true;
+    AppState.addEventListener('change', this.handleAppStateChange);
     CodePush.sync({
       updateDialog: true,
       installMode: CodePush.InstallMode.IMMEDIATE
     })
   }
 
+  componentWillUnmount() {
+    AppState.removeEventListener('change', this.handleAppStateChange);
+  }
+
+  handleAppStateChange(appState) {
+    if (appState === 'background') {
+      console.log('printingbackground state', appState)
+
+      let date = new Date(Date.now() + (6 * 1000));
+    /*  if (Platform.OS === 'ios') {
+        date = date.toISOString();
+      }*/
+     // debugger
+      console.log('printing', date)
+
+
+
+      PushNotification.localNotificationSchedule({
+        message: "My Notification Message",
+        date,
+      });
+    }
+  }
+
   constructor() {
     super();
+    this.handleAppStateChange = this.handleAppStateChange.bind(this);
     this.state = { restartAllowed: true };
   }
 
@@ -119,7 +147,10 @@ class Yomento extends Component {
 
     return (
       <Store>
-        <RootScreen/>
+        <RootScreen>
+          <PushController />
+        </RootScreen>
+
       </Store>
     )
   }

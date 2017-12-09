@@ -6,16 +6,19 @@ PODS:
     - AppCenter/Core
   - AppCenterReactNativeShared (1.0.1):
     - AppCenter/Core (= 1.0.1)
+  - Mixpanel (3.2.3)
 
 DEPENDENCIES:
   - AppCenter/Analytics (~> 1.0.1)
   - AppCenter/Crashes (~> 1.0.1)
   - AppCenterReactNativeShared (~> 1.0.1)
+  - Mixpanel
 
 SPEC CHECKSUMS:
   AppCenter: 1d9e08e4ffe7a8eab6e9741a12d27e44074e73a7
   AppCenterReactNativeShared: d7238832c02bd37019083045ed9fa24ba3193779
+  Mixpanel: 7bd8e176f088936bf6e283ade0d1f512f8e723bc
 
-PODFILE CHECKSUM: 94a9474d5ce86106563f29f302074708fb1a5363
+PODFILE CHECKSUM: 065760445c6e958f58cf8d2a1bef63be9d68a644
 
 COCOAPODS: 1.4.0.beta.2

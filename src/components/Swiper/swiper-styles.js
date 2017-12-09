@@ -20,14 +20,41 @@ export const styles = StyleSheet.create({
     fontSize: 20,
   },
   slider: {
-    marginRight:-100,
-    marginLeft:-100,
-    width:250,
+    marginRight: -100,
+    marginLeft: -100,
+    width: 250,
     transform: [
-      { rotateZ : '-90deg' },
+      {rotateZ: '-90deg'},
     ],
   },
-
+  ratingResult: {
+    textAlign: 'center',
+    fontSize: 80,
+    color: '#419BF9',
+    shadowColor: '#419BF9',
+    shadowOffset: {
+      width: 0,
+      height: 1
+    },
+    shadowRadius: 4,
+    shadowOpacity: 1.0,
+  },
+  ratingRange: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginLeft:10
+  },
+  rangeText: {
+    shadowColor: '#419BF9',
+    shadowOffset: {
+      width: 0,
+      height: 1
+    },
+    shadowRadius: 5,
+    shadowOpacity: 1.0,
+    ...boldTextMixin(24, '#419BF9')
+  },
   dotStyle: {
     backgroundColor: 'rgba(255,255,255,.3)',
     width: 6,
@@ -53,13 +80,13 @@ export const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   dotContainer: {
-    flex:1,
+    flex: 1,
     flexDirection: 'row',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   headerTextStyle: {
     ...regularTextMixin(14),
-    textAlign: 'center'
+    textAlign: 'center',
   },
   btnContainer: {
     flex: 1,
@@ -67,7 +94,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
     marginRight: 10,
-    marginBottom: 10
+    marginBottom: 10,
   },
 
   /*Styles with custome slide*/
@@ -79,7 +106,7 @@ export const styles = StyleSheet.create({
   title: {
     ...extraBoldTextMixin(24),
     marginBottom: 40,
-    marginRight: 40
+    marginRight: 40,
   },
   actionButton: {
     marginRight: 25,
@@ -91,26 +118,26 @@ export const styles = StyleSheet.create({
   headerStyle: {
     marginVertical: 40,
     marginHorizontal: 20,
-    flex:1,
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   quoteText: {
     ...boldTextMixin(24),
-    textAlign:'center',
-    justifyContent: 'center'
+    textAlign: 'center',
+    justifyContent: 'center',
   },
   tapText: {
     ...boldTextMixin(18),
-    textAlign:'center',
-    justifyContent: 'center'
+    textAlign: 'center',
+    justifyContent: 'center',
   },
   authorText: {
     marginTop: 20,
     ...lightTextMixin(18),
-    textAlign:'center',
-    justifyContent: 'center'
+    textAlign: 'center',
+    justifyContent: 'center',
   },
   track: {
     height: 10,
@@ -123,9 +150,8 @@ export const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderColor: '#419BF9',
     borderWidth: 2,
-  }
+  },
 })
-
 
 export const htmlStyles = StyleSheet.create({
   a: {
@@ -138,4 +164,4 @@ export const htmlStyles = StyleSheet.create({
   div: {
     ...regularTextMixin(18)
   },
-});
+})

@@ -11,6 +11,7 @@ const initialState = {
   redoCards: [],
   finishedCards:[],
   reminderCards: [],
+  reflectionCards: [],
   firstLaunch: false,
 }
 
@@ -32,6 +33,7 @@ export default (state = initialState, {type, payload}) => {
         redoCards: payload.redo_cards,
         finishedCards: payload.finished_cards,
         reminderCards: payload.reminder_cards,
+        reflectionCards: payload.reflection_cards,
         fetching: false,
       }
     case Types.ERROR_DASHBOARD_CARDS:
