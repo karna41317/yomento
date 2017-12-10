@@ -10,6 +10,7 @@ import { store } from './../store/store'
 import DeveloperMenu from '../components/DeveloperMenu'
 import { connect } from 'react-redux'
 import GradientWrapper from '../components/partials/gradientWrapper'
+import PushController from './pushNotificationController'
 
 @connect(
   state => {
@@ -18,8 +19,8 @@ import GradientWrapper from '../components/partials/gradientWrapper'
     }
   },
 )
-export default class rootScreen extends Component {
-  static displayName = 'rootScreen'
+export default class RootScreen extends Component {
+  static displayName = 'RootScreen'
 
   static propTypes = {
     isReady: PropTypes.bool.isRequired,
@@ -50,13 +51,16 @@ export default class rootScreen extends Component {
       )
     }
 
+    console.log('printing', PushController)
 
     return (
       <GradientWrapper>
         <View style={{flex: 1}}>
-          <StatusBar hidden={true} backgroundColor='#0B0B48' barStyle="light-content"/>
+          <StatusBar hidden={true} backgroundColor='#0B0B48'
+                     barStyle="light-content"/>
           <NavigatorView/>
           {__DEV__ && <DeveloperMenu/>}
+          <PushController/>
         </View>
       </GradientWrapper>
     )

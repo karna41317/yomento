@@ -275,8 +275,6 @@ export default class LoopSwiperComponent extends Component {
           color: 'blue',
         },
       }
-      const htmlData = `<p class="last-paragraph">hello this sis grey content</p><img src="https://i.imgur.com/dHLmxfO.jpg?2" /><i>Finally, this paragraph is styled through the classesStyles prop</i>`
-      console.log('printinghtmlContent', htmlContent)
 
       if (seq_order === 1) {
         return (
@@ -313,7 +311,7 @@ export default class LoopSwiperComponent extends Component {
               {title}
             </Text>
             <HTML
-              html={htmlData}
+              html={htmlContent}
               tagsStyles={tagsStyles}
               classesStyles={classesStyles}/>
           </View>

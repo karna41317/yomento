@@ -10,7 +10,18 @@ export default class PushController extends Component {
       onNotification: function (notification) {
         console.log('NOTIFICATION:', notification)
       },
+      onRegister: function(token) {
+        console.log( 'TOKEN:', token );
+      },
+      permissions: {
+        alert: true,
+        badge: true,
+        sound: true
+      },
+      popInitialNotification: true,
+      requestPermissions: true,
     })
+
   }
 
   render () {
