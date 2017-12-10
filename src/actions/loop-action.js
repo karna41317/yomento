@@ -5,6 +5,29 @@ import { reduxStore } from 'src/store/store'
 import { apiModule } from 'src/api'
 import { get } from 'lodash'
 
+
+
+export const getLoopStyles = () => {
+  return dispatch => {
+    const state = reduxStore.getState()
+    const token = get(state, 'auth.userData.authorization')
+    dispatch({type: Types.FETCH_LOOP_STYLES})
+    try {
+      apiModule.fetchLoopStyles(token).then(data => {
+        dispatch({
+          type: Types.RECEIVE_LOOP_STYLES,
+          payload: data,
+        })
+      })
+    } catch (err) {
+      dispatch({
+        type: Types.ERROR_LOOP_STYLES,
+        payload: err,
+      })
+    }
+  }
+}
+
 export const getLoops = (loop_id) => {
   return dispatch => {
 
@@ -63,3 +86,5 @@ export const updateCards = (parameteres, navigation) => {
     }
   }
 }
+
+

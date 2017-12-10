@@ -71,6 +71,15 @@ class ApiModule extends HttpService {
     const path = `/updateCard?card_type=${card_type}&loop_id=${loop_id}&card_status=${card_status}&reminder_time=${reminder_time}`
     return this.post(path, body, headers)
   }
+
+  fetchLoopStyles (token) {
+    const path = `/jsonStyles`
+    const headers = {
+      'authorization': token,
+    }
+    const body = {}
+    return this.get(path, body, headers)
+  }
 }
 
 export const apiModule = new ApiModule()
