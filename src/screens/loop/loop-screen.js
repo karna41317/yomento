@@ -10,6 +10,7 @@ import { styles, htmlStyles } from './loop-styles'
 import GradientWrapper from '../../components/partials/gradientWrapper'
 import { Header, Left, Right, Body, Icon, Button } from 'src/components/native-base'
 import HTMLView from 'react-native-htmlview'
+import HTML from 'react-native-render-html'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import { updateCards } from '../../actions/loop-action'
 import {get} from 'lodash'
@@ -50,6 +51,7 @@ export default class LoopScreen extends Component {
     if (theme_id) {
       const {loop} = this.props
       const currentLoop = loop.loop[0]
+      const loopStyles = get(loop, 'loopStyles[0]', {})
       if (currentLoop) {
         const loopContent = eval(this.parseJson(currentLoop))
         console.log('printingloopContent', loopContent)
@@ -88,7 +90,7 @@ export default class LoopScreen extends Component {
                         style={styles.title}>{data.title}</Text>
                 </Animated.View>
                 <Animated.View style={styles.descWrapper}>
-                  <HTMLView value={htmlContent} stylesheet={htmlStyles}/>
+                  <HTML html={htmlContent} classesStyles={loopStyles}/>
                 </Animated.View>
               </View>
 

@@ -5,13 +5,15 @@ import { createSelector } from 'reselect'
 
 import {
   profileState,
-  authState
+  authState,
+  loopState
 } from '../../selectors/common'
 
 export const profileSelector = createSelector(
-  [profileState, authState],
-  (profile, auth) => ({
+  [profileState, authState, loopState],
+  (profile, auth, loop) => ({
     profile,
     auth,
+    loop
   }),
 )

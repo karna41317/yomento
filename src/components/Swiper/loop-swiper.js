@@ -31,6 +31,7 @@ import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'src/c
 import data from '../../screens/profile/demo-data'
 import MultipleChoice from '../multi-select/index'
 import HTML from 'react-native-render-html'
+import { extraBoldTextMixin } from '../../styles/mixins'
 
 const {width, height} = Dimensions.get('window')
 @connect(profileSelector)
@@ -214,6 +215,10 @@ export default class LoopSwiperComponent extends Component {
   /*<Image source={require('src/images/background.png')} style={{flex: 1, resizeMode: 'cover'}} />*/
   renderIntroPages = (dataObject, seq_order) => {
     const {content_type} = dataObject
+    const {loop} = this.props
+
+    const loopStyles = get(loop, 'loopStyles[0]', {})
+    console.log('printingloopStyles', loopStyles)
 
     if (content_type === 'quote') {
       const {Author, content_type, description, title} = dataObject
@@ -233,8 +238,6 @@ export default class LoopSwiperComponent extends Component {
 
       let options = dataObject.options[0].data
       let max_select = dataObject.options[0].max_select
-      console.log('printingmax_select', max_select)
-
       if (options) {
         return (
           <View style={{position: 'absolute', top: 100, left: 20, right: 20}}>
@@ -256,23 +259,11 @@ export default class LoopSwiperComponent extends Component {
       return null
     } else if (content_type === 'general') {
       const {title, description} = dataObject
-      const htmlContent = `<p>${description}</p>`
-      const classesStyles = {
-        'how-paragraph': {
-          textAlign: 'right',
-          color: 'teal',
-          fontWeight: '800',
-        },
-        'refle-paragraph': {
-          textAlign: 'right',
-          color: 'teal',
-          fontWeight: '800',
-        },
-      }
+      const htmlContent = `${description}`
+      //const htmlContent = `<p>hello there</p>`
       const tagsStyles = {
-        i: {
-          fontWeight: '800',
-          color: 'blue',
+        p: {
+          ...extraBoldTextMixin(24,'#e31c1c'),
         },
       }
 
@@ -312,8 +303,7 @@ export default class LoopSwiperComponent extends Component {
             </Text>
             <HTML
               html={htmlContent}
-              tagsStyles={tagsStyles}
-              classesStyles={classesStyles}/>
+              classesStyles={loopStyles}/>
           </View>
         )
       }

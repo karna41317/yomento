@@ -13,7 +13,7 @@ import * as Constans from 'src/constants'
 import { authState } from 'src/selectors/common'
 import { regularTextMixin, semiBoldTextMixin } from '../../styles/mixins'
 import { SecondaryButton } from '../../components/buttons/Button'
-
+import {getLoopStyles} from 'src/actions'
 const logo = require('src/images/mercury_logo.png')
 
 @connect(authState)
@@ -31,6 +31,10 @@ export default class Home extends Component {
     const linkedInScopes = ['r_emailaddress', 'r_basicprofile']
     LinkedinLogin.init(linkedInScopes)
     this.getUserSession()
+  }
+
+  componentDidMount () {
+    this.props.dispatch(getLoopStyles())
   }
 
   getUserSession () {

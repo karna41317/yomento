@@ -39,7 +39,7 @@ export default class DashboardScreen extends Component {
   }
 
   skipFutureCards = () => {
-    if(this.scrollView) {
+    if (this.scrollView) {
       this.scrollView.scrollTo({y: 760, animated: true})
     }
 
@@ -75,9 +75,9 @@ export default class DashboardScreen extends Component {
   finishedCards = () => {
     const {dashboard: {finishedCards}} = this.props
     if (finishedCards && finishedCards.length > 0) {
-      return map(finishedCards, card => {
+      return map(finishedCards, (card, index) => {
         return (
-          <View style={styles.futureCards}>
+          <View style={styles.futureCards} key={index}>
             <View style={styles.textWrapper}>
               <Text style={styles.profileIntroHead}>
                 {toUpper(card.theme_name)}
@@ -101,12 +101,29 @@ export default class DashboardScreen extends Component {
     return null
   }
 
+  getHeights = () => {
+    const {dashboard: {reminderCards, reflectionCards}} = this.props
+    if (reminderCards.length > 0) {
+      const reminderCardsLength = reminderCards.length
+      if(reminderCardsLength > 1) {
+        const heights = {
+          mainCardHeight: 170,
+          reminderCardHeight: 170,
+          reflectionCardHeight: 170
+        }
+      } else {
+        
+      }
+    }
+  }
+
   getReminderCard = () => {
     const {dashboard: {reminderCards}} = this.props
     if (reminderCards && reminderCards.length > 0) {
-      return map(reminderCards, card => {
+      return map(reminderCards, (card, index) => {
         //console.log('printingreminder_time', card.reminder_time)
-        const isTimePassed = Moment(Date.now()).isAfter(Number(card.reminder_time))
+        const isTimePassed = Moment(Date.now()).
+          isAfter(Number(card.reminder_time))
         const reminderColor = isTimePassed ? '#FF0000' : '#12124B'
         const height = isTimePassed ? 300 : 170
         const style = {
@@ -114,10 +131,11 @@ export default class DashboardScreen extends Component {
           backgroundColor: '#FFFBCD',
         }
 
-        const reminderTime = Moment(new Date(Number(card.reminder_time))).format('Do MMM h:mm')
+        const reminderTime = Moment(new Date(Number(card.reminder_time))).
+          format('Do MMM h:mm')
 
         return (
-          <View style={[styles.completedCard, style]}>
+          <View style={[styles.completedCard, style]} key={index}>
             <View style={styles.textWrapper}>
               <View style={styles.textHeadWrapper}>
                 <Text style={styles.profileIntroHead}>
@@ -159,7 +177,6 @@ export default class DashboardScreen extends Component {
 
   getReflectionCard = () => {
     const {dashboard: {reflectionCards}} = this.props
-    console.log('printingreflectionCards', this.props)
     if (reflectionCards && reflectionCards.length > 0) {
 
       const isTimePassed = Moment(Date.now()).isAfter(1511913600)
@@ -171,9 +188,9 @@ export default class DashboardScreen extends Component {
       }
       console.log('printingreflectionCards', reflectionCards)
 
-      return map(reflectionCards, card => {
+      return map(reflectionCards, (card, index) => {
         return (
-          <View style={[styles.completedCard, style]}>
+          <View style={[styles.completedCard, style]} key={index}>
             <View style={styles.textWrapper}>
               <View style={styles.textHeadWrapper}>
                 <Text style={styles.profileIntroHead}>
@@ -232,9 +249,9 @@ export default class DashboardScreen extends Component {
 
   getFutureCards = (futureCards) => {
     if (futureCards && futureCards.length > 0) {
-      return map(futureCards, card => {
+      return map(futureCards, (card, index) => {
         return (
-          <View style={styles.futureCards}>
+          <View style={styles.futureCards} key={index}>
             <View style={styles.textWrapper}>
               <Text style={styles.profileIntroHead}>
                 {toUpper(card.theme_name)}

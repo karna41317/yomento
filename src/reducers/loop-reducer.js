@@ -27,6 +27,24 @@ export default (state = initialState, {type, payload}) => {
         ...payload,
         fetching: false,
       }
+    case Types.FETCH_LOOP_STYLES :
+      return {
+        ...state,
+        fetching: true,
+      }
+    case Types.RECEIVE_LOOP_STYLES:
+      return {
+        ...state,
+        loopStyles: payload,
+        fetching: false,
+      }
+    case Types.ERROR_LOOP_STYLES:
+      return {
+        ...state,
+        loopStylesError: payload,
+        fetching: false,
+      }
+
     default:
       return state
   }
