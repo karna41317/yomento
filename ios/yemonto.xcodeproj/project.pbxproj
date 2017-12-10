@@ -65,6 +65,10 @@
 		9E3D48E01FACEE9600E99E4A /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC8526D1FABD7D200AE7C23 /* libRNImagePicker.a */; };
 		9E3D48E11FACEEA200E99E4A /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC852711FABD7D200AE7C23 /* libRNSVG.a */; };
 		9E70F75A1FDC4BB500E51A21 /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E70F73C1FDC4BA200E51A21 /* libRCTPushNotification.a */; };
+		9E70F9191FDCC38000E51A21 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E70F9171FDCC37F00E51A21 /* FBSDKCoreKit.framework */; };
+		9E70F91A1FDCC38000E51A21 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E70F9171FDCC37F00E51A21 /* FBSDKCoreKit.framework */; };
+		9E70F91B1FDCC38000E51A21 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E70F9181FDCC38000E51A21 /* Bolts.framework */; };
+		9E70F91C1FDCC38000E51A21 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E70F9181FDCC38000E51A21 /* Bolts.framework */; };
 		9E75CC3C1F9D04CC00402736 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2BEE781E2EDFEA008A6295 /* libRNVectorIcons.a */; };
 		9E75CC3D1F9D04DA00402736 /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9A360F1F99662F00A7A7C4 /* libCodePush.a */; };
 		9E7FEF531FA0D409000312A4 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E75CC381F9D00CA00402736 /* libBVLinearGradient.a */; };
@@ -518,6 +522,8 @@
 		9D4B88EAE8082B6EA19DFF14 /* Pods-yemonto-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto-tvOS/Pods-yemonto-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		9E70F7241FDC4BA200E51A21 /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
 		9E70F75B1FDC4CA000E51A21 /* yemonto.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = yemonto.entitlements; path = yemonto/yemonto.entitlements; sourceTree = "<group>"; };
+		9E70F9171FDCC37F00E51A21 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		9E70F9181FDCC38000E51A21 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		9EB817FF1FB900A700CB26F6 /* yemonto-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yemonto-Bridging-Header.h"; sourceTree = "<group>"; };
 		A084FB918343439A8B98668A /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
 		A6447C65F3E9460B8B9678AA /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
@@ -564,7 +570,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
+				9E70F91A1FDCC38000E51A21 /* FBSDKCoreKit.framework in Frameworks */,
 				B74B347C94596CC3FCCB45DF /* Pods_yemontoTests.framework in Frameworks */,
+				9E70F91C1FDCC38000E51A21 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +596,7 @@
 				9E75CC3C1F9D04CC00402736 /* libRNVectorIcons.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
+				9E70F9191FDCC38000E51A21 /* FBSDKCoreKit.framework in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
@@ -598,6 +607,7 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				2E3299C268F4F01428FCA877 /* Pods_yemonto.framework in Frameworks */,
+				9E70F91B1FDCC38000E51A21 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1014,6 +1024,8 @@
 		A37355ABFDC94E399E8D4DD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E70F9181FDCC38000E51A21 /* Bolts.framework */,
+				9E70F9171FDCC37F00E51A21 /* FBSDKCoreKit.framework */,
 				81112987494743ED9BEB6A64 /* libz.tbd */,
 				EF72924978A8BB831E04E423 /* Pods_yemonto.framework */,
 				8DE93D374E37F1A007E5D93F /* libPods-yemonto-tvOS.a */,
@@ -1968,6 +1980,13 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2WECKNAJVA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Mixpanel\"",
+					"\"${PODS_ROOT}/AppCenter/AppCenter-SDK-Apple/iOS\"",
+					"\"${PODS_ROOT}/AppCenterReactNativeShared/AppCenterReactNativeShared\"",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -2017,6 +2036,13 @@
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 2WECKNAJVA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Mixpanel\"",
+					"\"${PODS_ROOT}/AppCenter/AppCenter-SDK-Apple/iOS\"",
+					"\"${PODS_ROOT}/AppCenterReactNativeShared/AppCenterReactNativeShared\"",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
@@ -2066,7 +2092,10 @@
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 2WECKNAJVA;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)/**";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)/**",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -2115,7 +2144,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2WECKNAJVA;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)/**";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)/**",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
