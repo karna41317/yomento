@@ -3,7 +3,7 @@
  */
 import { connect } from 'react-redux'
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, Linking, Image } from 'react-native'
+import { View, Text, StyleSheet, Linking, Image, ActivityIndicator } from 'react-native'
 import GradientWrapper from '../../components/partials/gradientWrapper'
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'src/components/native-base'
 import { styles } from './profile.styles'
@@ -59,7 +59,6 @@ export default class ProfileDetailsScreen extends Component {
       userType = memberShipDetails[0].type
     }
 
-    console.log('details', this.props.auth)
     const userDetails = get(auth, 'userData.user')
     const proButtonText = toLower(userType) === 'basic'
       ? 'Get YommentoPRO!'
@@ -69,79 +68,83 @@ export default class ProfileDetailsScreen extends Component {
       borderColor: toLower(userType) === 'basic' ? '#0079FF' : '#C1C1C1',
       width: 250,
     }
-    return (
-      <GradientWrapper name={'default'}>
-        <View backgroundColor={'transparent'} style={styles.headerStyle}>
-          <Button transparent>
-          </Button>
-          <Text style={styles.headerTextStyle}>Settings</Text>
-          <Button transparent onPress={this.closePress}>
-            <Icon name='close' style={{fontSize: 40, color: '#419BF9'}}/>
-          </Button>
-        </View>
-        <View style={styles.profileDetails}>
-          <View style={styles.avatarCircle}>
-            <Icon name='ios-person-outline' style={styles.avatarIcon}/>
+    if(userDetails && memberShipDetails) {
+      return (
+        <GradientWrapper name={'default'}>
+          <View backgroundColor={'transparent'} style={styles.headerStyle}>
+            <Button transparent>
+            </Button>
+            <Text style={styles.headerTextStyle}>Settings</Text>
+            <Button transparent onPress={this.closePress}>
+              <Icon name='close' style={{fontSize: 40, color: '#419BF9'}}/>
+            </Button>
           </View>
-          <View style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginVertical: 15,
-          }}>
-            <Text style={styles.profileName}>{userDetails.first_name}</Text>
-            <Text style={styles.profileEmail}>{userDetails.email}</Text>
+          <View style={styles.profileDetails}>
+            <View style={styles.avatarCircle}>
+              <Icon name='ios-person-outline' style={styles.avatarIcon}/>
+            </View>
+            <View style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginVertical: 15,
+            }}>
+              <Text style={styles.profileName}>{userDetails.first_name}</Text>
+              <Text style={styles.profileEmail}>{userDetails.email}</Text>
+            </View>
+            <PrimaryButton
+              textStyles={styles.profileButtonText}
+              style={proButtonStyle}>
+              {proButtonText}
+            </PrimaryButton>
+            <SecondaryButton
+              onPress={this.goToLeadership}
+              style={[
+                styles.profileSecondaryButtons,
+                styles.profileDetailsButtons]}
+              textStyles={styles.profileButtonText}>
+              Leadership Approach
+            </SecondaryButton>
+            <SecondaryButton
+              onPress = {this.openUrl.bind(this, 'http://www.yomento.com/faq')}
+              style={[
+                styles.profileSecondaryButtons,
+                styles.profileDetailsButtons]}
+              textStyles={styles.profileButtonText}>
+              FAQ
+            </SecondaryButton>
+            <SecondaryButton
+              onPress = {this.openUrl.bind(this, 'mailto:hello@yomento.com')}
+              style={[
+                styles.profileSecondaryButtons,
+                styles.profileDetailsButtons]}
+              textStyles={styles.profileButtonText}>
+              Send Feedback
+            </SecondaryButton>
+            <SecondaryButton
+              onPress={this.logOutUser}
+              style={[
+                styles.profileSecondaryButtons,
+                styles.profileDetailsButtons,
+                {borderColor: '#FF0000'}]}
+              textStyles={styles.profileButtonText}>
+              Sign out
+            </SecondaryButton>
+            <SecondaryButton
+              onPress = {this.openUrl.bind(this, 'http://www.yomento.com/toc')}
+              style={[styles.profileSecondaryButtons, {borderWidth: 0}]}
+              textStyles={styles.profileDetailsText}>
+              Terms and confitions</SecondaryButton>
+            <SecondaryButton
+              onPress = {this.openUrl.bind(this, 'http://www.yomento.com/privacy-policy')}
+              style={[styles.profileSecondaryButtons, {borderWidth: 0}]}
+              textStyles={styles.profileDetailsText}>
+              Privacy policy</SecondaryButton>
           </View>
-          <PrimaryButton
-            textStyles={styles.profileButtonText}
-            style={proButtonStyle}>
-            {proButtonText}
-          </PrimaryButton>
-          <SecondaryButton
-            onPress={this.goToLeadership}
-            style={[
-              styles.profileSecondaryButtons,
-              styles.profileDetailsButtons]}
-            textStyles={styles.profileButtonText}>
-            Leadership Approach
-          </SecondaryButton>
-          <SecondaryButton
-            onPress = {this.openUrl.bind(this, 'http://www.yomento.com/faq')}
-            style={[
-              styles.profileSecondaryButtons,
-              styles.profileDetailsButtons]}
-            textStyles={styles.profileButtonText}>
-            FAQ
-          </SecondaryButton>
-          <SecondaryButton
-            onPress = {this.openUrl.bind(this, 'mailto:hello@yomento.com')}
-            style={[
-              styles.profileSecondaryButtons,
-              styles.profileDetailsButtons]}
-            textStyles={styles.profileButtonText}>
-            Send Feedback
-          </SecondaryButton>
-          <SecondaryButton
-            onPress={this.logOutUser}
-            style={[
-              styles.profileSecondaryButtons,
-              styles.profileDetailsButtons,
-              {borderColor: '#FF0000'}]}
-            textStyles={styles.profileButtonText}>
-            Sign out
-          </SecondaryButton>
-          <SecondaryButton
-            onPress = {this.openUrl.bind(this, 'http://www.yomento.com/toc')}
-            style={[styles.profileSecondaryButtons, {borderWidth: 0}]}
-            textStyles={styles.profileDetailsText}>
-            Terms and confitions</SecondaryButton>
-          <SecondaryButton
-            onPress = {this.openUrl.bind(this, 'http://www.yomento.com/privacy-policy')}
-            style={[styles.profileSecondaryButtons, {borderWidth: 0}]}
-            textStyles={styles.profileDetailsText}>
-            Privacy policy</SecondaryButton>
-        </View>
-      </GradientWrapper>
-    )
+        </GradientWrapper>
+      )
+    }
+
+    return <ActivityIndicator />
   }
 }
 

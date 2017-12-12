@@ -8,10 +8,8 @@ export default class PushController extends Component {
   componentDidMount () {
     PushNotification.configure({
       onNotification: function (notification) {
-        console.log('NOTIFICATION:', notification)
       },
       onRegister: function(token) {
-        console.log( 'TOKEN:', token );
       },
       permissions: {
         alert: true,

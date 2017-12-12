@@ -8,7 +8,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Moment from 'moment'
 import { styles, htmlStyles } from './loop-styles'
-import { ActivityIndicator, View, Text, DatePickerIOS } from 'react-native'
+import { ActivityIndicator, View, Text, DatePickerIOS, Alert } from 'react-native'
 import GradientWrapper from '../../components/partials/gradientWrapper'
 import { Button, Icon } from 'src/components/native-base'
 import { loopSelector } from './loopSelector'
@@ -49,24 +49,52 @@ export default class loopReminderScreen extends Component {
     return JSON.parse(JSON.stringify(content))
   }
 
+  validateDate = (date) => {
+    if (Object.prototype.toString.call(date) === '[object Date]') {
+      if (isNaN(date.getTime())) {
+        return false
+      }
+      else {
+        return true
+      }
+    }
+    else {
+      return false
+    }
+  }
+
   confirmReminder = (currentLoop) => {
     const {dispatch, navigation} = this.props
 
 
-    const dataInEpoch = Moment(this.state.date).unix()
+    const isValidDate = this.validateDate(this.state.date)
 
-    const pathParams = {
-      card_type: 'reminder',
-      reminder_time: dataInEpoch,
-      loop_id: get(currentLoop, 'loop_id'),
+
+    if (isValidDate) {
+      const dataInEpoch = Moment(this.state.date).unix()
+
+      const pathParams = {
+        card_type: 'reminder',
+        reminder_time: dataInEpoch,
+        loop_id: get(currentLoop, 'loop_id'),
+      }
+      const bodyParams = {}
+      const params = {
+        pathParams,
+        bodyParams,
+        nextScreen: 'dashboard',
+      }
+      dispatch(updateCards(params, navigation))
+    } else {
+      Alert.alert(
+        'Error',
+        'Date is not valid',
+        [
+          {text: 'OK', onPress: () => {}},
+        ],
+        {cancelable: false},
+      )
     }
-    const bodyParams = {}
-    const params ={
-      pathParams,
-      bodyParams,
-      nextScreen: 'dashboard'
-    }
-    dispatch(updateCards(params, navigation))
   }
 
   render () {
@@ -102,8 +130,7 @@ export default class loopReminderScreen extends Component {
               </View>
             </View>
             <View style={styles.confirmReminder}>
-              <PrimaryButton
-                onPress={this.confirmReminder.bind(this, currentLoop)} upper>
+              <PrimaryButton onPress={this.confirmReminder.bind(this, currentLoop)} upper>
                 confirm
               </PrimaryButton>
             </View>

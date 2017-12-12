@@ -27,11 +27,11 @@ export default class TimePicker extends Component {
   componentWillMount () {
     this._panResponder = PanResponder.create({
       onStartShouldSetPanResponder: (e) => {
-        console.log('onStartShouldSetPanResponder')
+
         return true
       },
       onMoveShouldSetPanResponder: (e) => {
-        console.log('onMoveShouldSetPanResponder')
+
         return true
       },
       onPanResponderGrant: (e) => console.log('onPanResponderGrant'),

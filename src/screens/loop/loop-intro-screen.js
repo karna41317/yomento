@@ -24,17 +24,17 @@ export default class LoopIntroScreen extends Component {
   }
 
   onSkipBtnHandle = (index) => {
-    console.log(index)
+
   }
   doneBtnHandle = () => {
     const {navigation} = this.props
     navigation.navigate('loopHow')
   }
   nextBtnHandle = (index) => {
-    console.log(index)
+
   }
   onSlideChangeHandle = (index, total) => {
-    console.log(index, total)
+
   }
   readMoreHandle = () => {
     const {navigation} = this.props
@@ -58,7 +58,7 @@ export default class LoopIntroScreen extends Component {
     const introPages = state.params ? state.params : null
     const {dashboard} = this.props
     const headerName = get(dashboard, 'newCard[0].theme_name', 'Intro')
-    console.log('printingintroPages', introPages)
+
 
 
     if (introPages) {

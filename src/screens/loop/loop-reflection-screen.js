@@ -24,7 +24,7 @@ export default class LoopReflectionScreen extends Component {
   }
 
   onSkipBtnHandle = (index) => {
-    console.log(index)
+
   }
   doneBtnHandle = () => {
     const {navigation} = this.props
@@ -32,10 +32,10 @@ export default class LoopReflectionScreen extends Component {
 
   }
   nextBtnHandle = (index) => {
-    console.log(index)
+
   }
   onSlideChangeHandle = (index, total) => {
-    console.log(index, total)
+
   }
   readMoreHandle = () => {
     const {navigation} = this.props

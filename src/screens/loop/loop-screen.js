@@ -29,20 +29,50 @@ export default class LoopScreen extends Component {
     this.props.navigation.navigate('dashboard')
   }
   notInterested = (currentLoop) => {
-    const pathParams = {
-      card_type: 'finished',
-      loop_id: get(currentLoop, 'loop_id'),
-      card_status: 'not_interested'
+    const loopId = get(currentLoop, 'loop_id')
+    if(loopId) {
+      const pathParams = {
+        card_type: 'finished',
+        loop_id: get(currentLoop, 'loop_id'),
+        card_status: 'not_interested'
+      }
+      const bodyParams = {}
+      const params = {
+        pathParams,
+        bodyParams,
+        nextScreen: 'dashboard'
+      }
+      const {dispatch, navigation} = this.props
+      dispatch(updateCards(params, navigation))
     }
-    const params = {
-      pathParams: pathParams
-    }
-
-
-    const {dispatch, navigation} = this.props
-    dispatch(updateCards(params, navigation))
   }
 
+
+
+  doneBtnHandle = () => {
+    const {navigation, dispatch, loop} = this.props
+
+    const loopId = get(loop, 'loop[0].loop_id')
+
+    if (loopId) {
+      const pathParams = {
+        card_type: 'finished',
+        loop_id: loopId,
+        card_status: 'finished',
+      }
+      bodyParams = {
+        tap: this.state.selectedOptions,
+        selectedText: '',
+      }
+      const params = {
+        pathParams,
+        bodyParams,
+        nextScreen: 'loopCoachReflectionAfter'
+      }
+
+      dispatch(updateCards(params, navigation))
+    }
+  }
   render () {
 
     const {dashboard} = this.props

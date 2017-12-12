@@ -301,8 +301,16 @@ export default class ProfileScreen extends Component {
     }).filter(Boolean)
   }
 
-  render () {
+  getFooterButtons = () => {
+    const {profile} = this.props
+    const profileCreated = get(profile, 'profileCreated')
+    if (profileCreated) {
+      return this.getAllProfileButtons()
+    }
+    return this.getLaunchButton()
+  }
 
+  render () {
 
     const colors = {
       myideal: '#FFFA67',
@@ -326,12 +334,9 @@ export default class ProfileScreen extends Component {
 
         {this.getMyRatingButtons()}
         {this.getGraph(colors)}
+        {this.getFooterButtons()}
         <View>
-          {
-            !this.props.profileCreated
-              ? this.getLaunchButton()
-              : this.getAllProfileButtons()
-          }
+
         </View>
       </GradientWrapper>
     )

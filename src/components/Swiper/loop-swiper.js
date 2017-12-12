@@ -19,7 +19,7 @@ import SkipButton from './components/SkipButton'
 import RenderDots from './components/Dots'
 import GradientWrapper from '../partials/gradientWrapper'
 import { styles } from './swiper-styles'
-import { upperCase } from 'lodash'
+import { upperCase, toLower } from 'lodash'
 import { get } from 'lodash'
 import { profileSelector } from 'src/screens/profile/profile.selector'
 import { Container, Header, Left, Body, Right, Button, Icon, Title , Input} from 'src/components/native-base'
@@ -146,12 +146,22 @@ export default class LoopSwiperComponent extends Component {
       isDoneBtnShow = false
       isSkipBtnShow = true
     }
+
     const {pageArray} = this.props
+    let firtButtonAction, secondButtonAction
+    const firstButton = get(pageArray[index].buttons[0], 'text')
 
-    const buttonText = get(pageArray[index].buttons[0], 'text')
-    //const buttonText = get(pageArray[index], 'button_text', 'next')
+    if(get(pageArray[index].buttons[0], 'action') === 'reminder') {
+      firtButtonAction = this.props.readMoreClick
+      secondButtonAction = this.props.onDoneBtnClick
+    } else if(get(pageArray[index].buttons[1], 'action') === 'reminder'){
+      firtButtonAction = this.props.onDoneBtnClick
+      secondButtonAction = this.props.readMoreClick
+    } else {
+      firtButtonAction = this.props.onDoneBtnClick
+    }
 
-    const readMoreText = get(pageArray[index].buttons[1], 'text')
+    const secondButton = get(pageArray[index].buttons[1], 'text')
 
     return (
       <View style={styles.paginationContainer}>
@@ -167,13 +177,14 @@ export default class LoopSwiperComponent extends Component {
         {this.props.showDoneButton ? <DoneButton
             {...this.props}
             {...this.state}
-            nextBtnLabel={buttonText}
-            doneBtnLabel={buttonText}
+            nextBtnLabel={firstButton}
+            doneBtnLabel={firstButton}
             isDoneBtnShow={isDoneBtnShow}
-            readMoreLable={readMoreText}
+            readMoreLable={secondButton}
             styles={styles}
             onNextBtnClick={this.onNextBtnClick.bind(this, context)}
-            onDoneBtnClick={this.props.onDoneBtnClick}/> :
+            readMoreClick={secondButtonAction}
+            onDoneBtnClick={firtButtonAction}/> :
           <View style={styles.btnContainer}/>
         }
       </View>
@@ -198,7 +209,7 @@ export default class LoopSwiperComponent extends Component {
   }
 
   tapSelection = (option, options) => {
-    console.log('printing', options)
+
 
     if (options.length > 0) {
       this.setState({
@@ -351,13 +362,17 @@ export default class LoopSwiperComponent extends Component {
     const userName = get(auth, 'userData.user.first_name')
     const personName = get(loop, 'loopData.personName')
     let originalText = text
+
     if(userName) {
       originalText = originalText.replace('<first_name>', userName)
-      originalText = originalText.replace('<name_of_colleague>', personName)
-      return originalText
     }
+    if(personName) {
+      originalText = originalText.replace('<name_of_colleague>', personName)
+    }
+
     return originalText
   }
+
 
   getGeneralComponent = (dataObject, seq_order, page) => {
     const {title, description} = dataObject
@@ -420,10 +435,10 @@ export default class LoopSwiperComponent extends Component {
       marginHorizontal: 30,
       marginVertical:  0,
     }
-console.log('printingtitle', title)
+
 
     const updatedTitle = this.updateContent(title)
-    console.log('printingtitleupdatedTitle', updatedTitle)
+
 
 
     return (

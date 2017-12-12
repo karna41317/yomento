@@ -58,9 +58,11 @@ export default class LoopHowScreen extends Component {
   nextBtnHandle = (index) => {
     console.log(index)
   }
+
   onSlideChangeHandle = (index, total) => {
     console.log(index, total)
   }
+
   readMoreHandle = () => {
     const {navigation} = this.props
     this.updateCard('reminder')

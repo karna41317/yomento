@@ -34,7 +34,7 @@ export default class LoopReflectionScreen extends Component {
 
   doneBtnHandle = () => {
     const {navigation, dispatch, loop} = this.props
-    console.log('printing', this.props)
+
     const loopId = get(loop, 'loop[0].loop_id')
 
     if (loopId) {
@@ -89,7 +89,7 @@ export default class LoopReflectionScreen extends Component {
       const reflection_content = eval(
         this.parseJson(loopContent.reflection_content))
 
-      console.log('printingreflection_content', reflection_content)
+
 
       if (reflection_content) {
         return (

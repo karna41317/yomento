@@ -59,7 +59,7 @@ export const updateCards = (parameteres, navigation) => {
     }
     const card_type = get(params, 'pathParams.card_type')
     const nextScreen = get(parameteres, 'nextScreen')
-    console.log('printing', card_type)
+
 
     try {
       apiModule.updateCard(token, params).then(data => {
@@ -111,7 +111,7 @@ export const updateCards = (parameteres, navigation) => {
       bodyParams: get(parameteres, 'bodyParams', {}),
     }
     const card_type = get(params, 'pathParams.card_type')
-    console.log('printing', card_type)
+
 
     return new Promise(
       function (resolve, reject) {

@@ -1,12 +1,11 @@
 import Store from './store'
 import { reduxStore } from 'src/store/store'
-import { connect } from 'react-redux'
 import RootScreen from './screens/root'
 import React, { Component } from 'react'
 import { AppRegistry, BackHandler, Platform, AppState, View } from 'react-native'
 import { NavigationActions } from 'react-navigation'
 import CodePush from 'react-native-code-push'
-import Mixpanel  from 'react-native-mixpanel'
+
 import PushNotification from 'react-native-push-notification'
 
 GLOBAL.XMLHttpRequest = GLOBAL.originalXMLHttpRequest || GLOBAL.XMLHttpRequest
@@ -20,8 +19,7 @@ class Yomento extends Component {
       updateDialog: true,
       installMode: CodePush.InstallMode.IMMEDIATE,
     })
-    Mixpanel.sharedInstanceWithToken('79861ceaed8c442a57515ec71a2f1005');
-    Mixpanel.track("Event name");
+
   }
 
   componentWillUnmount () {
@@ -30,21 +28,6 @@ class Yomento extends Component {
 
   handleAppStateChange (appState) {
     if (appState === 'background') {
-      console.log('printingbackground state', appState)
-
-      let date = new Date(Date.now() + (6 * 1000))
-      /*  if (Platform.OS === 'ios') {
-          date = date.toISOString();
-        }*/
-      // debugger
-      console.log('printing', date)
-
-      /*
-            PushNotification.localNotificationSchedule({
-              message: "My Notification Message",
-              date,
-            });*/
-
       PushNotification.localNotificationSchedule({
         message: 'My Notification Message', // (required)
         date: new Date(Date.now() + (6 * 1000)) // in 60 secs

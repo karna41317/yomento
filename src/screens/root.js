@@ -11,6 +11,7 @@ import DeveloperMenu from '../components/DeveloperMenu'
 import { connect } from 'react-redux'
 import GradientWrapper from '../components/partials/gradientWrapper'
 import PushController from './pushNotificationController'
+import MixpanelController from './mixpanelController'
 
 @connect(
   state => {
@@ -51,7 +52,7 @@ export default class RootScreen extends Component {
       )
     }
 
-    console.log('printing', PushController)
+
 
     return (
       <GradientWrapper>
@@ -61,6 +62,7 @@ export default class RootScreen extends Component {
           <NavigatorView/>
           {__DEV__ && <DeveloperMenu/>}
           <PushController/>
+          <MixpanelController/>
         </View>
       </GradientWrapper>
     )

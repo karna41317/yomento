@@ -14,8 +14,8 @@ import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import Moment from 'moment'
 import { height } from '../../../src_native/Helpers/constant'
 
-const normalHeight = 200
-const extendedHeight = 300
+const normalHeight = 220
+const extendedHeight = 320
 const headerPadding = 20
 
 @connect(dashboardSelector)
@@ -57,18 +57,17 @@ export default class DashboardScreen extends Component {
   updateCard = (loopId, cardType, nextScreen) => {
     const {dispatch, loop, navigation} = this.props
 
-    if(loopId) {
+    if (loopId) {
       const pathParams = {
         card_type: cardType,
-        loop_id: loopId
+        loop_id: loopId,
       }
-      bodyParams = {
-      }
+      bodyParams = {}
 
       const params = {
         pathParams,
         bodyParams,
-        nextScreen
+        nextScreen,
       }
       dispatch(updateCards(params, navigation))
     }
@@ -81,7 +80,7 @@ export default class DashboardScreen extends Component {
   goToReflect = (item) => {
     const {navigation, dispatch} = this.props
     dispatch(getLoops(item.loop_id))
-    this.updateCard(item.loop_id ,'reflection', 'loopReflection')
+    this.updateCard(item.loop_id, 'reflection', 'loopReflection')
   }
 
   reflectReminderCards = (item) => {
@@ -116,6 +115,7 @@ export default class DashboardScreen extends Component {
     if (finishedCards && finishedCards.length > 0) {
       return map(finishedCards, (card, index) => {
         const style = {
+          flex: 1,
           height: normalHeight,
           backgroundColor: '#9696A5',
         }
@@ -168,13 +168,12 @@ export default class DashboardScreen extends Component {
     return null
   }
 
-
   getReminderCard = () => {
     const {dashboard: {reminderCards}} = this.props
     if (reminderCards && reminderCards.length > 0) {
       let haveMaxCard = false
       const sortByLatest = sortBy(reminderCards, card => {
-        return new Moment(Number(card.card_time)).format('YYYYMMDD hh:m:s')
+        return new Moment(Number(card.card_time)).format('Do MMM h:mm')
       }).reverse()
       return map(sortByLatest, (card, index) => {
         const isTimePassed = Moment(Date.now()).
@@ -197,6 +196,7 @@ export default class DashboardScreen extends Component {
           haveMaxCard = true
         }
         const style = {
+          flex: 1,
           height: height,
           backgroundColor: '#FFFBCD',
         }
@@ -278,14 +278,13 @@ export default class DashboardScreen extends Component {
       reminderTimePassed = includes(reminderTimeArrays, true)
     }
 
-
     if (reflectionCards && reflectionCards.length > 0) {
       const height = normalHeight
       const style = {
 
         /*normal height, if you have any reminder card with crossed deadline or have 2 reflection cards
         max height: if only one reflection card and  reminder card not crossed deadline.*/
-
+        flex: 1,
         height: (reminderTimePassed || reflectionCards.length > 1)
           ? height
           : extendedHeight,
@@ -335,23 +334,25 @@ export default class DashboardScreen extends Component {
   getMainCard = () => {
     const {dashboard: {newCard, reminderCards, reflectionCards}} = this.props
     if (newCard && newCard.length > 0) {
-      const onlyMainCard = reminderCards.length === 0 &&  reflectionCards.length === 0
-      let customStyles  = {}
+      const onlyMainCard = reminderCards.length === 0 &&
+        reflectionCards.length === 0
+      let customStyles = {}
 
       const mainCard = newCard[0]
       const isTimePassed = this.isReminderCardTimePassed()
       const height = isTimePassed ? normalHeight : extendedHeight
 
-      if(onlyMainCard) {
+      if (onlyMainCard) {
         customStyles = {
+          flex: 1,
           height: height,
-          marginTop: 100,
-          marginBottom: 100
+          marginTop: 130,
+          marginBottom: 120,
         }
       } else {
         customStyles = {
           height: height,
-          marginTop: 10
+          marginTop: 10,
         }
       }
       return (
@@ -379,8 +380,11 @@ export default class DashboardScreen extends Component {
     const {dashboard: {futureCards}} = this.props
     if (futureCards && futureCards.length > 0) {
       return map(futureCards, (card, index) => {
+        const style = {
+          flex: 1,
+        }
         return (
-          <View style={styles.futureCards} key={index}>
+          <View style={[styles.futureCards, style]} key={index}>
             <View style={styles.textWrapper}>
               <Text style={styles.profileIntroHead}>
                 {toUpper(card.theme_name)}
@@ -442,6 +446,7 @@ export default class DashboardScreen extends Component {
           <View style={{backgroundColor: 'transparent'}}>
             {this.getHeader()}
             <View style={styles.dashboardWrapper}>
+
               <ScrollView
                 ref={this.refScrollView}
                 automaticallyAdjustContentInsets={false}
@@ -454,6 +459,8 @@ export default class DashboardScreen extends Component {
                 {this.getMainCard()}
                 {this.getFutureCards()}
               </ScrollView>
+
+
             </View>
           </View>
         </GradientWrapper>
@@ -465,6 +472,7 @@ export default class DashboardScreen extends Component {
 
 const customStyles = StyleSheet.create({
   header: {
+    flex: 1,
     backgroundColor: 'transparent',
     marginTop: 20,
   },
