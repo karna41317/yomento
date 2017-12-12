@@ -172,9 +172,8 @@ export default class SwiperComponent extends Component {
       result: value,
     }
 
-
     this.props.dispatch(saveProfileRating(profileData))
-    if(value > 0) {
+    if (value > 0) {
       this.setState({disable: false, value: value})
     } else {
       this.setState({disable: true, value: value})
@@ -234,8 +233,11 @@ export default class SwiperComponent extends Component {
             <Icon name='arrow-back' style={{fontSize: 30, color: '#419BF9'}}/>
           </Button>
           <View>
-            <Text style={styles.headerTextStyle}>{this.props.name ? upperCase(
-              this.props.name) : null}</Text>
+            <Text style={styles.headerTextStyle}>
+              {this.props.screenName
+                ? upperCase(this.props.screenName)
+                : upperCase(this.props.name)}
+            </Text>
             <View style={styles.dotContainer}>
               {this.props.showDots && RenderDots(index, total, {
                 ...this.props, styles: styles,

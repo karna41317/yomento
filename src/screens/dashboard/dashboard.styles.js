@@ -50,9 +50,9 @@ export const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 10,
-    marginHorizontal: 10
+    alignItems: 'flex-end',
+    marginHorizontal: 10,
+    marginBottom: 20,
   },
   headerStyle: {
     marginTop: 30,
@@ -79,19 +79,44 @@ export const styles = StyleSheet.create({
     marginVertical: 20,
 
   },
+  /*Make a general css for dashboard cards*/
+
+ /* dashboardCard: {
+    width: Dimensions.get('window').width - 40,
+    height: 200,
+    backgroundColor: '#F0F0EB',
+    borderRadius: 15,
+    borderTopLeftRadius: 0,
+    marginTop: 10,
+    padding: 15,
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+  },
+
+  headerWrapper: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+  },
+
+  headerName: {
+    ...boldTextMixin(12),
+  },
+*/
+
   completedCard: {
     width: Dimensions.get('window').width - 40,
-    height: 180,
+    height: 200,
     backgroundColor: '#F0F0EB',
     borderRadius: 15,
     borderTopLeftRadius: 0,
     marginTop: 10,
   },
   futureCards: {
-    opacity: 0.5,
     width: Dimensions.get('window').width - 40,
-    height: 180,
-    backgroundColor: '#F0F0EB',
+    height: 200,
+    backgroundColor: '#9696A5',
     borderRadius: 15,
     borderTopLeftRadius: 0,
     marginTop: 10,
@@ -101,11 +126,10 @@ export const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    marginVertical: 25,
+    marginTop: 30,
     marginHorizontal: 15,
   },
   textHeadWrapper: {
-    flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
@@ -116,7 +140,6 @@ export const styles = StyleSheet.create({
   },
   profileIntroText: {
     ...boldTextMixin(22),
-    marginVertical: 30,
   },
   reminderWrapper: {
     borderRadius: 15,
@@ -127,11 +150,12 @@ export const styles = StyleSheet.create({
     paddingVertical: 4,
   },
   finishedCardStatusText: {
-    ...boldTextMixin(12, '#FFF'),
+    ...boldTextMixin(14, '#FFF'),
   },
 
   finishedCardStatusIcon: {
-    fontSize: 20,
+    backgroundColor: 'transparent',
+    fontSize: 40,
     color: '#FFF'
   }
 

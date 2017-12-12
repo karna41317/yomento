@@ -91,7 +91,7 @@ export default class SignUp extends Component {
     if (user && this.validation(user)) {
       const userInfo = Object.assign({}, user, {source: 'email'})
       dispatch(registerUser(userInfo, navigation))
-      try {
+      /*try {
         AsyncStorage.setItem('user', JSON.stringify(user))
         Alert.alert(
           'Success',
@@ -110,7 +110,7 @@ export default class SignUp extends Component {
           ],
           {cancelable: false},
         )
-      }
+      }*/
     }
 
 

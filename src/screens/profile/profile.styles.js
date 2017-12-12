@@ -32,12 +32,13 @@ export const styles = StyleSheet.create({
     borderRadius: 50,
     backgroundColor: '#3E3E65',
     justifyContent: 'center',
+    alignItems: 'center'
   },
   avatarIcon: {
-    fontSize: 80,
-    color: '#419BF9',
-    textAlign: 'center',
+    ...lightTextMixin(100, '#FFFFFF'),
+    backgroundColor:'transparent'
   },
+
   headerTextStyle: {
     ...semiBoldTextMixin(18, '#FFF'),
   },

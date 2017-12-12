@@ -63,7 +63,8 @@ export default class loopReminderScreen extends Component {
     const bodyParams = {}
     const params ={
       pathParams,
-      bodyParams
+      bodyParams,
+      nextScreen: 'dashboard'
     }
     dispatch(updateCards(params, navigation))
   }

@@ -37,10 +37,11 @@ export default class LoopReflectionScreen extends Component {
     console.log('printing', this.props)
     const loopId = get(loop, 'loop[0].loop_id')
 
-    if(loopId) {
+    if (loopId) {
       const pathParams = {
-        card_type: 'reflection',
+        card_type: 'finished',
         loop_id: loopId,
+        card_status: 'finished',
       }
       bodyParams = {
         tap: this.state.selectedOptions,
@@ -48,8 +49,10 @@ export default class LoopReflectionScreen extends Component {
       }
       const params = {
         pathParams,
-        bodyParams
+        bodyParams,
+        nextScreen: 'loopCoachReflectionAfter'
       }
+
       dispatch(updateCards(params, navigation))
     }
   }
@@ -76,7 +79,7 @@ export default class LoopReflectionScreen extends Component {
 
   closePress = () => {
     const {navigation} = this.props
-    navigation.navigate('loopIntro')
+    navigation.navigate('dashboard')
   }
 
   render () {
@@ -85,10 +88,14 @@ export default class LoopReflectionScreen extends Component {
       const loopContent = eval(this.parseJson(loop.loop[0]))
       const reflection_content = eval(
         this.parseJson(loopContent.reflection_content))
+
+      console.log('printingreflection_content', reflection_content)
+
       if (reflection_content) {
         return (
           <LoopSwiperComponent
             name={'reflection'}
+            screenName={'reflection'}
             showDots={true}
             tapSelection={this.tapSelection}
             showSkipButton={false}

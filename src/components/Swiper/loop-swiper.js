@@ -11,7 +11,6 @@ import {
   Image,
   Dimensions,
   Platform,
-  WebView,
 } from 'react-native'
 import { connect } from 'react-redux'
 import Swiper from './components/swiper'
@@ -19,19 +18,15 @@ import DoneButton from './components/DoneButton'
 import SkipButton from './components/SkipButton'
 import RenderDots from './components/Dots'
 import GradientWrapper from '../partials/gradientWrapper'
-import { styles, htmlStyles } from './swiper-styles'
+import { styles } from './swiper-styles'
 import { upperCase } from 'lodash'
-import { PadIcon } from 'src/components/icons'
 import { get } from 'lodash'
-import HTMLView from 'react-native-htmlview'
-import { RatingComponent } from '../rating/rating'
-import { saveProfileRating } from 'src/actions'
 import { profileSelector } from 'src/screens/profile/profile.selector'
-import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'src/components/native-base'
-import data from '../../screens/profile/demo-data'
+import { Container, Header, Left, Body, Right, Button, Icon, Title , Input} from 'src/components/native-base'
 import MultipleChoice from '../multi-select/index'
 import HTML from 'react-native-render-html'
-import { extraBoldTextMixin } from '../../styles/mixins'
+import { Slider } from 'src/components/slider'
+import {updateLoopDetails} from 'src/actions'
 
 const {width, height} = Dimensions.get('window')
 @connect(profileSelector)
@@ -44,7 +39,16 @@ export default class LoopSwiperComponent extends Component {
       doneFadeOpacity: new Animated.Value(0),
       nextOpacity: new Animated.Value(1),
       parallax: new Animated.Value(0),
+      value: 0,
+      text: '',
+      selectedOptions: [],
     }
+  }
+
+  componentDidMount = () => {
+    this.setState({
+      disable: this.props.name === 'reflection' ? true : false,
+    })
   }
 
   onNextBtnClick = (context) => {
@@ -63,7 +67,16 @@ export default class LoopSwiperComponent extends Component {
         },
       })
     }
+
+    /*Need this if two rating screens in reflection*/
+
+    /*
+      if (this.props.name === 'reflection') {
+        this.setState({disable: true, value: 0})
+      }
+    */
     this.props.onNextBtnClick(context.state.index)
+
   }
 
   setDoneBtnOpacity = (value) => {
@@ -166,26 +179,110 @@ export default class LoopSwiperComponent extends Component {
       </View>
     )
   }
-  valueChanged = (page, value) => {
+  valueChanged = (value, page) => {
+
     const profileData = {
       ...page,
       result: value,
     }
-    this.props.dispatch(saveProfileRating(profileData))
+    if (value > 0) {
+      this.setState({
+        disable: false,
+        value: value,
+      })
+    } else {
+      this.setState({disable: true, value: value})
+    }
+
+    //this.props.dispatch(saveProfileRating(profileData))
   }
 
-  getRatingComponent = (page) => {
-    if (page.content_type === 'rate') {
-      return (
-        <RatingComponent page={page} valueChanged={this.valueChanged}/>
-      )
+  tapSelection = (option, options) => {
+    console.log('printing', options)
+
+    if (options.length > 0) {
+      this.setState({
+        disable: false,
+        selectedOptions: options,
+
+      })
     }
+    this.props.tapSelection.bind(option, options)
+  }
+
+  getRatingComponent = (dataObject, seq_order, page) => {
+
+    const {title, description} = dataObject
+    const htmlContent = `${description}`
+    const updatedTitle = this.updateContent(title)
+
+    return (
+      <View style={{
+        position: 'absolute',
+        top: 150,
+        left: 20,
+        right: 20,
+      }}>
+        <Image
+          style={{
+            width: 50,
+            height: 50,
+            alignSelf: 'center',
+          }}
+          source={require('src/images/padIcon.png')}
+        />
+        <Text style={[
+          styles.tapText,
+          {
+            fontSize: 20,
+            marginHorizontal: 30,
+            marginVertical: 20,
+          }]}>
+          {updatedTitle}
+        </Text>
+        <View>
+          <View style={{marginVertical: 30}}>
+            <Text style={styles.ratingResult}>
+              {this.state.value}
+            </Text>
+          </View>
+          <Slider
+            page={dataObject}
+            minimumValue={0}
+            maximumValue={10}
+            step={1}
+            trackStyle={styles.track}
+            thumbStyle={styles.thumb}
+            minimumTrackTintColor='#419BF9'
+            maximumTrackTintColor={'#b3b3b3'}
+            thumbTintColor={'#bbbbbb'}
+            thumbTouchSize={{width: 40, height: 40}}
+            animationType={'spring'}
+            value={this.state.value}
+            onSlidingComplete={this.valueChanged}
+          />
+          <View style={styles.ratingRange}>
+            <Text style={styles.rangeText}>
+              1
+            </Text>
+            <Text style={styles.rangeText}>
+              10
+            </Text>
+          </View>
+        </View>
+      </View>
+    )
   }
 
   shouldHaveHeader = (type) => {
     return type === 'rate' || 'quote' || 'tap' || 'general'
   }
+  getHeaderName = () => {
+    const {loop} = this.props
+    const headerName = get(loop, 'loop[0].theme_name')
+    return headerName ? upperCase(headerName) : upperCase(this.props.screenName)
 
+  }
   getSwiperHeader = (index, total, content_type) => {
     if (this.shouldHaveHeader(content_type)) {
       return (
@@ -194,10 +291,7 @@ export default class LoopSwiperComponent extends Component {
             <Icon name='arrow-back' style={{fontSize: 30, color: '#419BF9'}}/>
           </Button>
           <View>
-            <Text style={styles.headerTextStyle}>{this.props.headerName
-              ? upperCase(
-                this.props.headerName)
-              : null}</Text>
+            <Text style={styles.headerTextStyle}>{this.getHeaderName()}</Text>
             <View style={styles.dotContainer}>
               {this.props.showDots && RenderDots(index, total, {
                 ...this.props, styles: styles,
@@ -212,103 +306,169 @@ export default class LoopSwiperComponent extends Component {
     }
     return null
   }
-  /*<Image source={require('src/images/background.png')} style={{flex: 1, resizeMode: 'cover'}} />*/
-  renderIntroPages = (dataObject, seq_order) => {
-    const {content_type} = dataObject
-    const {loop} = this.props
 
-    const loopStyles = get(loop, 'loopStyles[0]', {})
-    console.log('printingloopStyles', loopStyles)
+  getTapComponent = (dataObject, seq_order, page) => {
+    let {title} = dataObject
 
-    if (content_type === 'quote') {
-      const {Author, content_type, description, title} = dataObject
+    const updatedTitle = this.updateContent(title)
+
+    let options = dataObject.options[0].data
+    let max_select = dataObject.options[0].max_select
+    if (options) {
       return (
-        <View style={{position: 'absolute', top: 150, left: 20, right: 20}}>
-          <Text style={styles.quoteText}>
-            {title}
+        <View style={{position: 'absolute', top: 100, left: 20, right: 20}}>
+          <Text style={styles.tapText}>
+            {updatedTitle}
           </Text>
-          <Text style={styles.authorText}>{Author}</Text>
+          <Text style={styles.authorText}>select Option</Text>
+          <MultipleChoice
+            options={options}
+            selectedOptions={this.state.selectedOptions}
+            maxSelectedOptions={max_select}
+            onSelection={this.tapSelection}
+          />
         </View>
       )
-    } else if (content_type === 'tap') {
-      let {title} = dataObject
-      const {auth} = this.props
-      const userName = get(auth, 'user.name', '')
-      const updated = title.replace('<first_name>', userName)
-
-      let options = dataObject.options[0].data
-      let max_select = dataObject.options[0].max_select
-      if (options) {
-        return (
-          <View style={{position: 'absolute', top: 100, left: 20, right: 20}}>
-            <Text style={styles.tapText}>
-              {updated}
-            </Text>
-            <Text style={styles.authorText}>select Option</Text>
-            <MultipleChoice
-              options={options}
-              selectedOptions={[]}
-              maxSelectedOptions={max_select}
-              onSelection={(option, options) => {
-                this.props.tapSelection.bind(option, options)
-              }}
-            />
-          </View>
-        )
-      }
-      return null
-    } else if (content_type === 'general') {
-      const {title, description} = dataObject
-      const htmlContent = `${description}`
-      //const htmlContent = `<p>hello there</p>`
-      const tagsStyles = {
-        p: {
-          ...extraBoldTextMixin(24,'#e31c1c'),
-        },
-      }
-
-      if (seq_order === 1) {
-        return (
-          <View style={{position: 'absolute', top: 200, left: 20, right: 20}}>
-            <Image
-              style={{width: 72, height: 72, alignSelf: 'center'}}
-              source={require('src/images/padIcon.png')}
-            />
-            <Text style={[
-              styles.tapText,
-              {
-                fontSize: 24,
-                marginHorizontal: 30,
-                marginVertical: 20,
-              }]}>
-              {title}
-            </Text>
-          </View>
-        )
-      } else {
-        return (
-          <View style={{position: 'absolute', top: 100, left: 20, right: 20}}>
-            <Image
-              style={{
-                width: 50,
-                height: 50,
-                alignSelf: 'center',
-                marginBottom: 30,
-              }}
-              source={require('src/images/padIcon.png')}
-            />
-            <Text
-              style={[styles.tapText, {fontSize: 20, marginHorizontal: 30}]}>
-              {title}
-            </Text>
-            <HTML
-              html={htmlContent}
-              classesStyles={loopStyles}/>
-          </View>
-        )
-      }
     }
     return null
+  }
+
+  getQuoteComponent = (dataObject, seq_order, page) => {
+    const {Author, content_type, description, title} = dataObject
+    const updatedTitle = this.updateContent(title)
+    return (
+      <View style={{position: 'absolute', top: 150, left: 20, right: 20}}>
+        <Text style={styles.quoteText}>
+          {updatedTitle}
+        </Text>
+        <Text style={styles.authorText}>{Author}</Text>
+      </View>
+    )
+  }
+
+  updateContent = (text) => {
+    const {auth, loop} = this.props
+    const userName = get(auth, 'userData.user.first_name')
+    const personName = get(loop, 'loopData.personName')
+    let originalText = text
+    if(userName) {
+      originalText = originalText.replace('<first_name>', userName)
+      originalText = originalText.replace('<name_of_colleague>', personName)
+      return originalText
+    }
+    return originalText
+  }
+
+  getGeneralComponent = (dataObject, seq_order, page) => {
+    const {title, description} = dataObject
+    const {loop, auth} = this.props
+    const loopStyles = get(loop, 'loopStyles[0]', {})
+    const personName = get(loop, 'loopData.personName')
+
+    const updatedTitle = this.updateContent(title)
+    const updatedDescription = this.updateContent(description)
+
+    const htmlContent = `${updatedDescription}`
+    const wrapperStyle = {
+      position: 'absolute',
+      top: seq_order === 1 ? 200 : 100,
+      left: 20,
+      right: 20,
+    }
+    const imageStyle = {
+      width: seq_order === 1 ? 72 : 50,
+      height: seq_order === 1 ? 72 : 50,
+      marginBottom: seq_order === 1 ? 0 : 30,
+      alignSelf: 'center',
+    }
+    const textStyle = {
+      fontSize: seq_order === 1 ? 24 : 20,
+      marginHorizontal: 30,
+      marginVertical: seq_order === 1 ? 20 : 0,
+    }
+
+    return (
+      <View style={wrapperStyle}>
+        <Image style={imageStyle} source={require('src/images/padIcon.png')}/>
+        <Text style={[styles.tapText, textStyle]}>{updatedTitle}</Text>
+        <HTML html={htmlContent} classesStyles={loopStyles}/>
+      </View>
+    )
+  }
+  textChange = (text) => {
+    this.setState({text, disable: false})
+    const data = {
+      type: 'write',
+      personName: text
+    }
+    this.props.dispatch(updateLoopDetails(data))
+  }
+  getWriteComponent = (dataObject, seq_order, page) => {
+    const {title, description, text_box_name, text_box_placeholder} = dataObject
+    const {loop} = this.props
+    const loopStyles = get(loop, 'loopStyles[0]', {})
+    const htmlContent = `${description}`
+    const textWrapper = {
+      position: 'absolute',
+      top: 100,
+      left: 20,
+      right: 20,
+    }
+
+    const textStyle = {
+      fontSize: 18,
+      marginHorizontal: 30,
+      marginVertical:  0,
+    }
+console.log('printingtitle', title)
+
+    const updatedTitle = this.updateContent(title)
+    console.log('printingtitleupdatedTitle', updatedTitle)
+
+
+    return (
+
+      <View style={textWrapper}>
+        <Text style={[styles.tapText, textStyle]}>{updatedTitle}</Text>
+        <View
+          style={{
+            top: 120,
+            marginHorizontal: 20,
+            backgroundColor: '#FFFFFF',
+            borderColor: '#979797',
+            borderWidth: 1,
+            height: 50,
+          }}>
+          <Input
+            style={{fontSize: 20}}
+            placeholder={text_box_placeholder}
+            autoCapitalize={'words'}
+            editable={true}
+            multiLine={false}
+            maxLength={40}
+            onChangeText={this.textChange}
+            value={this.state.text}
+          />
+        </View>
+      </View>
+
+
+    )
+  }
+  renderIntroPages = (dataObject, seq_order, page) => {
+    const {content_type} = dataObject
+    if (content_type === 'quote') {
+      return this.getQuoteComponent(dataObject, seq_order, page)
+    } else if (content_type === 'tap') {
+      return this.getTapComponent(dataObject, seq_order, page)
+    } else if (content_type === 'rate') {
+      return this.getRatingComponent(dataObject, seq_order, page)
+    } else if (content_type === 'general') {
+      return this.getGeneralComponent(dataObject, seq_order, page)
+    } else if (content_type === 'write') {
+      return this.getWriteComponent(dataObject, seq_order, page)
+    }
+
   }
 
   renderBasicSlidePage = (index, page, total) => {
@@ -320,7 +480,7 @@ export default class LoopSwiperComponent extends Component {
       <GradientWrapper key={index} name={this.props.name}>
         <View style={{flex: 1}}>
           {this.getSwiperHeader(index, total, content_type)}
-          {this.renderIntroPages(dataObject, seq_order)}
+          {this.renderIntroPages(dataObject, seq_order, page)}
         </View>
       </GradientWrapper>
     )

@@ -8,7 +8,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { extraBoldTextMixin, lightTextMixin, boldTextMixin, semiBoldTextMixin, regularTextMixin } from 'src/styles'
 import { ActivityIndicator, View, Text, StyleSheet } from 'react-native'
-
+import HTML from 'react-native-render-html'
 import Button from '../../components/form/customButton'
 import { PrimaryButton } from '../../components/buttons/Button'
 import GradientWrapper from '../../components/partials/gradientWrapper'
@@ -44,14 +44,16 @@ export default class loopCoachReflectionIntroScreen extends Component {
 
 
         const titleUpdated = title.replace('<first_name>', userName)
-        descriptionUpdated = description.replace('<first_name>', userName)
+       /* descriptionUpdated = description.replace('<first_name>', userName)
         descriptionUpdated = description.replace('<first.name>', userName)
-
+*/      const profileFinishText = {
+          p: styles.profileFinishText
+        }
         return (
           <GradientWrapper name={'intro'}>
             <View style={styles.introWrapper}>
               <Text style={styles.profileFinishHead}>{titleUpdated}</Text>
-              <Text style={styles.profileFinishText}>{descriptionUpdated}</Text>
+              <HTML tagsStyles={profileFinishText}>{description}</HTML>
               <PrimaryButton
                 style={styles.profileButton}
                 onPress={this.goToLoopEndNext}>

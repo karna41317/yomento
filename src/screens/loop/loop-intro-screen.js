@@ -58,6 +58,7 @@ export default class LoopIntroScreen extends Component {
     const introPages = state.params ? state.params : null
     const {dashboard} = this.props
     const headerName = get(dashboard, 'newCard[0].theme_name', 'Intro')
+    console.log('printingintroPages', introPages)
 
 
     if (introPages) {
@@ -65,7 +66,7 @@ export default class LoopIntroScreen extends Component {
         <LoopSwiperComponent
           tapSelection={this.tapSelection}
           headerName={headerName}
-          name={'profile'}
+          screenName={'Introduction'}
           showDots={true}
           showSkipButton={false}
           onNextBtnClick={this.nextBtnHandle}

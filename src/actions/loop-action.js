@@ -5,8 +5,6 @@ import { reduxStore } from 'src/store/store'
 import { apiModule } from 'src/api'
 import { get } from 'lodash'
 
-
-
 export const getLoopStyles = () => {
   return dispatch => {
     const state = reduxStore.getState()
@@ -60,22 +58,20 @@ export const updateCards = (parameteres, navigation) => {
       bodyParams: get(parameteres, 'bodyParams', {}),
     }
     const card_type = get(params, 'pathParams.card_type')
+    const nextScreen = get(parameteres, 'nextScreen')
     console.log('printing', card_type)
 
     try {
       apiModule.updateCard(token, params).then(data => {
         if (data.status && data.status === 'success') {
-          if (card_type === 'reflection') {
-            navigation.navigate('loopCoachReflectionAfter')
-          } else {
-            navigation.navigate('dashboard')
+          if (nextScreen) {
+            navigation.navigate(nextScreen)
+            dispatch({
+              type: Types.UPDATE_CARD,
+              payload: data,
+            })
+            dispatch(getDashboardCards())
           }
-          dispatch(getDashboardCards())
-          dispatch({
-            type: Types.UPDATE_CARD,
-            payload: data,
-          })
-
         }
       })
     } catch (err) {
@@ -86,5 +82,60 @@ export const updateCards = (parameteres, navigation) => {
     }
   }
 }
+export const updateLoopDetails = (data) => {
+  return dispatch => {
+    try {
+      dispatch({
+        type: Types.UPDATE_LOOP_DETAILS,
+        payload: data,
+      })
+    } catch (err) {
+      dispatch({
+        type: Types.ERROR_UPDATE_LOOP_DETAILS,
+        payload: err,
+      })
+    }
+  }
+}
+
+
+
+/*
+export const updateCards = (parameteres, navigation) => {
+  return dispatch => {
+    const state = reduxStore.getState()
+    const token = get(state, 'auth.userData.authorization')
+
+    const params = {
+      pathParams: get(parameteres, 'pathParams'),
+      bodyParams: get(parameteres, 'bodyParams', {}),
+    }
+    const card_type = get(params, 'pathParams.card_type')
+    console.log('printing', card_type)
+
+    return new Promise(
+      function (resolve, reject) {
+        apiModule.updateCard(token, params).then(data => {
+          if (data.status && data.status === 'success') {
+            dispatch({
+              type: Types.UPDATE_CARD,
+              payload: data,
+            })
+            resolve(data)
+          } else {
+            reject(data.message)
+            dispatch({
+              type: Types.ERROR_UPDATE_CARD,
+              payload: data.message,
+            })
+          }
+        })
+      },
+    )
+
+  }
+}
+*/
+
 
 

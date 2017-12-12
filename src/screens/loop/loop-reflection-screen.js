@@ -49,7 +49,7 @@ export default class LoopReflectionScreen extends Component {
 
   closePress = () => {
     const {navigation} = this.props
-    navigation.navigate('loopIntro')
+    navigation.navigate('dashboard')
   }
   tapSelection = () => {
 
@@ -65,7 +65,7 @@ export default class LoopReflectionScreen extends Component {
         return (
           <LoopSwiperComponent
             tapSelection = {this.tapSelection}
-            name={'profile'}
+            screenName={'reflection'}
             showDots={true}
             showSkipButton={false}
             onNextBtnClick={this.nextBtnHandle}

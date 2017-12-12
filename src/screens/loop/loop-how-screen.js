@@ -13,7 +13,7 @@ import HTMLView from 'react-native-htmlview'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import LoopSwiperComponent from 'src/components/Swiper/loop-swiper'
 import { get } from 'lodash'
-
+import {updateCards} from 'src/actions'
 @connect(loopSelector)
 export default class LoopHowScreen extends Component {
 
@@ -27,8 +27,32 @@ export default class LoopHowScreen extends Component {
   onSkipBtnHandle = (index) => {
     console.log(index)
   }
+
+  updateCard = (cardType, nextScreen) => {
+    const {dispatch, loop, navigation} = this.props
+
+    const loopId = get(loop, 'loop[0].loop_id')
+
+    if(loopId) {
+      const pathParams = {
+        card_type: cardType,
+        loop_id: loopId
+      }
+      bodyParams = {
+      }
+
+      const params = {
+        pathParams,
+        bodyParams,
+        nextScreen
+      }
+      dispatch(updateCards(params, navigation))
+    }
+  }
+
   doneBtnHandle = () => {
     const {navigation} = this.props
+    this.updateCard('reflection', 'loopCoachReflectionIntro')
     navigation.navigate('loopCoachReflectionIntro')
   }
   nextBtnHandle = (index) => {
@@ -39,6 +63,7 @@ export default class LoopHowScreen extends Component {
   }
   readMoreHandle = () => {
     const {navigation} = this.props
+    this.updateCard('reminder')
     navigation.navigate('loopReminder')
   }
 
@@ -69,7 +94,7 @@ export default class LoopHowScreen extends Component {
           <LoopSwiperComponent
             tapSelection={this.tapSelection}
             headerName={headerName}
-            name={'loophow'}
+            screenName={'how'}
             showDots={true}
             showSkipButton={false}
             onNextBtnClick={this.nextBtnHandle}
@@ -91,43 +116,3 @@ export default class LoopHowScreen extends Component {
     return null
   }
 }
-
-/*
-return (
-  <GradientWrapper name={'default'}>
-    <View style={styles.mainCard}>
-      <Header backgroundColor={'transparent'} style={styles.header}>
-        <Left>
-
-        </Left>
-        <Body>
-        <Button transparent
-                style={styles.finishedButton}>
-          <Text style={styles.finishedText}>Feedback</Text>
-        </Button>
-        </Body>
-        <Right>
-          <Button transparent onPress={this.goToSetting}>
-            <Icon name='close'
-                  style={{fontSize: 35, color: '#419BF9'}}/>
-          </Button>
-        </Right>
-      </Header>
-      <View style={styles.wrapper}>
-        <Animated.View>
-          <Text numberOfLines={3}
-                style={styles.title}>{data.title}</Text>
-        </Animated.View>
-        <Animated.View style={styles.descWrapper}>
-          <HTMLView value={htmlContent} stylesheet={htmlStyles}/>
-        </Animated.View>
-      </View>
-      <View style={styles.buttonsWrapper}>
-        <View style={styles.why_buttons}>
-          <SecondaryButton onPress={()=>this.props.navigation.goBack()}>Not Interested</SecondaryButton>
-          <PrimaryButton onPress={this.goToIntroScreen}>Let's go</PrimaryButton>
-        </View>
-      </View>
-    </View>
-  </GradientWrapper>
-)*/

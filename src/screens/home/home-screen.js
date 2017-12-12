@@ -78,14 +78,12 @@ export default class Home extends Component {
     LinkedinLogin.getProfile().then((data) => {
       let userData = {
         email: data.emailAddress,
-        firstName: data.firstName,
-        lastName: data.lastName,
-        authType: Constans.LINKEDIN,
+        username: data.firstName,
+        source: 'linkedin'
       }
-      const userInfo = Object.assign({}, user, {source: 'email'})
       this.props.dispatch(registerUser(userData))
-      this.props.navigation.navigate('onBoarding')
-      /*AsyncStorage.setItem('user', JSON.stringify(userData), () => {
+      //this.props.navigation.navigate('onBoarding')
+ /*     AsyncStorage.setItem('user', JSON.stringify(userData), () => {
         this.getUserProfileImage()
       })*/
     }).catch((e) => {

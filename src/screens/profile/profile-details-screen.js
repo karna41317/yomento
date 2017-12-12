@@ -3,7 +3,7 @@
  */
 import { connect } from 'react-redux'
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, Linking } from 'react-native'
+import { View, Text, StyleSheet, Linking, Image } from 'react-native'
 import GradientWrapper from '../../components/partials/gradientWrapper'
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'src/components/native-base'
 import { styles } from './profile.styles'
@@ -59,7 +59,8 @@ export default class ProfileDetailsScreen extends Component {
       userType = memberShipDetails[0].type
     }
 
-
+    console.log('details', this.props.auth)
+    const userDetails = get(auth, 'userData.user')
     const proButtonText = toLower(userType) === 'basic'
       ? 'Get YommentoPRO!'
       : 'PRO member'
@@ -79,14 +80,16 @@ export default class ProfileDetailsScreen extends Component {
           </Button>
         </View>
         <View style={styles.profileDetails}>
-          <View style={styles.avatarCircle}/>
+          <View style={styles.avatarCircle}>
+            <Icon name='ios-person-outline' style={styles.avatarIcon}/>
+          </View>
           <View style={{
             justifyContent: 'center',
             alignItems: 'center',
             marginVertical: 15,
           }}>
-            <Text style={styles.profileName}>Rok Pregelj</Text>
-            <Text style={styles.profileEmail}>rok@wearesito.com</Text>
+            <Text style={styles.profileName}>{userDetails.first_name}</Text>
+            <Text style={styles.profileEmail}>{userDetails.email}</Text>
           </View>
           <PrimaryButton
             textStyles={styles.profileButtonText}

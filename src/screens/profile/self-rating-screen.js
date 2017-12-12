@@ -53,7 +53,8 @@ export default class selfRatingScreen extends Component {
     if (myself) {
       return (
         <Swiper
-          name={'profile'} // name={'profile'} TODO: another shitty hack to make it work for disabling
+          name={'profile'} // need this to disable next buttons
+          screenName={'profile'}
           showDots={true}
           showSkipButton={false}
           onNextBtnClick={this.nextBtnHandle}

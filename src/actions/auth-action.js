@@ -75,6 +75,10 @@ export const registerUser = (user, navigation) => {
           type: Types.SIGNUP_SUCCESS,
           payload: userData,
         })
+        dispatch({
+          type: Types.LOGIN_SUCCESS,
+          payload: userData,
+        })
         if (data.profile_created === 'no') {
           navigation.navigate('onBoarding')
         } else {

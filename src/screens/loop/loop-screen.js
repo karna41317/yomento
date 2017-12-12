@@ -54,7 +54,7 @@ export default class LoopScreen extends Component {
       const loopStyles = get(loop, 'loopStyles[0]', {})
       if (currentLoop) {
         const loopContent = eval(this.parseJson(currentLoop))
-        console.log('printingloopContent', loopContent)
+
 
         const introduction_content = eval(
           this.parseJson(loopContent.introduction_content))
@@ -62,7 +62,7 @@ export default class LoopScreen extends Component {
         const why_content = eval(this.parseJson(loopContent.why_content))
         const data = why_content[0].data[0]
         const htmlContent = `<p>${data.description}</p>`
-        console.log('printingwhy_content', why_content)
+
 
         return (
           <GradientWrapper name={'default'}>

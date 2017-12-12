@@ -5,6 +5,7 @@ const initialState = {
   fetching: false,
   loop: [],
   firstLaunch: false,
+  loopData: {}
 }
 
 export default (state = initialState, {type, payload}) => {
@@ -44,7 +45,17 @@ export default (state = initialState, {type, payload}) => {
         loopStylesError: payload,
         fetching: false,
       }
+    case Types.UPDATE_LOOP_DETAILS:
+      return {
+        ...state,
+        loopData: payload
+      }
 
+    case Types.ERROR_UPDATE_LOOP_DETAILS:
+      return {
+        ...state,
+        error: payload
+      }
     default:
       return state
   }

@@ -41,6 +41,13 @@ export default (state = initialState, action = {}) => {
           email: action.payload,
         },
       }
+    case Types.SIGNUP_SUCCESS:
+      return {
+        ...state,
+        fetching: false,
+        //authType: action.payload['authType'],
+        userData: action.payload,
+      }
 
     case Types.LOGIN_SUCCESS:
       return {
