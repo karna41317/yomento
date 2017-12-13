@@ -7,7 +7,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { ActivityIndicator } from 'react-native'
-import Swiper from 'src/components/Swiper/swiper'
+import SwiperComponent from 'src/components/Swiper/swiper'
 import demoData from './demo-data'
 import { getProfileContent } from 'src/actions'
 import { profileState } from 'src/selectors'
@@ -52,12 +52,13 @@ export default class idealRatingScreen extends Component {
 
   render () {
 
-    const {myideal} = this.props
+    const {myideal, navigation} = this.props
     if (myideal) {
       return (
-        <Swiper
+        <SwiperComponent
+          navigation={navigation}
           name={'profile'} // need this to disable next buttons
-          screenName={'profile'}
+          screenName={'ideal-rating'}
           showDots={true}
           showSkipButton={false}
           onNextBtnClick={this.nextBtnHandle}

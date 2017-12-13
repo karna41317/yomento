@@ -83,7 +83,7 @@ export default class LoopReflectionScreen extends Component {
   }
 
   render () {
-    const {loop} = this.props
+    const {loop, navigation} = this.props
     if (loop) {
       const loopContent = eval(this.parseJson(loop.loop[0]))
       const reflection_content = eval(
@@ -91,9 +91,11 @@ export default class LoopReflectionScreen extends Component {
 
 
 
+
       if (reflection_content) {
         return (
           <LoopSwiperComponent
+            navigation={navigation}
             name={'reflection'}
             screenName={'reflection'}
             showDots={true}

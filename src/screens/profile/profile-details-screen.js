@@ -76,7 +76,7 @@ export default class ProfileDetailsScreen extends Component {
             </Button>
             <Text style={styles.headerTextStyle}>Settings</Text>
             <Button transparent onPress={this.closePress}>
-              <Icon name='close' style={{fontSize: 40, color: '#419BF9'}}/>
+              <Icon name='ios-arrow-round-forward-outline' style={{fontSize: 40, color: '#419BF9'}}/>
             </Button>
           </View>
           <View style={styles.profileDetails}>

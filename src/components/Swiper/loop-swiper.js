@@ -292,13 +292,43 @@ export default class LoopSwiperComponent extends Component {
     const {loop} = this.props
     const headerName = get(loop, 'loop[0].theme_name')
     return headerName ? upperCase(headerName) : upperCase(this.props.screenName)
-
   }
+
+  backArrowPress = (index) => {
+    const {navigation, dispatch, screenName, loop} = this.props
+    const loopId = get(loop, 'loop[0].loop_id')
+
+    if(index === 0) {
+      switch (screenName) {
+        case 'Introduction':
+          navigation.navigate('loop')
+          break
+        case 'how':
+          navigation.navigate('loopIntro')
+          break
+        case 'reflection':
+          navigation.navigate('loopCoachReflectionIntro', loopId)
+          break
+        default:
+          break
+      }
+    } else {
+      if(this.refs && this.refs.swiper.scrollBy) {
+        this.refs.swiper.scrollBy(-1)
+      } else {
+        navigation.goBack()
+      }
+    }
+  }
+  goToDashboard = () => {
+    this.props.navigation.navigate('dashboard')
+  }
+
   getSwiperHeader = (index, total, content_type) => {
     if (this.shouldHaveHeader(content_type)) {
       return (
         <View backgroundColor={'transparent'} style={styles.headerStyle}>
-          <Button transparent onPress={this.props.backPress}>
+          <Button transparent onPress={this.backArrowPress.bind(this,index)}>
             <Icon name='arrow-back' style={{fontSize: 30, color: '#419BF9'}}/>
           </Button>
           <View>
@@ -309,7 +339,7 @@ export default class LoopSwiperComponent extends Component {
               })}
             </View>
           </View>
-          <Button transparent onPress={this.props.closePress}>
+          <Button transparent onPress={this.goToDashboard}>
             <Icon name='close' style={{fontSize: 30, color: '#419BF9'}}/>
           </Button>
         </View>
@@ -490,6 +520,7 @@ export default class LoopSwiperComponent extends Component {
     const {data, seq_order} = page
     const dataObject = data[0]
     const {content_type} = dataObject
+    console.log('printingdataObject', dataObject)
 
     return (
       <GradientWrapper key={index} name={this.props.name}>
@@ -591,6 +622,7 @@ export default class LoopSwiperComponent extends Component {
       <View style={{flex: 1}}>
         {androidPages}
         <Swiper
+          ref={'swiper'}
           scrollEnabled={false}
           scrollEventThrottle={50}
           loop={false}

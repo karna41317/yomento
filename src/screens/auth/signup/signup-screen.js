@@ -4,14 +4,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import * as snapshotUtil from 'src/utils/snapshot'
+import { store } from 'src/store/store'
 import { KeyboardAvoidingView, TextInput, View, Image, StyleSheet, Dimensions, Text, TouchableOpacity, Alert, AsyncStorage } from 'react-native'
-
-
 import { authState } from 'src/selectors'
 import GradientWrapper from 'src/components/partials/gradientWrapper'
 //import { View } from 'src/components/wrappers/viewWrapper'
 import { Container, Header, Left, Body, Right, Button as NativeButton, Icon, Title, Item, Input } from 'src/components/native-base'
-import { usernameChanged, passwordChanged, emailChanged, registerUser } from 'src/actions'
+import { usernameChanged, passwordChanged, emailChanged, registerUser, resetSessionStateFromSnapshot, initializeSessionState } from 'src/actions'
 import { PrimaryButton } from '../../../components/buttons/Button'
 import MonoLogo from 'src/components/logos/mono-logo'
 import { lightTextMixin, semiBoldTextMixin } from '../../../styles/mixins'
@@ -31,16 +31,50 @@ export default class SignUp extends Component {
     }
   }
 
+  resetUserState = () => {
+    const {dispatch} = this.props
+    snapshotUtil.resetSnapshot().then(snapshot => {
+      const newState = Object.assign(snapshot, {auth: null})
+      console.log('printingnewState', newState)
+
+      if (newState) {
+        dispatch(resetSessionStateFromSnapshot(newState))
+      }
+      dispatch(initializeSessionState())
+      store.subscribe(() => {
+        snapshotUtil.saveSnapshot(store.getState())
+      })
+    })
+  }
+
   componentWillMount = () => {
-    const {userData} = this.props
+    const {userData, navigation} = this.props
     if(userData) {
       const token = get(userData, 'authorization')
       const isValid = token.includes('Bearer')
 
       if(isValid) {
+        try {
+          Alert.alert(
+            'Signed up',
+            'You are alredy Signed up on this device, You want to signup again ?',
+            [
+              {text: 'No', onPress: () => navigation.navigate('onBoarding')},
+              {text: 'Signup', onPress: () => this.resetUserState()},
+            ],
+            {cancelable: false},
+          )
+        } catch (error) {
+          Alert.alert(
+            'Error',
+            'Error while Signing up, please contact app team',
+            [
+              {text: 'OK', onPress: () => {}},
+            ],
+            {cancelable: false},
+          )
+        }
 
-
-        this.props.navigation.navigate('dashboard')
       }
     }
   }
@@ -86,41 +120,14 @@ export default class SignUp extends Component {
 
   signUpUser = () => {
     const {user, dispatch, navigation} = this.props
-
-
+    //dispatch()
     if (user && this.validation(user)) {
       const userInfo = Object.assign({}, user, {source: 'email'})
       dispatch(registerUser(userInfo, navigation))
-      /*try {
-        AsyncStorage.setItem('user', JSON.stringify(user))
-        Alert.alert(
-          'Success',
-          'Successfully signed',
-          [
-            {text: 'OK', onPress: () => navigation.navigate('onBoarding')},
-          ],
-          {cancelable: false},
-        )
-      } catch (error) {
-        Alert.alert(
-          'Error',
-          'Error saving user info',
-          [
-            {text: 'OK', onPress: () => {}},
-          ],
-          {cancelable: false},
-        )
-      }*/
     }
-
-
-
-    //navigation.navigate('login')
   }
 
   onIconPress = () => {
-
-
     this.props.navigation.goBack()
   }
 

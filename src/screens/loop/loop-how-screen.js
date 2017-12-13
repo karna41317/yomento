@@ -53,7 +53,6 @@ export default class LoopHowScreen extends Component {
   doneBtnHandle = () => {
     const {navigation} = this.props
     this.updateCard('reflection', 'loopCoachReflectionIntro')
-    navigation.navigate('loopCoachReflectionIntro')
   }
   nextBtnHandle = (index) => {
     console.log(index)
@@ -65,8 +64,8 @@ export default class LoopHowScreen extends Component {
 
   readMoreHandle = () => {
     const {navigation} = this.props
-    this.updateCard('reminder')
-    navigation.navigate('loopReminder')
+    this.updateCard('reminder', 'loopReminder')
+
   }
 
   backPress = () => {
@@ -82,7 +81,7 @@ export default class LoopHowScreen extends Component {
 
   }
   render () {
-    const {loop} = this.props
+    const {loop, navigation} = this.props
     if (loop) {
 
 
@@ -90,10 +89,10 @@ export default class LoopHowScreen extends Component {
       const how_content = eval(this.parseJson(loopContent.how_content))
       const {dashboard} = this.props
       const headerName = get(dashboard, 'newCard[0].theme_name', 'Intro')
-
       if (how_content) {
         return (
           <LoopSwiperComponent
+            navigation={navigation}
             tapSelection={this.tapSelection}
             headerName={headerName}
             screenName={'how'}
@@ -114,6 +113,7 @@ export default class LoopHowScreen extends Component {
           />
         )
       }
+      return <ActivityIndicator/>
     }
     return null
   }

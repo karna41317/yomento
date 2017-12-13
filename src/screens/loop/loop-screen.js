@@ -13,7 +13,7 @@ import HTMLView from 'react-native-htmlview'
 import HTML from 'react-native-render-html'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import { updateCards } from '../../actions/loop-action'
-import {get} from 'lodash'
+import { get } from 'lodash'
 
 @connect(loopSelector)
 export default class LoopScreen extends Component {
@@ -21,37 +21,34 @@ export default class LoopScreen extends Component {
   parseJson = (content) => {
     return JSON.parse(JSON.stringify(content))
   }
-  goToIntroScreen = (introduction_content) => {
-    this.props.navigation.navigate('loopIntro', introduction_content)
+  goToIntroScreen = () => {
+    this.props.navigation.navigate('loopIntro')
   }
 
-  goToDashboard= () => {
+  goToDashboard = () => {
     this.props.navigation.navigate('dashboard')
   }
   notInterested = (currentLoop) => {
     const loopId = get(currentLoop, 'loop_id')
-    if(loopId) {
+    if (loopId) {
       const pathParams = {
         card_type: 'finished',
         loop_id: get(currentLoop, 'loop_id'),
-        card_status: 'not_interested'
+        card_status: 'not_interested',
       }
       const bodyParams = {}
       const params = {
         pathParams,
         bodyParams,
-        nextScreen: 'dashboard'
+        nextScreen: 'dashboard',
       }
       const {dispatch, navigation} = this.props
       dispatch(updateCards(params, navigation))
     }
   }
 
-
-
   doneBtnHandle = () => {
     const {navigation, dispatch, loop} = this.props
-
     const loopId = get(loop, 'loop[0].loop_id')
 
     if (loopId) {
@@ -67,44 +64,40 @@ export default class LoopScreen extends Component {
       const params = {
         pathParams,
         bodyParams,
-        nextScreen: 'loopCoachReflectionAfter'
+        nextScreen: 'loopCoachReflectionAfter',
       }
-
       dispatch(updateCards(params, navigation))
     }
   }
+
   render () {
 
-    const {dashboard} = this.props
-    const {state} = this.props.navigation
-    const theme_id = state.params ? state.params.theme_id : null
-    if (theme_id) {
-      const {loop} = this.props
-      const currentLoop = loop.loop[0]
+    const {loop, navigation, dashboard} = this.props
+    const currentLoop = get(loop, 'loop[0]')
+    console.log('printing', loop)
+
+    if (!loop.fetching && currentLoop) {
+      const currentLoop = get(loop, 'loop[0]')
       const loopStyles = get(loop, 'loopStyles[0]', {})
-      if (currentLoop) {
-        const loopContent = eval(this.parseJson(currentLoop))
+      const loopContent = eval(this.parseJson(loop.loop[0]))
+      const whyContent = eval(this.parseJson(loopContent.why_content))
+      const headerName = get(dashboard, 'newCard[0].theme_name', 'Intro')
+      console.log('printingwhyContent', whyContent)
 
+      if (whyContent) {
 
-        const introduction_content = eval(
-          this.parseJson(loopContent.introduction_content))
-
-        const why_content = eval(this.parseJson(loopContent.why_content))
-        const data = why_content[0].data[0]
+        const data = whyContent[0].data[0]
         const htmlContent = `<p>${data.description}</p>`
-
 
         return (
           <GradientWrapper name={'default'}>
             <View style={styles.mainCard}>
               <Header backgroundColor={'transparent'} style={styles.header}>
-                <Left>
-
-                </Left>
+                <Left></Left>
                 <Body>
                 <Button transparent
                         style={styles.finishedButton}>
-                  <Text style={styles.finishedText}>Feedback</Text>
+                  <Text style={styles.finishedText}>{headerName}</Text>
                 </Button>
                 </Body>
                 <Right>
@@ -129,19 +122,19 @@ export default class LoopScreen extends Component {
                   <SecondaryButton
                     style={{left: 20}}
                     textStyles={{color: '#0F0F3D'}}
-                    onPress={this.notInterested.bind(this,currentLoop)}>Not
+                    onPress={this.notInterested.bind(this, currentLoop)}>Not
                     Interested
                   </SecondaryButton>
                   <PrimaryButton
                     style={{left: 40}}
-                    onPress={this.goToIntroScreen.bind(this,
-                      introduction_content)}>Let's go</PrimaryButton>
+                    onPress={this.goToIntroScreen}>Let's go</PrimaryButton>
                 </View>
               </View>
             </View>
           </GradientWrapper>
         )
       }
+      return null
     }
     return null
   }

@@ -334,13 +334,11 @@ export default class DashboardScreen extends Component {
   getMainCard = () => {
     const {dashboard: {newCard, reminderCards, reflectionCards}} = this.props
     if (newCard && newCard.length > 0) {
-      const onlyMainCard = reminderCards.length === 0 &&
-        reflectionCards.length === 0
+      const onlyMainCard = reminderCards.length === 0 && reflectionCards.length === 0
       let customStyles = {}
-
       const mainCard = newCard[0]
       const isTimePassed = this.isReminderCardTimePassed()
-      const height = isTimePassed ? normalHeight : extendedHeight
+      const height = (isTimePassed || reflectionCards.length > 0) ?  normalHeight : extendedHeight
 
       if (onlyMainCard) {
         customStyles = {

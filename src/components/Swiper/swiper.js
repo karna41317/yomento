@@ -142,25 +142,23 @@ export default class SwiperComponent extends Component {
     return (
       <View style={styles.paginationContainer}>
         {this.props.showSkipButton ? <SkipButton
-            {...this.props}
-            {...this.state}
-            isSkipBtnShow={isSkipBtnShow}
-            styles={styles}
-            onSkipBtnClick={() => this.props.onSkipBtnClick(index)}/> :
-          <View style={styles.btnContainer}/>
+          {...this.props}
+          {...this.state}
+          isSkipBtnShow={isSkipBtnShow}
+          styles={styles}
+          onSkipBtnClick={() => this.props.onSkipBtnClick(index)}/> : <View style={styles.btnContainer}/>
         }
 
         {this.props.showDoneButton ? <DoneButton
-            {...this.props}
-            {...this.state}
-            nextBtnLabel={buttonText}
-            doneBtnLabel={buttonText}
-            isDoneBtnShow={isDoneBtnShow}
-            readMoreLable={readMoreText}
-            styles={styles}
-            onNextBtnClick={this.onNextBtnClick.bind(this, context)}
-            onDoneBtnClick={this.props.onDoneBtnClick}/> :
-          <View style={styles.btnContainer}/>
+          {...this.props}
+          {...this.state}
+          nextBtnLabel={buttonText}
+          doneBtnLabel={buttonText}
+          isDoneBtnShow={isDoneBtnShow}
+          readMoreLable={readMoreText}
+          styles={styles}
+          onNextBtnClick={this.onNextBtnClick.bind(this, context)}
+          onDoneBtnClick={this.props.onDoneBtnClick}/> : <View style={styles.btnContainer}/>
         }
       </View>
     )
@@ -225,11 +223,33 @@ export default class SwiperComponent extends Component {
     return type === 'rate'
   }
 
+  backArrowPress = (index) => {
+    const {navigation, screenName} = this.props
+    if (index === 0) {
+      switch (screenName) {
+        case 'self-rating':
+          navigation.navigate('selfRatingIntro')
+          break
+        case 'ideal-rating':
+          navigation.navigate('idealRatingIntro')
+          break
+        default:
+          break
+      }
+    } else {
+      if (this.refs && this.refs.swiper.scrollBy) {
+        this.refs.swiper.scrollBy(-1)
+      } else {
+        navigation.goBack()
+      }
+    }
+  }
+
   getSwiperHeader = (index, total, content_type) => {
     if (this.shouldHaveHeader(content_type)) {
       return (
         <View backgroundColor={'transparent'} style={styles.headerStyle}>
-          <Button transparent onPress={this.props.backPress}>
+          <Button transparent onPress={this.backArrowPress.bind(this, index)}>
             <Icon name='arrow-back' style={{fontSize: 30, color: '#419BF9'}}/>
           </Button>
           <View>
@@ -371,6 +391,7 @@ export default class SwiperComponent extends Component {
       <View style={{flex: 1}}>
         {androidPages}
         <Swiper
+          ref={'swiper'}
           scrollEnabled={false}
           scrollEventThrottle={50}
           loop={false}

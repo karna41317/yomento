@@ -13,7 +13,8 @@ import * as Constans from 'src/constants'
 import { authState } from 'src/selectors/common'
 import { regularTextMixin, semiBoldTextMixin } from '../../styles/mixins'
 import { SecondaryButton } from '../../components/buttons/Button'
-import {getLoopStyles} from 'src/actions'
+import { getLoopStyles } from 'src/actions'
+
 const logo = require('src/images/mercury_logo.png')
 
 @connect(authState)
@@ -34,33 +35,34 @@ export default class Home extends Component {
   }
 
   componentDidMount () {
-    this.props.dispatch(getLoopStyles())
+    //this.props.dispatch(getLoopStyles())
   }
 
   getUserSession () {
     AsyncStorage.getItem('user', (err, result) => {
       if (result) {
-        const user = JSON.parse(result)
+        //const user = JSON.parse(result)
         LinkedinLogin.setSession(user.accessToken, user.expiresOn)
       }
+      console.log('linkedin', err)
     })
   }
 
   goToLinkedInLogin () {
     const {dispatch} = this.props
-    dispatch(loginWithLinkedIn({
+    /*dispatch(loginWithLinkedIn({
       authType: Constans.LINKEDIN,
-    }))
-    LinkedinLogin.login().then((user) => {
-      AsyncStorage.setItem('user', JSON.stringify(user), () => {
-        this.getUserProfile(user)
-      })
-    }).catch((e) => {
-      var err = JSON.parse(e.description)
-      alert('ERROR: ' + err.errorMessage)
-      dispatch(loginFailure({
+    }))*/
+
+    LinkedinLogin.login().then(user => {
+      console.log('printinguser', user)
+
+      this.getUserProfile(user)
+    }).catch(e => {
+      //var err = JSON.parse(e.description)
+      /*dispatch(loginFailure({
         authType: Constans.LINKEDIN,
-      }))
+      }))*/
     })
     return true
   }
@@ -74,18 +76,17 @@ export default class Home extends Component {
   }
 
   getUserProfile (user) {
-    //TODO : fix linkedIn loggin
-    LinkedinLogin.getProfile().then((data) => {
+    LinkedinLogin.getProfile(user).then((data) => {
       let userData = {
         email: data.emailAddress,
         username: data.firstName,
-        source: 'linkedin'
+        source: 'linkedin',
       }
       this.props.dispatch(registerUser(userData))
       //this.props.navigation.navigate('onBoarding')
- /*     AsyncStorage.setItem('user', JSON.stringify(userData), () => {
-        this.getUserProfileImage()
-      })*/
+      /*     AsyncStorage.setItem('user', JSON.stringify(userData), () => {
+             this.getUserProfileImage()
+           })*/
     }).catch((e) => {
       dispatch(loginFailure({
         authType: Constans.LINKEDIN,
@@ -118,7 +119,7 @@ export default class Home extends Component {
           </ViewWrapper>
           <ViewWrapper>
             <TextFont style={styles.member}>Become a member</TextFont>
-            <RNEButton
+            {/*<RNEButton
               onPress={this.goToLinkedInLogin}
               style={{backgroundColor: 'transparent'}}
               backgroundColor={'#2B7AB6'}
@@ -132,7 +133,7 @@ export default class Home extends Component {
                 type: 'ionicon',
                 color: 'white',
               }}
-              title='Sign in with LinkedIn'/>
+              title='Sign in with LinkedIn'/>*/}
             <RNEButton
               onPress={this.goToSignUp}
               backgroundColor={'#D5EDFF'}

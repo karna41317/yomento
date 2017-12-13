@@ -12,3 +12,4 @@ export function initializeSessionState() {
     type: Types.INITIALIZE_STATE
   };
 }
+

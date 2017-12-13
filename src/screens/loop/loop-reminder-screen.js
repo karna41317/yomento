@@ -111,7 +111,7 @@ export default class loopReminderScreen extends Component {
           <GradientWrapper name='reminder'>
             <View backgroundColor={'transparent'} style={styles.headerStyle}>
               <Button transparent onPress={this.goBack}>
-                <Icon name='settings' style={{fontSize: 30, color: '#419BF9'}}/>
+                <Icon name='ios-arrow-round-back-outline' style={{fontSize: 40, color: '#419BF9'}}/>
               </Button>
               <Text style={[styles.headerTextStyle, {}]}>FEEDBACK
                 EXERCISE</Text>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { ActivityIndicator } from 'react-native'
-import Swiper from 'src/components/Swiper/swiper'
+import SwiperComponent from 'src/components/Swiper/swiper'
 import { get } from 'lodash'
 import { getProfileContent, AddProfileContent } from 'src/actions'
 import { profileState } from 'src/selectors'
@@ -49,12 +49,13 @@ export default class selfRatingScreen extends Component {
 
   render () {
 
-    const {myself} = this.props
+    const {myself, navigation} = this.props
     if (myself) {
       return (
-        <Swiper
+        <SwiperComponent
+          navigation={navigation}
           name={'profile'} // need this to disable next buttons
-          screenName={'profile'}
+          screenName={'self-rating'}
           showDots={true}
           showSkipButton={false}
           onNextBtnClick={this.nextBtnHandle}
