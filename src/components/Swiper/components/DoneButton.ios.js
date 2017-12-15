@@ -21,8 +21,6 @@ const DoneButton = ({
   }
   let btnContainerStyle = {}
 
-
-
   if (toLower(readMoreLable).includes('reminder')) {
 
     textStyle = {
@@ -36,7 +34,7 @@ const DoneButton = ({
     }
     btnContainerStyle = {
       position: 'absolute',
-      bottom: 50,
+      bottom: 0,
       marginLeft: 10,
       alignSelf: 'center',
     }

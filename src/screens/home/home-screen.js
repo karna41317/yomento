@@ -3,40 +3,74 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { ViewWrapper } from '../../components/wrappers/viewWrapper'
 import TextFont from '../../components/typography/textFont'
-import { View, StyleSheet, AsyncStorage, Image, Text, Dimensions } from 'react-native'
+import { View, StyleSheet, AsyncStorage, Image, Text, Dimensions, AppState } from 'react-native'
 import { Button } from 'src/components/buttons'
 import { Button as RNEButton } from 'react-native-elements'
 import LinkedinLogin from 'react-native-linkedin-login'
 import GradientWrapper from 'src/components/partials/gradientWrapper'
 import { loginWithLinkedIn, loginSuccess, loginFailure, loginLocal, linkedInLogout } from 'src/actions/auth-action'
 import * as Constans from 'src/constants'
-import { authState } from 'src/selectors/common'
+import { homeSelector } from './home-selector'
 import { regularTextMixin, semiBoldTextMixin } from '../../styles/mixins'
 import { SecondaryButton } from '../../components/buttons/Button'
 import { getLoopStyles } from 'src/actions'
-
+import {map} from 'lodash'
+import Moment from 'moment'
+import PushNotification from 'react-native-push-notification'
 const logo = require('src/images/mercury_logo.png')
 
-@connect(authState)
+@connect(homeSelector)
 export default class Home extends Component {
 
   constructor (props) {
     super(props)
     this.state = {
       user: null,
+      appState: AppState.currentState
     }
-    this.goToLinkedInLogin = this.goToLinkedInLogin.bind(this)
+    //this.goToLinkedInLogin = this.goToLinkedInLogin.bind(this)
   }
 
   componentWillMount () {
-    const linkedInScopes = ['r_emailaddress', 'r_basicprofile']
+    /*const linkedInScopes = ['r_emailaddress', 'r_basicprofile']
     LinkedinLogin.init(linkedInScopes)
-    this.getUserSession()
+    this.getUserSession()*/
   }
 
   componentDidMount () {
-    //this.props.dispatch(getLoopStyles())
+    this.props.dispatch(getLoopStyles())
+    AppState.addEventListener('change', this._handleAppStateChange)
   }
+
+  componentWillUnmount () {
+    AppState.removeEventListener('change', this._handleAppStateChange)
+  }
+
+  componentDidUpdate() {
+    if(this.state.appState === 'background' || this.state.appState === 'inactive' ) {
+      let isTimePassed = false
+      const {dashboard: {reminderCards}} = this.props
+      map(reminderCards, card=> {
+        const current = Moment(new Date()).unix()
+        isTimePassed = Moment(current).isAfter(Number(card.reminder_time))
+        if(isTimePassed) {
+          PushNotification.localNotificationSchedule({
+            message: 'My Notification Message', // (required)
+            date: new Date(Number(card.reminder_time) + (6 * 1000)) // in 60 secs
+          })
+        }
+      })
+
+    }
+  }
+
+  _handleAppStateChange = (nextAppState) => {
+    /*if (nextState === 'background') {
+
+    }*/
+    this.setState({appState: nextAppState})
+  }
+
 
   getUserSession () {
     AsyncStorage.getItem('user', (err, result) => {
@@ -48,11 +82,11 @@ export default class Home extends Component {
     })
   }
 
-  goToLinkedInLogin () {
+ /* goToLinkedInLogin () {
     const {dispatch} = this.props
-    /*dispatch(loginWithLinkedIn({
+    /!*dispatch(loginWithLinkedIn({
       authType: Constans.LINKEDIN,
-    }))*/
+    }))*!/
 
     LinkedinLogin.login().then(user => {
       console.log('printinguser', user)
@@ -60,12 +94,12 @@ export default class Home extends Component {
       this.getUserProfile(user)
     }).catch(e => {
       //var err = JSON.parse(e.description)
-      /*dispatch(loginFailure({
+      /!*dispatch(loginFailure({
         authType: Constans.LINKEDIN,
-      }))*/
+      }))*!/
     })
     return true
-  }
+  }*/
 
   goToLinkedInLogout () {
     LinkedinLogin.logout()

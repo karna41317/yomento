@@ -4,7 +4,7 @@
 
 const demoData = [
   {
-    'title': 'Hey Name!',
+    'title': 'Hey <first_name>',
     'description': `<p>I&rsquo;m your own Personal Leadership Trainer and I have one simple goal:</p><p>To develop your leadership skills.</p>`,
     'button_text': 'GREAT, NEXT?',
     'content_type': 'onBoarding',

@@ -33,18 +33,13 @@ export default class SignUp extends Component {
 
   resetUserState = () => {
     const {dispatch} = this.props
-    snapshotUtil.resetSnapshot().then(snapshot => {
-      const newState = Object.assign(snapshot, {auth: null})
-      console.log('printingnewState', newState)
-
-      if (newState) {
-        dispatch(resetSessionStateFromSnapshot(newState))
-      }
-      dispatch(initializeSessionState())
-      store.subscribe(() => {
-        snapshotUtil.saveSnapshot(store.getState())
-      })
+    snapshotUtil.clearSnapshot()
+    dispatch(resetSessionStateFromSnapshot({}))
+    dispatch(initializeSessionState())
+    store.subscribe(() => {
+      snapshotUtil.saveSnapshot(store.getState())
     })
+
   }
 
   componentWillMount = () => {
@@ -123,6 +118,7 @@ export default class SignUp extends Component {
     //dispatch()
     if (user && this.validation(user)) {
       const userInfo = Object.assign({}, user, {source: 'email'})
+      this.resetUserState()
       dispatch(registerUser(userInfo, navigation))
     }
   }

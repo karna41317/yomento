@@ -9,7 +9,7 @@ export default (state = initialState, action = {}) => {
 
     case Types.RESET_STATE:
       return {
-        ...state,
+        state,
         isReady: true,
       }
     case Types.INITIALIZE_STATE:

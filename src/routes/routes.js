@@ -9,20 +9,29 @@ import passwordScreen from 'src/screens/auth/password/password-screen'
 import profileScreen from 'src/screens/profile/profile-screen'
 import profileDetailsScreen from 'src/screens/profile/profile-details-screen'
 import onBoarding from 'src/screens/on-boarding/on-boarding-screen'
-import selfRatingIntroScreen from 'src/screens/profile/self-rating-intro-screen'
-import selfRatingScreen from 'src/screens/profile/self-rating-screen'
-import selfRatingFinishScreen from 'src/screens/profile/self-rating-finish-screen'
+
 import idealRatingIntroScreen from 'src/screens/profile/ideal-rating-intro-screen'
-import idealRatingScreen from 'src/screens/profile/ideal-rating-screen'
+import idealRatingMainScreen from 'src/screens/profile/ideal-rating-main-screen'
+import idealRatingLoopScreen from 'src/screens/profile/ideal-rating-loop-screen'
 import idealRatingFinishScreen from 'src/screens/profile/ideal-rating-finish-screen'
+
+
+import selfRatingIntroScreen from 'src/screens/profile/self-rating-intro-screen'
+import selfRatingMainScreen from 'src/screens/profile/self-rating-main-screen'
+import selfRatingLoopScreen from 'src/screens/profile/self-rating-loop-screen'
+import selfRatingFinishScreen from 'src/screens/profile/self-rating-finish-screen'
+
 import demoScreen from 'src/screens/demo/demo-screen'
 import readMoreScreen from 'src/screens/profile/read-more'
 import dashboardScreen from 'src/screens/dashboard/dashboard-screen'
+import finishedScreen from 'src/screens/dashboard/finished-screen'
+
 import initDashboardScreen from 'src/screens/dashboard/init-dashboard-screen'
 import LoopScreen from 'src/screens/loop/loop-screen'
 import loopIntroScreen from 'src/screens/loop/loop-intro-screen'
 import loopHowScreen from 'src/screens/loop/loop-how-screen'
 import loopReminderScreen from 'src/screens/loop/loop-reminder-screen'
+import loopReminderConfirmScreen from 'src/screens/loop/loop-reminder-confirm-screen'
 import loopCoachReminderEndScreen from 'src/screens/loop/loop-coach-reminder-end-screen'
 import loopCoachReminderEndNextScreen from 'src/screens/loop/loop-coach-reminder-end-next-screen'
 import loopCoachReflectionIntroScreen from 'src/screens/loop/loop-coach-reflection-intro-screen'
@@ -95,8 +104,11 @@ export const AppNavigator = StackNavigator({
   selfRatingIntro: {
     screen: selfRatingIntroScreen,
   },
-  selfRating: {
-    screen: selfRatingScreen,
+  selfRatingLoop: {
+    screen: selfRatingLoopScreen,
+  },
+  selfRatingMain:{
+    screen: selfRatingMainScreen
   },
   selfRatingFinish: {
     screen: selfRatingFinishScreen,
@@ -104,8 +116,11 @@ export const AppNavigator = StackNavigator({
   idealRatingIntro: {
     screen: idealRatingIntroScreen,
   },
-  idealRating: {
-    screen: idealRatingScreen,
+  idealRatingMain:{
+    screen: idealRatingMainScreen
+  },
+  idealRatingLoop: {
+    screen: idealRatingLoopScreen,
   },
   idealRatingFinish: {
     screen: idealRatingFinishScreen,
@@ -125,6 +140,9 @@ export const AppNavigator = StackNavigator({
   dashboard: {
     screen: dashboardScreen,
   },
+  finished: {
+    screen: finishedScreen
+  },
   loop: {
     screen: LoopScreen,
   },
@@ -138,10 +156,10 @@ export const AppNavigator = StackNavigator({
     screen: loopReminderScreen,
   },
 
-  loopCoachEnd: {
+  loopReminderEnd: {
     screen: loopCoachReminderEndScreen,
   },
-  loopCoachEndNext: {
+  loopReminderEndNext: {
     screen: loopCoachReminderEndNextScreen,
   },
   loopCoachReflectionIntro: {

@@ -1,16 +1,24 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
+
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { ActivityIndicator } from 'react-native'
 import SwiperComponent from 'src/components/Swiper/swiper'
-import { get } from 'lodash'
-import { getProfileContent, AddProfileContent } from 'src/actions'
+import demoData from './demo-data'
+import { getProfileContent } from 'src/actions'
 import { profileState } from 'src/selectors'
 import { styles, htmlStyles } from './profile.styles'
 
 @connect(profileState)
-export default class selfRatingScreen extends Component {
+export default class idealRatingLoopScreen extends Component {
 
   componentDidMount () {
+
+
     this.props.dispatch(getProfileContent())
   }
 
@@ -18,13 +26,8 @@ export default class selfRatingScreen extends Component {
     console.log(index)
   }
   doneBtnHandle = () => {
-    const {navigation, profileRating, dispatch} = this.props
-    const myself = get(profileRating, 'myself')
-    const myideal = get(profileRating, 'myideal')
-    if (myself.length && myideal.length) {
-      dispatch(AddProfileContent(profileRating))
-    }
-    navigation.navigate('selfRatingFinish')
+    const {navigation} = this.props
+    navigation.navigate('idealRatingFinish')
   }
   nextBtnHandle = (index) => {
     console.log(index)
@@ -44,18 +47,18 @@ export default class selfRatingScreen extends Component {
 
   closePress = () => {
     const {navigation} = this.props
-    navigation.navigate('selfRatingIntro')
+    navigation.navigate('idealRatingIntro')
   }
 
   render () {
 
-    const {myself, navigation} = this.props
-    if (myself) {
+    const {myideal, navigation} = this.props
+    if (myideal) {
       return (
         <SwiperComponent
           navigation={navigation}
           name={'profile'} // need this to disable next buttons
-          screenName={'self-rating'}
+          screenName={'ideal-rating'}
           showDots={true}
           showSkipButton={false}
           onNextBtnClick={this.nextBtnHandle}
@@ -63,7 +66,7 @@ export default class selfRatingScreen extends Component {
           onSkipBtnClick={this.onSkipBtnHandle}
           onSlideChange={this.onSlideChangeHandle}
           readMoreClick={this.readMoreHandle}
-          pageArray={myself}
+          pageArray={myideal}
           wrapperStyle={styles.wrapper}
           titleStyle={styles.title}
           descWrapperStyle={styles.descWrapper}

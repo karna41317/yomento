@@ -25,9 +25,9 @@ export default class ProfileScreen extends Component {
       mySelfActive: true,
       myTeamActive: false,
       myIdealActive: true,
-      allIdealActive: true,
-      allSelfActive: true,
-      keys: ['myideal', 'myself', 'myteam', 'allideal_avg', 'allself_avg'],
+      allIdealActive: false,
+      allSelfActive: false,
+      keys: ['myideal', 'myself'],
     }
   }
 
@@ -49,7 +49,7 @@ export default class ProfileScreen extends Component {
         styles.headerStyle,
         {
           marginHorizontal: 10,
-          marginBottom: 30,
+          marginBottom: 50,
         }]}>
         <SecondaryButton
           onPress={this.allSelfPress}
@@ -134,24 +134,24 @@ export default class ProfileScreen extends Component {
   allSelfPress = () => {
     this.setState({
       allSelfActive: !this.state.allSelfActive,
-      keys: !this.state.allSelfActive ? this.getKeys('allself_avg') : reject(
-        this.state.keys, o => o === 'allself_avg'),
+      keys: !this.state.allSelfActive ? this.getKeys('allself_avg') :
+        reject(this.state.keys, o => o === 'allself_avg'),
     })
   }
 
   allIdealPress = () => {
     this.setState({
       allIdealActive: !this.state.allIdealActive,
-      keys: !this.state.allIdealActive ? this.getKeys('allideal_avg') : reject(
-        this.state.keys, o => o === 'allideal_avg'),
+      keys: !this.state.allIdealActive ? this.getKeys('allideal_avg') :
+        reject(this.state.keys, o => o === 'allideal_avg'),
     })
   }
 
   myTeamPress = () => {
     this.setState({
       myTeamActive: !this.state.myTeamActive,
-      keys: this.state.myTeamActive ? this.getKeys('myteam') : reject(
-        this.state.keys, o => o === 'myteam'),
+      keys: this.state.myTeamActive ? this.getKeys('myteam') :
+        reject(this.state.keys, o => o === 'myteam'),
     })
   }
 

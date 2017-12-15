@@ -14,13 +14,13 @@ import { PrimaryButton } from '../../components/buttons/Button'
 import GradientWrapper from '../../components/partials/gradientWrapper'
 
 @connect()
-export default class selfRatingIntro extends Component {
+export default class idealRatingFinishScreen extends Component {
 
   componentDidMount () {
   }
 
   goToSelfRating = () => {
-    this.props.navigation.navigate('selfRating')
+    this.props.navigation.navigate('selfRatingMain')
   }
 
   render () {

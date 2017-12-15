@@ -33,10 +33,10 @@ export default class LoginScreen extends Component {
       const isValid = token.includes('Bearer')
       if (isValid) {
         const profileCreated = get(profile, 'profileCreated')
-        if(!profileCreated) {
-          this.props.navigation.navigate('onBoarding')
-        } else {
+        if(profileCreated) {
           this.props.navigation.navigate('dashboard')
+        } else {
+          this.props.navigation.navigate('onBoarding')
         }
       }
     }

@@ -59,6 +59,7 @@
 		9A1E48476C1E4B63BA678F7C /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A97CCAE14D8441D08590E11D /* rubicon-icon-font.ttf */; };
 		9AD68C9FE0C44BE1812488DC /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D48CDB6E1594FF69439C93D /* Octicons.ttf */; };
 		9CA6361B915A4B718AD48CFA /* TabletGothic-ExtraBoldOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C309AE6995EC4393B3EA2040 /* TabletGothic-ExtraBoldOblique.ttf */; };
+		9E05BA241FE4004D005B967F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E05BA221FE4004C005B967F /* LaunchScreen.xib */; };
 		9E133DCD1FD335DA0063D2D0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 81112987494743ED9BEB6A64 /* libz.tbd */; };
 		9E3D48DE1FACEE8100E99E4A /* libRNPhotoView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7FF3071FA3DB6D000312A4 /* libRNPhotoView.a */; };
 		9E3D48DF1FACEE8B00E99E4A /* libRNShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7FF30C1FA3DB6D000312A4 /* libRNShare.a */; };
@@ -520,6 +521,7 @@
 		9D09EBDB574F4DA3B12A3E2C /* Raleway_bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Raleway_bold.ttf; path = ../assets/fonts/Raleway_bold.ttf; sourceTree = "<group>"; };
 		9D48CDB6E1594FF69439C93D /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		9D4B88EAE8082B6EA19DFF14 /* Pods-yemonto-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemonto-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-yemonto-tvOS/Pods-yemonto-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		9E05BA231FE4004C005B967F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = yemonto/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9E70F7241FDC4BA200E51A21 /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
 		9E70F75B1FDC4CA000E51A21 /* yemonto.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = yemonto.entitlements; path = yemonto/yemonto.entitlements; sourceTree = "<group>"; };
 		9E70F9171FDCC37F00E51A21 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -777,6 +779,7 @@
 		13B07FAE1A68108700A75B9A /* yemonto */ = {
 			isa = PBXGroup;
 			children = (
+				9E05BA221FE4004C005B967F /* LaunchScreen.xib */,
 				9E70F75B1FDC4CA000E51A21 /* yemonto.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -1150,8 +1153,11 @@
 						LastSwiftMigration = 900;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
-							com.apple.Push = {
+							com.apple.InAppPurchase = {
 								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
 							};
 						};
 					};
@@ -1657,6 +1663,7 @@
 				67CC3C60DD834577A4CB2314 /* MaterialIcons.ttf in Resources */,
 				AEB333E4C637491784F83811 /* Octicons.ttf in Resources */,
 				17FD54A7454148E2822B83AD /* Roboto_medium.ttf in Resources */,
+				9E05BA241FE4004D005B967F /* LaunchScreen.xib in Resources */,
 				54689D902A354D468B6EE79E /* Roboto.ttf in Resources */,
 				C84446338D134D50AD888987 /* rubicon-icon-font.ttf in Resources */,
 				860E50332B2B456CA228CDA8 /* SimpleLineIcons.ttf in Resources */,
@@ -1972,6 +1979,17 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		9E05BA221FE4004C005B967F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9E05BA231FE4004C005B967F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2086,6 +2104,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = yemonto/yemonto.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2138,6 +2157,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = yemonto/yemonto.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Yomento Management AB (2WECKNAJVA)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
@@ -2174,8 +2194,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardust.yomento;
 				PRODUCT_NAME = yemonto;
-				PROVISIONING_PROFILE = "433e1abc-bff5-42fa-a47c-2b69625c27f6";
-				PROVISIONING_PROFILE_SPECIFIER = "ad-hoc profile";
+				PROVISIONING_PROFILE = "8d3bd8e1-3490-496b-b481-6a16463ae4e4";
+				PROVISIONING_PROFILE_SPECIFIER = ios_distribution_provisioning;
 				SWIFT_OBJC_BRIDGING_HEADER = "yemonto-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";

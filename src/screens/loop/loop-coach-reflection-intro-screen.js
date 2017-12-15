@@ -67,16 +67,7 @@ export default class loopCoachReflectionIntroScreen extends Component {
           <GradientWrapper name={'intro'}>
             <View style={styles.introWrapper}>
               <Text style={styles.profileFinishHead}>{updatedTitle}</Text>
-              <HTML
-                containerStyle={{
-                  backgroundColor: 'transparent',
-                  position: 'absolute',
-                  left: 40,
-                  top: 210,
-                  right: 40,
-                }}
-                classesStyles={profileFinishText}
-                html={updatedDescription}/>
+              <Text style={styles.profileFinishText}>{updatedDescription}</Text>
               <PrimaryButton
                 style={styles.profileButton}
                 onPress={this.goToLoopEndNext}>

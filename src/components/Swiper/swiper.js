@@ -23,11 +23,11 @@ import HTMLView from 'react-native-htmlview'
 import { RatingComponent } from '../rating/rating'
 
 import { saveProfileRating } from 'src/actions'
-import { profileState } from '../../selectors/common'
+import { onBoardingSelector } from 'src/screens/on-boarding/onboarding.selector'
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'src/components/native-base'
 
 const {width, height} = Dimensions.get('window')
-@connect(profileState)
+@connect(onBoardingSelector)
 export default class SwiperComponent extends Component {
   constructor (props) {
     super(props)
@@ -184,7 +184,7 @@ export default class SwiperComponent extends Component {
     if (page.content_type === 'rate') {
       return (
         <View>
-          <View style={{marginVertical: 30}}>
+          <View style={{marginVertical: 0}}>
             <Text style={styles.ratingResult}>
               {this.state.value}
             </Text>
@@ -272,6 +272,24 @@ export default class SwiperComponent extends Component {
     }
     return null
   }
+
+  updateContent = (text) => {
+    const {auth, loop} = this.props
+    const userName = get(auth, 'userData.user.first_name')
+    const personName = get(loop, 'loopData.personName')
+    let originalText = text
+
+    if(userName) {
+      originalText = originalText.replace('<first_name>', userName)
+    }
+    if(personName) {
+      originalText = originalText.replace('<name_of_colleague>', personName)
+    }
+
+    return originalText
+  }
+
+
   renderBasicSlidePage = (index, page, total) => {
     const {
       title,
@@ -279,12 +297,16 @@ export default class SwiperComponent extends Component {
       content_type,
     } = page
     const {wrapperStyle, titleStyle, descriptionStyle, descWrapperStyle} = this.props
-    const htmlContent = `<div>${description}</div>`
+
+
+    const updatedTitle = this.updateContent(title)
+    const updatedDescription = this.updateContent(description)
+    const htmlContent = `<div>${updatedDescription}</div>`
 
     const pageView = (
       <View style={wrapperStyle}>
         <Animated.View>
-          <Text numberOfLines={3} style={titleStyle}>{title}</Text>
+          <Text numberOfLines={3} style={titleStyle}>{updatedTitle}</Text>
         </Animated.View>
         <Animated.View style={descWrapperStyle}>
           <HTMLView value={htmlContent} stylesheet={descriptionStyle}/>

@@ -2,13 +2,15 @@ import { StyleSheet, Dimensions } from 'react-native'
 import { lightTextMixin, regularTextMixin } from '../../styles/mixins'
 
 export default StyleSheet.create({
-  list: {},
+  list: {
+    marginTop: 2
+  },
 
   row: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical:2,
+    marginVertical:5,
     borderRadius: 8,
 
   },
@@ -19,7 +21,7 @@ export default StyleSheet.create({
   },
   optionWrapper: {
     width:Dimensions.get('window').width - 40,
-    height: 60,
+    height: 50,
     justifyContent:'center',
     alignItems: 'flex-start',
     paddingHorizontal:20,
@@ -27,7 +29,7 @@ export default StyleSheet.create({
   },
   multiChoiceText: {
     textAlign: 'left',
-  ...regularTextMixin(18),
+  ...lightTextMixin(20),
   },
   optionIndicator: {
     width: 40,

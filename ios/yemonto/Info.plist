@@ -23,18 +23,20 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>li4351894</string>
+				<string>fb386489758443257</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>10</string>
+	<string>13</string>
 	<key>CodePushDeploymentKey</key>
 	<string>rBN5vHwbRXAUiivgTg0rW1P7tDMK6de86c2a-973b-4f25-9914-22830c3cd7a1</string>
+	<key>FacebookAppID</key>
+	<string>386489758443257</string>
+	<key>FacebookDisplayName</key>
+	<string>yomento</string>
 	<key>LIAppId</key>
 	<string>4351894</string>
 	<key>LSApplicationQueriesSchemes</key>
@@ -140,19 +142,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-  <key>CFBundleURLTypes</key>
-  <array>
-    <dict>
-      <key>CFBundleURLSchemes</key>
-      <array>
-        <string>fb386489758443257</string>
-      </array>
-    </dict>
-  </array>
-  <key>FacebookAppID</key>
-  <string>386489758443257</string>
-  <key>FacebookDisplayName</key>
-  <string>yomento</string>
 </dict>
-
 </plist>

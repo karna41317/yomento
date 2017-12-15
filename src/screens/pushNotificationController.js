@@ -2,6 +2,7 @@
  * Created by Karan on 2017-12-09.
  */
 import React, { Component } from 'react'
+import {AppState} from 'react-native'
 import PushNotification from 'react-native-push-notification'
 
 export default class PushController extends Component {
@@ -19,6 +20,8 @@ export default class PushController extends Component {
       popInitialNotification: true,
       requestPermissions: true,
     })
+
+
 
   }
 

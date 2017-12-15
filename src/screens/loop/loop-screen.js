@@ -74,7 +74,6 @@ export default class LoopScreen extends Component {
 
     const {loop, navigation, dashboard} = this.props
     const currentLoop = get(loop, 'loop[0]')
-    console.log('printing', loop)
 
     if (!loop.fetching && currentLoop) {
       const currentLoop = get(loop, 'loop[0]')
@@ -82,13 +81,11 @@ export default class LoopScreen extends Component {
       const loopContent = eval(this.parseJson(loop.loop[0]))
       const whyContent = eval(this.parseJson(loopContent.why_content))
       const headerName = get(dashboard, 'newCard[0].theme_name', 'Intro')
-      console.log('printingwhyContent', whyContent)
 
       if (whyContent) {
 
         const data = whyContent[0].data[0]
         const htmlContent = `<p>${data.description}</p>`
-
         return (
           <GradientWrapper name={'default'}>
             <View style={styles.mainCard}>
@@ -113,20 +110,21 @@ export default class LoopScreen extends Component {
                         style={styles.title}>{data.title}</Text>
                 </Animated.View>
                 <Animated.View style={styles.descWrapper}>
-                  <HTML html={htmlContent} classesStyles={loopStyles}/>
+                  {/*<Text>{htmlContent} </Text>*/}
+                  <HTML html={htmlContent==="" ? "<p></p>" : htmlContent} classesStyles={loopStyles}/>
                 </Animated.View>
               </View>
 
               <View style={styles.buttonsWrapper}>
                 <View style={styles.why_buttons}>
                   <SecondaryButton
-                    style={{left: 20}}
+                    style={{left: 20, minWidth: 150}}
                     textStyles={{color: '#0F0F3D'}}
-                    onPress={this.notInterested.bind(this, currentLoop)}>Not
-                    Interested
+                    onPress={this.notInterested.bind(this, currentLoop)}>
+                    Not Interested
                   </SecondaryButton>
                   <PrimaryButton
-                    style={{left: 40}}
+                    style={{left: 40, minWidth: 150}}
                     onPress={this.goToIntroScreen}>Let's go</PrimaryButton>
                 </View>
               </View>

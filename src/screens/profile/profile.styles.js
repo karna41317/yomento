@@ -23,8 +23,8 @@ export const styles = StyleSheet.create({
   },
   profileFooterButtons: {
     position: 'absolute',
-    right: 30,
-    bottom: 20,
+    right: 50,
+    bottom: 50,
   },
   avatarCircle: {
     width: 100,
@@ -108,8 +108,8 @@ export const styles = StyleSheet.create({
   },
   profileButton: {
     position: 'absolute',
-    right: 10,
-    bottom: 20,
+    right: 50,
+    bottom: 50,
   },
   profileIntroHead: {
     position: 'absolute',

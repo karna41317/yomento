@@ -25,7 +25,7 @@ export default class OnBoarding extends Component {
   }
   doneBtnHandle = () => {
     const {navigation} = this.props
-    navigation.navigate('idealRatingIntro')
+    navigation.navigate('idealRatingMain')
   }
   nextBtnHandle = (index) => {
     console.log(index)

@@ -27,6 +27,7 @@ import MultipleChoice from '../multi-select/index'
 import HTML from 'react-native-render-html'
 import { Slider } from 'src/components/slider'
 import {updateLoopDetails} from 'src/actions'
+import { boldTextMixin } from '../../styles/mixins'
 
 const {width, height} = Dimensions.get('window')
 @connect(profileSelector)
@@ -230,23 +231,15 @@ export default class LoopSwiperComponent extends Component {
     return (
       <View style={{
         position: 'absolute',
-        top: 150,
-        left: 20,
-        right: 20,
+        top: 100,
+        left: 30,
+        right: 30,
       }}>
-        <Image
-          style={{
-            width: 50,
-            height: 50,
-            alignSelf: 'center',
-          }}
-          source={require('src/images/padIcon.png')}
-        />
         <Text style={[
           styles.tapText,
           {
-            fontSize: 20,
-            marginHorizontal: 30,
+            ...boldTextMixin(18),
+            textAlign: 'left',
             marginVertical: 20,
           }]}>
           {updatedTitle}
@@ -355,13 +348,16 @@ export default class LoopSwiperComponent extends Component {
 
     let options = dataObject.options[0].data
     let max_select = dataObject.options[0].max_select
+
+    const optionTitle = max_select ===1 ? 'Select one Option' : 'Select any releavant'
+
     if (options) {
       return (
         <View style={{position: 'absolute', top: 100, left: 20, right: 20}}>
           <Text style={styles.tapText}>
             {updatedTitle}
           </Text>
-          <Text style={styles.authorText}>select Option</Text>
+          <Text style={styles.authorText}>{optionTitle}</Text>
           <MultipleChoice
             options={options}
             selectedOptions={this.state.selectedOptions}
@@ -380,7 +376,7 @@ export default class LoopSwiperComponent extends Component {
     return (
       <View style={{position: 'absolute', top: 150, left: 20, right: 20}}>
         <Text style={styles.quoteText}>
-          {updatedTitle}
+          "{updatedTitle}"
         </Text>
         <Text style={styles.authorText}>{Author}</Text>
       </View>
@@ -414,6 +410,9 @@ export default class LoopSwiperComponent extends Component {
     const updatedDescription = this.updateContent(description)
 
     const htmlContent = `${updatedDescription}`
+    console.log('printinghtmlContent', htmlContent)
+
+
     const wrapperStyle = {
       position: 'absolute',
       top: seq_order === 1 ? 200 : 100,
@@ -432,11 +431,14 @@ export default class LoopSwiperComponent extends Component {
       marginVertical: seq_order === 1 ? 20 : 0,
     }
 
+    const renderers = {
+      p: (htmlAttribs, children, convertedCSSStyles, passProps) => children
+    }
     return (
       <View style={wrapperStyle}>
         <Image style={imageStyle} source={require('src/images/padIcon.png')}/>
         <Text style={[styles.tapText, textStyle]}>{updatedTitle}</Text>
-        <HTML html={htmlContent} classesStyles={loopStyles}/>
+        <HTML html={htmlContent === "" ? "<p></p>" : htmlContent} classesStyles={loopStyles} />
       </View>
     )
   }
@@ -520,10 +522,10 @@ export default class LoopSwiperComponent extends Component {
     const {data, seq_order} = page
     const dataObject = data[0]
     const {content_type} = dataObject
-    console.log('printingdataObject', dataObject)
+    //console.log('printingdataObject', dataObject)
 
     return (
-      <GradientWrapper key={index} name={this.props.name}>
+      <GradientWrapper key={index} name={this.props.screenName}>
         <View style={{flex: 1}}>
           {this.getSwiperHeader(index, total, content_type)}
           {this.renderIntroPages(dataObject, seq_order, page)}

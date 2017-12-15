@@ -14,7 +14,7 @@ class Yomento extends Component {
 
   componentDidMount () {
     console.disableYellowBox = true
-    AppState.addEventListener('change', this.handleAppStateChange)
+    //AppState.addEventListener('change', this.handleAppStateChange)
     CodePush.sync({
       updateDialog: true,
       installMode: CodePush.InstallMode.IMMEDIATE,
@@ -23,7 +23,7 @@ class Yomento extends Component {
   }
 
   componentWillUnmount () {
-    AppState.removeEventListener('change', this.handleAppStateChange)
+    //AppState.removeEventListener('change', this.handleAppStateChange)
   }
 
   handleAppStateChange (appState) {
@@ -37,7 +37,7 @@ class Yomento extends Component {
 
   constructor () {
     super()
-    this.handleAppStateChange = this.handleAppStateChange.bind(this)
+    //this.handleAppStateChange = this.handleAppStateChange.bind(this)
     this.state = {restartAllowed: true}
   }
 
@@ -138,6 +138,8 @@ class Yomento extends Component {
   }
 
   render () {
+
+
 
     return (
       <Store>

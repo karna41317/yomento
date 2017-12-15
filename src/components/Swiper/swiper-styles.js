@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
   },
   ratingResult: {
     textAlign: 'center',
-    fontSize: 80,
+    fontSize: 60,
     color: '#419BF9',
     shadowColor: '#419BF9',
     shadowOffset: {

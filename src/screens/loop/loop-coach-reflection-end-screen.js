@@ -56,11 +56,14 @@ export default class loopCoachReflectionEndScreen extends Component {
         const loopStyles = get(loop, 'loopStyles[0]', {})
         const updatedTitle = this.updateContent(title)
         const updatedDescription = this.updateContent(description)
+        console.log('printing demi', updatedDescription)
+
         return (
           <GradientWrapper name={'intro'}>
             <View style={styles.introWrapper}>
-              <Text style={styles.profileFinishHead}>{title}</Text>
-              <Text style={styles.profileFinishText}>{description}</Text>
+              <Text style={styles.profileFinishHead}>{updatedTitle}</Text>
+              <Text style={styles.profileFinishText}>{updatedDescription}</Text>
+
               <PrimaryButton
                 style={styles.profileButton}
                 onPress={this.goToLoopEndNext}>

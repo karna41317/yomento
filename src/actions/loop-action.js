@@ -59,13 +59,14 @@ export const updateCards = (parameteres, navigation) => {
     }
     const card_type = get(params, 'pathParams.card_type')
     const nextScreen = get(parameteres, 'nextScreen')
+    let routeParams = get(parameteres, 'routeParams')
 
 
     try {
       apiModule.updateCard(token, params).then(data => {
         if (data.status && data.status === 'success') {
           if (nextScreen) {
-            navigation.navigate(nextScreen)
+            navigation.navigate(nextScreen, routeParams)
             dispatch({
               type: Types.UPDATE_CARD,
               payload: data,

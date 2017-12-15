@@ -7,35 +7,34 @@ export class PrimaryButton extends Component {
   disabled = () => {
 
   }
-
   onPress = () => {
-    if(this.props.disable) {
+    if (this.props.disable) {
       this.disabled()
     } else {
       this.props.onPress()
     }
   }
+
   render () {
     const {children, upper, onPress, style, textStyles, disable} = this.props
-    const textString = upper? toUpper(children) : children
-
+    const textString = upper ? toUpper(children) : children
     const disableStyle = {
-      opacity: 0.5
+      opacity: 0.5,
     }
-
 
     let stylesList
-    if(disable) {
-      stylesList =  [style, disableStyle]
+    if (disable) {
+      stylesList = [style, disableStyle]
     } else {
-      stylesList =  [style]
+      stylesList = [style]
     }
 
-
     return (
-      <TouchableOpacity disable={disable} style={[styles.primaryContainer, style]}
-                        onPress={this.onPress}>
-        <Text style={[styles.primaryText, textStyles]} numberOfLines={1}>{textString}</Text>
+      <TouchableOpacity
+        disable={disable}
+        style={[styles.primaryContainer, style]}
+        onPress={this.onPress}>
+        <Text style={[styles.primaryText, textStyles]}  numberOfLines={1}>{textString}</Text>
       </TouchableOpacity>
     )
   }
@@ -46,15 +45,19 @@ export class SecondaryButton extends Component {
   render () {
     const {children, upper, onPress, style, textStyles, transparent, disable} = this.props
     return (
-      <TouchableOpacity  disable={disable} style={[styles.secondaryContainer, style]}
-                         onPress={onPress}>
-        <Text style={[styles.secondaryText, textStyles]} numberOfLines={1}>{upper
+      <TouchableOpacity
+        disable={disable}
+        style={[styles.secondaryContainer, style]}
+        onPress={onPress}>
+        <Text style={[styles.secondaryText, textStyles]} numberOfLines={1}>{
+          upper
           ? toUpper(children)
           : children}</Text>
       </TouchableOpacity>
     )
   }
 }
+
 
 const styles = StyleSheet.create({
   primaryContainer: {
@@ -63,7 +66,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#0079FF',
     borderRadius: 30,
     alignItems: 'stretch',
-    shadowColor: '#000000',
+    shadowColor: '#0079FF',
     shadowOpacity: 0.5,
     shadowRadius: 2,
     minWidth: 150,
@@ -79,15 +82,17 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     minWidth: 150,
     borderColor: '#9595A4',
-    borderWidth:1,
+    borderWidth: 1,
     alignItems: 'stretch',
   },
   primaryText: {
     textAlign: 'center',
-    ...semiBoldTextMixin(14, '#FFF')
+    ...semiBoldTextMixin(12, '#FFF'),
+    alignSelf: 'center'
   },
   secondaryText: {
     textAlign: 'center',
-    ...semiBoldTextMixin(14, '#FFF')
+    ...semiBoldTextMixin(14, '#FFF'),
+    alignSelf: 'center'
   },
 })

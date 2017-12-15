@@ -3,6 +3,7 @@ import { AsyncStorage } from 'react-native'
 const STATE_STORAGE_KEY = 'yemontoAppState:Latest'
 
 export async function resetSnapshot () {
+  await clear()
   const state = await rehydrate()
   if (state) {
     return state

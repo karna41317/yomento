@@ -173,11 +173,11 @@ export default class DashboardScreen extends Component {
     if (reminderCards && reminderCards.length > 0) {
       let haveMaxCard = false
       const sortByLatest = sortBy(reminderCards, card => {
-        return new Moment(Number(card.card_time)).format('Do MMM h:mm')
-      }).reverse()
+        return new Moment(Number(card.card_time)).format('Do MMM H:mm')
+      })
       return map(sortByLatest, (card, index) => {
-        const isTimePassed = Moment(Date.now()).
-          isAfter(Number(card.reminder_time))
+        const current = Moment(new Date()).unix()
+        const isTimePassed = Moment(current).isAfter(Number(card.reminder_time))
 
         /*
           normal height if deadline is not crossed,
@@ -201,8 +201,7 @@ export default class DashboardScreen extends Component {
           backgroundColor: '#FFFBCD',
         }
 
-        const reminderTime = Moment(new Date(Number(card.reminder_time))).
-          format('Do MMM h:mm')
+        const reminderTime = Moment.unix(Number(card.reminder_time)).format('Do MMM H:mm')
         return (
           <View
             style={[styles.completedCard, style]}
@@ -214,7 +213,9 @@ export default class DashboardScreen extends Component {
                 </Text>
                 <Text style={[
                   styles.profileIntroHead,
-                  styles.reminderWrapper]}>
+                  styles.reminderWrapper, {
+                    borderColor: reminderColor,
+                  }]}>
                   <Icon name={'ios-time-outline'}
                         style={{fontSize: 20, color: reminderColor}}/>
                   {'    '}
@@ -256,8 +257,10 @@ export default class DashboardScreen extends Component {
     if (reminderCards && reminderCards.length > 0) {
       let reminderTimeArrays = []
       map(reminderCards, card => {
-        const timePassed = Moment(Date.now()).
-          isAfter(Number(card.reminder_time))
+
+        const current = Moment(new Date()).unix()
+        const timePassed = Moment(current).isAfter(Number(card.reminder_time))
+
         reminderTimeArrays.push(timePassed)
       })
       reminderTimePassed = includes(reminderTimeArrays, true)
@@ -338,7 +341,9 @@ export default class DashboardScreen extends Component {
       let customStyles = {}
       const mainCard = newCard[0]
       const isTimePassed = this.isReminderCardTimePassed()
-      const height = (isTimePassed || reflectionCards.length > 0) ?  normalHeight : extendedHeight
+      console.log('printingisTimePassed || reflectionCards.length > 0', isTimePassed )
+
+      const height = (isTimePassed || reflectionCards.length > 0) ? normalHeight : extendedHeight
 
       if (onlyMainCard) {
         customStyles = {

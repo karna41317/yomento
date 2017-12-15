@@ -12,28 +12,28 @@ import { styles, htmlStyles } from './profile.styles'
 import Button from '../../components/form/customButton'
 import { PrimaryButton } from '../../components/buttons/Button'
 import GradientWrapper from '../../components/partials/gradientWrapper'
-import {launchFirstTime} from 'src/actions'
+
 @connect()
-export default class selfRatingFinishScreen extends Component {
+export default class selfRatingMainScreen extends Component {
 
   componentDidMount () {
   }
 
-  goToProfile = () => {
-    this.props.dispatch(launchFirstTime())
-    this.props.navigation.navigate('profile')
+  goToIdealRating = () => {
+    this.props.navigation.navigate('selfRatingIntro')
   }
 
   render () {
     return (
       <GradientWrapper name={'intro'}>
         <View style={styles.introWrapper}>
-          <Text style={styles.profileFinishHead}>Now, take a look at
-            this!</Text>
-          <Text style={styles.profileFinishText}>Let me show you your own
-            leadership profile.</Text>
-          <PrimaryButton style={styles.profileButton}
-                         onPress={this.goToProfile}>SHOW ME!</PrimaryButton>
+          <View style={styles.regularCard}>
+            <Text style={styles.profileIntroHead}>PROFILE</Text>
+            <Text style={styles.profileIntroText}>Rate yourself as a leader</Text>
+            <PrimaryButton style={styles.profileButton}
+                           onPress={this.goToIdealRating}>START</PrimaryButton>
+          </View>
+
         </View>
       </GradientWrapper>
     )

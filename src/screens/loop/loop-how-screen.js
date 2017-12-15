@@ -7,10 +7,6 @@ import { View, Text, Animated, ActivityIndicator } from 'react-native'
 import { connect } from 'react-redux'
 import { loopSelector } from './loopSelector'
 import { styles, htmlStyles } from './loop-styles'
-import GradientWrapper from '../../components/partials/gradientWrapper'
-import { Header, Left, Right, Body, Icon, Button } from 'src/components/native-base'
-import HTMLView from 'react-native-htmlview'
-import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import LoopSwiperComponent from 'src/components/Swiper/loop-swiper'
 import { get } from 'lodash'
 import {updateCards} from 'src/actions'
@@ -90,6 +86,8 @@ export default class LoopHowScreen extends Component {
       const {dashboard} = this.props
       const headerName = get(dashboard, 'newCard[0].theme_name', 'Intro')
       if (how_content) {
+        console.log('printinghow_content', how_content)
+
         return (
           <LoopSwiperComponent
             navigation={navigation}

@@ -26,6 +26,7 @@ export default class GradientWrapper extends Component {
             {this.props.children ? this.props.children : null}
           </LinearGradient>
         )
+      case 'profile':
       case 'rate' :
         return (
           <LinearGradient colors={[
@@ -39,6 +40,7 @@ export default class GradientWrapper extends Component {
       case 'reminder' :
       case 'how' :
       case 'loophow' :
+      case 'profile':
         return (
           <LinearGradient colors={[
             '#FFFBCD',
