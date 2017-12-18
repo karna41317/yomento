@@ -94,6 +94,8 @@
 	<string>This app does not require access to the microphone.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app requires access to the photo library.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>App needs your agreement to access reminders</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Entypo.ttf</string>
@@ -125,6 +127,10 @@
 		<string>TabletGothic-SemiBoldOblique.ttf</string>
 		<string>TabletGothic-Thin.ttf</string>
 		<string>TabletGothic-ThinOblique.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

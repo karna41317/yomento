@@ -30,7 +30,7 @@ class Yomento extends Component {
     if (appState === 'background') {
       PushNotification.localNotificationSchedule({
         message: 'My Notification Message', // (required)
-        date: new Date(Date.now() + (6 * 1000)) // in 60 secs
+        date: new Date(Date.now() + (20 * 1000)) // in 60 secs
       })
     }
   }

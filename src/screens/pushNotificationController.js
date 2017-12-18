@@ -1,9 +1,37 @@
 import React, { Component } from 'react'
 import { AppState } from 'react-native'
 import PushNotification from 'react-native-push-notification'
-import Pusher from 'pusher-js/react-native'
+import RNCalendarReminders from 'react-native-calendar-reminders';
+import OneSignal from 'react-native-onesignal';
 
 export default class PushController extends Component {
+  componentWillMount() {
+    OneSignal.addEventListener('received', this.onReceived);
+    OneSignal.addEventListener('opened', this.onOpened);
+    OneSignal.addEventListener('registered', this.onRegistered);
+    OneSignal.addEventListener('ids', this.onIds);
+  }
+  componentWillUnmount() {
+    OneSignal.removeEventListener('received', this.onReceived);
+    OneSignal.removeEventListener('opened', this.onOpened);
+    OneSignal.removeEventListener('registered', this.onRegistered);
+    OneSignal.removeEventListener('ids', this.onIds);
+  }
+  onOpened(openResult) {
+    console.log('Message: ', openResult.notification.payload.body);
+    console.log('Data: ', openResult.notification.payload.additionalData);
+    console.log('isActive: ', openResult.notification.isAppInFocus);
+    console.log('openResult: ', openResult);
+  }
+
+  onRegistered(notifData) {
+    console.log("Device had been registered for push notifications!", notifData);
+  }
+
+  onIds(device) {
+    console.log('Device info: ', device);
+  }
+
   componentDidMount () {
     PushNotification.configure({
       onNotification: function (notification) {
@@ -19,17 +47,14 @@ export default class PushController extends Component {
       requestPermissions: true,
     })
 
-    Pusher.logToConsole = true
+    RNCalendarReminders.authorizeEventStore()
+    .then(status => {
+      console.log('printing status', status)
 
-    const pusher = new Pusher('a5b3fa8839d4a6a94840', {
-      cluster: 'eu',
-      encrypted: true,
     })
-
-    const channel = pusher.subscribe('my-channel')
-    channel.bind('my-event', function (data) {
-      console.log('pringingdevicetoken', data)
-    })
+    .catch(error => {
+      // handle error
+    });
 
   }
 

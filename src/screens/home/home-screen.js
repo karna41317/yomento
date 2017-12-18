@@ -16,8 +16,8 @@ import { SecondaryButton } from '../../components/buttons/Button'
 import { getLoopStyles } from 'src/actions'
 import {map} from 'lodash'
 import Moment from 'moment'
-import PushNotification from 'react-native-push-notification'
 const logo = require('src/images/mercury_logo.png')
+import Mixpanel from 'react-native-mixpanel'
 
 @connect(homeSelector)
 export default class Home extends Component {
@@ -40,6 +40,7 @@ export default class Home extends Component {
   componentDidMount () {
     this.props.dispatch(getLoopStyles())
     AppState.addEventListener('change', this._handleAppStateChange)
+    var Mixpanel = require('react-native-mixpanel');
   }
 
   componentWillUnmount () {
@@ -47,20 +48,19 @@ export default class Home extends Component {
   }
 
   componentDidUpdate() {
-    if(this.state.appState === 'background' || this.state.appState === 'inactive' ) {
+    if(this.state.appState === 'inactive' ) {
       let isTimePassed = false
       const {dashboard: {reminderCards}} = this.props
       map(reminderCards, card=> {
         const current = Moment(new Date()).unix()
         isTimePassed = Moment(current).isAfter(Number(card.reminder_time))
         if(isTimePassed) {
-          PushNotification.localNotificationSchedule({
-            message: 'My Notification Message', // (required)
-            date: new Date(Number(card.reminder_time) + (6 * 1000)) // in 60 secs
-          })
+          /*PushNotification.localNotificationSchedule({
+            message: 'push notification when app killed', // (required)
+            date: new Date(Number(card.reminder_time) + (10 * 1000)) // in 60 secs
+          })*/
         }
       })
-
     }
   }
 
