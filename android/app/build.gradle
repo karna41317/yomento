@@ -139,6 +139,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-fbsdk')
     compile project(':react-native-onesignal')
     compile project(':react-native-mixpanel')
     compile project(':appcenter-crashes')

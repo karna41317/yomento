@@ -6,18 +6,14 @@ import TextFont from '../../components/typography/textFont'
 import { View, StyleSheet, AsyncStorage, Image, Text, Dimensions, AppState } from 'react-native'
 import { Button } from 'src/components/buttons'
 import { Button as RNEButton } from 'react-native-elements'
-import LinkedinLogin from 'react-native-linkedin-login'
 import GradientWrapper from 'src/components/partials/gradientWrapper'
-import { loginWithLinkedIn, loginSuccess, loginFailure, loginLocal, linkedInLogout } from 'src/actions/auth-action'
-import * as Constans from 'src/constants'
 import { homeSelector } from './home-selector'
 import { regularTextMixin, semiBoldTextMixin } from '../../styles/mixins'
 import { SecondaryButton } from '../../components/buttons/Button'
 import { getLoopStyles } from 'src/actions'
-import {map} from 'lodash'
-import Moment from 'moment'
+import {map, get} from 'lodash'
 const logo = require('src/images/mercury_logo.png')
-import Mixpanel from 'react-native-mixpanel'
+import {logEvents} from 'src/services/analytics'
 
 @connect(homeSelector)
 export default class Home extends Component {
@@ -28,104 +24,29 @@ export default class Home extends Component {
       user: null,
       appState: AppState.currentState
     }
-    //this.goToLinkedInLogin = this.goToLinkedInLogin.bind(this)
   }
 
-  componentWillMount () {
-    /*const linkedInScopes = ['r_emailaddress', 'r_basicprofile']
-    LinkedinLogin.init(linkedInScopes)
-    this.getUserSession()*/
-  }
+  componentWillMount = () => {
+    const {auth: {userData}, profile} = this.props
+    if (userData) {
+      const token = get(userData, 'authorization')
+      const isValid = token.includes('Bearer')
+      if (isValid) {
+        const profileCreated = get(profile, 'profileCreated')
+        console.log('printingprofileCreated', profileCreated)
 
-  componentDidMount () {
-    this.props.dispatch(getLoopStyles())
-    AppState.addEventListener('change', this._handleAppStateChange)
-    var Mixpanel = require('react-native-mixpanel');
-  }
-
-  componentWillUnmount () {
-    AppState.removeEventListener('change', this._handleAppStateChange)
-  }
-
-  componentDidUpdate() {
-    if(this.state.appState === 'inactive' ) {
-      let isTimePassed = false
-      const {dashboard: {reminderCards}} = this.props
-      map(reminderCards, card=> {
-        const current = Moment(new Date()).unix()
-        isTimePassed = Moment(current).isAfter(Number(card.reminder_time))
-        if(isTimePassed) {
-          /*PushNotification.localNotificationSchedule({
-            message: 'push notification when app killed', // (required)
-            date: new Date(Number(card.reminder_time) + (10 * 1000)) // in 60 secs
-          })*/
+        if(profileCreated) {
+          this.props.navigation.navigate('dashboard')
+        } else {
+          this.props.navigation.navigate('onBoarding')
         }
-      })
+      }
     }
   }
 
-  _handleAppStateChange = (nextAppState) => {
-    /*if (nextState === 'background') {
-
-    }*/
-    this.setState({appState: nextAppState})
-  }
-
-
-  getUserSession () {
-    AsyncStorage.getItem('user', (err, result) => {
-      if (result) {
-        //const user = JSON.parse(result)
-        LinkedinLogin.setSession(user.accessToken, user.expiresOn)
-      }
-      console.log('linkedin', err)
-    })
-  }
-
- /* goToLinkedInLogin () {
-    const {dispatch} = this.props
-    /!*dispatch(loginWithLinkedIn({
-      authType: Constans.LINKEDIN,
-    }))*!/
-
-    LinkedinLogin.login().then(user => {
-      console.log('printinguser', user)
-
-      this.getUserProfile(user)
-    }).catch(e => {
-      //var err = JSON.parse(e.description)
-      /!*dispatch(loginFailure({
-        authType: Constans.LINKEDIN,
-      }))*!/
-    })
-    return true
-  }*/
-
-  goToLinkedInLogout () {
-    LinkedinLogin.logout()
-    AsyncStorage.removeItem('user')
-    this.props.dispatch(linkedInLogout({
-      authType: Constans.LINKEDIN,
-    }))
-  }
-
-  getUserProfile (user) {
-    LinkedinLogin.getProfile(user).then((data) => {
-      let userData = {
-        email: data.emailAddress,
-        username: data.firstName,
-        source: 'linkedin',
-      }
-      this.props.dispatch(registerUser(userData))
-      //this.props.navigation.navigate('onBoarding')
-      /*     AsyncStorage.setItem('user', JSON.stringify(userData), () => {
-             this.getUserProfileImage()
-           })*/
-    }).catch((e) => {
-      dispatch(loginFailure({
-        authType: Constans.LINKEDIN,
-      }))
-    })
+  componentDidMount () {
+    //this.props.dispatch(getLoopStyles())
+    logEvents('app.launched', {})
   }
 
   goToLogin = () => {
@@ -153,21 +74,6 @@ export default class Home extends Component {
           </ViewWrapper>
           <ViewWrapper>
             <TextFont style={styles.member}>Become a member</TextFont>
-            {/*<RNEButton
-              onPress={this.goToLinkedInLogin}
-              style={{backgroundColor: 'transparent'}}
-              backgroundColor={'#2B7AB6'}
-              color={'white'}
-              buttonStyle={styles.rneButton}
-              borderRadius={30}
-              raised
-              large
-              leftIcon={{
-                name: 'logo-linkedin',
-                type: 'ionicon',
-                color: 'white',
-              }}
-              title='Sign in with LinkedIn'/>*/}
             <RNEButton
               onPress={this.goToSignUp}
               backgroundColor={'#D5EDFF'}

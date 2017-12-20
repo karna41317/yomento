@@ -7,11 +7,22 @@ import GradientWrapper from '../../components/partials/gradientWrapper'
 import { get } from 'lodash'
 import { loopSelector } from './loopSelector'
 import HTML from 'react-native-render-html'
+import {logEvents} from '../../services/analytics'
+
+const sequenceNumber = 0
+
 @connect(loopSelector)
 export default class loopCoachReminderEndScreen extends Component {
 
   goToLoopEndNext = () => {
-    this.props.navigation.navigate('loopReminderEndNext')
+    const {navigation, dashboard} = this.props
+    const themeName = get(dashboard, 'newCard[0].theme_name', 'Intro')
+    this.fireEvents(`${themeName}.loopReminderScreenEnd.${sequenceNumber}.button.next`)
+    navigation.navigate('loopReminderEndNext')
+  }
+
+  fireEvents = (eventName) => {
+    logEvents(eventName)
   }
 
   parseJson = (content) => {

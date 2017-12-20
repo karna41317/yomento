@@ -11,6 +11,7 @@ import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import { profileSelector } from './profile.selector'
 import { get, toLower } from 'lodash'
 import {logOut} from 'src/actions'
+import {logEvents} from 'src/services/analytics'
 
 @connect(profileSelector)
 export default class ProfileDetailsScreen extends Component {
@@ -23,7 +24,12 @@ export default class ProfileDetailsScreen extends Component {
     this.props.navigation.navigate('readMore')
   }
 
-  openUrl = (url) => {
+  fireEvents = (eventName) => {
+    logEvents(eventName)
+  }
+
+  openUrl = (url, name) => {
+
     Linking.canOpenURL(url).then(supported => {
       if (!supported) {
         console.log('Can\'t handle url: ' + url)
@@ -40,11 +46,13 @@ export default class ProfileDetailsScreen extends Component {
           {cancelable: false},
         )
       } else {
+        this.fireEvents(`profileDetails.clicked${name}`)
         return Linking.openURL(url)
       }
     }).catch(err => console.error('An error occurred', err))
   }
   logOutUser = () => {
+    this.fireEvents('profileDetails.loggedOut')
     this.props.dispatch(logOut())
     this.props.navigation.navigate('home')
   }
@@ -105,7 +113,7 @@ export default class ProfileDetailsScreen extends Component {
               Leadership Approach
             </SecondaryButton>
             <SecondaryButton
-              onPress = {this.openUrl.bind(this, 'http://www.yomento.com/faq')}
+              onPress = {this.openUrl.bind(this, 'http://www.yomento.com/faq', 'Faq')}
               style={[
                 styles.profileSecondaryButtons,
                 styles.profileDetailsButtons]}
@@ -113,7 +121,7 @@ export default class ProfileDetailsScreen extends Component {
               FAQ
             </SecondaryButton>
             <SecondaryButton
-              onPress = {this.openUrl.bind(this, 'mailto:hello@yomento.com')}
+              onPress = {this.openUrl.bind(this, 'mailto:hello@yomento.com', 'Send feedback')}
               style={[
                 styles.profileSecondaryButtons,
                 styles.profileDetailsButtons]}
@@ -130,12 +138,12 @@ export default class ProfileDetailsScreen extends Component {
               Sign out
             </SecondaryButton>
             <SecondaryButton
-              onPress = {this.openUrl.bind(this, 'http://www.yomento.com/toc')}
+              onPress = {this.openUrl.bind(this, 'http://www.yomento.com/toc', 'Terms and conditions')}
               style={[styles.profileSecondaryButtons, {borderWidth: 0}]}
               textStyles={styles.profileDetailsText}>
               Terms and confitions</SecondaryButton>
             <SecondaryButton
-              onPress = {this.openUrl.bind(this, 'http://www.yomento.com/privacy-policy')}
+              onPress = {this.openUrl.bind(this, 'http://www.yomento.com/privacy-policy', 'Privacy')}
               style={[styles.profileSecondaryButtons, {borderWidth: 0}]}
               textStyles={styles.profileDetailsText}>
               Privacy policy</SecondaryButton>

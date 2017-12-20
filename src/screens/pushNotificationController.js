@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { AppState } from 'react-native'
+import { AppState, AsyncStorage, Platform } from 'react-native'
 import PushNotification from 'react-native-push-notification'
-import RNCalendarReminders from 'react-native-calendar-reminders';
 import OneSignal from 'react-native-onesignal';
+import Mixpanel from 'react-native-mixpanel'
 
 export default class PushController extends Component {
   componentWillMount() {
@@ -29,7 +29,12 @@ export default class PushController extends Component {
   }
 
   onIds(device) {
-    console.log('Device info: ', device);
+    const {userId, pushToken} = device
+    Mixpanel.identify(userId)
+    if(Platform.OS=== 'ios') {
+      Mixpanel.addPushDeviceToken(pushToken)
+    }
+    AsyncStorage.setItem('deviceInfo', JSON.stringify(device))
   }
 
   componentDidMount () {
@@ -46,16 +51,6 @@ export default class PushController extends Component {
       popInitialNotification: true,
       requestPermissions: true,
     })
-
-    RNCalendarReminders.authorizeEventStore()
-    .then(status => {
-      console.log('printing status', status)
-
-    })
-    .catch(error => {
-      // handle error
-    });
-
   }
 
   render () {

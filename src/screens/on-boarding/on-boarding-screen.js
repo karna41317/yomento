@@ -12,12 +12,20 @@ import demoData from './demo-data'
 import { getProfileContent } from 'src/actions'
 import { profileState } from 'src/selectors'
 import { styles, htmlStyles } from './onboarding.styles'
-
+import {logEvents} from 'src/services/analytics'
+import {get} from 'lodash'
 @connect(profileState)
 export default class OnBoarding extends Component {
 
+
   componentDidMount () {
     this.props.dispatch(getProfileContent())
+    this.fireEvents(`OnBoarding.launched`)
+  }
+
+  fireEvents = (eventName) => {
+
+    logEvents(eventName)
   }
 
   onSkipBtnHandle = (index) => {
@@ -25,6 +33,7 @@ export default class OnBoarding extends Component {
   }
   doneBtnHandle = () => {
     const {navigation} = this.props
+    this.fireEvents(`OnBoarding.navigateTo.ProfileIdealRating`)
     navigation.navigate('idealRatingMain')
   }
   nextBtnHandle = (index) => {

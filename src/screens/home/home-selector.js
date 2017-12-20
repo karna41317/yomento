@@ -5,13 +5,15 @@ import { createSelector } from 'reselect'
 
 import {
   dashboardState,
-  authState
+  authState,
+  profileState
 } from '../../selectors/common'
 
 export const homeSelector = createSelector(
-  [dashboardState,authState],
-  (dashboard, auth) => ({
+  [dashboardState,authState, profileState],
+  (dashboard, auth, profile) => ({
     dashboard,
-    auth
+    auth,
+    profile
   }),
 )

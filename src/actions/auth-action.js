@@ -4,7 +4,7 @@
 import * as Types from 'src/action-types'
 import { apiModule } from 'src/api'
 import { Alert } from 'react-native'
-
+import {logEvents} from 'src/services/analytics'
 export const loginLocal = (user) => ({
   type: Types.LOGIN_LOCAL,
   payload: user,
@@ -79,11 +79,14 @@ export const registerUser = (user, navigation) => {
           type: Types.LOGIN_SUCCESS,
           payload: userData,
         })
+        logEvents('user.signup.success')
         if (data.profile_created === 'no') {
           navigation.navigate('onBoarding')
         } else {
           navigation.navigate('dashboard')
         }
+      } else {
+        logEvents('user.signup.failure')
       }
     })
   }
@@ -100,6 +103,7 @@ export const loginUser = (username, password, navigation) => {
         })
       }
       if (data.status === 'success') {
+        logEvents('user.logged.success')
         const userData = {
           ...data,
           authorization: data.token_type + ' ' + data.token_access,
@@ -113,6 +117,8 @@ export const loginUser = (username, password, navigation) => {
         } else {
           navigation.navigate('dashboard')
         }
+      } else {
+        logEvents('user.logged.failed')
       }
     })
   }

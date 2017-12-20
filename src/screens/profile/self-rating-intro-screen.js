@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { View, Text, Dimensions,StyleSheet } from 'react-native'
+import { View, Text, Dimensions, StyleSheet } from 'react-native'
 import GradientWrapper from '../../components/partials/gradientWrapper'
-import { Container, Header, DeckSwiper, Card, CardItem, Thumbnail, Left,Right, Body, Icon, Button } from 'src/components/native-base'
+import { Container, Header, DeckSwiper, Card, CardItem, Thumbnail, Left, Right, Body, Icon, Button } from 'src/components/native-base'
 import { styles } from './profile.styles'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import Radar from 'src/components/radar_chart/Radar'
@@ -11,6 +11,7 @@ import { profileLanunched, getDashboardCards } from 'src/actions'
 import { map, get, each, snakeCase, toLower, toUpper, upperFirst, startCase, reject, has, some, find } from 'lodash'
 import HTML from 'react-native-render-html'
 import { boldTextMixin, regularTextMixin, semiBoldTextMixin } from '../../styles/mixins'
+import { logEvents } from 'src/services/analytics'
 
 @connect(profileSelector)
 export default class selfRatingIntroScreen extends Component {
@@ -22,13 +23,19 @@ export default class selfRatingIntroScreen extends Component {
     return JSON.parse(JSON.stringify(content))
   }
 
-  goToIdealRating = () => {
+  goToSelfRating = () => {
+    this.fireEvents('profile.selfRating.coachScreen.button.next')
     this.props.navigation.navigate('selfRatingLoop')
   }
+
   closePress = () => {
+    this.fireEvents('profile.selfRating.coachScreen.button.close')
     this.props.navigation.goBack()
   }
 
+  fireEvents = (eventName) => {
+    logEvents(eventName)
+  }
 
   updateContent = (text) => {
     const {auth, loop} = this.props
@@ -45,26 +52,19 @@ export default class selfRatingIntroScreen extends Component {
 
     return originalText
   }
+
   getHeader = () => {
     return (
       <Header backgroundColor={'transparent'} style={customStyles.header}>
-        <Left>
-
-        </Left>
+        <Left></Left>
         <Body>
-        {/*<Button
-          iconLeft transparent rounded bordered info
-          onPress={this.scrollToFinished}
-          style={customStyles.finishedButton}>
-
-        </Button>*/}
         <Text style={customStyles.finishedText}>PROFILE</Text>
         </Body>
         <Right>
           <Button transparent onPress={this.closePress}>
-            <Icon name='close'
-
-                  style={{fontSize: 40, color: '#419BF9'}}/>
+            <Icon
+              name='close'
+              style={{fontSize: 40, color: '#419BF9'}}/>
           </Button>
         </Right>
       </Header>
@@ -72,21 +72,17 @@ export default class selfRatingIntroScreen extends Component {
   }
 
   render () {
-    console.log('printing', this.props)
+
     const {profile} = this.props
     const introResponse = get(profile, 'intro_content')
-    console.log('printing', introResponse)
+
     if (!profile.fetching && introResponse) {
       const loopContent = eval(this.parseJson(introResponse))
-
       const selfResponse = find(loopContent, {screen_type: 'myself_intro_why'})
-      console.log('printing', selfResponse)
       const selfDescription = eval(this.parseJson(selfResponse.description))
-      console.log('printing', selfDescription)
       const buttonText = get(selfDescription[0], 'buttons[0].text')
       const title = get(selfDescription[0], 'data[0].title')
       const description = get(selfDescription[0], 'data[0].description')
-
       const viewDescription = `<View >${description}</View>`
       const updateDescription = this.updateContent(viewDescription)
 
@@ -121,15 +117,15 @@ export default class selfRatingIntroScreen extends Component {
                     textAlign: 'left',
                   },
                 }}
-                html={updateDescription==="" ? "<p></p>" : updateDescription}
+                html={updateDescription === '' ? '<p></p>' : updateDescription}
               /></View>
           </View>
           <PrimaryButton
-            onPress={this.goToIdealRating}
+            onPress={this.goToSelfRating}
             style={{
               position: 'absolute',
               bottom: 50,
-              right: 50
+              right: 50,
             }}
             upper>
             {buttonText}
@@ -140,8 +136,6 @@ export default class selfRatingIntroScreen extends Component {
     return null
   }
 }
-
-
 
 const customStyles = StyleSheet.create({
   header: {

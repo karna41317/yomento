@@ -1,12 +1,5 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
 import { ActivityIndicator, View, Text, } from 'react-native'
 import { styles, htmlStyles } from './profile.styles'
 import Button from '../../components/form/customButton'
@@ -14,6 +7,8 @@ import { PrimaryButton } from '../../components/buttons/Button'
 import GradientWrapper from '../../components/partials/gradientWrapper'
 import {get} from 'lodash'
 import { profileSelector } from './profile.selector'
+import {logEvents} from 'src/services/analytics'
+
 @connect(profileSelector)
 export default class idealRatingMainScreen extends Component {
 
@@ -24,7 +19,12 @@ export default class idealRatingMainScreen extends Component {
     return JSON.parse(JSON.stringify(content))
   }
 
+  fireEvents = (eventName) => {
+    logEvents(eventName)
+  }
+
   goToIdealRating = () => {
+    this.fireEvents(`profile.idealRating.main.button.Next`)
     this.props.navigation.navigate('idealRatingIntro')
   }
 

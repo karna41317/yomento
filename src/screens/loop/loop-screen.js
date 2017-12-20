@@ -14,21 +14,26 @@ import HTML from 'react-native-render-html'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import { updateCards } from '../../actions/loop-action'
 import { get } from 'lodash'
-
+import { logEvents } from 'src/services/analytics'
+import {contentStyles} from 'src/loop-styles'
+const sequenceNumber = 0
 @connect(loopSelector)
 export default class LoopScreen extends Component {
 
   parseJson = (content) => {
     return JSON.parse(JSON.stringify(content))
   }
-  goToIntroScreen = () => {
+  goToIntroScreen = (themeName) => {
+    this.fireEvents(`${themeName}.coachScreen.${sequenceNumber}.button.letsgo`)
     this.props.navigation.navigate('loopIntro')
   }
 
-  goToDashboard = () => {
+  goToDashboard = (themeName) => {
+    this.fireEvents(`${themeName}.coachScreen.${sequenceNumber}.button.close`)
     this.props.navigation.navigate('dashboard')
   }
-  notInterested = (currentLoop) => {
+  notInterested = (currentLoop, themeName) => {
+    this.fireEvents(`${themeName}.coachScreen.${sequenceNumber}.button.notInterested`)
     const loopId = get(currentLoop, 'loop_id')
     if (loopId) {
       const pathParams = {
@@ -47,7 +52,12 @@ export default class LoopScreen extends Component {
     }
   }
 
+  fireEvents = (eventName, params = {}) => {
+    logEvents(eventName, params)
+  }
+
   doneBtnHandle = () => {
+    this.fireEvents(`${themeName}.coachScreen.${sequenceNumber}.button.done`)
     const {navigation, dispatch, loop} = this.props
     const loopId = get(loop, 'loop[0].loop_id')
 
@@ -77,7 +87,7 @@ export default class LoopScreen extends Component {
 
     if (!loop.fetching && currentLoop) {
       const currentLoop = get(loop, 'loop[0]')
-      const loopStyles = get(loop, 'loopStyles[0]', {})
+      //const loopStyles = get(loop, 'loopStyles[0]', {})
       const loopContent = eval(this.parseJson(loop.loop[0]))
       const whyContent = eval(this.parseJson(loopContent.why_content))
       const headerName = get(dashboard, 'newCard[0].theme_name', 'Intro')
@@ -98,7 +108,7 @@ export default class LoopScreen extends Component {
                 </Button>
                 </Body>
                 <Right>
-                  <Button transparent onPress={this.goToDashboard}>
+                  <Button transparent onPress={this.goToDashboard.bind(this, headerName)}>
                     <Icon name='close'
                           style={{fontSize: 35, color: '#419BF9'}}/>
                   </Button>
@@ -111,7 +121,7 @@ export default class LoopScreen extends Component {
                 </Animated.View>
                 <Animated.View style={styles.descWrapper}>
                   {/*<Text>{htmlContent} </Text>*/}
-                  <HTML html={htmlContent==="" ? "<p></p>" : htmlContent} classesStyles={loopStyles}/>
+                  <HTML html={htmlContent === '' ? '<p></p>' : htmlContent} classesStyles={contentStyles[0]}/>
                 </Animated.View>
               </View>
 
@@ -120,12 +130,12 @@ export default class LoopScreen extends Component {
                   <SecondaryButton
                     style={{left: 20, minWidth: 150}}
                     textStyles={{color: '#0F0F3D'}}
-                    onPress={this.notInterested.bind(this, currentLoop)}>
+                    onPress={this.notInterested.bind(this, currentLoop, headerName)}>
                     Not Interested
                   </SecondaryButton>
                   <PrimaryButton
                     style={{left: 40, minWidth: 150}}
-                    onPress={this.goToIntroScreen}>Let's go</PrimaryButton>
+                    onPress={this.goToIntroScreen.bind(this, headerName)}>Let's go</PrimaryButton>
                 </View>
               </View>
             </View>

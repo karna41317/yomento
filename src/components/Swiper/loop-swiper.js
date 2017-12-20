@@ -28,6 +28,7 @@ import HTML from 'react-native-render-html'
 import { Slider } from 'src/components/slider'
 import {updateLoopDetails} from 'src/actions'
 import { boldTextMixin } from '../../styles/mixins'
+import {contentStyles} from 'src/loop-styles'
 
 const {width, height} = Dimensions.get('window')
 @connect(profileSelector)
@@ -410,7 +411,7 @@ export default class LoopSwiperComponent extends Component {
     const updatedDescription = this.updateContent(description)
 
     const htmlContent = `${updatedDescription}`
-    console.log('printinghtmlContent', htmlContent)
+
 
 
     const wrapperStyle = {
@@ -434,11 +435,13 @@ export default class LoopSwiperComponent extends Component {
     const renderers = {
       p: (htmlAttribs, children, convertedCSSStyles, passProps) => children
     }
+
+
     return (
       <View style={wrapperStyle}>
         <Image style={imageStyle} source={require('src/images/padIcon.png')}/>
         <Text style={[styles.tapText, textStyle]}>{updatedTitle}</Text>
-        <HTML html={htmlContent === "" ? "<p></p>" : htmlContent} classesStyles={loopStyles} />
+        <HTML html={htmlContent === "" ? "<p></p>" : htmlContent} classesStyles={contentStyles[0]} />
       </View>
     )
   }
@@ -468,13 +471,9 @@ export default class LoopSwiperComponent extends Component {
       marginVertical:  0,
     }
 
-
     const updatedTitle = this.updateContent(title)
 
-
-
     return (
-
       <View style={textWrapper}>
         <Text style={[styles.tapText, textStyle]}>{updatedTitle}</Text>
         <View
@@ -522,7 +521,7 @@ export default class LoopSwiperComponent extends Component {
     const {data, seq_order} = page
     const dataObject = data[0]
     const {content_type} = dataObject
-    //console.log('printingdataObject', dataObject)
+
 
     return (
       <GradientWrapper key={index} name={this.props.screenName}>

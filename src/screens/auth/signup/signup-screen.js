@@ -15,7 +15,7 @@ import { usernameChanged, passwordChanged, emailChanged, registerUser, resetSess
 import { PrimaryButton } from '../../../components/buttons/Button'
 import MonoLogo from 'src/components/logos/mono-logo'
 import { lightTextMixin, semiBoldTextMixin } from '../../../styles/mixins'
-
+import logEvents from 'src/services/analytics'
 import {get} from 'lodash'
 
 @connect(authState)

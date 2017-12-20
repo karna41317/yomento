@@ -20,13 +20,21 @@ export default class loopCoachReflectionIntroScreen extends Component {
   componentDidMount () {
   }
 
-  goToLoopEndNext = () => {
+  goToLoopEndNext = (currentLoop) => {
+
+    this.fireEvents(`${currentLoop.theme_name}.reflectionIntro.button.next`)
     this.props.navigation.navigate('loopReflection')
   }
 
   parseJson = (content) => {
     return JSON.parse(JSON.stringify(content))
   }
+
+
+  fireEvents = (eventName) => {
+    logEvents(eventName)
+  }
+
 
   updateContent = (text) => {
     const {auth, loop} = this.props
@@ -47,7 +55,7 @@ export default class loopCoachReflectionIntroScreen extends Component {
   render () {
 
     const {loop} = this.props
-
+    const currentLoop = get(loop, 'loop[0]')
     if (loop.loop[0]) {
       const loopContent = eval(this.parseJson(loop.loop[0]))
       const coach_action_done_content = eval(
@@ -70,7 +78,7 @@ export default class loopCoachReflectionIntroScreen extends Component {
               <Text style={styles.profileFinishText}>{updatedDescription}</Text>
               <PrimaryButton
                 style={styles.profileButton}
-                onPress={this.goToLoopEndNext}>
+                onPress={this.goToLoopEndNext.bind(this, currentLoop)}>
                 INTERESTING!
               </PrimaryButton>
             </View>

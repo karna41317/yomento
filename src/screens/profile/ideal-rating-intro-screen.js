@@ -11,6 +11,7 @@ import { profileLanunched, getDashboardCards } from 'src/actions'
 import { map, get, each, snakeCase, toLower, toUpper, upperFirst, startCase, reject, has, some, find } from 'lodash'
 import HTML from 'react-native-render-html'
 import { boldTextMixin, regularTextMixin, semiBoldTextMixin } from '../../styles/mixins'
+import { logEvents } from 'src/services/analytics'
 
 @connect(profileSelector)
 export default class idealRatingIntroScreen extends Component {
@@ -23,11 +24,18 @@ export default class idealRatingIntroScreen extends Component {
   }
 
   goToIdealRating = () => {
+    this.fireEvents('profile.idealRating.coachScreen.button.next')
     this.props.navigation.navigate('idealRatingLoop')
   }
   closePress = () => {
+    this.fireEvents('profile.idealRating.coachScreen.button.close')
     this.props.navigation.goBack()
   }
+
+  fireEvents = (eventName) => {
+    logEvents(eventName)
+  }
+
 
   updateContent = (text) => {
     const {auth, loop} = this.props

@@ -12,7 +12,9 @@ import { styles, htmlStyles } from './profile.styles'
 import Button from '../../components/form/customButton'
 import { PrimaryButton } from '../../components/buttons/Button'
 import GradientWrapper from '../../components/partials/gradientWrapper'
-import {launchFirstTime} from 'src/actions'
+import { launchFirstTime } from 'src/actions'
+import { logEvents } from 'src/services/analytics'
+
 @connect()
 export default class selfRatingFinishScreen extends Component {
 
@@ -20,8 +22,13 @@ export default class selfRatingFinishScreen extends Component {
   }
 
   goToProfile = () => {
+    this.fireEvents(`profile.selfRating.finish.button.showme`)
     this.props.dispatch(launchFirstTime())
     this.props.navigation.navigate('profile')
+  }
+
+  fireEvents = (eventName) => {
+    logEvents(eventName)
   }
 
   render () {

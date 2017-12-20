@@ -13,8 +13,12 @@ import HTMLView from 'react-native-htmlview'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import LoopSwiperComponent from 'src/components/Swiper/loop-swiper'
 import { get } from 'lodash'
+import {logEvents} from 'src/services/analytics'
+
+const sequenceNumber = 0
 
 @connect(loopSelector)
+
 export default class LoopIntroScreen extends Component {
 
   parseJson = (content) => {
@@ -24,33 +28,44 @@ export default class LoopIntroScreen extends Component {
     this.props.navigation.navigate('loopIntro')
   }
 
-  onSkipBtnHandle = (index) => {
-
+  fireEvents = (eventName) => {
+    logEvents(eventName)
   }
+
+  onSkipBtnHandle = (index) => {}
+
   doneBtnHandle = () => {
-    const {navigation} = this.props
+    const {navigation, dashboard} = this.props
+    const themeName = get(dashboard, 'newCard[0].theme_name', 'Intro')
+    this.fireEvents(`${themeName}.loopIntroScreen.${sequenceNumber}.button.done`)
     navigation.navigate('loopHow')
   }
-  nextBtnHandle = (index) => {
 
-  }
-  onSlideChangeHandle = (index, total) => {
+  nextBtnHandle = (index) => {}
 
-  }
+  onSlideChangeHandle = (index, total) => {}
+
   readMoreHandle = () => {
-    const {navigation} = this.props
+    const {navigation, dashboard} = this.props
+    const themeName = get(dashboard, 'newCard[0].theme_name', 'Intro')
+    this.fireEvents(`${themeName}.loopIntroScreen.${sequenceNumber}.button.back`)
     navigation.navigate('readMore')
   }
 
   backPress = () => {
-    const {navigation} = this.props
+    const {navigation, dashboard} = this.props
+    const themeName = get(dashboard, 'newCard[0].theme_name', 'Intro')
+    this.fireEvents(`${themeName}.loopIntroScreen.${sequenceNumber}.button.back`)
     navigation.goBack()
   }
 
   closePress = () => {
-    const {navigation} = this.props
+    const {navigation, dashboard} = this.props
+    const themeName = get(dashboard, 'newCard[0].theme_name', 'Intro')
+    this.fireEvents(`${themeName}.loopIntroScreen.${sequenceNumber}.button.close`)
     navigation.navigate('loopIntro')
   }
+
   tapSelection = () => {
 
   }
@@ -90,4 +105,3 @@ export default class LoopIntroScreen extends Component {
     }
   }
 }
-

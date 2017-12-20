@@ -12,13 +12,13 @@ import demoData from './demo-data'
 import { getProfileContent } from 'src/actions'
 import { profileState } from 'src/selectors'
 import { styles, htmlStyles } from './profile.styles'
+import { logEvents } from 'src/services/analytics'
+
 
 @connect(profileState)
 export default class idealRatingLoopScreen extends Component {
 
   componentDidMount () {
-
-
     this.props.dispatch(getProfileContent())
   }
 
@@ -27,9 +27,11 @@ export default class idealRatingLoopScreen extends Component {
   }
   doneBtnHandle = () => {
     const {navigation} = this.props
+    this.fireEvents('profile.idealRating.loopScreen.button.done')
     navigation.navigate('idealRatingFinish')
   }
   nextBtnHandle = (index) => {
+    this.fireEvents('profile.idealRating.loopScreen.button.next')
     console.log(index)
   }
   onSlideChangeHandle = (index, total) => {
@@ -37,18 +39,26 @@ export default class idealRatingLoopScreen extends Component {
   }
   readMoreHandle = () => {
     const {navigation} = this.props
+    this.fireEvents('profile.idealRating.loopScreen.button.readmore')
     navigation.navigate('readMore')
   }
 
   backPress = () => {
     const {navigation} = this.props
+    this.fireEvents('profile.idealRating.loopScreen.button.back')
     navigation.goBack()
   }
 
   closePress = () => {
+    this.fireEvents('profile.idealRating.loopScreen.button.close')
     const {navigation} = this.props
     navigation.navigate('idealRatingIntro')
   }
+
+  fireEvents = (eventName) => {
+    logEvents(eventName)
+  }
+
 
   render () {
 

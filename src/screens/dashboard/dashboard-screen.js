@@ -13,6 +13,8 @@ import { dashboardSelector } from './dashboard-selector'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import Moment from 'moment'
 import { height } from '../../../src_native/Helpers/constant'
+import { logEvents } from 'src/services/analytics'
+import PushNotification from 'react-native-push-notification'
 
 const normalHeight = 220
 const extendedHeight = 320
@@ -33,6 +35,10 @@ export default class DashboardScreen extends Component {
 
   showMainCard = () => {
     return true
+  }
+
+  fireEvents = (eventName, params = {}) => {
+    logEvents(eventName, params)
   }
 
   componentWillMount () {
@@ -80,6 +86,10 @@ export default class DashboardScreen extends Component {
   goToReflect = (item) => {
     const {navigation, dispatch} = this.props
     dispatch(getLoops(item.loop_id))
+    PushNotification.cancelLocalNotifications({
+      id: `reminder_${item.themeName}_${item.loop_id}`,
+    })
+    this.fireEvents(`dashboard.remindercard.${item.theme_name}.button.gotoreflect`, item)
     this.updateCard(item.loop_id, 'reflection', 'loopReflection')
   }
 
@@ -89,25 +99,24 @@ export default class DashboardScreen extends Component {
 
   reflectReflectionCard = (item) => {
     const {navigation, dispatch} = this.props
+    this.fireEvents(`dashboard.reflectioncard.${item.theme_name}.button.gotoreflect`, item)
     dispatch(getLoops(item.loop_id))
     navigation.navigate('loopReflection', item)
   }
 
   goToHow = (item) => {
     const {navigation, dispatch} = this.props
+    this.fireEvents(`dashboard.remindercard.${item.theme_name}.button.how`, item)
     dispatch(getLoops(item.loop_id))
-    navigation.navigate('loop', item)
+    /*TODO: Fix for only how screen*/
+    navigation.navigate('loopHow', {howRoute: true})
   }
 
   goToLoop = (item) => {
     const {navigation, dispatch} = this.props
+    this.fireEvents(`dashboard.maincard.${item.theme_name}.button.gotoloop`, item)
     dispatch(getLoops(item.loop_id))
     navigation.navigate('loop', item)
-  }
-
-  moveCardBack = (arr, n) => {
-    const arrayLength = arr.length
-    return arr.slice(arrayLength - n).concat(arr.slice(0, arrayLength - n))
   }
 
   finishedCards = () => {
@@ -287,6 +296,7 @@ export default class DashboardScreen extends Component {
 
         /*normal height, if you have any reminder card with crossed deadline or have 2 reflection cards
         max height: if only one reflection card and  reminder card not crossed deadline.*/
+
         flex: 1,
         height: (reminderTimePassed || reflectionCards.length > 1)
           ? height
@@ -341,7 +351,7 @@ export default class DashboardScreen extends Component {
       let customStyles = {}
       const mainCard = newCard[0]
       const isTimePassed = this.isReminderCardTimePassed()
-      console.log('printingisTimePassed || reflectionCards.length > 0', isTimePassed )
+      console.log('printingisTimePassed || reflectionCards.length > 0', isTimePassed)
 
       const height = (isTimePassed || reflectionCards.length > 0) ? normalHeight : extendedHeight
 

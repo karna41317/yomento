@@ -20,7 +20,6 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: 'TabletGothic-Bold',
     fontSize: 14,
-    fontWeight: 100,
-
+    fontWeight: '100',
   }
 })

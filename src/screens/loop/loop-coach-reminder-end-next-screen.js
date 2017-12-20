@@ -5,6 +5,9 @@ import { View, Text, StyleSheet } from 'react-native'
 import { PrimaryButton } from '../../components/buttons/Button'
 import GradientWrapper from '../../components/partials/gradientWrapper'
 import { get } from 'lodash'
+import {logEvents} from '../../services/analytics'
+
+const sequenceNumber = 0
 
 @connect()
 export default class loopCoachReminderEndNextScreen extends Component {
@@ -16,8 +19,16 @@ export default class loopCoachReminderEndNextScreen extends Component {
     return JSON.parse(JSON.stringify(content))
   }
 
+
+  fireEvents = (eventName) => {
+    logEvents(eventName)
+  }
+
   goToDashboard = () => {
-    this.props.navigation.navigate('dashboard')
+    const {navigation, dashboard} = this.props
+    const themeName = get(dashboard, 'newCard[0].theme_name', 'Intro')
+    this.fireEvents(`${themeName}.loopReminderScreenEndFinal.${sequenceNumber}.button.dashboard`)
+    navigation.navigate('dashboard')
   }
 
   render () {

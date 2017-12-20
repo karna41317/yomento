@@ -13,21 +13,26 @@ import HTMLView from 'react-native-htmlview'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import LoopSwiperComponent from 'src/components/Swiper/loop-swiper'
 import {get} from 'lodash'
+
+const sequenceNumber = 0
+
 @connect(loopSelector)
 export default class LoopReflectionScreen extends Component {
 
   parseJson = (content) => {
     return JSON.parse(JSON.stringify(content))
   }
+
   goToIntroScreen = () => {
     this.props.navigation.navigate('loopIntro')
   }
 
-  onSkipBtnHandle = (index) => {
+  onSkipBtnHandle = (index) => {}
 
-  }
   doneBtnHandle = () => {
-    const {navigation} = this.props
+    const {navigation, dashboard} = this.props
+    const themeName = get(dashboard, 'newCard[0].theme_name', 'Intro')
+    this.fireEvents(`${themeName}.loopReflectionScreen.${sequenceNumber}.button.secondaryButton`)
     navigation.navigate('loopCoach', {})
 
   }
@@ -35,10 +40,18 @@ export default class LoopReflectionScreen extends Component {
 
   }
   onSlideChangeHandle = (index, total) => {
-
   }
+
+  fireEvents = (eventName) => {
+    /*const themeName = get(dashboard, 'newCard[0].theme_name', 'Intro')
+    this.fireEvents(`${themeName}.loopHowScreen.${sequenceNumber}.button.close`)*/
+    logEvents(eventName)
+  }
+
   readMoreHandle = () => {
-    const {navigation} = this.props
+    const {navigation, dashboard} = this.props
+    const themeName = get(dashboard, 'newCard[0].theme_name', 'Intro')
+    this.fireEvents(`${themeName}.loopReflectionScreen.${sequenceNumber}.button.secondaryButton`)
     navigation.navigate('readMore')
   }
 
@@ -48,7 +61,9 @@ export default class LoopReflectionScreen extends Component {
   }
 
   closePress = () => {
-    const {navigation} = this.props
+    const {navigation, dashboard} = this.props
+    const themeName = get(dashboard, 'newCard[0].theme_name', 'Intro')
+    this.fireEvents(`${themeName}.loopReflectionScreen.${sequenceNumber}.button.close`)
     navigation.navigate('dashboard')
   }
   tapSelection = () => {

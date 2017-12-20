@@ -19,7 +19,9 @@ import { PrimaryButton } from '../../components/buttons/Button'
 import { semiBoldTextMixin } from '../../styles/mixins'
 import PushNotification from 'react-native-push-notification'
 import RNCalendarReminders from 'react-native-calendar-reminders';
+import { logEvents } from '../../services/analytics'
 
+const sequenceNumber = 0
 @connect(loopSelector)
 export default class loopReminderScreen extends Component {
   constructor (props) {
@@ -31,12 +33,19 @@ export default class loopReminderScreen extends Component {
 
 
 
+  fireEvents = (eventName, params) => {
+    logEvents(eventName, params)
+  }
+
   componentDidMount () {
     //this.props.dispatch(getLoops())
   }
 
   goBack = () => {
-    this.props.navigation.goBack()
+    const {navigation, dashboard} = this.props
+    const themeName = get(dashboard, 'newCard[0].theme_name', 'Reminder')
+    this.fireEvents(`${themeName}.loopReminderScreen.${sequenceNumber}.button.confirmReminder`)
+    navigation.goBack()
   }
 
   goToDashBoard = () => {
@@ -69,20 +78,13 @@ export default class loopReminderScreen extends Component {
   }
 
   confirmReminder = (currentLoop) => {
-    const {dispatch, navigation} = this.props
-
-    console.log('printingthis.state.date before', this.state.date)
-    const dataInEpoch = Moment(this.state.date).unix()
-    console.log('printingafter', new Date().setUTCSeconds(dataInEpoch))
+    const {dispatch, navigation, dashboard, auth} = this.props
 
     const isValidDate = this.validateDate(this.state.date)
-
-
+    const loopId =  get(currentLoop, 'loop_id')
+    const firstName = get(auth, 'userData.user.first_name')
     if (isValidDate) {
-
-
       const dataInEpoch = Moment(this.state.date).unix()
-
       const pathParams = {
         card_type: 'reminder',
         reminder_time: dataInEpoch,
@@ -97,45 +99,24 @@ export default class loopReminderScreen extends Component {
           reminder_time: Moment(this.state.date).format('Do MMM H:mm')
         }
       }
-      const loopId =  get(currentLoop, 'loop_id')
 
+      const themeName = get(dashboard, 'newCard[0].theme_name', 'Reminder')
+      this.fireEvents(`${themeName}.loopReminderScreen.${sequenceNumber}.button.confirmReminder`, {
+        themeName: themeName,
+        reminder_time: dataInEpoch,
+        loop_id: loopId
+      })
+      console.log('printingcurrentLoop', currentLoop.title, firstName)
+      const prefix = firstName ? firstName : 'Hej'
+      const message = `${prefix} ! ${currentLoop.title}`
 
       PushNotification.localNotificationSchedule({
-        message: 'please reflect' + loopId, // (required)
+        id: `reminder_${themeName}_${loopId}`,
+        message: message,
         date: new Date(this.state.date.getTime() + (60 * 1000)) // in 60 secs
       })
 
       dispatch(updateCards(params, navigation))
-
-      /*RNCalendarReminders.saveReminder(loopId, {
-        notes: `reminder for${loopId}` ,
-        startDate: this.state.date.toISOString()
-      }).then(id => {
-
-
-        const pathParams = {
-          card_type: 'reminder',
-          reminder_time: dataInEpoch,
-          loop_id: get(currentLoop, 'loop_id'),
-          local_reminder_id: id
-        }
-        const bodyParams = {}
-        const params = {
-          pathParams,
-          bodyParams,
-          nextScreen: 'loopReminderEnd',
-          routeParams : {
-            reminder_time: Moment(this.state.date).format('Do MMM H:mm')
-          }
-        }
-        dispatch(updateCards(params, navigation))
-      })
-      .catch(error => {
-        console.log('printing remidner saving error ', error)
-
-      });*/
-
-
     } else {
       Alert.alert(
         'Error',

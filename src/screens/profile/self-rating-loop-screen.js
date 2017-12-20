@@ -6,6 +6,7 @@ import { get } from 'lodash'
 import { getProfileContent, AddProfileContent } from 'src/actions'
 import { profileState } from 'src/selectors'
 import { styles, htmlStyles } from './profile.styles'
+import { logEvents } from 'src/services/analytics'
 
 @connect(profileState)
 export default class selfRatingLoopScreen extends Component {
@@ -13,6 +14,19 @@ export default class selfRatingLoopScreen extends Component {
   componentDidMount () {
     this.props.dispatch(getProfileContent())
   }
+
+/*
+  this.fireEvents('profile.idealRating.loopScreen.button.done')
+  this.fireEvents('profile.idealRating.loopScreen.button.next')
+  this.fireEvents('profile.idealRating.loopScreen.button.readmore')
+  this.fireEvents('profile.idealRating.loopScreen.button.back')
+  this.fireEvents('profile.idealRating.loopScreen.button.close')
+  */
+
+  fireEvents = (eventName) => {
+    logEvents(eventName)
+  }
+
 
   onSkipBtnHandle = (index) => {
     console.log(index)
@@ -24,26 +38,29 @@ export default class selfRatingLoopScreen extends Component {
     if (myself.length && myideal.length) {
       dispatch(AddProfileContent(profileRating))
     }
+    this.fireEvents('profile.idealRating.loopScreen.button.done')
     navigation.navigate('selfRatingFinish')
   }
   nextBtnHandle = (index) => {
-    console.log(index)
+    this.fireEvents('profile.idealRating.loopScreen.button.next')
   }
   onSlideChangeHandle = (index, total) => {
-    console.log(index, total)
   }
   readMoreHandle = () => {
     const {navigation} = this.props
+    this.fireEvents('profile.idealRating.loopScreen.button.readmore')
     navigation.navigate('readMore')
   }
 
   backPress = () => {
     const {navigation} = this.props
+    this.fireEvents('profile.idealRating.loopScreen.button.back')
     navigation.goBack()
   }
 
   closePress = () => {
     const {navigation} = this.props
+    this.fireEvents('profile.idealRating.loopScreen.button.close')
     navigation.navigate('selfRatingIntro')
   }
 

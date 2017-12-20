@@ -76,6 +76,10 @@
 		9E75CC3D1F9D04DA00402736 /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9A360F1F99662F00A7A7C4 /* libCodePush.a */; };
 		9E7FEF531FA0D409000312A4 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E75CC381F9D00CA00402736 /* libBVLinearGradient.a */; };
 		9E7FF0CF1FA2269C000312A4 /* libRCTLinkedinLogin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7FEFE31FA0F368000312A4 /* libRCTLinkedinLogin.a */; };
+		9E8780EE1FE757A800CF5237 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E8780BA1FE757A800CF5237 /* FBSDKShareKit.framework */; };
+		9E8780EF1FE757A800CF5237 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E8780EC1FE757A800CF5237 /* FBSDKLoginKit.framework */; };
+		9E8780F01FE757A800CF5237 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E8780ED1FE757A800CF5237 /* Bolts.framework */; };
+		9E8781431FE75FFC00CF5237 /* libRCTFBSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E8781421FE75FC600CF5237 /* libRCTFBSDK.a */; };
 		9EFF71CC1FDB489B00438906 /* libAppCenterReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFF70B91FDB3DDD00438906 /* libAppCenterReactNative.a */; };
 		9EFF71CD1FDB48CE00438906 /* libAppCenterReactNativeAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFF70B41FDB3DDD00438906 /* libAppCenterReactNativeAnalytics.a */; };
 		9EFF71CE1FDB48CE00438906 /* libAppCenterReactNativeCrashes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFF70BE1FDB3DDD00438906 /* libAppCenterReactNativeCrashes.a */; };
@@ -339,6 +343,13 @@
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNShare;
 		};
+		9E8781411FE75FC600CF5237 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 13FEC805B8F5494E9824F45F /* RCTFBSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9350E0F11CE3B0920041D815;
+			remoteInfo = RCTFBSDK;
+		};
 		9E9A35C21F99647C00A7A7C4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */;
@@ -487,6 +498,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = yemonto/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = yemonto/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = yemonto/main.m; sourceTree = "<group>"; };
+		13FEC805B8F5494E9824F45F /* RCTFBSDK.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTFBSDK.xcodeproj; path = "../node_modules/react-native-fbsdk/ios/RCTFBSDK.xcodeproj"; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		1AC1591684E64D88BC13BD54 /* RNMixpanel.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNMixpanel.xcodeproj; path = "../node_modules/react-native-mixpanel/RNMixpanel.xcodeproj"; sourceTree = "<group>"; };
 		1D55586477EC4AD8A64CD653 /* AppCenterReactNativeAnalytics.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeAnalytics.xcodeproj; path = "../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics.xcodeproj"; sourceTree = "<group>"; };
@@ -497,6 +509,7 @@
 		360C4A0167334365B825B4B8 /* TabletGothic-Heavy.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-Heavy.ttf"; path = "../assets/fonts/TabletGothic-Heavy.ttf"; sourceTree = "<group>"; };
 		38244652825B442987EDEC5A /* TabletGothic-SemiBoldOblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-SemiBoldOblique.ttf"; path = "../assets/fonts/TabletGothic-SemiBoldOblique.ttf"; sourceTree = "<group>"; };
 		39E518B8D419ABFAB3C57057 /* Pods_yemontoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yemontoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BFEF6C6C23C48E28CFE08B4 /* libRCTFBSDK.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTFBSDK.a; sourceTree = "<group>"; };
 		3DC3E750F7A345FA9647ADC0 /* libRNMixpanel-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNMixpanel-tvOS.a"; sourceTree = "<group>"; };
 		3E2CC884F8AE416396CCB468 /* TabletGothic-ThinOblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TabletGothic-ThinOblique.ttf"; path = "../assets/fonts/TabletGothic-ThinOblique.ttf"; sourceTree = "<group>"; };
 		42C5381DEE514F6B8EFD9A9C /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = ../assets/fonts/SimpleLineIcons.ttf; sourceTree = "<group>"; };
@@ -544,6 +557,9 @@
 		9E70F75B1FDC4CA000E51A21 /* yemonto.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = yemonto.entitlements; path = yemonto/yemonto.entitlements; sourceTree = "<group>"; };
 		9E70F9171FDCC37F00E51A21 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		9E70F9181FDCC38000E51A21 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
+		9E8780BA1FE757A800CF5237 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		9E8780EC1FE757A800CF5237 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		9E8780ED1FE757A800CF5237 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		9EB817FF1FB900A700CB26F6 /* yemonto-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yemonto-Bridging-Header.h"; sourceTree = "<group>"; };
 		A084FB918343439A8B98668A /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
 		A6447C65F3E9460B8B9678AA /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
@@ -602,6 +618,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E8781431FE75FFC00CF5237 /* libRCTFBSDK.a in Frameworks */,
 				9E12A54B1FE6EAEF00031C51 /* libRCTOneSignal.a in Frameworks */,
 				9E12A54A1FE6EAE900031C51 /* libRNCalendarReminders.a in Frameworks */,
 				9E70F75A1FDC4BB500E51A21 /* libRCTPushNotification.a in Frameworks */,
@@ -611,6 +628,7 @@
 				9EFF71CC1FDB489B00438906 /* libAppCenterReactNative.a in Frameworks */,
 				9E133DCD1FD335DA0063D2D0 /* libz.tbd in Frameworks */,
 				9E3D48E11FACEEA200E99E4A /* libRNSVG.a in Frameworks */,
+				9E8780EE1FE757A800CF5237 /* FBSDKShareKit.framework in Frameworks */,
 				9E3D48E01FACEE9600E99E4A /* libRNImagePicker.a in Frameworks */,
 				9E3D48DF1FACEE8B00E99E4A /* libRNShare.a in Frameworks */,
 				9E3D48DE1FACEE8100E99E4A /* libRNPhotoView.a in Frameworks */,
@@ -631,6 +649,8 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				2E3299C268F4F01428FCA877 /* Pods_yemonto.framework in Frameworks */,
+				9E8780F01FE757A800CF5237 /* Bolts.framework in Frameworks */,
+				9E8780EF1FE757A800CF5237 /* FBSDKLoginKit.framework in Frameworks */,
 				9E70F91B1FDCC38000E51A21 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -885,6 +905,7 @@
 				1AC1591684E64D88BC13BD54 /* RNMixpanel.xcodeproj */,
 				EE37665D40504A6EAD5331F5 /* RCTOneSignal.xcodeproj */,
 				ACA14FA7A71B4E49BA914A51 /* RNCalendarReminders.xcodeproj */,
+				13FEC805B8F5494E9824F45F /* RCTFBSDK.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -985,6 +1006,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9E87813E1FE75FC600CF5237 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9E8781421FE75FC600CF5237 /* libRCTFBSDK.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9E9A35BB1F99647C00A7A7C4 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -1003,6 +1032,7 @@
 				3DC3E750F7A345FA9647ADC0 /* libRNMixpanel-tvOS.a */,
 				600942D479374A559282FB34 /* libRCTOneSignal.a */,
 				4B0C71BB6AEA43B281477C2F /* libRNCalendarReminders.a */,
+				3BFEF6C6C23C48E28CFE08B4 /* libRCTFBSDK.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -1070,6 +1100,9 @@
 			isa = PBXGroup;
 			children = (
 				9E70F9181FDCC38000E51A21 /* Bolts.framework */,
+				9E8780ED1FE757A800CF5237 /* Bolts.framework */,
+				9E8780EC1FE757A800CF5237 /* FBSDKLoginKit.framework */,
+				9E8780BA1FE757A800CF5237 /* FBSDKShareKit.framework */,
 				9E70F9171FDCC37F00E51A21 /* FBSDKCoreKit.framework */,
 				81112987494743ED9BEB6A64 /* libz.tbd */,
 				EF72924978A8BB831E04E423 /* Pods_yemonto.framework */,
@@ -1256,6 +1289,10 @@
 				{
 					ProductGroup = 01DC710D1E3C150E0081C922 /* Products */;
 					ProjectRef = 01DC710C1E3C150E0081C922 /* RCTAnimation.xcodeproj */;
+				},
+				{
+					ProductGroup = 9E87813E1FE75FC600CF5237 /* Products */;
+					ProjectRef = 13FEC805B8F5494E9824F45F /* RCTFBSDK.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302B61ABCB90400DB3ED1 /* Products */;
@@ -1567,6 +1604,13 @@
 			fileType = archive.ar;
 			path = libRNShare.a;
 			remoteRef = 9E7FF30B1FA3DB6D000312A4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9E8781421FE75FC600CF5237 /* libRCTFBSDK.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTFBSDK.a;
+			remoteRef = 9E8781411FE75FC600CF5237 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		9E9A35C31F99647C00A7A7C4 /* libRCTImage-tvOS.a */ = {
@@ -2091,18 +2135,13 @@
 					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/RCTOneSignal/**",
 					"$(SRCROOT)/../node_modules/react-native-calendar-reminders",
+					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
 				);
 				INFOPLIST_FILE = yemontoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -2147,18 +2186,13 @@
 					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/RCTOneSignal/**",
 					"$(SRCROOT)/../node_modules/react-native-calendar-reminders",
+					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
 				);
 				INFOPLIST_FILE = yemontoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -2208,6 +2242,7 @@
 					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-calendar-reminders",
+					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
 				);
 				INFOPLIST_FILE = yemonto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2263,6 +2298,7 @@
 					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-calendar-reminders",
+					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
 				);
 				INFOPLIST_FILE = yemonto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2273,7 +2309,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardust.yomento;
 				PRODUCT_NAME = yemonto;
-				PROVISIONING_PROFILE = "fdba3f8c-b65b-488e-9c02-a2a42259dbc6";
+				PROVISIONING_PROFILE = "41abc7b1-5892-4334-87a1-fe446ccc5d7b";
 				PROVISIONING_PROFILE_SPECIFIER = "yomento stardust development";
 				SWIFT_OBJC_BRIDGING_HEADER = "yemonto-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -2309,17 +2345,12 @@
 					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/RCTOneSignal/**",
 					"$(SRCROOT)/../node_modules/react-native-calendar-reminders",
+					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
 				);
 				INFOPLIST_FILE = "yemonto-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -2362,17 +2393,12 @@
 					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/RCTOneSignal/**",
 					"$(SRCROOT)/../node_modules/react-native-calendar-reminders",
+					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
 				);
 				INFOPLIST_FILE = "yemonto-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -2404,12 +2430,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.yemonto-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2435,12 +2455,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.yemonto-tvOSTests";

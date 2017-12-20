@@ -3,6 +3,7 @@ package com.yemonto;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
 import com.kevinejohn.RNMixpanel.RNMixpanel;
 import com.microsoft.appcenter.reactnative.crashes.AppCenterReactNativeCrashesPackage;
@@ -41,6 +42,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
+            new FBSDKPackage(),
             new ReactNativeOneSignalPackage(),
             new RNMixpanel(),
             new AppCenterReactNativeCrashesPackage(MainApplication.this, getResources().getString(R.string.appcenterCrashes_whenToSendCrashes)),

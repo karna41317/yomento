@@ -1,7 +1,3 @@
-/**
- * Created by Karan on 2017-11-20.
- */
-
 import React, { Component } from 'react'
 import { View, Text, Animated, ActivityIndicator } from 'react-native'
 import { connect } from 'react-redux'
@@ -9,9 +5,22 @@ import { loopSelector } from './loopSelector'
 import { styles, htmlStyles } from './loop-styles'
 import LoopSwiperComponent from 'src/components/Swiper/loop-swiper'
 import { get } from 'lodash'
-import {updateCards} from 'src/actions'
+import { updateCards } from 'src/actions'
+import { logEvents } from 'src/services/analytics'
+
+const sequenceNumber = 0
+
 @connect(loopSelector)
 export default class LoopHowScreen extends Component {
+  constructor (props) {
+    super(props)
+    const {navigation: {state}} = props
+    const howRoute = get(state, 'params.howRoute')
+
+    this.state = {
+      isHowRoute: howRoute ? howRoute : false,
+    }
+  }
 
   parseJson = (content) => {
     return JSON.parse(JSON.stringify(content))
@@ -26,30 +35,36 @@ export default class LoopHowScreen extends Component {
 
   updateCard = (cardType, nextScreen) => {
     const {dispatch, loop, navigation} = this.props
-
     const loopId = get(loop, 'loop[0].loop_id')
 
-    if(loopId) {
+    if (loopId) {
       const pathParams = {
         card_type: cardType,
-        loop_id: loopId
+        loop_id: loopId,
       }
-      bodyParams = {
-      }
+      bodyParams = {}
 
       const params = {
         pathParams,
         bodyParams,
-        nextScreen
+        nextScreen,
       }
       dispatch(updateCards(params, navigation))
     }
   }
 
+  fireEvents = (eventName) => {
+    //this.fireEvents(`${themeName}.loopHowScreen.${sequenceNumber}.button.close`)
+    logEvents(eventName)
+  }
+
   doneBtnHandle = () => {
-    const {navigation} = this.props
+    const {dashboard} = this.props
+    const themeName = get(dashboard, 'newCard[0].theme_name', 'Intro')
+    this.fireEvents(`${themeName}.loopHowScreen.${sequenceNumber}.button.done`)
     this.updateCard('reflection', 'loopCoachReflectionIntro')
   }
+
   nextBtnHandle = (index) => {
     console.log(index)
   }
@@ -59,40 +74,45 @@ export default class LoopHowScreen extends Component {
   }
 
   readMoreHandle = () => {
-    const {navigation} = this.props
+    const {dashboard} = this.props
+    const themeName = get(dashboard, 'newCard[0].theme_name', 'Intro')
+    this.fireEvents(`${themeName}.loopHowScreen.${sequenceNumber}.button.reminder`)
     this.updateCard('reminder', 'loopReminder')
-
   }
 
   backPress = () => {
-    const {navigation} = this.props
+    const {navigation, dashboard} = this.props
+    const themeName = get(dashboard, 'newCard[0].theme_name', 'Intro')
+    this.fireEvents(`${themeName}.loopHowScreen.${sequenceNumber}.button.back`)
     navigation.goBack()
   }
 
   closePress = () => {
-    const {navigation} = this.props
+    const {navigation, dashboard} = this.props
+    const themeName = get(dashboard, 'newCard[0].theme_name', 'Intro')
+    this.fireEvents(`${themeName}.loopHowScreen.${sequenceNumber}.button.close`)
     navigation.navigate('loopIntro')
   }
-  tapSelection = () => {
 
-  }
+  tapSelection = () => {}
+
   render () {
     const {loop, navigation} = this.props
+    console.log('printingnavigation', this.state)
+
     if (loop) {
-
-
       const loopContent = eval(this.parseJson(loop.loop[0]))
       const how_content = eval(this.parseJson(loopContent.how_content))
       const {dashboard} = this.props
       const headerName = get(dashboard, 'newCard[0].theme_name', 'Intro')
-      if (how_content) {
-        console.log('printinghow_content', how_content)
 
+      if (how_content) {
         return (
           <LoopSwiperComponent
             navigation={navigation}
             tapSelection={this.tapSelection}
             headerName={headerName}
+            isHowRoute={this.state.isHowRoute}
             screenName={'how'}
             showDots={true}
             showSkipButton={false}

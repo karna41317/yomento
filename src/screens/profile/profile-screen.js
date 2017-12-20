@@ -9,6 +9,7 @@ import { connect } from 'react-redux'
 import { profileSelector } from './profile.selector'
 import { profileLanunched, getDashboardCards } from 'src/actions'
 import { map, get, each, snakeCase, toLower, toUpper, upperFirst, startCase, reject, has, some } from 'lodash'
+import {logEvents} from 'src/services/analytics'
 
 const white = '#FFFFFF'
 const myIdealColor = '#FFFA67'
@@ -31,11 +32,17 @@ export default class ProfileScreen extends Component {
     }
   }
 
+  fireEvents = (eventName) => {
+    logEvents(eventName)
+  }
+
   settingsPress = () => {
+    this.fireEvents('profile.settingsclicked')
     this.props.navigation.navigate('profileDetails')
   }
 
   closePress = () => {
+    this.fireEvents('profile.closeclicked')
     this.props.navigation.navigate('dashboard')
   }
 
@@ -91,6 +98,7 @@ export default class ProfileScreen extends Component {
   }
 
   launchDashboard = () => {
+    this.fireEvents('profile.launchDashboard')
     this.props.dispatch(profileLanunched())
     this.props.navigation.navigate('dashboard')
   }
@@ -116,6 +124,7 @@ export default class ProfileScreen extends Component {
   }
 
   mySelfPress = () => {
+    this.fireEvents('profile.myselfPress')
     this.setState({
       mySelfActive: !this.state.mySelfActive,
       keys: !this.state.mySelfActive ? this.getKeys('myself') : reject(
@@ -124,6 +133,7 @@ export default class ProfileScreen extends Component {
   }
 
   myIdealPress = () => {
+    this.fireEvents('profile.myIdealPress')
     this.setState({
       myIdealActive: !this.state.myIdealActive,
       keys: !this.state.myIdealActive ? this.getKeys('myideal') : reject(
@@ -132,6 +142,7 @@ export default class ProfileScreen extends Component {
   }
 
   allSelfPress = () => {
+    this.fireEvents('profile.allselfPress')
     this.setState({
       allSelfActive: !this.state.allSelfActive,
       keys: !this.state.allSelfActive ? this.getKeys('allself_avg') :
@@ -140,6 +151,7 @@ export default class ProfileScreen extends Component {
   }
 
   allIdealPress = () => {
+    this.fireEvents('profile.allIdealPress')
     this.setState({
       allIdealActive: !this.state.allIdealActive,
       keys: !this.state.allIdealActive ? this.getKeys('allideal_avg') :
@@ -148,6 +160,7 @@ export default class ProfileScreen extends Component {
   }
 
   myTeamPress = () => {
+    this.fireEvents('profile.myteamPress')
     this.setState({
       myTeamActive: !this.state.myTeamActive,
       keys: this.state.myTeamActive ? this.getKeys('myteam') :

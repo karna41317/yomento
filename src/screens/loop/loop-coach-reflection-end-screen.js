@@ -13,6 +13,8 @@ import { PrimaryButton } from '../../components/buttons/Button'
 import GradientWrapper from '../../components/partials/gradientWrapper'
 import { loopSelector } from './loopSelector'
 import {get} from 'lodash'
+import {logEvents} from 'lodash'
+
 
 @connect(loopSelector)
 
@@ -25,8 +27,16 @@ export default class loopCoachReflectionEndScreen extends Component {
     return JSON.parse(JSON.stringify(content))
   }
 
-  goToLoopEndNext = () => {
+  goToLoopEndNext = (currentLoop) => {
+    /*Verify currentLoop has theme_name*/
+    console.log('printingcurrenlop has themename ?', currentLoop)
+
+    //this.fireEvents(`${currentLoop.theme_name}.reflection.button.next`)
     this.props.navigation.navigate('dashboard')
+  }
+
+  fireEvents = (eventName, params = {}) => {
+    logEvents(eventName, params)
   }
 
   updateContent = (text) => {
@@ -48,7 +58,9 @@ export default class loopCoachReflectionEndScreen extends Component {
 
   render () {
     const {loop} = this.props
-    if (loop.loop[0]) {
+    const currentLoop = get(loop,'loop[0]')
+
+    if (currentLoop) {
       const loopContent = eval(this.parseJson(loop.loop[0]))
       const coach_end_content = eval(this.parseJson(loopContent.coach_end_content))
       if (coach_end_content) {
@@ -56,8 +68,6 @@ export default class loopCoachReflectionEndScreen extends Component {
         const loopStyles = get(loop, 'loopStyles[0]', {})
         const updatedTitle = this.updateContent(title)
         const updatedDescription = this.updateContent(description)
-        console.log('printing demi', updatedDescription)
-
         return (
           <GradientWrapper name={'intro'}>
             <View style={styles.introWrapper}>
@@ -66,7 +76,7 @@ export default class loopCoachReflectionEndScreen extends Component {
 
               <PrimaryButton
                 style={styles.profileButton}
-                onPress={this.goToLoopEndNext}>
+                onPress={this.goToLoopEndNext.bind(this,currentLoop)}>
                 INTERESTING!
               </PrimaryButton>
             </View>

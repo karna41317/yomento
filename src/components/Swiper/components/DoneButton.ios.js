@@ -14,6 +14,7 @@ const DoneButton = ({
                       doneBtnLabel, nextBtnLabel,
                       readMoreLable,
                       doneFadeOpacity, skipFadeOpacity, nextOpacity,
+                      isHowRoute,
                     }) => {
   let textStyle = {}
   let buttonStyle = {
@@ -21,7 +22,13 @@ const DoneButton = ({
   }
   let btnContainerStyle = {}
 
-  if (toLower(readMoreLable).includes('reminder')) {
+  if (toLower(readMoreLable).includes('reminder') ||
+    toLower(nextBtnLabel).includes('reminder')) {
+
+
+    if (isHowRoute) {
+      return null
+    }
 
     textStyle = {
       color: '#0079FF',
@@ -35,8 +42,10 @@ const DoneButton = ({
     btnContainerStyle = {
       position: 'absolute',
       bottom: 0,
-      marginLeft: 10,
-      alignSelf: 'center',
+      left: 40,
+      right: 0,
+      justifyContent: 'center',
+      alignItems: 'center',
     }
   }
   let disabled
@@ -47,25 +56,27 @@ const DoneButton = ({
     disabled = disable
   }
   return (
-    <View style={[styles.btnContainer, btnContainerStyle]}>
-      <Animated.View>
-        <PrimaryButton
-          disable={disabled}
-          upper
-          onPress={isDoneBtnShow
-            ? onDoneBtnClick
-            : onNextBtnClick}>
-          {nextBtnLabel}
-        </PrimaryButton>
-      </Animated.View>
-      {isDoneBtnShow && readMoreLable ? (
-        <SecondaryButton
-          onPress={readMoreClick}
-          textStyles={textStyle}
-          style={buttonStyle}
-          upper>
-          {readMoreLable}
-        </SecondaryButton>) : null}
+    <View style={btnContainerStyle}>
+      <View style={[styles.btnContainer]}>
+        <Animated.View>
+          <PrimaryButton
+            disable={disabled}
+            upper
+            onPress={isDoneBtnShow
+              ? onDoneBtnClick
+              : onNextBtnClick}>
+            {nextBtnLabel}
+          </PrimaryButton>
+        </Animated.View>
+        {isDoneBtnShow && readMoreLable ? (
+          <SecondaryButton
+            onPress={readMoreClick}
+            textStyles={textStyle}
+            style={buttonStyle}
+            upper>
+            {readMoreLable}
+          </SecondaryButton>) : null}
+      </View>
     </View>
   )
 }
