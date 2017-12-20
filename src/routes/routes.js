@@ -7,6 +7,7 @@ import verfiyScreen from 'src/screens/auth/verify/verify-screen'
 import verificationCodeScreen from 'src/screens/auth/verificationCode/verification-code-screen'
 import passwordScreen from 'src/screens/auth/password/password-screen'
 import profileScreen from 'src/screens/profile/profile-screen'
+import profileScreenNext from 'src/screens/profile/profile-screen-next'
 import profileDetailsScreen from 'src/screens/profile/profile-details-screen'
 import onBoarding from 'src/screens/on-boarding/on-boarding-screen'
 
@@ -126,6 +127,9 @@ export const AppNavigator = StackNavigator({
   },
   profile: {
     screen: profileScreen,
+  },
+  profileNext: {
+    screen: profileScreenNext,
   },
   profileDetails: {
     screen: profileDetailsScreen,

@@ -5,7 +5,7 @@ import { loopSelector } from './loopSelector'
 import { styles, htmlStyles } from './loop-styles'
 import LoopSwiperComponent from 'src/components/Swiper/loop-swiper'
 import { get } from 'lodash'
-import { updateCards } from 'src/actions'
+import { updateCards, getLoops } from 'src/actions'
 import { logEvents } from 'src/services/analytics'
 
 const sequenceNumber = 0
@@ -20,6 +20,10 @@ export default class LoopHowScreen extends Component {
     this.state = {
       isHowRoute: howRoute ? howRoute : false,
     }
+  }
+
+  componentDidMount () {
+    //this.props.dispatch(getLoops())
   }
 
   parseJson = (content) => {
@@ -100,7 +104,7 @@ export default class LoopHowScreen extends Component {
     const {loop, navigation} = this.props
     console.log('printingnavigation', this.state)
 
-    if (loop) {
+    if (loop.loop[0]) {
       const loopContent = eval(this.parseJson(loop.loop[0]))
       const how_content = eval(this.parseJson(loopContent.how_content))
       const {dashboard} = this.props

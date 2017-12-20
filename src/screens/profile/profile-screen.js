@@ -43,7 +43,7 @@ export default class ProfileScreen extends Component {
 
   closePress = () => {
     this.fireEvents('profile.closeclicked')
-    this.props.navigation.navigate('dashboard')
+    this.props.navigation.navigate('profileNext')
   }
 
   componentDidMount = () => {
@@ -100,7 +100,7 @@ export default class ProfileScreen extends Component {
   launchDashboard = () => {
     this.fireEvents('profile.launchDashboard')
     this.props.dispatch(profileLanunched())
-    this.props.navigation.navigate('dashboard')
+    this.props.navigation.navigate('profileNext')
   }
 
   getLaunchButton = () => {

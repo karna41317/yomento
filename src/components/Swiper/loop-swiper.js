@@ -350,7 +350,7 @@ export default class LoopSwiperComponent extends Component {
     let options = dataObject.options[0].data
     let max_select = dataObject.options[0].max_select
 
-    const optionTitle = max_select ===1 ? 'Select one Option' : 'Select any releavant'
+    const optionTitle = max_select === 1 ? 'Select one Option' : 'Select any relevant'
 
     if (options) {
       return (

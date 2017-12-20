@@ -14,6 +14,8 @@ import { PrimaryButton } from '../../components/buttons/Button'
 import GradientWrapper from '../../components/partials/gradientWrapper'
 import { loopSelector } from './loopSelector'
 import {get} from 'lodash'
+import {logEvents} from '../../services/analytics'
+
 @connect(loopSelector)
 export default class loopCoachReflectionIntroScreen extends Component {
 

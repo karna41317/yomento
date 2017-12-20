@@ -69,11 +69,11 @@ export default class ProfileDetailsScreen extends Component {
 
     const userDetails = get(auth, 'userData.user')
     const proButtonText = toLower(userType) === 'basic'
-      ? 'Get YommentoPRO!'
+      ? 'Get YomentoPRO!'
       : 'PRO member'
     proButtonStyle = {
-      backgroundColor: toLower(userType) === 'basic' ? '#0079FF' : '#C1C1C1',
-      borderColor: toLower(userType) === 'basic' ? '#0079FF' : '#C1C1C1',
+      backgroundColor: toLower(userType) === 'basic' ? '#D3D3D3' : '#C1C1C1',
+      borderColor: toLower(userType) === 'basic' ? '#D3D3D3' : '#C1C1C1',
       width: 250,
     }
     if(userDetails && memberShipDetails) {
@@ -100,6 +100,7 @@ export default class ProfileDetailsScreen extends Component {
               <Text style={styles.profileEmail}>{userDetails.email}</Text>
             </View>
             <PrimaryButton
+              onPress={()=> {}}
               textStyles={styles.profileButtonText}
               style={proButtonStyle}>
               {proButtonText}

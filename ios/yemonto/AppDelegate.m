@@ -32,7 +32,7 @@
   [AppCenterReactNativeCrashes registerWithAutomaticProcessing];  // Initialize AppCenter crashes
 
   [AppCenterReactNativeAnalytics registerWithInitiallyEnabled:true];  // Initialize AppCenter analytics
-  [FBSDKAppEvents logEvent:@"My custom event"];
+  //[FBSDKAppEvents logEvent:@"My custom event"];
   [AppCenterReactNative register];  // Initialize AppCenter 
     #ifdef DEBUG
         //jsCodeLocation = [NSURL URLWithString:@"http://192.168.1.108:8081/index.ios.bundle?platform=ios&dev=true"];

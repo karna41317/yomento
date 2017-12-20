@@ -72,7 +72,7 @@ export default class LoopIntroScreen extends Component {
 
   render () {
     const {loop, navigation, dashboard} = this.props
-    if (loop) {
+    if (loop.loop[0]) {
       const loopContent = eval(this.parseJson(loop.loop[0]))
       const introPages = eval(this.parseJson(loopContent.introduction_content))
       const headerName = get(dashboard, 'newCard[0].theme_name', 'Intro')
@@ -103,5 +103,6 @@ export default class LoopIntroScreen extends Component {
       }
       return null
     }
+    return null
   }
 }

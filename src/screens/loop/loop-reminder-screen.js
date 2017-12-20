@@ -18,7 +18,6 @@ import { get, toUpper } from 'lodash'
 import { PrimaryButton } from '../../components/buttons/Button'
 import { semiBoldTextMixin } from '../../styles/mixins'
 import PushNotification from 'react-native-push-notification'
-import RNCalendarReminders from 'react-native-calendar-reminders';
 import { logEvents } from '../../services/analytics'
 
 const sequenceNumber = 0
@@ -30,8 +29,6 @@ export default class loopReminderScreen extends Component {
       date: new Date(),
     }
   }
-
-
 
   fireEvents = (eventName, params) => {
     logEvents(eventName, params)
@@ -77,11 +74,27 @@ export default class loopReminderScreen extends Component {
     }
   }
 
+  updateContent = (text) => {
+    const {auth, loop} = this.props
+    const userName = get(auth, 'userData.user.first_name')
+    const personName = get(loop, 'loopData.personName')
+    let originalText = text
+
+    if (userName) {
+      originalText = originalText.replace('<first_name>', userName)
+    }
+    if (personName) {
+      originalText = originalText.replace('<name_of_colleague>', personName)
+    }
+
+    return originalText
+  }
+
   confirmReminder = (currentLoop) => {
     const {dispatch, navigation, dashboard, auth} = this.props
 
     const isValidDate = this.validateDate(this.state.date)
-    const loopId =  get(currentLoop, 'loop_id')
+    const loopId = get(currentLoop, 'loop_id')
     const firstName = get(auth, 'userData.user.first_name')
     if (isValidDate) {
       const dataInEpoch = Moment(this.state.date).unix()
@@ -95,24 +108,25 @@ export default class loopReminderScreen extends Component {
         pathParams,
         bodyParams,
         nextScreen: 'loopReminderEnd',
-        routeParams : {
-          reminder_time: Moment(this.state.date).format('Do MMM H:mm')
-        }
+        routeParams: {
+          reminder_time: Moment(this.state.date).format('Do MMM H:mm'),
+        },
       }
 
       const themeName = get(dashboard, 'newCard[0].theme_name', 'Reminder')
       this.fireEvents(`${themeName}.loopReminderScreen.${sequenceNumber}.button.confirmReminder`, {
         themeName: themeName,
         reminder_time: dataInEpoch,
-        loop_id: loopId
+        loop_id: loopId,
       })
-      console.log('printingcurrentLoop', currentLoop.title, firstName)
+
       const prefix = firstName ? firstName : 'Hej'
-      const message = `${prefix} ! ${currentLoop.title}`
+      const reminderMsg = currentLoop.reminder_msg1 ? currentLoop.reminder_msg1 : `${prefix}! ${currentLoop.title}`
+      const notificationMsg = this.updateContent(reminderMsg)
 
       PushNotification.localNotificationSchedule({
         id: `reminder_${themeName}_${loopId}`,
-        message: message,
+        message: notificationMsg,
         date: new Date(this.state.date.getTime() + (60 * 1000)) // in 60 secs
       })
 
@@ -132,8 +146,8 @@ export default class loopReminderScreen extends Component {
   getHeader = (headerName) => {
     return (
       <Header backgroundColor={'transparent'} style={customStyles.header}>
-        <Left >
-            <Icon onPress={this.goBack} name='ios-arrow-round-back-outline' style={{fontSize: 40, width: 20, color: '#419BF9'}}/>
+        <Left>
+          <Icon onPress={this.goBack} name='ios-arrow-round-back-outline' style={{fontSize: 40, width: 20, color: '#419BF9'}}/>
         </Left>
         <Body style={{minWidth: 150}}>
         <Text style={customStyles.finishedText}>{toUpper(headerName)}</Text>
@@ -150,7 +164,8 @@ export default class loopReminderScreen extends Component {
       const loopContent = eval(this.parseJson(currentLoop))
       const reminder_action_content = eval(
         this.parseJson(loopContent.reminder_action_content))
-      const headerName = get(dashboard, 'newCard[0].theme_name', 'Intro')
+
+      const headerName = get(dashboard, 'newCard[0].theme_name', 'FEEDBACK EXERCISE')
       if (reminder_action_content) {
         const {title} = get(reminder_action_content[0], 'data[0]')
         return (
@@ -180,8 +195,6 @@ export default class loopReminderScreen extends Component {
     return null
   }
 }
-
-
 
 const customStyles = StyleSheet.create({
   header: {
