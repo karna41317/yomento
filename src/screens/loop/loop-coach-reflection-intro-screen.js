@@ -14,7 +14,7 @@ import Button from '../../components/form/customButton'
 import { PrimaryButton } from '../../components/buttons/Button'
 import GradientWrapper from '../../components/partials/gradientWrapper'
 import { loopSelector } from './loopSelector'
-import {get} from 'lodash'
+import {get, toUpper} from 'lodash'
 import {logEvents} from '../../services/analytics'
 
 @connect(loopSelector)
@@ -66,6 +66,9 @@ export default class loopCoachReflectionIntroScreen extends Component {
 
       if (coach_action_done_content) {
         const {title, description} = get(coach_action_done_content[0], 'data[0]')
+
+
+        const {text} = get(coach_action_done_content[0], 'button[0]')
         const updatedTitle = this.updateContent(title)
         const updatedDescription = this.updateContent(description)
         const profileFinishText = {
@@ -82,7 +85,7 @@ export default class loopCoachReflectionIntroScreen extends Component {
               <PrimaryButton
                 style={styles.profileButton}
                 onPress={this.goToLoopEndNext.bind(this, currentLoop)}>
-                INTERESTING!
+                {toUpper(text)}
               </PrimaryButton>
             </View>
           </GradientWrapper>

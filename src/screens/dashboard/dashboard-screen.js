@@ -449,6 +449,8 @@ export default class DashboardScreen extends Component {
 
   render () {
     const {dashboard: {fetching}} = this.props
+    console.log('printingfetching',  this.props)
+
     if (fetching) {
       return (
         <View style={{flex: 1}}>
@@ -461,21 +463,17 @@ export default class DashboardScreen extends Component {
           <View style={{backgroundColor: 'transparent'}}>
             {this.getHeader()}
             <View style={styles.dashboardWrapper}>
-
               <ScrollView
                 ref={this.refScrollView}
                 automaticallyAdjustContentInsets={false}
                 onScroll={() => {}}
                 scrollEventThrottle={200}
                 showsVerticalScrollIndicator={false}>
-
                 {this.getReminderCard()}
                 {this.getReflectionCard()}
                 {this.getMainCard()}
                 {this.getFutureCards()}
               </ScrollView>
-
-
             </View>
           </View>
         </GradientWrapper>

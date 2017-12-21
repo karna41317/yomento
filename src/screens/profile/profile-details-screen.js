@@ -13,6 +13,7 @@ import { profileSelector } from './profile.selector'
 import { get, toLower } from 'lodash'
 import {logOut} from 'src/actions'
 import {logEvents} from 'src/services/analytics'
+import {clearSnapshot} from 'src/utils'
 
 @connect(profileSelector)
 export default class ProfileDetailsScreen extends Component {
@@ -54,6 +55,7 @@ export default class ProfileDetailsScreen extends Component {
   }
   logOutUser = () => {
     this.fireEvents('profileDetails.loggedOut')
+    clearSnapshot()
     this.props.dispatch(logOut())
     this.props.navigation.navigate('home')
   }

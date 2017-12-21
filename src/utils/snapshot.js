@@ -53,6 +53,7 @@ async function rehydrate () {
 async function clear () {
   try {
     await AsyncStorage.removeItem(STATE_STORAGE_KEY)
+    await AsyncStorage.clear()
   } catch (e) {
     console.error('Error clearing peristed application state', e)
   }

@@ -28,12 +28,17 @@ export default class Home extends Component {
 
   componentWillMount = () => {
     const {auth: {userData}, profile} = this.props
+    console.log('printinguserData', userData)
+
     if (userData) {
       const token = get(userData, 'authorization')
+      const PCreated = get(userData, 'profile_created')
+      console.log('printingPCreated', PCreated)
+
       const isValid = token.includes('Bearer')
-      if (isValid) {
+      if (!isValid) {
         const profileCreated = get(profile, 'profileCreated')
-        console.log('printingprofileCreated', profileCreated)
+        console.log('printingprofileCreated',profileCreated )
 
         if(profileCreated) {
           this.props.navigation.navigate('dashboard')

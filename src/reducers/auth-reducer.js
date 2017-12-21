@@ -71,13 +71,7 @@ export default (state = initialState, action = {}) => {
         //authType: action.payload['authType'],
       }
     case Types.LOG_OUT:
-      return {
-        ...state,
-        fetching: false,
-        user: null,
-        userData:null
-        //authType: null,
-      }
+      return state
     default:
       return state
   }
