@@ -4,6 +4,7 @@
 import { connect } from 'react-redux'
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, Linking, Image, ActivityIndicator } from 'react-native'
+import { Spinner} from 'src/components'
 import GradientWrapper from '../../components/partials/gradientWrapper'
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'src/components/native-base'
 import { styles } from './profile.styles'
@@ -153,7 +154,7 @@ export default class ProfileDetailsScreen extends Component {
       )
     }
 
-    return <ActivityIndicator />
+    return <Spinner />
   }
 }
 

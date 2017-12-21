@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, Animated, ActivityIndicator } from 'react-native'
+import { Spinner} from 'src/components'
 import { connect } from 'react-redux'
 import { loopSelector } from './loopSelector'
 import { styles, htmlStyles } from './loop-styles'
@@ -124,7 +125,8 @@ export default class LoopReflectionScreen extends Component {
           />
         )
       }
+      return <Spinner />
     }
-    return null
+    return <Spinner />
   }
 }

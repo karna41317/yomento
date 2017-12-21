@@ -318,25 +318,53 @@ export default class LoopSwiperComponent extends Component {
     this.props.navigation.navigate('dashboard')
   }
 
+
+
+  getHeader = () => {
+    return (
+      <Header backgroundColor={'transparent'} style={customStyles.header}>
+        <Left></Left>
+        <Body>
+        <Text style={customStyles.finishedText}>PROFILE</Text>
+        </Body>
+        <Right>
+          <Button transparent onPress={this.closePress}>
+            <Icon
+              name='close'
+              style={{fontSize: 40, color: '#419BF9'}}/>
+          </Button>
+        </Right>
+      </Header>
+    )
+  }
+
+
+
   getSwiperHeader = (index, total, content_type) => {
+
     if (this.shouldHaveHeader(content_type)) {
       return (
-        <View backgroundColor={'transparent'} style={styles.headerStyle}>
-          <Button transparent onPress={this.backArrowPress.bind(this,index)}>
-            <Icon name='arrow-back' style={{fontSize: 30, color: '#419BF9'}}/>
-          </Button>
-          <View>
+        <Header  style={styles.headerStyle} backgroundColor={'transparent'}>
+          <Left>{ index ? (
+            <Button style={{maxWidth: 100}} transparent onPress={this.backArrowPress.bind(this,index)}>
+              <Icon name='arrow-back' style={{fontSize: 30, color: '#419BF9'}}/>
+            </Button>
+          ): null
+          }</Left>
+          <Body>
             <Text style={styles.headerTextStyle}>{this.getHeaderName()}</Text>
             <View style={styles.dotContainer}>
               {this.props.showDots && RenderDots(index, total, {
                 ...this.props, styles: styles,
               })}
             </View>
-          </View>
+          </Body>
+          <Right>
           <Button transparent onPress={this.goToDashboard}>
-            <Icon name='close' style={{fontSize: 30, color: '#419BF9'}}/>
+            <Icon name='close' style={{fontSize: 40, color: '#419BF9'}}/>
           </Button>
-        </View>
+          </Right>
+        </Header>
       )
     }
     return null

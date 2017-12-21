@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, Dimensions, Image, ScrollView, ActivityIndicator, TouchableOpacity } from 'react-native'
+import { Spinner} from 'src/components'
 import GradientWrapper from '../../components/partials/gradientWrapper'
 import { get, toUpper, head, map, each, sortBy, includes } from 'lodash'
 import { styles } from './dashboard.styles'
@@ -11,69 +12,30 @@ import { getDashboardCards, getLoops, updateDashboardCards, updateCards } from '
 import { connect } from 'react-redux'
 import { dashboardSelector } from './dashboard-selector'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
-
+import {logEvents} from 'src/services/analytics'
 const normalHeight = 220
 const extendedHeight = 320
 const headerPadding = 20
 
 @connect(dashboardSelector)
 export default class DashboardScreen extends Component {
-  goToSetting = () => {
-    this.props.navigation.navigate('profile')
-  }
-
-  constructor (props) {
-    super(props)
-    this.state = {
-      showMainCard: this.showMainCard(),
-    }
-  }
-
-  showMainCard = () => {
-    return true
-  }
-
-  componentWillMount () {
-    this.props.dispatch(getDashboardCards())
-  }
-
-  componentDidUpdate () {
-    this.skipFutureCards()
-  }
-
-  skipFutureCards = () => {
-    const {dashboard: {finishedCards}} = this.props
-    if (finishedCards && finishedCards.length > 0) {
-      let scrollHeight = finishedCards.length * normalHeight
-      scrollHeight = scrollHeight + (finishedCards.length * 10)
-      if (this.scrollView) {
-        this.scrollView.scrollTo({x: 0, y: scrollHeight, animated: true})
-      }
-    }
-  }
-
-  updateCard = (loopId, cardType, nextScreen) => {
-    const {dispatch, loop, navigation} = this.props
-
-    if (loopId) {
-      const pathParams = {
-        card_type: cardType,
-        loop_id: loopId,
-      }
-      bodyParams = {}
-
-      const params = {
-        pathParams,
-        bodyParams,
-        nextScreen,
-      }
-      dispatch(updateCards(params, navigation))
-    }
-  }
 
   parseJson = (content) => {
     return JSON.parse(JSON.stringify(content))
   }
+
+  goToHow = (item) => {
+    const {navigation, dispatch} = this.props
+    this.fireEvents(`dashboard.finishedcard.${item.theme_name}.button.how`, item)
+    dispatch(getLoops(item.loop_id))
+    /*TODO: Fix for only how screen*/
+    navigation.navigate('loopHow', {howRoute: true})
+  }
+
+  fireEvents = (eventName, params = {}) => {
+    logEvents(eventName, params)
+  }
+
 
   finishedCards = () => {
     const {dashboard: {finishedCards}} = this.props
@@ -83,7 +45,7 @@ export default class DashboardScreen extends Component {
           flex: 1,
           height: normalHeight,
           backgroundColor: '#9696A5',
-          marginHorizontal:20
+          marginHorizontal: 20,
         }
 
         return (
@@ -125,6 +87,12 @@ export default class DashboardScreen extends Component {
                     {toUpper(card.card_status)}
                   </SecondaryButton>
                 </View>
+                <PrimaryButton
+                  upper
+                  style={{minWidth: 100}}
+                  textStyles={{color: '#FFFFFF'}}
+                  onPress={this.goToHow.bind(this,
+                    card)}>How?</PrimaryButton>
               </View>
             </View>
           </View>
@@ -136,7 +104,7 @@ export default class DashboardScreen extends Component {
   refScrollView = view => {
     this.scrollView = view
   }
-  scrollToFinished = () => {
+  goToHome = () => {
     this.props.navigation.navigate('dashboard')
   }
   getHomeButton = () => {
@@ -144,7 +112,7 @@ export default class DashboardScreen extends Component {
       <View style={customStyles.header}>
 
         <TouchableOpacity
-          onPress={this.scrollToFinished}
+          onPress={this.goToHome}
           style={customStyles.finishedButton}>
           <View style={{
             justifyContent: 'center',
@@ -164,36 +132,20 @@ export default class DashboardScreen extends Component {
   render () {
     const {dashboard: {fetching}} = this.props
     if (fetching) {
-      return <ActivityIndicator/>
+      return <Spinner/>
     } else {
       return (
         <GradientWrapper name={'default'}>
-          {/*<View style={{backgroundColor: 'transparent'}}>
-            {this.getHeader()}
-            <View style={styles.dashboardWrapper}>
-              <ScrollView
-                ref={this.refScrollView}
-                automaticallyAdjustContentInsets={false}
-                onScroll={() => {}}
-                scrollEventThrottle={200}
-                showsVerticalScrollIndicator={false}>
-                {this.getFutureCards()}
-              </ScrollView>
-              <View style={{
-                justifyContent: 'flex-end',
-                alignItems: 'center',
-                flex: 1,
-                flexDirection:'column'
-              }}>
-
-
-              </View>
-
-            </View>
-          </View>*/}
-
-          {this.finishedCards()}
-
+          <View style={{height: Dimensions.get('window').height - 70}}>
+            <ScrollView
+              ref={this.refScrollView}
+              automaticallyAdjustContentInsets={false}
+              onScroll={() => {}}
+              scrollEventThrottle={200}
+              showsVerticalScrollIndicator={false}>
+              {this.finishedCards()}
+            </ScrollView>
+          </View>
           {this.getHomeButton()}
         </GradientWrapper>
       )

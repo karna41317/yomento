@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, Animated, ActivityIndicator } from 'react-native'
+import { Spinner} from 'src/components'
 import { connect } from 'react-redux'
 import { loopSelector } from './loopSelector'
 import { styles, htmlStyles } from './loop-styles'
@@ -67,6 +68,7 @@ export default class LoopHowScreen extends Component {
     const themeName = get(dashboard, 'newCard[0].theme_name', 'Intro')
     this.fireEvents(`${themeName}.loopHowScreen.${sequenceNumber}.button.done`)
     this.updateCard('reflection', 'loopCoachReflectionIntro')
+    //this.props.navigation.navigate('loopCoachReflectionIntro')
   }
 
   nextBtnHandle = (index) => {
@@ -81,7 +83,8 @@ export default class LoopHowScreen extends Component {
     const {dashboard} = this.props
     const themeName = get(dashboard, 'newCard[0].theme_name', 'Intro')
     this.fireEvents(`${themeName}.loopHowScreen.${sequenceNumber}.button.reminder`)
-    this.updateCard('reminder', 'loopReminder')
+    this.props.navigation.navigate('loopReminder')
+    //this.updateCard('reminder', 'loopReminder')
   }
 
   backPress = () => {
@@ -135,8 +138,8 @@ export default class LoopHowScreen extends Component {
           />
         )
       }
-      return <ActivityIndicator/>
+      return <Spinner/>
     }
-    return null
+    return <Spinner />
   }
 }

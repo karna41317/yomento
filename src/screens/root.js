@@ -3,6 +3,7 @@
  */
 import React, { PropTypes, Component } from 'react'
 import { View, StyleSheet, StatusBar, ActivityIndicator } from 'react-native'
+import { Spinner} from 'src/components'
 import { NavigatorView } from 'src/screens/navigator'
 import * as snapshotUtil from '../utils/snapshot'
 import * as SessionStateActions from 'src/actions/session-action'
@@ -47,7 +48,7 @@ export default class RootScreen extends Component {
     if (!this.props.isReady) {
       return (
         <View style={{flex: 1}}>
-          <ActivityIndicator style={styles.centered}/>
+          <Spinner/>
         </View>
       )
     }

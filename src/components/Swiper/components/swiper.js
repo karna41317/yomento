@@ -11,6 +11,7 @@ import {
   Platform,
   ActivityIndicator,
 } from 'react-native'
+import { Spinner} from 'src/components'
 
 /**
  * Default styles
@@ -719,7 +720,7 @@ export default class Swiper extends Component {
           } else {
             return (
               <View style={pageStyleLoading} key={i}>
-                {loadMinimalLoader ? loadMinimalLoader : <ActivityIndicator/>}
+                {loadMinimalLoader ? loadMinimalLoader : <Spinner/>}
               </View>
             )
           }

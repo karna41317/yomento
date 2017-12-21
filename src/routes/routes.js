@@ -1,4 +1,6 @@
+//import { StackNavigator } from 'react-navigation'
 import { StackNavigator } from 'react-navigation'
+//import CardStackStyleInterpolator from 'react-navigation/src/views/CardStack/CardStackStyleInterpolator';
 import loginScreen from 'src/screens/auth/login/login-screen_no_animation'
 import homeScreen from 'src/screens/home/home-screen'
 import signupScreen from 'src/screens/auth/signup/signup-screen'
@@ -15,7 +17,6 @@ import idealRatingIntroScreen from 'src/screens/profile/ideal-rating-intro-scree
 import idealRatingMainScreen from 'src/screens/profile/ideal-rating-main-screen'
 import idealRatingLoopScreen from 'src/screens/profile/ideal-rating-loop-screen'
 import idealRatingFinishScreen from 'src/screens/profile/ideal-rating-finish-screen'
-
 
 import selfRatingIntroScreen from 'src/screens/profile/self-rating-intro-screen'
 import selfRatingMainScreen from 'src/screens/profile/self-rating-main-screen'
@@ -38,7 +39,6 @@ import loopCoachReflectionIntroScreen from 'src/screens/loop/loop-coach-reflecti
 import loopReflectionScreen from 'src/screens/loop/loop-coach-reflection-screen'
 import loopCoachReflectionAfterScreen from 'src/screens/loop/loop-coach-reflection-end-screen'
 
-/*
 let MyTransition = (index, position) => {
   const inputRange = [index - 1, index, index + 1]
   const opacity = position.interpolate({
@@ -62,16 +62,13 @@ let MyTransition = (index, position) => {
 let TransitionConfiguration = () => {
   return {
     // Define scene interpolation, eq. custom transition
-    screenInterpolator: (sceneProps) => {
-
+    screenInterpolator: sceneProps => {
       const {position, scene} = sceneProps
       const {index} = scene
-
       return MyTransition(index, position)
     },
   }
 }
-*/
 
 export const AppNavigator = StackNavigator({
   home: {
@@ -107,8 +104,8 @@ export const AppNavigator = StackNavigator({
   selfRatingLoop: {
     screen: selfRatingLoopScreen,
   },
-  selfRatingMain:{
-    screen: selfRatingMainScreen
+  selfRatingMain: {
+    screen: selfRatingMainScreen,
   },
   selfRatingFinish: {
     screen: selfRatingFinishScreen,
@@ -116,8 +113,8 @@ export const AppNavigator = StackNavigator({
   idealRatingIntro: {
     screen: idealRatingIntroScreen,
   },
-  idealRatingMain:{
-    screen: idealRatingMainScreen
+  idealRatingMain: {
+    screen: idealRatingMainScreen,
   },
   idealRatingLoop: {
     screen: idealRatingLoopScreen,
@@ -130,9 +127,22 @@ export const AppNavigator = StackNavigator({
   },
   profileNext: {
     screen: profileScreenNext,
+
+/*    navigationOptions: {
+      direction: 'fade',
+      transitionConfig: () => {
+        return {screenInterpolator: CardStackStyleInterpolator.forHorizontal}
+      },
+    },*/
   },
   profileDetails: {
     screen: profileDetailsScreen,
+/*    navigationOptions: {
+      direction: 'fade',
+      transitionConfig: () => {
+        return {screenInterpolator: CardStackStyleInterpolator.forHorizontal}
+      },
+    },*/
   },
   demoScreen: {
     screen: demoScreen,
@@ -144,7 +154,7 @@ export const AppNavigator = StackNavigator({
     screen: dashboardScreen,
   },
   finished: {
-    screen: finishedScreen
+    screen: finishedScreen,
   },
   loop: {
     screen: LoopScreen,
@@ -180,8 +190,10 @@ export const AppNavigator = StackNavigator({
   headerMode: 'none',
   navigationOptions: {
     gesturesEnabled: false,
+    direction: 'fade',
+    mode: 'modal',
   },
-  /*transitionConfig: TransitionConfiguration,*/
+  transitionConfig: TransitionConfiguration,
 })
 
 

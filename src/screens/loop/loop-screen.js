@@ -13,7 +13,7 @@ import HTMLView from 'react-native-htmlview'
 import HTML from 'react-native-render-html'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import { updateCards } from '../../actions/loop-action'
-import { get } from 'lodash'
+import { get, toUpper } from 'lodash'
 import { logEvents } from 'src/services/analytics'
 import {contentStyles} from 'src/loop-styles'
 const sequenceNumber = 0
@@ -104,7 +104,7 @@ export default class LoopScreen extends Component {
                 <Body>
                 <Button transparent
                         style={styles.finishedButton}>
-                  <Text style={styles.finishedText}>{headerName}</Text>
+                  <Text style={styles.finishedText}>{toUpper(headerName)}</Text>
                 </Button>
                 </Body>
                 <Right>

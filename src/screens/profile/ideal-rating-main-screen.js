@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { ActivityIndicator, View, Text, } from 'react-native'
+import { Spinner} from 'src/components'
 import { styles, htmlStyles } from './profile.styles'
 import Button from '../../components/form/customButton'
 import { PrimaryButton } from '../../components/buttons/Button'

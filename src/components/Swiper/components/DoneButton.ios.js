@@ -36,13 +36,13 @@ const DoneButton = ({
     }
     buttonStyle = {
       paddingHorizontal: 0,
-      marginTop: 10,
+      marginTop: 20,
       borderWidth: 0,
     }
     btnContainerStyle = {
       position: 'absolute',
       bottom: 0,
-      left: 40,
+      left: 50,
       right: 0,
       justifyContent: 'center',
       alignItems: 'center',

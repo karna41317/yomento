@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { ActivityIndicator } from 'react-native'
+import { Spinner} from 'src/components'
 import SwiperComponent from 'src/components/Swiper/swiper'
 import { get } from 'lodash'
 import { getProfileContent, AddProfileContent } from 'src/actions'
@@ -90,7 +91,7 @@ export default class selfRatingLoopScreen extends Component {
         />
       )
     }
-    return <ActivityIndicator/>
+    return <Spinner/>
   }
 }
 

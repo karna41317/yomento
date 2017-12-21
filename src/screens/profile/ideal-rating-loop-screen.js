@@ -7,6 +7,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { ActivityIndicator } from 'react-native'
+import { Spinner} from 'src/components'
 import SwiperComponent from 'src/components/Swiper/swiper'
 import demoData from './demo-data'
 import { getProfileContent } from 'src/actions'
@@ -86,7 +87,7 @@ export default class idealRatingLoopScreen extends Component {
         />
       )
     }
-    return <ActivityIndicator/>
+    return <Spinner/>
   }
 }
 

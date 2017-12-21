@@ -43,7 +43,7 @@ export default class ProfileScreen extends Component {
 
   closePress = () => {
     this.fireEvents('profile.closeclicked')
-    this.props.navigation.navigate('profileNext')
+    this.props.navigation.navigate('dashboard')
   }
 
   componentDidMount = () => {

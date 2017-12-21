@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, Dimensions, Image, ScrollView, ActivityIndicator } from 'react-native'
+import { Spinner} from 'src/components'
 import GradientWrapper from '../../components/partials/gradientWrapper'
 import { get, toUpper, head, map, each, sortBy, includes } from 'lodash'
 import { styles } from './dashboard.styles'
@@ -39,10 +40,6 @@ export default class DashboardScreen extends Component {
 
   fireEvents = (eventName, params = {}) => {
     logEvents(eventName, params)
-  }
-
-  componentWillMount () {
-    this.props.dispatch(getDashboardCards())
   }
 
   componentDidUpdate () {
@@ -417,7 +414,8 @@ export default class DashboardScreen extends Component {
     this.scrollView = view
   }
   scrollToFinished = () => {
-    this.scrollView.scrollTo({y: 0, animated: true})
+    //this.scrollView.scrollTo({y: 0, animated: true})
+    this.props.navigation.navigate('finished')
   }
   getHeader = () => {
     return (
@@ -452,7 +450,11 @@ export default class DashboardScreen extends Component {
   render () {
     const {dashboard: {fetching}} = this.props
     if (fetching) {
-      return <ActivityIndicator/>
+      return (
+        <View style={{flex: 1}}>
+          <Spinner/>
+        </View>
+      )
     } else {
       return (
         <GradientWrapper name={'default'}>
@@ -466,7 +468,7 @@ export default class DashboardScreen extends Component {
                 onScroll={() => {}}
                 scrollEventThrottle={200}
                 showsVerticalScrollIndicator={false}>
-                {this.finishedCards()}
+
                 {this.getReminderCard()}
                 {this.getReflectionCard()}
                 {this.getMainCard()}

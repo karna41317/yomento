@@ -87,6 +87,7 @@ export const styles = StyleSheet.create({
   headerTextStyle: {
     ...regularTextMixin(14),
     textAlign: 'center',
+    minWidth: 180
   },
   btnContainer: {
     flex: 1,

@@ -9,6 +9,7 @@ import { connect } from 'react-redux'
 import Moment from 'moment'
 import { styles, htmlStyles } from './loop-styles'
 import { ActivityIndicator, View, Text, DatePickerIOS, Alert, StyleSheet } from 'react-native'
+import { Spinner} from 'src/components'
 import GradientWrapper from '../../components/partials/gradientWrapper'
 import { Container, Header, DeckSwiper, Card, CardItem, Thumbnail, Left, Right, Body, Icon, Button } from 'src/components/native-base'
 import { loopSelector } from './loopSelector'
@@ -190,9 +191,9 @@ export default class loopReminderScreen extends Component {
           </GradientWrapper>
         )
       }
-      return null
+      return <Spinner />
     }
-    return null
+    return <Spinner />
   }
 }
 

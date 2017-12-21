@@ -8,6 +8,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { extraBoldTextMixin, lightTextMixin, boldTextMixin, semiBoldTextMixin, regularTextMixin } from 'src/styles'
 import { ActivityIndicator, View, Text, StyleSheet } from 'react-native'
+import { Spinner} from 'src/components'
 import HTML from 'react-native-render-html'
 import Button from '../../components/form/customButton'
 import { PrimaryButton } from '../../components/buttons/Button'
@@ -25,7 +26,7 @@ export default class loopCoachReflectionIntroScreen extends Component {
   goToLoopEndNext = (currentLoop) => {
 
     this.fireEvents(`${currentLoop.theme_name}.reflectionIntro.button.next`)
-    this.props.navigation.navigate('loopReflection')
+    this.props.navigation.navigate('dashboard')
   }
 
   parseJson = (content) => {
@@ -88,6 +89,9 @@ export default class loopCoachReflectionIntroScreen extends Component {
         )
       }
     }
+    return (
+      <Spinner />
+    )
   }
 }
 
