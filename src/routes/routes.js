@@ -193,7 +193,7 @@ export const AppNavigator = StackNavigator({
     direction: 'fade',
     mode: 'modal',
   },
-  transitionConfig: TransitionConfiguration,
+  //transitionConfig: TransitionConfiguration,
 })
 
 

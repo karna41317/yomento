@@ -63,7 +63,9 @@ export default class loopCoachReflectionEndScreen extends Component {
       const coach_end_content = eval(this.parseJson(loopContent.coach_end_content))
       if (coach_end_content) {
         const {title, description} = get(coach_end_content[0], 'data[0]')
-        const {text} = get(coach_end_content[0], 'button[0]')
+        console.log('printingcoach_end_content', coach_end_content)
+
+        const {text} = get(coach_end_content[0], 'buttons[0]')
         const loopStyles = get(loop, 'loopStyles[0]', {})
         const updatedTitle = this.updateContent(title)
         const updatedDescription = this.updateContent(description)

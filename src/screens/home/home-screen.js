@@ -36,7 +36,7 @@ export default class Home extends Component {
       console.log('printingPCreated', PCreated)
 
       const isValid = token.includes('Bearer')
-      if (!isValid) {
+      if (isValid) {
         const profileCreated = get(profile, 'profileCreated')
         console.log('printingprofileCreated',profileCreated )
 

@@ -2309,7 +2309,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardust.yomento;
 				PRODUCT_NAME = yemonto;
-				PROVISIONING_PROFILE = "41abc7b1-5892-4334-87a1-fe446ccc5d7b";
+				PROVISIONING_PROFILE = "be70f2f9-f636-47fd-9601-62b32891c34f";
 				PROVISIONING_PROFILE_SPECIFIER = "yomento stardust development";
 				SWIFT_OBJC_BRIDGING_HEADER = "yemonto-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

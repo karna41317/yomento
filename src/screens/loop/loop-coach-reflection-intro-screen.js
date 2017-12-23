@@ -67,8 +67,10 @@ export default class loopCoachReflectionIntroScreen extends Component {
       if (coach_action_done_content) {
         const {title, description} = get(coach_action_done_content[0], 'data[0]')
 
+        console.log('printingcoach_action_done_content', coach_action_done_content)
 
-        const {text} = get(coach_action_done_content[0], 'button[0]')
+
+        const {text} = get(coach_action_done_content[0], 'buttons[0]')
         const updatedTitle = this.updateContent(title)
         const updatedDescription = this.updateContent(description)
         const profileFinishText = {
