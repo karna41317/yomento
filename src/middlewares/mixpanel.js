@@ -32,7 +32,7 @@ const actionTracking = store => next => action => {
     }*/
     case Types.SIGNUP_SUCCESS: {
       const user = get(result, 'payload.user')
-      console.log('printing', user, result)
+
 
       Mixpanel.trackWithProperties('SIGNUP_SUCCESS', {
         user: user,

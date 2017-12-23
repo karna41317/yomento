@@ -4,7 +4,7 @@
 
 import React, { Component } from 'react'
 import { View, Text, Animated, ActivityIndicator } from 'react-native'
-import { Spinner} from 'src/components'
+import { Spinner } from 'src/components'
 import { connect } from 'react-redux'
 import { loopSelector } from './loopSelector'
 import { styles, htmlStyles } from './loop-styles'
@@ -14,7 +14,7 @@ import HTMLView from 'react-native-htmlview'
 import { PrimaryButton, SecondaryButton } from '../../components/buttons/Button'
 import LoopSwiperComponent from 'src/components/Swiper/loop-swiper'
 import { get } from 'lodash'
-import {logEvents} from 'src/services/analytics'
+import { logEvents } from 'src/services/analytics'
 
 const sequenceNumber = 0
 
@@ -102,8 +102,8 @@ export default class LoopIntroScreen extends Component {
           />
         )
       }
-      return <Spinner />
+      return <Spinner/>
     }
-    return <Spinner />
+    return <Spinner/>
   }
 }

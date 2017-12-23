@@ -36,7 +36,6 @@ export default class idealRatingIntroScreen extends Component {
     logEvents(eventName)
   }
 
-
   updateContent = (text) => {
     const {auth, loop} = this.props
     const userName = get(auth, 'userData.user.first_name')
@@ -72,17 +71,17 @@ export default class idealRatingIntroScreen extends Component {
   }
 
   render () {
-    console.log('printing', this.props)
+
     const {profile} = this.props
     const introResponse = get(profile, 'intro_content')
-    console.log('printing', introResponse)
+
     if (!profile.fetching && introResponse) {
       const loopContent = eval(this.parseJson(introResponse))
 
       const idealResponse = find(loopContent, {screen_type: 'myideal_intro_why'})
-      console.log('printing', idealResponse)
+
       const idealDescription = eval(this.parseJson(idealResponse.description))
-      console.log('printing', idealDescription)
+
       const buttonText = get(idealDescription[0], 'buttons[0].text')
       const title = get(idealDescription[0], 'data[0].title')
       const description = get(idealDescription[0], 'data[0].description')
@@ -120,7 +119,7 @@ export default class idealRatingIntroScreen extends Component {
                   textAlign: 'left',
                 },
               }}
-              html={updateDescription==="" ?"<p></p>" :  updateDescription }
+              html={updateDescription === '' ? '<p></p>' : updateDescription}
             />
           </View>
           <PrimaryButton

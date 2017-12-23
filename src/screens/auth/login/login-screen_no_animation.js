@@ -31,9 +31,9 @@ export default class LoginScreen extends Component {
     if (userData) {
       const token = get(userData, 'authorization')
       const isValid = token.includes('Bearer')
-      console.log('printinguserDatadas', userData)
+
       const PCreated = get(userData, 'profile_created')
-      console.log('printingPCreateddad', PCreated)
+
 
       if (!isValid) {
         const profileCreated = get(profile, 'profileCreated')

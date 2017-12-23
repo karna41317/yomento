@@ -348,7 +348,7 @@ export default class DashboardScreen extends Component {
       let customStyles = {}
       const mainCard = newCard[0]
       const isTimePassed = this.isReminderCardTimePassed()
-      console.log('printingisTimePassed || reflectionCards.length > 0', isTimePassed)
+
 
       const height = (isTimePassed || reflectionCards.length > 0) ? normalHeight : extendedHeight
 
@@ -449,7 +449,7 @@ export default class DashboardScreen extends Component {
 
   render () {
     const {dashboard: {fetching}} = this.props
-    console.log('printingfetching',  this.props)
+
 
     if (fetching) {
       return (

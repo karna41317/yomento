@@ -33,11 +33,11 @@ export default class idealRatingMainScreen extends Component {
 
   const {profile} = this.props
     const introContent = get(profile, 'intro_content')
-    console.log('printing', introContent)
+
     if (!profile.fetching && introContent) {
       const loopContent = eval(this.parseJson(introContent))
 
-      console.log('printing', loopContent)
+
 
     }
     return (

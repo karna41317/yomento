@@ -105,7 +105,7 @@ export default class LoopHowScreen extends Component {
 
   render () {
     const {loop, navigation} = this.props
-    console.log('printingnavigation', this.state)
+
 
     if (loop.loop[0]) {
       const loopContent = eval(this.parseJson(loop.loop[0]))

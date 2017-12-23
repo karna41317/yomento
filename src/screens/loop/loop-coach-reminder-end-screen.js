@@ -60,7 +60,7 @@ export default class loopCoachReminderEndScreen extends Component {
       const loopStyles = get(loop, 'loopStyles[0]', {})
       const reminder_action_content = eval(
         this.parseJson(loopContent.reminder_action_content))
-      console.log('printing', reminder_action_content)
+
 
       const headerName = get(dashboard, 'newCard[0].theme_name', 'Intro')
       if (reminder_action_content[1]) {
