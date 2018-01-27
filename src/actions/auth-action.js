@@ -58,7 +58,11 @@ export const passwordChanged = (text) => {
 // register action
 export const registerUser = (user, navigation) => {
   //const {username, email, password} = user
+
   return dispatch => {
+    dispatch({
+      type: Types.SIGNUP_USER
+    })
     apiModule.registerUser(user).then(data => {
       if (data.status !== 'success') {
         dispatch({
@@ -94,7 +98,9 @@ export const registerUser = (user, navigation) => {
 // login action
 export const loginUser = (username, password, navigation) => {
   return dispatch => {
-
+    dispatch({
+      type: Types.LOGIN_USER
+    })
     apiModule.loginUser(username, password).then(data => {
       if (data.status !== 'success') {
         dispatch({

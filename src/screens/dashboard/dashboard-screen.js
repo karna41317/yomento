@@ -111,7 +111,8 @@ export default class DashboardScreen extends Component {
 
   goToLoop = (item) => {
     const {navigation, dispatch} = this.props
-    this.fireEvents(`dashboard.maincard.${item.theme_name}.button.gotoloop`, item)
+    //this.fireEvents(`dashboard.maincard.${item.theme_name}.button.gotoloop`, item)
+    this.fireEvents(`dashboard.maincard.button.gotoloop`, item)
     dispatch(getLoops(item.loop_id))
     navigation.navigate('loop', item)
   }

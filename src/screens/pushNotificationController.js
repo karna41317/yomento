@@ -17,6 +17,7 @@ export default class PushController extends Component {
     OneSignal.removeEventListener('registered', this.onRegistered);
     OneSignal.removeEventListener('ids', this.onIds);
   }
+
   onOpened(openResult) {
     console.log('Message: ', openResult.notification.payload.body);
     console.log('Data: ', openResult.notification.payload.additionalData);
@@ -28,13 +29,15 @@ export default class PushController extends Component {
     console.log("Device had been registered for push notifications!", notifData);
   }
 
-  onIds(device) {
+  async onIds(device) {
+    console.log('printingonopend', device)
     const {userId, pushToken} = device
     Mixpanel.identify(userId)
     if(Platform.OS=== 'ios') {
       Mixpanel.addPushDeviceToken(pushToken)
     }
     AsyncStorage.setItem('deviceInfo', JSON.stringify(device))
+    const deviceInfo = await AsyncStorage.getItem('deviceInfo')
   }
 
   componentDidMount () {
@@ -42,6 +45,7 @@ export default class PushController extends Component {
       onNotification: function (notification) {
       },
       onRegister: function (token) {
+        console.log('prinitng', token)
       },
       permissions: {
         alert: true,

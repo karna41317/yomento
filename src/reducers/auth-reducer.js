@@ -10,7 +10,6 @@ export default (state = initialState, action = {}) => {
 
     case Types.USERNAME_CHANGE:
 
-
       return {
         ...state,
         fetching: false,
@@ -41,6 +40,14 @@ export default (state = initialState, action = {}) => {
           email: action.payload,
         },
       }
+
+    case Types.LOGIN_USER:
+    case Types.SIGNUP_USER:
+      return {
+        ...state,
+        fetching: false,
+      }
+
     case Types.SIGNUP_SUCCESS:
       return {
         ...state,
@@ -67,7 +74,7 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         fetching: false,
-        loginError: action.payload
+        loginError: action.payload,
         //authType: action.payload['authType'],
       }
     case Types.LOG_OUT:

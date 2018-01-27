@@ -21,6 +21,9 @@ export const EMAIL_CHANGE = 'EMAIL_CHANGE'
 export const LOGIN_WITH_LINKEDIN = 'LOGIN_WITH_LINKEDIN'
 
 
+export const SIGNUP_USER = 'SIGNUP_USER'
+export const LOGIN_USER = 'LOGIN_USER'
+
 export const SIGNUP_FAILURE = 'SIGNUP_FAILURE'
 export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS'
 
