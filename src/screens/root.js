@@ -2,7 +2,7 @@
  * Created by Karan on 2017-10-26.
  */
 import React, { PropTypes, Component } from 'react'
-import { View, StyleSheet, StatusBar, ActivityIndicator } from 'react-native'
+import { View, StyleSheet, StatusBar, ActivityIndicator,Platform } from 'react-native'
 import { Spinner} from 'src/components'
 import { NavigatorView } from 'src/screens/navigator'
 import * as snapshotUtil from '../utils/snapshot'
@@ -13,7 +13,7 @@ import { connect } from 'react-redux'
 import GradientWrapper from '../components/partials/gradientWrapper'
 import PushController from './pushNotificationController'
 import MixpanelController from './mixpanelController'
-
+import Mixpanel from 'src/services/mixpanel-service'
 @connect(
   state => {
     return {
@@ -28,7 +28,10 @@ export default class RootScreen extends Component {
     isReady: PropTypes.bool.isRequired,
     dispatch: PropTypes.func.isRequired,
   }
-
+  constructor () {
+   super()
+    Mixpanel.sharedInstanceWithToken('79861ceaed8c442a57515ec71a2f1005')
+  }
   componentDidMount () {
     snapshotUtil.resetSnapshot().then(snapshot => {
       const {dispatch} = this.props
@@ -62,8 +65,9 @@ export default class RootScreen extends Component {
                      barStyle="light-content"/>
           <NavigatorView/>
           {__DEV__ && <DeveloperMenu/>}
-          <PushController/>
           <MixpanelController/>
+          <PushController/>
+
         </View>
       </GradientWrapper>
     )

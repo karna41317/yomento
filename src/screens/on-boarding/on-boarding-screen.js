@@ -49,8 +49,13 @@ export default class OnBoarding extends Component {
   }
 
   render () {
+console.log('printing', demoData)
+
+
+
 
     if (demoData) {
+
       return (
         <Swiper
           showDots={false}

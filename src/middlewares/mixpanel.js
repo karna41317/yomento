@@ -1,5 +1,5 @@
 import { NavigationActions } from 'react-navigation'
-import Mixpanel from 'react-native-mixpanel'
+import Mixpanel from 'src/services/mixpanel-service'
 import { get } from 'lodash'
 
 import * as Types from 'src/action-types'

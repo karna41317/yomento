@@ -11,7 +11,7 @@ import {
   Platform,
   ActivityIndicator,
 } from 'react-native'
-import { Spinner} from 'src/components'
+import { Spinner } from 'src/components'
 
 /**
  * Default styles
@@ -159,7 +159,7 @@ export default class Swiper extends Component {
     removeClippedSubviews: true,
     automaticallyAdjustContentInsets: false,
     showsPagination: true,
-    showsButtons: false,
+    showsButtons: true,
     disableNextButton: false,
     loop: true,
     loadMinimal: false,
@@ -352,7 +352,8 @@ export default class Swiper extends Component {
   onScrollEnd = e => {
     // update scroll state
     this.internals.isScrolling = false
-
+console.log('printinge.nativeEvent.contentOffset', e.nativeEvent.contentOffset)
+  //debugger
     // making our events coming from android compatible to updateIndex logic
     if (!e.nativeEvent.contentOffset) {
       if (this.state.dir === 'x') {
@@ -366,10 +367,10 @@ export default class Swiper extends Component {
       }
     }
 
+
     this.updateIndex(e.nativeEvent.contentOffset, this.state.dir, () => {
       this.autoplay()
       this.loopJump()
-
       // if `onMomentumScrollEnd` registered will be called here
       this.props.onMomentumScrollEnd &&
       this.props.onMomentumScrollEnd(e, this.fullState(), this)
@@ -461,6 +462,8 @@ export default class Swiper extends Component {
    */
 
   scrollBy = (index, animated = true) => {
+    console.log('printing internals', this.internals.isScrolling)
+
     if (this.internals.isScrolling || this.state.total < 2) return
     const state = this.state
     const diff = (this.props.loop ? 1 : 0) + index + this.state.index
@@ -657,6 +660,7 @@ export default class Swiper extends Component {
                         initialPage={this.props.loop
                           ? this.state.index + 1
                           : this.state.index}
+                        onPageScroll={(p, o)=>{console.log('p,o', p, o)}}
                         onPageSelected={this.onScrollEnd}
                         key={pages.length}
                         style={[styles.wrapperAndroid, this.props.style]}>
@@ -731,6 +735,7 @@ export default class Swiper extends Component {
     } else {
       pages = <View style={pageStyle} key={0}>{children}</View>
     }
+    console.log('printing', this.state)
 
     return (
       <View style={[styles.container, containerStyle]} onLayout={this.onLayout}>

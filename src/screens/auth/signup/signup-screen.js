@@ -113,7 +113,9 @@ export default class SignUp extends Component {
     const {user, dispatch, navigation} = this.props
     if (user && this.validation(user)) {
       const deviceInfo = await AsyncStorage.getItem('deviceInfo')
-      const deviceId = JSON.parse(deviceInfo).userId
+      console.log('printingdeviceInfo', deviceInfo)
+
+      const deviceId = deviceInfo ? JSON.parse(deviceInfo).userId : ''
       const userInfo = Object.assign({}, user, {source: 'email', deviceId} )
       this.resetUserState()
       dispatch(registerUser(userInfo, navigation))

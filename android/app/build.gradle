@@ -84,18 +84,20 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '25.0.0'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.2'
 
     defaultConfig {
         applicationId "com.yemonto"
         minSdkVersion 16
-        targetSdkVersion 22
+        targetSdkVersion 27
         versionCode versionMajor * 10000 + versionMinor * 100 + versionPatch
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+        manifestPlaceholders = [onesignal_app_id: "39d92bd2-262c-4b94-b3b8-043f7942797c",
+                                onesignal_google_project_number: "REMOTE"]
     }
     splits {
         abi {
@@ -136,10 +138,14 @@ android {
         exclude 'META-INF/dependencies.txt'
         exclude 'META-INF/LGPL2.1'
     }
+    dexOptions {
+        jumboMode true
+    }
 }
 
 dependencies {
-    compile project(':react-native-fbsdk')
+    compile project(':react-native-push-notification')
+    compile project(':react-native-config')
     compile project(':react-native-onesignal')
     compile project(':react-native-mixpanel')
     compile project(':appcenter-crashes')
@@ -155,8 +161,15 @@ dependencies {
     compile project(':react-native-code-push')
     compile project(':react-native-vector-icons')
     compile fileTree(dir: "libs", include: ["*.jar"])
-    compile "com.android.support:appcompat-v7:25.0.0"
+    compile "com.android.support:appcompat-v7:27.0.2"
+    compile(project(':react-native-fbsdk')){
+        exclude(group: 'com.facebook.android', module: 'facebook-android-sdk')
+    }
+    compile "com.facebook.android:facebook-android-sdk:4.22.1"
+
     compile "com.facebook.react:react-native:+"  // From node_modules
+    //compile 'com.facebook.android:facebook-android-sdk:[4,5)'
+
 }
 
 // Run this once to be able to run the application with BUCK

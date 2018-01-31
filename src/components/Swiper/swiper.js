@@ -350,7 +350,8 @@ export default class SwiperComponent extends Component {
   }
 
   shadeStatusBarColor (color, percent) {
-    const first = parseInt(color.slice(1), 16)
+    const backgroundColor = color ? color : '#007DFF'
+    const first = parseInt(backgroundColor.slice(1), 16)
     const black = first & 0x0000FF
     const green = first >> 8 & 0x00FF
     const percentage = percent < 0 ? percent * -1 : percent
@@ -413,12 +414,14 @@ export default class SwiperComponent extends Component {
       <View style={{flex: 1}}>
         {androidPages}
         <Swiper
+          id={Math.random()}
           ref={'swiper'}
-          scrollEnabled={false}
+          scrollEnabled={true}
           scrollEventThrottle={50}
           loop={false}
           index={this.props.defaultIndex}
           renderPagination={this.renderPagination}
+          onScrollEndDrag={() => this.setState({ isScrolling: false })}
           onMomentumScrollEnd={(e, state) => {
             if (this.isToTintStatusBar()) {
               StatusBar.setBackgroundColor(
@@ -429,7 +432,9 @@ export default class SwiperComponent extends Component {
             this.props.onSlideChange(state.index, state.total)
           }}
           onScroll={Animated.event(
-            [{nativeEvent: {contentOffset: {y: this.state.yValue}}}],
+            [{nativeEvent: {contentOffset: {
+              y: this.state.yValue,
+            }}}],
           )}
         >
           {pages}
